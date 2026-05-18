@@ -1,0 +1,18 @@
+# OS / editor
+Thumbs.db
+.DS_Store
+*.swp
+.vscode/
+.idea/
+
+# Logs
+*.log
+
+# User-uploaded content (runtime data, not source)
+uploads/*
+!uploads/.gitkeep
+
+# Local env / secrets
+.env
+.env.*
+*.local
