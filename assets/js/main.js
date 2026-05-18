@@ -76,108 +76,95 @@
         window.addEventListener('scroll', onScroll, { passive: true });
         onScroll();
 
-        /* ---------- MOBILE NAV ---------- */
-        var toggle = document.getElementById('navToggle');
-        var navList = document.getElementById('navList');
-        var drawerClose = document.getElementById('navDrawerClose');
-        function setNav(open) {
-            if (!navList || !toggle) return;
-            navList.classList.toggle('is-open', open);
-            toggle.classList.toggle('is-open', open);
-            toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+        /* ---------- MOBILE SLIDE-IN MENU ---------- */
+        var navToggle      = document.getElementById('navToggle');
+        var mobileMenu     = document.getElementById('mobileMenu');
+        var mobileOverlay  = document.getElementById('mobileOverlay');
+        var mobileClose    = document.getElementById('navDrawerClose');
+
+        function setMobileMenu(open) {
+            if (!mobileMenu) return;
+            mobileMenu.classList.toggle('is-open', open);
+            if (mobileOverlay) mobileOverlay.classList.toggle('is-open', open);
+            if (navToggle) {
+                navToggle.classList.toggle('is-open', open);
+                navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+            }
+            mobileMenu.setAttribute('aria-hidden', open ? 'false' : 'true');
             document.body.style.overflow = open ? 'hidden' : '';
         }
-        if (toggle && navList) {
-            toggle.addEventListener('click', function () {
-                setNav(!navList.classList.contains('is-open'));
+
+        if (navToggle && mobileMenu) {
+            navToggle.addEventListener('click', function () {
+                setMobileMenu(!mobileMenu.classList.contains('is-open'));
             });
-            // X close inside the drawer
-            if (drawerClose) {
-                drawerClose.addEventListener('click', function (e) {
-                    e.stopPropagation();
-                    setNav(false);
-                });
-            }
-            // Tap on the dimmed backdrop closes the drawer
-            navList.addEventListener('click', function (e) {
-                // Only react when the click landed on the ::before backdrop layer
-                // (which sits behind the drawer). Easiest signal: clientX is past
-                // the drawer's left edge.
-                var rect = navList.getBoundingClientRect();
-                if (e.clientX < rect.left) setNav(false);
+        }
+        if (mobileClose) {
+            mobileClose.addEventListener('click', function () { setMobileMenu(false); });
+        }
+        if (mobileOverlay) {
+            mobileOverlay.addEventListener('click', function () { setMobileMenu(false); });
+        }
+        // Close on link click inside the mobile menu (so navigation feels snappy)
+        if (mobileMenu) {
+            mobileMenu.querySelectorAll('.mm-links > a, .mm-sub a, .mm-cta a').forEach(function (a) {
+                a.addEventListener('click', function () { setMobileMenu(false); });
             });
-            // Closing the panel on link click — but not when the click is on
-            // a parent dropdown trigger (that needs to expand its sublist).
-            navList.querySelectorAll('a').forEach(function (a) {
-                a.addEventListener('click', function (e) {
-                    var li = a.parentElement;
-                    if (li && li.classList.contains('has-dropdown')) {
-                        // On mobile, the parent link expands its dropdown
-                        // instead of navigating, unless it's already open
-                        // (in which case the user is asking to actually visit).
-                        var isMobile = window.matchMedia('(max-width: 991px)').matches;
-                        if (isMobile && !li.classList.contains('is-open')) {
-                            e.preventDefault();
-                            // Close any sibling open dropdowns
-                            navList.querySelectorAll('.has-dropdown.is-open').forEach(function (sib) {
-                                if (sib !== li) sib.classList.remove('is-open');
-                            });
-                            li.classList.add('is-open');
-                            a.setAttribute('aria-expanded', 'true');
-                            return;
-                        }
-                    }
-                    navList.classList.remove('is-open');
-                    toggle.classList.remove('is-open');
-                    document.body.style.overflow = '';
+            // Expand/collapse mobile group sections (Services, etc.)
+            mobileMenu.querySelectorAll('.mm-trigger').forEach(function (btn) {
+                btn.addEventListener('click', function () {
+                    var group = btn.closest('.mm-group');
+                    if (!group) return;
+                    var isOpen = group.classList.toggle('is-open');
+                    btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
                 });
             });
         }
+        // ESC closes mobile menu
+        document.addEventListener('keydown', function (e) {
+            if (e.key === 'Escape' && mobileMenu && mobileMenu.classList.contains('is-open')) {
+                setMobileMenu(false);
+            }
+        });
 
-        /* ---------- DROPDOWN MENUS ---------- */
-        var dropdownItems = document.querySelectorAll('.nav-list .has-dropdown');
+        /* ---------- DESKTOP DROPDOWN MENUS (.nav-item.has-dd) ---------- */
+        var dropdownItems = document.querySelectorAll('.navlinks .nav-item.has-dd');
         if (dropdownItems.length) {
-            // Desktop: hover already opens it via CSS. JS handles click-toggle
-            // on the trigger (helps keyboard + touch laptops where hover is weird)
-            // and click-outside / ESC to close.
-            dropdownItems.forEach(function (li) {
-                var trigger = li.querySelector(':scope > a');
+            dropdownItems.forEach(function (item) {
+                var trigger = item.querySelector(':scope > a');
                 if (!trigger) return;
 
-                // Caret-only click toggle on desktop: keep the link clickable,
-                // but if the user clicks the caret region, open the panel instead.
+                // Caret-only click toggle: keep the link clickable, but tapping
+                // the caret opens the panel without navigating.
                 trigger.addEventListener('click', function (e) {
                     var isMobile = window.matchMedia('(max-width: 991px)').matches;
-                    if (isMobile) return; // handled by the mobile nav logic above
-                    // Click on the caret icon -> toggle, don't navigate
+                    if (isMobile) return;
                     if (e.target.closest('.nav-caret')) {
                         e.preventDefault();
-                        var wasOpen = li.classList.contains('is-open');
-                        // Close all others
+                        var wasOpen = item.classList.contains('is-open');
                         dropdownItems.forEach(function (other) { other.classList.remove('is-open'); });
-                        if (!wasOpen) li.classList.add('is-open');
+                        if (!wasOpen) item.classList.add('is-open');
                         trigger.setAttribute('aria-expanded', !wasOpen ? 'true' : 'false');
                     }
                 });
             });
 
-            // Click outside -> close any open dropdowns (desktop only — mobile
-            // closes when the full menu is dismissed)
+            // Click outside -> close any open dropdowns
             document.addEventListener('click', function (e) {
-                if (e.target.closest('.nav-list .has-dropdown')) return;
-                dropdownItems.forEach(function (li) {
-                    li.classList.remove('is-open');
-                    var t = li.querySelector(':scope > a');
+                if (e.target.closest('.navlinks .nav-item.has-dd')) return;
+                dropdownItems.forEach(function (item) {
+                    item.classList.remove('is-open');
+                    var t = item.querySelector(':scope > a');
                     if (t) t.setAttribute('aria-expanded', 'false');
                 });
             });
 
-            // ESC -> close
+            // ESC closes any open dropdown
             document.addEventListener('keydown', function (e) {
                 if (e.key !== 'Escape') return;
-                dropdownItems.forEach(function (li) {
-                    li.classList.remove('is-open');
-                    var t = li.querySelector(':scope > a');
+                dropdownItems.forEach(function (item) {
+                    item.classList.remove('is-open');
+                    var t = item.querySelector(':scope > a');
                     if (t) t.setAttribute('aria-expanded', 'false');
                 });
             });

@@ -1,129 +1,122 @@
 <?php require_once __DIR__ . '/config.php';
 $menu = navMenu();
-
-/**
- * Recursive renderer — supports unlimited nesting depth, but the design is
- * tuned for two levels (top-level item + one row of children).
- */
-if (!function_exists('renderNavItem')):
-function renderNavItem($item, $depth = 0) {
-    $hasChildren = !empty($item['children']);
-    $isMega      = !empty($item['mega']);
-    $activeTree  = navIsActiveTree($item);
-    $itemId      = 'nav-' . ($item['key'] ?? md5($item['label']));
-
-    $liClass = 'nav-item';
-    if ($hasChildren) $liClass .= ' has-dropdown';
-    if ($isMega)      $liClass .= ' has-mega';
-    if ($activeTree)  $liClass .= ' is-active-tree';
-
-    echo '<li class="' . safe($liClass) . '">';
-
-    // Top-level link (also acts as dropdown trigger)
-    echo '<a href="' . safe($item['href']) . '" '
-       . 'class="' . ($activeTree ? 'active' : '') . '" '
-       . ($activeTree ? 'aria-current="page" ' : '')
-       . ($hasChildren ? 'aria-haspopup="true" aria-expanded="false" aria-controls="' . safe($itemId) . '"' : '')
-       . '>';
-    echo safe($item['label']);
-    if ($hasChildren) {
-        echo ' <i class="fa-solid fa-chevron-down nav-caret" aria-hidden="true"></i>';
-    }
-    echo '</a>';
-
-    if ($hasChildren) {
-        $panelClass = 'nav-dropdown' . ($isMega ? ' nav-dropdown--mega' : '');
-        echo '<div class="' . safe($panelClass) . '" id="' . safe($itemId) . '" role="menu">';
-        echo '<ul class="nav-dropdown__list" role="none">';
-        foreach ($item['children'] as $child) {
-            $childActive = navIsActiveTree($child);
-            echo '<li role="none">';
-            echo '<a href="' . safe($child['href']) . '" class="nav-sub' . ($childActive ? ' is-active' : '') . '" role="menuitem">';
-            if (!empty($child['icon'])) {
-                echo '<span class="nav-sub__icon" aria-hidden="true"><i class="fa-solid ' . safe($child['icon']) . '"></i></span>';
-            }
-            echo '<span class="nav-sub__body">';
-            echo '<strong>' . safe($child['label']) . '</strong>';
-            if (!empty($child['desc'])) {
-                echo '<small>' . safe($child['desc']) . '</small>';
-            }
-            echo '</span>';
-            echo '<span class="nav-sub__arrow" aria-hidden="true"><i class="fa-solid fa-arrow-right"></i></span>';
-            echo '</a>';
-
-            // Recursive nesting if this child has its own children
-            if (!empty($child['children'])) {
-                echo '<ul class="nav-dropdown__sublist" role="menu">';
-                foreach ($child['children'] as $grandchild) {
-                    renderNavItem($grandchild, $depth + 2);
-                }
-                echo '</ul>';
-            }
-            echo '</li>';
-        }
-        echo '</ul>';
-        echo '</div>';
-    }
-
-    echo '</li>';
-}
-endif;
 ?>
-<header class="site-header" id="siteHeader">
-    <div class="container-fluid">
-        <nav class="nav-tri" aria-label="Primary">
+<!-- ============== DESKTOP NAV ============== -->
+<nav class="top" id="topNav" aria-label="Primary">
+    <div class="wrap">
 
-            <!-- Pill 1 — Logo -->
-            <div class="nav-pill nav-pill--logo">
-                <a class="brand" href="index.php" aria-label="<?= safe(WEBSITE_NAME) ?> home">
-                    <img src="<?= asset('images/logo.webp') ?>" alt="<?= safe(WEBSITE_NAME) ?>">
-                </a>
-            </div>
+        <a class="brand" href="index.php" aria-label="<?= safe(WEBSITE_NAME) ?> home">
+            <img src="<?= asset('images/logo.webp') ?>" alt="<?= safe(WEBSITE_NAME) ?>" loading="lazy" decoding="async">
+        </a>
 
-            <!-- Pill 2 — Navigation -->
-            <div class="nav-pill nav-pill--menu">
-                <ul class="nav-list" id="navList" role="menubar">
-                    <li class="nav-drawer-head" aria-hidden="true">
-                        <span class="nav-drawer-head__logo">
-                            <img src="<?= asset('images/logo.webp') ?>" alt="<?= safe(WEBSITE_NAME) ?>">
-                        </span>
-                        <button type="button" class="nav-drawer-close" id="navDrawerClose" aria-label="Close menu">
-                            <i class="fa-solid fa-xmark"></i>
-                        </button>
-                    </li>
-                    <?php foreach ($menu as $item) renderNavItem($item); ?>
-                    <li class="nav-drawer-foot" aria-hidden="true">
-                        <a href="contact.php#submit" class="btn btn-cta nav-drawer-cta">
-                            Submit Manuscript <i class="fa-solid fa-arrow-right"></i>
+        <div class="navlinks" role="menubar">
+            <?php foreach ($menu as $item):
+                $hasKids  = !empty($item['children']);
+                $isMega   = !empty($item['mega']);
+                $isActive = navIsActiveTree($item);
+            ?>
+                <?php if ($hasKids): ?>
+                    <div class="nav-item has-dd <?= $isActive ? 'is-active' : '' ?>">
+                        <a class="<?= $isActive ? 'is-active' : '' ?>"
+                           href="<?= safe($item['href']) ?>"
+                           role="menuitem"
+                           aria-haspopup="true"
+                           aria-expanded="false">
+                            <?= safe($item['label']) ?>
+                            <i class="fa-solid fa-chevron-down nav-caret" aria-hidden="true"></i>
                         </a>
-                        <div class="nav-drawer-contact">
-                            <a href="mailto:<?= EMAIL_ADDRESS ?>"><i class="fa-solid fa-envelope"></i> <?= safe(EMAIL_ADDRESS) ?></a>
-                            <a href="tel:<?= PHONE_NUMBER_RAW ?>"><i class="fa-solid fa-phone"></i> <?= safe(PHONE_NUMBER) ?></a>
-                        </div>
-                    </li>
-                </ul>
-            </div>
+                        <ul class="nav-dd <?= $isMega ? 'nav-dd--wide' : '' ?>" role="menu">
+                            <?php foreach ($item['children'] as $child): ?>
+                                <li role="none">
+                                    <a role="menuitem" href="<?= safe($child['href']) ?>">
+                                        <?php if (!empty($child['icon'])): ?>
+                                            <i class="fa-solid <?= safe($child['icon']) ?>"></i>
+                                        <?php endif; ?>
+                                        <div>
+                                            <b><?= safe($child['label']) ?></b>
+                                            <?php if (!empty($child['desc'])): ?>
+                                                <span><?= safe($child['desc']) ?></span>
+                                            <?php endif; ?>
+                                        </div>
+                                    </a>
+                                </li>
+                            <?php endforeach; ?>
+                        </ul>
+                    </div>
+                <?php else: ?>
+                    <a class="<?= $isActive ? 'is-active' : '' ?>"
+                       href="<?= safe($item['href']) ?>"
+                       role="menuitem"><?= safe($item['label']) ?></a>
+                <?php endif; ?>
+            <?php endforeach; ?>
+        </div>
 
-            <!-- Pill 3 — Phone + Submit CTA + Mobile toggle (transparent, creative) -->
-            <div class="nav-pill nav-pill--cta">
-                <a href="tel:<?= PHONE_NUMBER_RAW ?>" class="nav-phone" aria-label="Call us">
-                    <span class="nav-phone__icon" aria-hidden="true"><i class="fa-solid fa-phone-volume"></i></span>
-                    <span class="nav-phone__text">
-                        <small>Call our editorial desk</small>
-                        <strong><?= safe(PHONE_NUMBER) ?></strong>
-                    </span>
-                </a>
-                <a href="contact.php#submit" class="nav-cta nav-cta--creative">
-                    <span class="nav-cta__label">Submit Manuscript</span>
-                    <span class="nav-cta__arrow" aria-hidden="true">
-                        <i class="fa-solid fa-arrow-right"></i>
-                    </span>
-                </a>
-                <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false" id="navToggle">
-                    <span></span><span></span><span></span>
-                </button>
-            </div>
+        <div class="navactions">
+            <a href="tel:<?= PHONE_NUMBER_RAW ?>" class="nav-phone-btn" aria-label="Call <?= safe(PHONE_NUMBER) ?>">
+                <i class="fa-solid fa-phone-volume" aria-hidden="true"></i>
+            </a>
+            <a class="btn btn-cta nav-cta" href="contact.php#submit">
+                <span class="lbl lbl--long">Submit Manuscript</span>
+                <span class="lbl lbl--short">Submit</span>
+                <span class="arr" aria-hidden="true">&rarr;</span>
+            </a>
+            <button class="navtoggle" type="button"
+                    aria-label="Open menu"
+                    aria-expanded="false"
+                    aria-controls="mobileMenu"
+                    id="navToggle">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
 
-        </nav>
     </div>
-</header>
+</nav>
+
+<!-- ============== MOBILE SLIDE-IN MENU ============== -->
+<div class="mobile-overlay" id="mobileOverlay" aria-hidden="true"></div>
+<aside class="mobile-menu" id="mobileMenu" aria-hidden="true">
+    <div class="mm-head">
+        <a class="brand" href="index.php" aria-label="<?= safe(WEBSITE_NAME) ?> home">
+            <img src="<?= asset('images/logo.webp') ?>" alt="<?= safe(WEBSITE_NAME) ?>" loading="lazy" decoding="async">
+        </a>
+        <button class="mm-close" type="button" aria-label="Close menu" id="navDrawerClose">
+            <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+        </button>
+    </div>
+
+    <nav class="mm-links" aria-label="Mobile">
+        <?php foreach ($menu as $item):
+            $hasKids  = !empty($item['children']);
+            $isActive = navIsActiveTree($item);
+        ?>
+            <?php if ($hasKids): ?>
+                <div class="mm-group <?= $isActive ? 'is-active' : '' ?>">
+                    <button type="button" class="mm-trigger" aria-expanded="false">
+                        <span><?= safe($item['label']) ?></span>
+                        <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
+                    </button>
+                    <div class="mm-sub">
+                        <a href="<?= safe($item['href']) ?>">All <?= safe($item['label']) ?></a>
+                        <?php foreach ($item['children'] as $child): ?>
+                            <a href="<?= safe($child['href']) ?>"><?= safe($child['label']) ?></a>
+                        <?php endforeach; ?>
+                    </div>
+                </div>
+            <?php else: ?>
+                <a class="<?= $isActive ? 'is-active' : '' ?>" href="<?= safe($item['href']) ?>"><?= safe($item['label']) ?></a>
+            <?php endif; ?>
+        <?php endforeach; ?>
+    </nav>
+
+    <div class="mm-cta">
+        <a class="btn btn-cta" href="contact.php#submit">
+            Submit Manuscript <span class="arr" aria-hidden="true">&rarr;</span>
+        </a>
+        <a class="btn btn-outline-dark" href="contact.php">Contact Us</a>
+    </div>
+
+    <div class="mm-foot">
+        <a href="tel:<?= PHONE_NUMBER_RAW ?>"><i class="fa-solid fa-phone"></i> <?= safe(PHONE_NUMBER) ?></a>
+        <a href="mailto:<?= EMAIL_ADDRESS ?>"><i class="fa-solid fa-envelope"></i> <?= safe(EMAIL_ADDRESS) ?></a>
+    </div>
+</aside>
