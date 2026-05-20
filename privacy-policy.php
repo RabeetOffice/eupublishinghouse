@@ -10,8 +10,8 @@ require __DIR__ . '/includes/header.php';
 
 $banner = [
     'crumb'   => 'Privacy Policy',
-    'eyebrow' => 'Legal',
-    'title'   => 'Privacy <em class="gold-italic">Policy</em>',
+
+    'title'   => 'Privacy <em class="serif-italic">Policy</em>',
     'sub'     => 'How European Publishing House collects, uses, and safeguards your information.',
 ];
 include __DIR__ . '/includes/page-banner.php';

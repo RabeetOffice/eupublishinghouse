@@ -10,8 +10,8 @@ require __DIR__ . '/includes/header.php';
 
 $banner = [
     'crumb'   => 'FAQs',
-    'eyebrow' => 'Frequently Asked',
-    'title'   => 'We&rsquo;re Here To Answer All Your <em class="gold-italic">Questions.</em>',
+
+    'title'   => 'We&rsquo;re Here To Answer All Your <em class="serif-italic">Questions.</em>',
     'sub'     => 'A short brief on how we work, who we publish, and what authors can expect.',
 ];
 include __DIR__ . '/includes/page-banner.php';
@@ -85,7 +85,7 @@ $faqs = [
         <div class="row g-5 align-items-start">
             <div class="col-lg-4" data-aos="fade-right">
                 <span class="eyebrow">Frequently Asked</span>
-                <h2 class="section-title">We&rsquo;re Here To Answer All Your <em class="gold-italic">Questions.</em></h2>
+                <h2 class="section-title">We&rsquo;re Here To Answer All Your <em class="serif-italic">Questions.</em></h2>
                 <p class="section-lead">Can&rsquo;t find what you&rsquo;re looking for? Speak with our team directly.</p>
                 <a href="contact.php" class="btn btn-cta">Get in Touch <i class="fa-solid fa-arrow-right"></i></a>
             </div>

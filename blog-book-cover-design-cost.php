@@ -12,8 +12,8 @@ require __DIR__ . '/includes/header.php';
 
 $banner = [
     'crumb'   => 'How Much Does Book Cover Design Cost in Europe?',
-    'eyebrow' => 'Design · Pricing',
-    'title'   => 'How Much Does Book Cover Design Cost in <em class="gold-italic">Europe?</em>',
+
+    'title'   => 'How Much Does Book Cover Design Cost in <em class="serif-italic">Europe?</em>',
     'sub'     => 'A 2026 breakdown by region, experience, complexity, and the things designers forget to tell you about.',
 ];
 include __DIR__ . '/includes/page-banner.php';
@@ -70,7 +70,7 @@ include __DIR__ . '/includes/page-banner.php';
                 <p>Then there are genre specialists. These are designers who only design fantasy covers, or only romance, or only thrillers. Their rates are often at the top of the market, but they understand the visual codes of their genre so deeply that the result is almost always commercially stronger than a generalist could produce.</p>
 
                 <h3>Complexity of the Design</h3>
-                <p>Not all covers require the same amount of work, and the price reflects that. A typography-driven cover, where the focus is on strong fonts and minimal imagery, is the most affordable end of the spectrum. Photo manipulation covers combine and edit multiple stock images into something that feels original. Custom illustration or artwork is at the top end , an artist creating original imagery specifically for your book takes the longest and costs the most.</p>
+                <p>Not all covers require the same amount of work, and the price reflects that. A typography-driven cover, where the focus is on strong fonts and minimal imagery, is the most affordable end of the spectrum. Photo manipulation covers combine and edit multiple stock images into something that feels original. Custom illustration or artwork is at the top end, an artist creating original imagery specifically for your book takes the longest and costs the most.</p>
 
                 <h4>Number of Revisions Included</h4>
                 <p>Most professional cover design packages include between one and three rounds of revisions. Each additional round typically adds 10-20% to the total fee, sometimes more if the changes are substantial. This is one of the most common reasons authors end up paying more than they expected, and it&rsquo;s almost always avoidable with better upfront communication.</p>
@@ -97,7 +97,7 @@ include __DIR__ . '/includes/page-banner.php';
                 <p>Agency rates typically start at &euro;1,000 and can climb past &euro;5,000 per project. You&rsquo;re paying for a team, project management, and a level of accountability that individual freelancers can&rsquo;t always match. For most indie authors, agencies are overkill.</p>
 
                 <h3>Online Freelance Platforms</h3>
-                <p>Reedsy book cover design costs in Europe generally fall between &euro;400 and &euro;2,000+, with many projects in the &euro;600-&euro;1,200 range. The advantage is vetting , Reedsy curates its designers. Upwork and Fiverr cover a much wider range, with freelancers starting at &euro;50 and going well above &euro;1,000 , but the variance in quality is enormous.</p>
+                <p>Reedsy book cover design costs in Europe generally fall between &euro;400 and &euro;2,000+, with many projects in the &euro;600-&euro;1,200 range. The advantage is vetting, Reedsy curates its designers. Upwork and Fiverr cover a much wider range, with freelancers starting at &euro;50 and going well above &euro;1,000, but the variance in quality is enormous.</p>
 
                 <p>If you&rsquo;re still figuring out where book cover design fits in the wider publishing picture, our overview of <a href="design.php">design services for authors</a> explains how cover, interior, and marketing visuals work together.</p>
 
@@ -120,7 +120,7 @@ include __DIR__ . '/includes/page-banner.php';
                 </table>
                 </div>
 
-                <p>Western Europe sits at the upper end of the European market. Southern Europe offers more competitive rates without compromising on quality , rates tend to be 20-30% lower than Western Europe for comparable work. Central and Eastern Europe is where you&rsquo;ll find the strongest value for money in the entire European market.</p>
+                <p>Western Europe sits at the upper end of the European market. Southern Europe offers more competitive rates without compromising on quality, rates tend to be 20-30% lower than Western Europe for comparable work. Central and Eastern Europe is where you&rsquo;ll find the strongest value for money in the entire European market.</p>
 
                 <blockquote><strong>Expert Tip:</strong> Don&rsquo;t assume the most expensive region produces the best work. A &euro;500 cover from a skilled designer in Warsaw can easily outperform a &euro;1,500 cover from a less specialized designer in London. Focus on portfolio fit and genre experience over geography.</blockquote>
 
@@ -132,12 +132,12 @@ include __DIR__ . '/includes/page-banner.php';
                 <hr>
 
                 <h2>Custom Illustration vs Stock Photography</h2>
-                <p>Stock photography is the more affordable route. The biggest disadvantage is uniqueness , other authors may license the same image. Custom illustration for a book cover typically starts at &euro;500 for simpler work and can climb past &euro;3,000 for highly detailed pieces. For fantasy, sci-fi, children&rsquo;s books, and graphic novels, custom illustration often pays for itself. For most contemporary fiction, romance, thrillers, and non-fiction, stock-based covers work brilliantly when done well.</p>
+                <p>Stock photography is the more affordable route. The biggest disadvantage is uniqueness, other authors may license the same image. Custom illustration for a book cover typically starts at &euro;500 for simpler work and can climb past &euro;3,000 for highly detailed pieces. For fantasy, sci-fi, children&rsquo;s books, and graphic novels, custom illustration often pays for itself. For most contemporary fiction, romance, thrillers, and non-fiction, stock-based covers work brilliantly when done well.</p>
 
                 <hr>
 
                 <h2>How to Set a Realistic Budget</h2>
-                <p>For most indie authors, your cover budget ends up somewhere between 20% and 40% of total pre-publication spend, depending on genre and ambition. Spend a few hours looking at the bestseller lists in your genre on Amazon. The cheapest cover isn&rsquo;t always the best value , a &euro;200 cover that doesn&rsquo;t sell books is more expensive than an &euro;800 cover that does.</p>
+                <p>For most indie authors, your cover budget ends up somewhere between 20% and 40% of total pre-publication spend, depending on genre and ambition. Spend a few hours looking at the bestseller lists in your genre on Amazon. The cheapest cover isn&rsquo;t always the best value, a &euro;200 cover that doesn&rsquo;t sell books is more expensive than an &euro;800 cover that does.</p>
 
                 <hr>
 
@@ -167,7 +167,7 @@ include __DIR__ . '/includes/page-banner.php';
         <!-- ===== FAQ for this post ===== -->
         <div class="row mt-5 justify-content-center">
             <div class="col-lg-9" data-aos="fade-up">
-                <h2 class="section-title text-center">Frequently Asked <em class="gold-italic">Questions</em></h2>
+                <h2 class="section-title text-center">Frequently Asked <em class="serif-italic">Questions</em></h2>
                 <div class="accordion faq-accordion mt-4" id="postFaq">
                     <?php
                     $postFaqs = [

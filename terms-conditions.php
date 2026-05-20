@@ -10,8 +10,8 @@ require __DIR__ . '/includes/header.php';
 
 $banner = [
     'crumb'   => 'Terms & Conditions',
-    'eyebrow' => 'Legal',
-    'title'   => 'Terms &amp; <em class="gold-italic">Conditions</em>',
+
+    'title'   => 'Terms &amp; <em class="serif-italic">Conditions</em>',
     'sub'     => 'The terms that govern your use of the European Publishing House website and services.',
 ];
 include __DIR__ . '/includes/page-banner.php';

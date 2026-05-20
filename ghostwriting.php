@@ -10,15 +10,14 @@ require __DIR__ . '/includes/header.php';
 
 $hero = [
     'crumb'      => 'Ghostwriting',
-    'eyebrow'    => 'Ghostwriting',
-    'title'      => 'Professional Ghostwriting Services in <em class="gold-italic">Europe</em>',
+    'title'      => 'Professional Ghostwriting Services in <em class="serif-italic">Europe</em>',
     'paragraphs' => [
-        'Some of the best books ever written had help. Ghostwriting has been part of the industry for as long as the industry has existed, and there&rsquo;s nothing unusual about having a professional writer turn your ideas into a finished manuscript.',
-        'You bring the ideas, the experiences, and the vision. We bring the craft. The finished book is entirely yours , your name on the cover, your rights, your royalties.',
+        "Some of the best books ever written had help. That's not a secret in publishing, it's just rarely talked about openly. Ghostwriting has been part of the industry for as long as the industry has existed, and there's nothing unusual about having a professional writer turn your ideas into a finished manuscript.",
+        "At European Publishing House, our ghostwriters work with authors across Europe who have a story worth telling, a business book worth writing, or a memoir worth preserving, but need someone to do the actual writing. You bring the ideas, the experiences, and the vision. We bring the craft. The finished book is entirely yours, your name on the cover, your rights, your royalties. We're not in the picture once the manuscript is done.",
     ],
     'ctas' => [
-        ['label' => 'Start a Conversation', 'href' => 'contact.php#submit', 'class' => 'btn-cta'],
-        ['label' => 'Genres We Write',      'href' => '#ghost-services',    'class' => 'btn-outline-dark'],
+        ['label' => 'Get Started',     'href' => '#popup',         'class' => 'btn-cta',  'popup' => true],
+        ['label' => 'Genres We Write', 'href' => '#ghost-services','class' => 'btn-glass'],
     ],
 ];
 include __DIR__ . '/includes/service-hero.php';
@@ -32,7 +31,7 @@ include __DIR__ . '/includes/distributors.php';
     <div class="container">
         <div class="section-head text-center" data-aos="fade-up">
             <span class="eyebrow">Genres &amp; Formats</span>
-            <h2 class="section-title">Ghostwriting Services <em class="gold-italic">We Offer</em></h2>
+            <h2 class="section-title">Ghostwriting Services <em class="serif-italic">We Offer</em></h2>
             <p class="hero-sub" style="max-width:760px;margin-inline:auto;">Confidential ghostwriting across every genre and every length.</p>
         </div>
 
@@ -40,7 +39,7 @@ include __DIR__ . '/includes/distributors.php';
             <article class="service-card" data-aos="fade-up">
                 <span class="service-icon"><i class="fa-solid fa-book-open"></i></span>
                 <h3 class="service-title">Fiction Ghostwriting</h3>
-                <p class="service-desc">We write across every fiction genre , literary fiction, romance, thrillers, crime, science fiction, fantasy, historical fiction, horror, young adult, and more. Whether you have a detailed outline or just a concept you&rsquo;ve been sitting on for years, our fiction ghostwriters build the plot, develop the characters, and write the kind of prose that keeps readers turning pages.</p>
+                <p class="service-desc">We write across every fiction genre, literary fiction, romance, thrillers, crime, science fiction, fantasy, historical fiction, horror, young adult, and more. Whether you have a detailed outline or just a concept you&rsquo;ve been sitting on for years, our fiction ghostwriters build the plot, develop the characters, and write the kind of prose that keeps readers turning pages.</p>
                 <span class="service-glow" aria-hidden="true"></span>
             </article>
             <article class="service-card" data-aos="fade-up" data-aos-delay="70">
@@ -91,18 +90,18 @@ include __DIR__ . '/includes/distributors.php';
             </div>
             <div class="col-lg-6" data-aos="fade-left">
                 <span class="eyebrow">Your Ideas, Our Writing</span>
-                <h2 class="section-title">Your Ideas. Our Writing. <em class="gold-italic">Your Book.</em></h2>
-                <p>The most common reason people look for ghostwriting services isn&rsquo;t that they can&rsquo;t write. It&rsquo;s that writing a full manuscript is a different skill from having the ideas, the story, or the expertise that makes a book worth reading. A surgeon who&rsquo;s spent thirty years in an operating theatre has a book in them. So does the entrepreneur who built a business from nothing, or the person who&rsquo;s lived through something that deserves to be documented properly.</p>
-                <p>What they often don&rsquo;t have is the time, the writing experience, or the patience to turn all of that into 80,000 well-structured words. That&rsquo;s exactly where our professional ghostwriting services come in.</p>
-                <p>We start every project with a thorough briefing process. From there, our ghostwriters work through the manuscript in stages, sharing drafts, taking feedback, and refining until the writing sounds like you, not like a writer who was hired to impersonate you.</p>
+                <h2 class="section-title">Your ideas. Our writing. <em class="serif-italic">Your book.</em></h2>
+                <p>The most common reason people look for ghostwriting services isn't that they can't write. It's that writing a full manuscript is a different skill from having the ideas, the story, or the expertise that makes a book worth reading. A surgeon who's spent thirty years in an operating theatre has a book in them. So does the entrepreneur who built a business from nothing, or the person who's lived through something that deserves to be documented properly.</p>
+                <p>What they often don't have is the time, the writing experience, or the patience to turn all of that into 80,000 well-structured words. That's exactly where our professional ghostwriting services come in.</p>
+                <p>We start every project with a thorough briefing process. We want to understand your voice, your story, your audience, and what you want the book to do. From there, our ghostwriters work through the manuscript in stages, sharing drafts, taking feedback, and refining until the writing sounds like you, not like a writer who was hired to impersonate you.</p>
                 <ul class="genre-list mt-3" role="list">
-                    <li><i class="fa-solid fa-check" style="color:var(--c-leaf,#6CB04C);"></i>Complete confidentiality, always</li>
-                    <li><i class="fa-solid fa-check" style="color:var(--c-leaf,#6CB04C);"></i>You keep 100% ownership and all rights</li>
-                    <li><i class="fa-solid fa-check" style="color:var(--c-leaf,#6CB04C);"></i>Written to sound like you, not like us</li>
-                    <li><i class="fa-solid fa-check" style="color:var(--c-leaf,#6CB04C);"></i>All genres, all lengths, all formats</li>
+                    <li><i class="fa-solid fa-check"></i>Complete confidentiality, always</li>
+                    <li><i class="fa-solid fa-check"></i>You keep 100% ownership and all rights</li>
+                    <li><i class="fa-solid fa-check"></i>Written to sound like you, not like us</li>
+                    <li><i class="fa-solid fa-check"></i>All genres, all lengths, all formats</li>
                 </ul>
                 <div class="mt-4">
-                    <a href="contact.php#submit" class="btn btn-cta">Start a Conversation <i class="fa-solid fa-arrow-right"></i></a>
+                    <a href="#popup" class="btn btn-cta" data-popup>Start a Conversation <i class="fa-solid fa-arrow-right"></i></a>
                 </div>
             </div>
         </div>
@@ -121,10 +120,11 @@ include __DIR__ . '/includes/distributors.php';
             </div>
             <div class="col-lg-6" data-aos="fade-left">
                 <span class="eyebrow">Pricing</span>
-                <h2 class="section-title">What Do Ghostwriting Services Cost in <em class="gold-italic">Europe?</em></h2>
-                <p>Ghostwriting rates vary more than almost any other publishing service. A 30,000-word eBook is a completely different project from a 90,000-word memoir that requires extensive interviews and multiple revision rounds. Length, genre, research requirements, and turnaround time all affect what a project costs.</p>
-                <p>What we don&rsquo;t do is quote you a rate before we understand what you&rsquo;re actually trying to build. Get in touch and we&rsquo;ll talk through your project properly. You&rsquo;ll get a clear, honest quote based on what your book actually needs, not a generic rate pulled from a pricing page.</p>
-                <a href="contact.php#submit" class="btn btn-cta btn-lg">Get a Custom Quote <i class="fa-solid fa-arrow-right"></i></a>
+                <h2 class="section-title">What do ghostwriting services cost in <em class="serif-italic">Europe?</em></h2>
+                <p>Ghostwriting rates vary more than almost any other publishing service, and the reason is straightforward, a 30,000-word eBook is a completely different project from a 90,000-word memoir that requires extensive interviews and multiple revision rounds. Length, genre, research requirements, and turnaround time all affect what a project costs.</p>
+                <p>What we don't do is quote you a rate before we understand what you're actually trying to build. Some projects need a full manuscript from scratch. Others start with existing notes, recordings, or a partial draft that needs shaping into something complete. That difference matters when it comes to pricing.</p>
+                <p>Get in touch and we'll talk through your project properly. You'll get a clear, honest quote based on what your book actually needs, not a generic rate pulled from a pricing page.</p>
+                <a href="#popup" class="btn btn-cta btn-lg" data-popup>Get Your Free Ghostwriting Quote <i class="fa-solid fa-arrow-right"></i></a>
             </div>
         </div>
     </div>
@@ -141,19 +141,26 @@ include __DIR__ . '/includes/other-services.php';
         <div class="row g-5 align-items-start">
             <div class="col-lg-4" data-aos="fade-right">
                 <span class="eyebrow">FAQs</span>
-                <h2 class="section-title">We&rsquo;re Here To Answer All Your <em class="gold-italic">Questions.</em></h2>
+                <h2 class="section-title">WeWe&rsquo;re Here To Answer All Your <em class="serif-italic">Questions.</em>rsquo;re here to answer all your <em class="serif-italic">questions</em></h2>
                 <p>Can&rsquo;t find what you&rsquo;re looking for? Speak with our team directly.</p>
-                <a href="contact.php" class="btn btn-cta">Get in Touch <i class="fa-solid fa-arrow-right"></i></a>
+                <a href="contact.php" class="btn btn-cta" data-no-popup>Get in Touch <i class="fa-solid fa-arrow-right"></i></a>
             </div>
             <div class="col-lg-8" data-aos="fade-left" data-aos-delay="100">
                 <div class="accordion faq-accordion" id="ghostFaq">
                     <?php
                     $faqs = [
-                        ['q' => 'What is the average cost of a ghostwriter in Europe?',                 'a' => 'Ghostwriting rates in Europe vary considerably depending on the type of book, its length, and the level of research and interviews involved. A short eBook sits at a very different price point from a full-length memoir or a detailed business book. We don&rsquo;t publish fixed rates because they rarely reflect what a specific project actually costs.'],
-                        ['q' => 'What are the red flags when hiring a ghostwriter in Europe?',          'a' => 'Ghostwriters who quote immediately without asking about your project in any detail are usually working from templates. Unusually low rates are another warning sign , professional ghostwriting takes significant time and skill. Lack of a proper contract covering confidentiality, ownership, and revision rounds is a serious concern.'],
-                        ['q' => 'Is ghostwriting illegal in the UK?',                                    'a' => 'No. Ghostwriting is completely legal across the UK and Europe. It&rsquo;s a long-established, widely used professional service across publishing, business, academia, and public life. The only context where using ghostwritten work can become problematic is in academic settings where institutions have specific rules about original authorship.'],
-                        ['q' => 'Can I use ChatGPT for ghostwriting?',                                   'a' => 'You can use it as a drafting or brainstorming tool, but it has real limitations as a ghostwriter. It can&rsquo;t interview you, it doesn&rsquo;t know your story, it can&rsquo;t capture your voice with any real accuracy, and the output tends to read as generic and flat. For a book that needs to engage readers and sound like a real person, a professional human ghostwriter produces a substantially better result.'],
-                        ['q' => 'What is the difference between a ghostwriter and ChatGPT?',            'a' => 'A professional ghostwriter interviews you, gets to know how you think and speak, researches your subject thoroughly, and crafts writing that sounds authentically like you. ChatGPT generates text statistically , it produces words that follow patterns but doesn&rsquo;t understand your story, can&rsquo;t ask you the right questions, and has no genuine feel for voice or narrative.'],
+                        ['q' => 'What is the average cost of a ghostwriter in Europe?',
+                         'a' => "Ghostwriting rates in Europe vary considerably depending on the type of book, its length, and the level of research and interviews involved. A short eBook sits at a very different price point from a full-length memoir or a detailed business book. Most professional ghostwriters charge either per word or per project, and rates reflect experience and the complexity of the work. We don't publish fixed rates because they rarely reflect what a specific project actually costs. Get in touch, tell us about your book, and we'll give you a clear and honest quote."],
+                        ['q' => 'What are the red flags when hiring a ghostwriter in Europe?',
+                         'a' => "A few things are worth watching for. Ghostwriters who quote immediately without asking about your project in any detail are usually working from templates rather than tailoring their approach. Unusually low rates are another warning sign, professional ghostwriting takes significant time and skill, and rates that seem too good to be true usually are. Lack of a proper contract covering confidentiality, ownership, and revision rounds is a serious concern. And ghostwriters who can't show you relevant work samples, even anonymised ones, are difficult to evaluate properly. Take the time to have a proper conversation before committing to anyone."],
+                        ['q' => 'Is ghostwriting illegal in the UK?',
+                         'a' => "No. Ghostwriting is completely legal across the UK and Europe. It's a long-established, widely used professional service across publishing, business, academia, and public life. The arrangement between a ghostwriter and a client is a private commercial agreement, and there is no law against having someone write on your behalf. The only context where using ghostwritten work can become problematic is in academic settings where institutions have specific rules about original authorship, but that relates to institutional policy, not the law."],
+                        ['q' => 'Can you use ChatGPT to write essays without plagiarising?',
+                         'a' => "ChatGPT generates text based on patterns in its training data rather than copying directly from sources, so in a technical sense it isn't plagiarism in the traditional way. However, most academic institutions treat AI-generated content as a form of academic misconduct regardless of whether it's technically plagiarised. Detection tools for AI-generated writing are improving rapidly, and the risks of submitting AI-written work in an academic context are significant. If you need support with academic writing, working with a human ghostwriter produces original, properly argued work that actually reflects your thinking."],
+                        ['q' => 'Can I use ChatGPT for ghostwriting?',
+                         'a' => "You can use it as a drafting or brainstorming tool, but it has real limitations as a ghostwriter. It can't interview you, it doesn't know your story, it can't capture your voice with any real accuracy, and the output tends to read as generic and flat in ways that readers notice. For short, functional content it can be useful. For a book, something that needs to engage readers, sound like a real person, and hold together over tens of thousands of words, a professional human ghostwriter produces a substantially better result."],
+                        ['q' => 'What is the difference between a ghostwriter and ChatGPT?',
+                         'a' => "The difference is considerable. A professional ghostwriter interviews you, gets to know how you think and speak, researches your subject thoroughly, and crafts writing that sounds authentically like you. They bring creative judgment, structural thinking, and years of craft to the project. ChatGPT generates text statistically, it produces words that follow patterns but doesn't understand your story, can't ask you the right questions, and has no genuine feel for voice or narrative. The gap in quality between a professionally ghostwritten book and an AI-generated one is significant, and readers can usually sense it even when they can't name exactly what's wrong."],
                     ];
                     foreach ($faqs as $i => $f): ?>
                     <div class="accordion-item">

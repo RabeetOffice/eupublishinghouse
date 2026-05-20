@@ -11,8 +11,8 @@ require __DIR__ . '/includes/header.php';
 
 $banner = [
     'crumb'   => 'Portfolio',
-    'eyebrow' => 'Published Titles',
-    'title'   => 'Books we&rsquo;ve <em class="gold-italic">put</em> our name to.',
+
+    'title'   => 'Books we&rsquo;ve <em class="serif-italic">put</em> our name to.',
     'sub'     => 'A curated selection of recent and signature titles across our imprints.',
 ];
 include __DIR__ . '/includes/page-banner.php';

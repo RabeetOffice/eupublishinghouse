@@ -173,6 +173,63 @@
             });
         }
 
+        /* ---------- BLOG SEARCH ---------- */
+        (function initBlogSearch() {
+            var input = document.getElementById('blogSearch');
+            if (!input) return;
+
+            var grid    = document.getElementById('blogGrid');
+            var empty   = document.getElementById('blogEmpty');
+            var count   = document.getElementById('blogSearchCount');
+            var clearEl = document.getElementById('blogSearchClear');
+            var resetEl = document.getElementById('blogResetBtn');
+            var items   = grid ? Array.prototype.slice.call(grid.querySelectorAll('.blog-grid-item')) : [];
+            var total   = items.length;
+
+            function plural(n) { return n === 1 ? '1 article' : n + ' articles'; }
+
+            function filter(q) {
+                q = (q || '').trim().toLowerCase();
+                var visible = 0;
+                items.forEach(function (el) {
+                    if (!q) {
+                        el.classList.remove('is-hidden');
+                        visible++;
+                        return;
+                    }
+                    var hay = (el.dataset.title || '') + ' ' + (el.dataset.desc || '') + ' ' + (el.dataset.cat || '');
+                    if (hay.indexOf(q) !== -1) {
+                        el.classList.remove('is-hidden');
+                        visible++;
+                    } else {
+                        el.classList.add('is-hidden');
+                    }
+                });
+
+                if (empty) empty.hidden = visible !== 0;
+                if (count) count.textContent = q
+                    ? (visible === 0 ? 'No matches' : plural(visible) + ' of ' + total)
+                    : plural(total);
+                if (clearEl) clearEl.hidden = !q;
+            }
+
+            input.addEventListener('input', function () { filter(this.value); });
+            if (clearEl) {
+                clearEl.addEventListener('click', function () {
+                    input.value = '';
+                    input.focus();
+                    filter('');
+                });
+            }
+            if (resetEl) {
+                resetEl.addEventListener('click', function () {
+                    input.value = '';
+                    input.focus();
+                    filter('');
+                });
+            }
+        })();
+
         /* ---------- FAQ ACCORDION ---------- */
         document.querySelectorAll('[data-faq-accordion]').forEach(function (acc) {
             acc.querySelectorAll('.faq-trigger').forEach(function (btn) {

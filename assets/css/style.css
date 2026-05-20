@@ -2932,7 +2932,7 @@ body.popup-open { overflow: hidden; }
 .qc-field select,
 .qc-field textarea {
     width: 100%;
-    background: var(--c-ivory);
+    background: rgb(190 225 174 / 35%);
     border: 1.5px solid transparent;
     border-radius: var(--r-md);
     padding: .75rem 1rem;
@@ -3478,39 +3478,129 @@ body.popup-open { overflow: hidden; }
 }
 
 /* =====================================================================
-   33. BLOG INDEX — feature card + grid cards
+   33. BLOG INDEX — search bar + uniform card grid
    ===================================================================== */
 .blog-section { padding-block: clamp(3rem, 6vw, 5rem); }
 
-.blog-feature {
-    display: grid;
-    grid-template-columns: 1.05fr 1fr;
+/* Search bar */
+.blog-search-wrap {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    flex-wrap: wrap;
+    margin-bottom: 1rem;
+}
+.blog-search {
+    position: relative;
+    flex: 1;
+    min-width: 280px;
+    max-width: 640px;
+    display: flex;
+    align-items: center;
     background: var(--glass-bg-2);
     backdrop-filter: blur(20px) saturate(180%);
     -webkit-backdrop-filter: blur(20px) saturate(180%);
-    border: 1px solid rgba(255, 255, 255, .7);
-    border-radius: var(--r-xl);
-    overflow: hidden;
-    box-shadow: 0 30px 70px -30px rgba(15, 62, 46, .35);
-    transition: all var(--t-mid) var(--ease);
+    border: 1px solid rgba(255, 255, 255, .65);
+    border-radius: var(--r-pill);
+    padding: .25rem .55rem .25rem 1.25rem;
+    box-shadow: 0 12px 32px -16px rgba(15, 62, 46, .22), inset 0 1px 0 rgba(255, 255, 255, .8);
+    transition: all var(--t-fast) var(--ease);
 }
-.blog-feature:hover { box-shadow: 0 40px 80px -28px rgba(27, 83, 64, .4); border-color: rgba(108, 176, 76, .35); }
-
-.blog-feature__art {
-    min-height: 320px;
-    position: relative;
+.blog-search:focus-within {
+    border-color: rgba(108, 176, 76, .45);
+    box-shadow: 0 14px 36px -14px rgba(27, 83, 64, .28), 0 0 0 4px rgba(108, 176, 76, .14);
+    background: #fff;
 }
-.blog-feature__art::after {
-    content: '';
-    position: absolute; inset: 0;
-    background: linear-gradient(135deg, rgba(15, 62, 46, .15), transparent 50%);
+.blog-search__ico {
+    color: var(--c-primary);
+    font-size: 1rem;
+    flex-shrink: 0;
+    margin-right: .65rem;
 }
-
-.blog-feature__body {
-    padding: clamp(1.5rem, 3vw, 2.75rem);
-    display: flex;
-    flex-direction: column;
+.blog-search input {
+    flex: 1;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-family: inherit;
+    font-size: .98rem;
+    color: var(--c-ink);
+    padding: .85rem 0;
+    min-width: 0;
+}
+.blog-search input::placeholder {
+    color: var(--c-soft);
+    font-weight: 400;
+}
+.blog-search input::-webkit-search-cancel-button { display: none; }
+.blog-search__clear {
+    width: 34px; height: 34px;
+    border-radius: 50%;
+    border: none;
+    background: rgba(108, 176, 76, .15);
+    color: var(--c-primary);
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
     justify-content: center;
+    flex-shrink: 0;
+    transition: all var(--t-fast) var(--ease);
+}
+.blog-search__clear:hover {
+    background: var(--c-primary);
+    color: #fff;
+    transform: rotate(90deg);
+}
+.blog-search-count {
+    display: inline-flex;
+    align-items: center;
+    padding: .5rem 1rem;
+    border-radius: var(--r-pill);
+    background: rgba(108, 176, 76, .12);
+    border: 1px solid rgba(108, 176, 76, .22);
+    color: var(--c-primary);
+    font-size: .85rem;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+/* Empty state */
+.blog-empty {
+    text-align: center;
+    padding: 4rem 1.5rem;
+    background: var(--glass-bg-2);
+    backdrop-filter: blur(18px) saturate(160%);
+    -webkit-backdrop-filter: blur(18px) saturate(160%);
+    border: 1px dashed rgba(108, 176, 76, .35);
+    border-radius: var(--r-xl);
+    margin-top: 2rem;
+}
+.blog-empty i {
+    font-size: 2.5rem;
+    color: var(--c-leaf);
+    margin-bottom: 1rem;
+    opacity: .7;
+}
+.blog-empty h3 { color: var(--c-ink); margin-bottom: .5rem; }
+.blog-empty p { color: var(--c-muted); margin-bottom: 1.5rem; }
+
+/* Hide blog items while searching */
+.blog-grid-item.is-hidden { display: none !important; }
+
+/* Card art clickable wrapper */
+.blog-card__art-link {
+    display: block;
+    overflow: hidden;
+}
+.blog-card .post-title a {
+    color: inherit;
+    transition: color var(--t-fast) var(--ease);
+}
+.blog-card .post-title a:hover { color: var(--c-primary); }
+
+@media (max-width: 575px) {
+    .blog-search-wrap { gap: .75rem; }
+    .blog-search-count { width: 100%; justify-content: center; }
 }
 
 .post-cat {
@@ -3535,8 +3625,6 @@ body.popup-open { overflow: hidden; }
     line-height: 1.2;
     margin: 0 0 1rem;
 }
-.blog-feature .post-title { font-size: clamp(1.6rem, 2.6vw, 2.2rem); }
-
 .post-desc {
     color: var(--c-muted);
     line-height: 1.65;
@@ -3618,11 +3706,6 @@ body.popup-open { overflow: hidden; }
     margin-top: auto;
 }
 .post-link:hover { gap: .65rem; color: var(--c-primary-2); }
-
-@media (max-width: 991px) {
-    .blog-feature { grid-template-columns: 1fr; }
-    .blog-feature__art { min-height: 240px; }
-}
 
 /* =====================================================================
    34. BLOG POST BODY — long-form article styling
@@ -3724,9 +3807,6 @@ body.popup-open { overflow: hidden; }
     border-bottom: 1px solid rgba(27, 83, 64, .06);
 }
 .blog-post-body tr:last-child td { border-bottom: none; }
-
-/* Blog feature on a single post page — only the header art + meta, no body */
-.blog-section .blog-feature .blog-feature__body .post-meta { margin-bottom: 0; }
 
 /* =====================================================================
    35. CLEAN UP — deprecated old selectors retained as no-op safety nets

@@ -31,7 +31,7 @@ include __DIR__ . '/includes/distributors.php';
     <div class="container">
         <div class="section-head text-center" data-aos="fade-up">
             <span class="eyebrow">Our Process</span>
-            <h2 class="section-title">How We Publish <em class="gold-italic">Your Book</em></h2>
+            <h2 class="section-title">How We Publish <em class="serif-italic">Your Book</em></h2>
             <p class="hero-sub" style="max-width:760px;margin-inline:auto;">Six structured stages from finished manuscript to global retail availability.</p>
         </div>
 
@@ -117,10 +117,10 @@ include __DIR__ . '/includes/distributors.php';
             </div>
             <div class="col-lg-6" data-aos="fade-left">
                 <span class="eyebrow">Pricing</span>
-                <h2 class="section-title">What Does It Cost to Publish a Book in <em class="gold-italic">Europe?</em></h2>
-                <p>Publishing costs depend entirely on what your book needs. A children&rsquo;s picture book is a different project from a 100,000-word thriller, and any quote that doesn&rsquo;t reflect that is guessing.</p>
-                <p>Get in touch and we&rsquo;ll have an honest conversation about your manuscript and what it actually needs to be ready for readers. From there, we&rsquo;ll put together a clear quote with no surprises.</p>
-                <a href="contact.php#submit" class="btn btn-cta btn-lg">Get Your Publishing Quote <i class="fa-solid fa-arrow-right"></i></a>
+                <h2 class="section-title">What does it cost to publish a book in <em class="serif-italic">Europe?</em></h2>
+                <p>Publishing costs depend entirely on what your book needs. A children's picture book is a different project from a 100,000-word thriller. Some authors come to us with a fully edited manuscript and just need formatting, distribution, and a cover. Others need the full package from the ground up, editing, design, formatting, and marketing. The cost reflects that difference.</p>
+                <p>What we don't do is charge you for services your book doesn't need. During a free consultation, we look at your manuscript, talk through your goals, and put together a clear quote covering exactly what your project requires. No inflated packages. No hidden fees appearing later.</p>
+                <a href="#popup" class="btn btn-cta btn-lg" data-popup>Get Your Publishing Quote <i class="fa-solid fa-arrow-right"></i></a>
             </div>
         </div>
     </div>
@@ -140,18 +140,28 @@ include __DIR__ . '/includes/other-services.php';
         <div class="row g-5 align-items-start">
             <div class="col-lg-4" data-aos="fade-right">
                 <span class="eyebrow">FAQs</span>
-                <h2 class="section-title">We&rsquo;re Here To Answer All Your <em class="gold-italic">Questions.</em></h2>
+                <h2 class="section-title">WeWe&rsquo;re Here To Answer All Your <em class="serif-italic">Questions.</em>rsquo;re here to answer all your <em class="serif-italic">questions</em></h2>
                 <p>Can&rsquo;t find what you&rsquo;re looking for? Speak with our team directly.</p>
-                <a href="contact.php" class="btn btn-cta">Get in Touch <i class="fa-solid fa-arrow-right"></i></a>
+                <a href="contact.php" class="btn btn-cta" data-no-popup>Get in Touch <i class="fa-solid fa-arrow-right"></i></a>
             </div>
             <div class="col-lg-8" data-aos="fade-left" data-aos-delay="100">
                 <div class="accordion faq-accordion" id="pubFaq">
                     <?php
                     $faqs = [
-                        ['q' => 'Who owns my book after publishing with European Publishing House?', 'a' => 'You do, completely. You retain 100% of your rights, your royalties, and your creative ownership throughout the process and after publication.'],
-                        ['q' => 'Which retailers will my book be available on?',                     'a' => 'Amazon Kindle (UK, EU, US, Canada, Australia, Germany, France, Spain, Italy, Japan, and more), Apple Books, Google Play Books, Kobo, Barnes &amp; Noble, Scribd, OverDrive for libraries, and 150+ additional retailers worldwide.'],
-                        ['q' => 'How long does the publishing process take?',                       'a' => 'Most full-service projects run four to six weeks once your manuscript is ready. Formatting-only or distribution-only projects can be turned around in two to three weeks.'],
-                        ['q' => 'Do I need an ISBN?',                                                'a' => 'Yes, and we handle ISBN registration as part of the publishing process. You don&rsquo;t need to source one separately unless you prefer to.'],
+                        ['q' => 'Which publisher is best for first-time authors?',
+                         'a' => "For most first-time authors, self-publishing with a professional team behind them is the strongest option. Traditional publishing is slow, competitive, and requires a literary agent before most publishers will even look at your manuscript. The process can take years with no guarantee of a deal at the end of it. Self-publishing through European Publishing House means your book gets published professionally, proper editing, proper design, global distribution, on a timeline that makes sense, and you keep your rights and royalties throughout. We've helped hundreds of debut authors publish their first books, and we're set up to guide you through every step of the process."],
+                        ['q' => 'What does it cost to publish a book?',
+                         'a' => "It depends on what your book needs. Authors who come to us with a fully edited manuscript and a finished cover need far less than someone starting from scratch. Costs vary based on manuscript length, genre, which services are required, and the platforms you want to distribute to. Rather than give you a number that may not reflect your project at all, we'd rather have a proper conversation first. Get in touch and we'll give you a clear, honest quote built around your specific book."],
+                        ['q' => 'Can I use ChatGPT to write a book and sell it?',
+                         'a' => "You can, but it comes with real risks worth understanding before you go down that route. AI-generated content is increasingly detectable, and major platforms including Amazon have introduced policies around AI-authored work that require disclosure. Readers are also getting better at recognising it, and they don't tend to respond well to it. If you have a strong idea but need help with the actual writing, working with a professional ghostwriter produces a far better book, one that reads like a human wrote it because one did, and one that won't put your publishing account at risk."],
+                        ['q' => 'Can Amazon tell if a book was written by AI?',
+                         'a' => "Amazon has detection tools in place and has already removed thousands of AI-generated titles from its platform for policy violations. They require authors to disclose AI-generated content during the publishing process, and undisclosed AI content can result in your book being removed or your account being flagged. The short answer is yes, they can often tell, and the consequences of getting it wrong aren't worth it."],
+                        ['q' => 'Can I sell a book that AI helped me write?',
+                         'a' => "This depends on how much of the book is AI-generated and how transparent you are about it. Using AI as a drafting or brainstorming tool while doing substantial human writing and editing yourself sits in different territory from submitting a fully AI-generated manuscript. Platform policies on this are still evolving, but disclosure is currently required on Amazon and several other retailers for content that is substantially AI-generated. If you're unsure where your manuscript falls, it's worth getting proper advice before publishing."],
+                        ['q' => 'How much does it cost to make 1,000 copies of a book?',
+                         'a' => "Print-on-demand means you don't need to order copies upfront, books are printed as readers buy them, which removes the financial risk of a bulk print run entirely. If you do want physical copies for events, gifts, or direct sales, the cost per copy depends on page count, trim size, interior colour, and binding type. A standard paperback with black-and-white interiors typically costs somewhere between &euro;3 and &euro;7 per copy at volume. Get in touch and we'll walk you through the print options that make sense for your book."],
+                        ['q' => 'How do I know if someone buys my book on Amazon?',
+                         'a' => "Amazon KDP provides a sales dashboard where you can track purchases, royalties, page reads through Kindle Unlimited, and sales by marketplace in real time. You'll receive monthly royalty payments directly to your account for all sales the previous month. We help you set up and understand your KDP dashboard as part of our publishing process, so you're never left wondering where your numbers are coming from or how to read them."],
                     ];
                     foreach ($faqs as $i => $f): ?>
                     <div class="accordion-item">

@@ -12,8 +12,8 @@ require __DIR__ . '/includes/header.php';
 
 $banner = [
     'crumb'   => 'Top 10 Book Publishers in Europe',
-    'eyebrow' => 'Industry · Publishers',
-    'title'   => 'Top 10 Book Publishers in <em class="gold-italic">Europe</em>',
+
+    'title'   => 'Top 10 Book Publishers in <em class="serif-italic">Europe</em>',
     'sub'     => 'A practical 2026 guide to indie-friendly modern publishers and the major traditional houses.',
 ];
 include __DIR__ . '/includes/page-banner.php';
@@ -128,7 +128,7 @@ include __DIR__ . '/includes/page-banner.php';
         <!-- ===== FAQs ===== -->
         <div class="row mt-5 justify-content-center">
             <div class="col-lg-9" data-aos="fade-up">
-                <h2 class="section-title text-center">Frequently Asked <em class="gold-italic">Questions</em></h2>
+                <h2 class="section-title text-center">Frequently Asked <em class="serif-italic">Questions</em></h2>
                 <div class="accordion faq-accordion mt-4" id="postFaq">
                     <?php
                     $postFaqs = [
