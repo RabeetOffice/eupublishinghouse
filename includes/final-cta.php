@@ -1,10 +1,10 @@
 <?php
 require_once __DIR__ . '/config.php';
 
-$ctaEyebrow = $ctaEyebrow ?? 'Ready to Begin?';
-$ctaTitle   = $ctaTitle   ?? 'Let\'s publish a book you\'ll be <em class="serif-italic">proud of</em>';
-$ctaSub     = $ctaSub     ?? 'Every book we publish gets the same level of care, whether it\'s your first or your fifth. We don\'t consider our job done until your book is in readers\' hands and you\'re happy with it.';
-$ctaPrimary = $ctaPrimary ?? ['label' => 'Submit Your Manuscript', 'href' => '#popup', 'class' => 'btn btn-gold btn-lg', 'popup' => true];
+$ctaEyebrow   = $ctaEyebrow   ?? 'Ready to Begin?';
+$ctaTitle     = $ctaTitle     ?? "We're invested in your <em class=\"serif-italic\">book's success</em>";
+$ctaSub       = $ctaSub       ?? "Every book we publish gets the same level of care, whether it's your first or your fifth. We don't consider our job done until your book is out in the world and you're happy with it. That's been our standard since day one.";
+$ctaPrimary   = $ctaPrimary   ?? ['label' => 'Start Publishing With Confidence', 'href' => '#popup', 'class' => 'btn btn-gold btn-lg', 'popup' => true];
 $ctaSecondary = $ctaSecondary ?? ['label' => 'Book a free call', 'href' => 'contact.php', 'class' => 'btn btn-outline-light btn-lg', 'icon' => 'fa-comments'];
 
 $ctaPerks = $ctaPerks ?? [

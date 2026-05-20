@@ -22,15 +22,15 @@ $hero = [
     ],
 ];
 include __DIR__ . '/includes/service-hero.php';
-include __DIR__ . '/includes/logo-slider.php';
+include __DIR__ . '/includes/distributors.php';
 ?>
 
-<section class="services-section section--dark" id="marketing-services">
+<section class="services-section" id="marketing-services">
     <div class="container">
         <div class="section-head text-center" data-aos="fade-up">
-            <span class="eyebrow eyebrow--light">Strategic, Transparent</span>
-            <h2 class="section-title text-light">Book Marketing Services <em class="gold-italic">We Offer</em></h2>
-            <p class="hero-sub" style="max-width:760px;margin-inline:auto;color:rgba(255,255,255,0.78);">Focused on actual sales rather than vanity metrics.</p>
+            <span class="eyebrow">Strategic, Transparent</span>
+            <h2 class="section-title">Book Marketing Services <em class="gold-italic">We Offer</em></h2>
+            <p class="hero-sub" style="max-width:760px;margin-inline:auto;">Focused on actual sales rather than vanity metrics.</p>
         </div>
 
         <div class="services-grid mt-5">
@@ -103,9 +103,9 @@ include __DIR__ . '/includes/logo-slider.php';
     </div>
 </section>
 
-<?php include __DIR__ . '/includes/top-categories.php'; ?>
+<?php include __DIR__ . '/includes/categories.php'; ?>
 
-<section class="publish-cost-sec section--dark" id="pricing">
+<section class="publish-cost-sec" id="pricing">
     <div class="container">
         <div class="row align-items-center g-5">
             <div class="col-lg-6" data-aos="fade-right">
@@ -126,6 +126,7 @@ include __DIR__ . '/includes/logo-slider.php';
 
 <?php
 $exclude_slug = 'marketing';
+include __DIR__ . '/includes/books.php';
 include __DIR__ . '/includes/other-services.php';
 ?>
 
@@ -169,5 +170,5 @@ include __DIR__ . '/includes/other-services.php';
 </section>
 
 <?php
-include __DIR__ . '/includes/cta.php';
+include __DIR__ . '/includes/final-cta.php';
 include __DIR__ . '/includes/footer.php';

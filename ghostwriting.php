@@ -22,18 +22,18 @@ $hero = [
     ],
 ];
 include __DIR__ . '/includes/service-hero.php';
-include __DIR__ . '/includes/logo-slider.php';
+include __DIR__ . '/includes/distributors.php';
 ?>
 
 <!-- ============================================================
      GHOSTWRITING SERVICES WE OFFER
      ============================================================ -->
-<section class="services-section section--dark" id="ghost-services">
+<section class="services-section" id="ghost-services">
     <div class="container">
         <div class="section-head text-center" data-aos="fade-up">
-            <span class="eyebrow eyebrow--light">Genres &amp; Formats</span>
-            <h2 class="section-title text-light">Ghostwriting Services <em class="gold-italic">We Offer</em></h2>
-            <p class="hero-sub" style="max-width:760px;margin-inline:auto;color:rgba(255,255,255,0.78);">Confidential ghostwriting across every genre and every length.</p>
+            <span class="eyebrow">Genres &amp; Formats</span>
+            <h2 class="section-title">Ghostwriting Services <em class="gold-italic">We Offer</em></h2>
+            <p class="hero-sub" style="max-width:760px;margin-inline:auto;">Confidential ghostwriting across every genre and every length.</p>
         </div>
 
         <div class="services-grid mt-5">
@@ -109,9 +109,9 @@ include __DIR__ . '/includes/logo-slider.php';
     </div>
 </section>
 
-<?php include __DIR__ . '/includes/top-categories.php'; ?>
+<?php include __DIR__ . '/includes/categories.php'; ?>
 
-<section class="publish-cost-sec section--dark" id="pricing">
+<section class="publish-cost-sec" id="pricing">
     <div class="container">
         <div class="row align-items-center g-5">
             <div class="col-lg-6" data-aos="fade-right">
@@ -132,6 +132,7 @@ include __DIR__ . '/includes/logo-slider.php';
 
 <?php
 $exclude_slug = 'ghostwriting';
+include __DIR__ . '/includes/books.php';
 include __DIR__ . '/includes/other-services.php';
 ?>
 
@@ -176,5 +177,5 @@ include __DIR__ . '/includes/other-services.php';
 </section>
 
 <?php
-include __DIR__ . '/includes/cta.php';
+include __DIR__ . '/includes/final-cta.php';
 include __DIR__ . '/includes/footer.php';

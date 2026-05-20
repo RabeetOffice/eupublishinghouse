@@ -22,18 +22,18 @@ $hero = [
     ],
 ];
 include __DIR__ . '/includes/service-hero.php';
-include __DIR__ . '/includes/logo-slider.php';
+include __DIR__ . '/includes/distributors.php';
 ?>
 
 <!-- ============================================================
      TYPES OF BOOK EDITING WE OFFER
      ============================================================ -->
-<section class="services-section section--dark" id="editing-types">
+<section class="services-section" id="editing-types">
     <div class="container">
         <div class="section-head text-center" data-aos="fade-up">
-            <span class="eyebrow eyebrow--light">Editing Levels</span>
-            <h2 class="section-title text-light">Types of Book Editing <em class="gold-italic">We Offer</em></h2>
-            <p class="hero-sub" style="max-width:760px;margin-inline:auto;color:rgba(255,255,255,0.78);">Different manuscripts need different kinds of editing. We&rsquo;ll tell you honestly which type yours needs.</p>
+            <span class="eyebrow">Editing Levels</span>
+            <h2 class="section-title">Types of Book Editing <em class="gold-italic">We Offer</em></h2>
+            <p class="hero-sub" style="max-width:760px;margin-inline:auto;">Different manuscripts need different kinds of editing. We&rsquo;ll tell you honestly which type yours needs.</p>
         </div>
 
         <div class="services-grid mt-5">
@@ -108,12 +108,12 @@ include __DIR__ . '/includes/logo-slider.php';
     </div>
 </section>
 
-<?php include __DIR__ . '/includes/top-categories.php'; ?>
+<?php include __DIR__ . '/includes/categories.php'; ?>
 
 <!-- ============================================================
      PRICING
      ============================================================ -->
-<section class="publish-cost-sec section--dark" id="pricing">
+<section class="publish-cost-sec" id="pricing">
     <div class="container">
         <div class="row align-items-center g-5">
             <div class="col-lg-6" data-aos="fade-right">
@@ -135,6 +135,7 @@ include __DIR__ . '/includes/logo-slider.php';
 
 <?php
 $exclude_slug = 'editing';
+include __DIR__ . '/includes/books.php';
 include __DIR__ . '/includes/other-services.php';
 ?>
 
@@ -182,5 +183,5 @@ include __DIR__ . '/includes/other-services.php';
 </section>
 
 <?php
-include __DIR__ . '/includes/cta.php';
+include __DIR__ . '/includes/final-cta.php';
 include __DIR__ . '/includes/footer.php';

@@ -2,28 +2,28 @@
 require_once __DIR__ . '/config.php';
 
 $distPlatforms = $distPlatforms ?? [
-    'Amazon Kindle, UK, EU, US, Canada, Australia, Germany, France, Spain, Italy, Japan',
-    'Apple Books, 170+ countries',
-    'Google Play Books, 75+ countries',
-    'Kobo, 190+ countries',
-    'Barnes & Noble, US & UK',
-    'Scribd, global digital library',
-    'OverDrive, library distribution worldwide',
+    'Amazon Kindle (UK, EU, US, Canada, Australia, Germany, France, Spain, Italy, Japan, and more)',
+    'Apple Books (170+ countries)',
+    'Google Play Books (75+ countries)',
+    'Kobo (190+ countries)',
+    'Barnes &amp; Noble',
+    'Scribd',
+    'OverDrive (library distribution)',
     '150+ additional retailers worldwide',
 ];
 $distFormats = $distFormats ?? [
     'Kindle eBooks',
-    'ePub for Apple Books, Kobo, Google Play',
+    'ePub (Apple Books, Kobo, Google Play)',
     'Print-on-demand paperbacks',
     'Print-on-demand hardcovers',
     'Large print editions',
-    'Audiobook (Audible / Apple / Google)',
 ];
 
-$distEyebrow = $distEyebrow ?? 'Global Distribution';
-$distTitle   = $distTitle   ?? 'Your book, available <em class="serif-italic">worldwide</em>';
-$distIntro   = $distIntro   ?? 'Publishing with us means your book is available globally from launch day. We distribute across every major retailer in every major format, so readers can find it however they prefer to read.';
-$distFootnote = $distFootnote ?? 'We handle every upload, every platform requirement, every technical specification. You manage your book, we manage the logistics.';
+$distEyebrow  = $distEyebrow  ?? 'Global Distribution';
+$distTitle    = $distTitle    ?? 'Your book, available <em class="serif-italic">worldwide</em>';
+$distIntro    = $distIntro    ?? "Publishing with us means your book is available globally from the moment it goes live. We distribute across every major retailer in every major format, so readers can find and buy your book however they prefer to read, on a Kindle, through Apple Books, in paperback, or in hardcover.";
+$distFootnote = $distFootnote ?? 'We handle every upload, every platform requirement, and every technical specification. You manage your book. We manage the logistics.';
+$distCtaText  = $distCtaText  ?? 'Publish Globally';
 ?>
 <section class="distribution-section section-paper" id="distribution">
     <div class="container">
@@ -41,7 +41,7 @@ $distFootnote = $distFootnote ?? 'We handle every upload, every platform require
                 </h3>
                 <ul class="dist-list">
                     <?php foreach ($distPlatforms as $p): ?>
-                        <li><i class="fa-solid fa-check"></i><?= safe($p) ?></li>
+                        <li><i class="fa-solid fa-check"></i><?= $p ?></li>
                     <?php endforeach; ?>
                 </ul>
             </div>
@@ -62,7 +62,7 @@ $distFootnote = $distFootnote ?? 'We handle every upload, every platform require
 
         <div class="text-center mt-4" data-aos="fade-up">
             <a href="#popup" class="btn btn-cta btn-lg" data-popup>
-                Publish globally <i class="fa-solid fa-arrow-right"></i>
+                <?= safe($distCtaText) ?> <i class="fa-solid fa-arrow-right"></i>
             </a>
         </div>
     </div>

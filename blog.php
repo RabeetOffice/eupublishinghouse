@@ -83,5 +83,6 @@ $rest = array_slice($posts, 1);
 </section>
 
 <?php
-include __DIR__ . '/includes/cta.php';
+include __DIR__ . '/includes/services.php';
+include __DIR__ . '/includes/final-cta.php';
 include __DIR__ . '/includes/footer.php';

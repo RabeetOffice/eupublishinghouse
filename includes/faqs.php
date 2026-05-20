@@ -3,22 +3,22 @@ require_once __DIR__ . '/config.php';
 
 $faqs = $faqs ?? [
     ['q' => 'Who owns European Publishing House?',
-     'a' => "We are an independent publishing company founded in 2021, not affiliated with any of the Big 5. Independence means faster turnaround, more flexibility, and a direct working relationship with our editorial team."],
-    ['q' => 'What does it cost to publish a book in Europe?',
-     'a' => "Publishing costs vary based on what your manuscript actually needs, length, genre, current condition, and which services you require. A basic package starts from a few hundred euros; a full editorial-to-launch service can run into the thousands. We build a custom quote after a free manuscript review."],
-    ['q' => 'Do I keep my rights and royalties?',
-     'a' => "Yes, 100% of them. You retain all creative rights, all royalties, and full ownership of your work. We charge for the services we provide; we do not take a slice of your book."],
-    ['q' => 'How long does the publishing process take?',
-     'a' => "Most projects move from finalised manuscript to published book in 8–14 weeks, depending on the services included. Editing-heavy projects naturally take longer; format-and-distribute-only projects move faster. You will get a realistic timeline before we start."],
-    ['q' => 'Where will my book be available?',
-     'a' => "Amazon Kindle and paperback (every territory), Apple Books (170+ countries), Kobo (190+ countries), Google Play, Barnes &amp; Noble, Scribd, IngramSpark and 150+ other retailers. Print-on-demand means readers buy it however they prefer."],
-    ['q' => 'Can you help if I have not finished writing yet?',
-     'a' => "Yes, that is what our ghostwriting service is for. Whether you need help shaping a first draft, completing a half-finished manuscript, or writing the whole book in your voice, we can take it on confidentially. You own every word."],
+     'a' => "European Publishing House is an independent publishing company founded in 2021. We're not affiliated with any of the Big 5 publishers, we operate independently, which means we can offer authors faster turnaround, more flexibility, and a direct working relationship with our team."],
+    ['q' => 'What is the average cost to publish a book in Europe?',
+     'a' => "Publishing costs in Europe vary quite a bit depending on what your book needs. A basic self-publishing package might start from a few hundred pounds or euros, while a full-service package covering editing, cover design, formatting, and distribution can run into the thousands. The honest answer is that pricing depends on your manuscript's length, genre, current state, and which services you need. We build a custom quote for every author after a free consultation."],
+    ['q' => 'How much does it cost to make 1,000 copies of a book in Europe?',
+     'a' => "Print-on-demand means you don't have to order 1,000 copies upfront, books are printed as readers buy them. If you do want a bulk print run, the cost per copy varies based on page count, size, colour interiors, and binding. Generally, a standard paperback with black-and-white interiors might cost anywhere from &pound;2&ndash;&pound;6 per copy at volume. We'll walk you through the options during your consultation."],
+    ['q' => 'Are there any reputable hybrid publishers in Europe?',
+     'a' => "Yes, European Publishing House offers hybrid publishing services in Europe. Hybrid publishing sits between traditional and self-publishing: you get professional editing, design, and distribution, while retaining your rights and a larger share of royalties than a traditional deal would give you. It's a strong option for authors who want quality without the waiting list."],
+    ['q' => 'How expensive is hybrid publishing in Europe?',
+     'a' => "Hybrid publishing costs more than DIY self-publishing because you're paying for professional services, but you retain rights and earn higher royalties than through a traditional publisher. Costs vary based on what's included. Some authors need the full package, editing, design, formatting, marketing, and distribution. Others just need certain services. We quote based on what your book actually needs."],
+    ['q' => 'Who are the best publishing houses in Europe?',
+     'a' => "Finding the right publishing house in Europe comes down to one thing, who's actually going to care about your book. European Publishing House is one of the best publishing houses in Europe, and the numbers speak for themselves. Since 2021, we've published over 800 books across every genre, working with authors from first draft to final sale. We handle editing, cover design, formatting, ghostwriting, marketing, and global distribution, all under one roof. You keep your rights, you keep your royalties, and you work directly with a team that treats your manuscript like it matters. You've already found your publisher."],
 ];
-$faqsEyebrow = $faqsEyebrow ?? 'FAQ';
-$faqsTitle   = $faqsTitle   ?? 'Questions, answered <em class="serif-italic">honestly</em>';
-$faqsIntro   = $faqsIntro   ?? 'The questions authors ask us most, and the straight answers we give them.';
-$faqsCtaText = $faqsCtaText ?? 'Speak with the team';
+$faqsEyebrow = $faqsEyebrow ?? 'FAQs';
+$faqsTitle   = $faqsTitle   ?? "We're here to answer all your <em class=\"serif-italic\">questions</em>";
+$faqsIntro   = $faqsIntro   ?? "Can't find what you're looking for? Speak with our team directly.";
+$faqsCtaText = $faqsCtaText ?? 'Get in Touch';
 ?>
 <section class="faq-section" id="faq">
     <div class="container">
@@ -49,7 +49,7 @@ $faqsCtaText = $faqsCtaText ?? 'Speak with the team';
         </div>
 
         <div class="text-center mt-5" data-aos="fade-up">
-            <a href="#popup" class="btn btn-cta btn-lg" data-popup>
+            <a href="contact.php" class="btn btn-cta btn-lg" data-no-popup>
                 <?= safe($faqsCtaText) ?> <i class="fa-solid fa-arrow-right"></i>
             </a>
         </div>

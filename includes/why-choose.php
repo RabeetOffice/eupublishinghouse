@@ -2,14 +2,16 @@
 require_once __DIR__ . '/config.php';
 
 $whyEyebrow = $whyEyebrow ?? 'Why Authors Choose Us';
-$whyTitle   = $whyTitle   ?? 'Built around the <em class="serif-italic">author</em>, not the platform';
-$whyLead    = $whyLead    ?? 'We\'re not a publishing mill. Every manuscript gets read, edited, designed and launched by a real person who genuinely wants it to succeed.';
+$whyTitle   = $whyTitle   ?? 'Why authors choose <em class="serif-italic">European Publishing House</em>';
+$whyLead    = $whyLead    ?? "We're not a publishing mill. We're a team of editors, designers, and publishing specialists who genuinely care whether your book lands well. Since 2021, we've published over 800 books, and every single one has had a real person behind it who read it, worked on it, and wanted it to succeed.";
+$whyBody    = $whyBody    ?? "We'll tell you the honest truth about your manuscript, even if that means saying it needs more work before it's ready to publish. We'd rather lose the job than send a book into the world that's not ready. Our pricing has no hidden fees. Your rights stay yours. And we're with you after publication too, not just until we've taken your money.";
+$whyBody2   = $whyBody2   ?? "We work with authors across Europe and beyond, bringing the kind of quality and care you'd expect from the best publishing houses in Europe, without the exclusivity or the years-long waiting lists.";
 
 $whyFeatures = $whyFeatures ?? [
     ['icon' => 'fa-check', 'title' => 'You keep your rights',   'desc' => '100% creative ownership, always. Royalties paid in full.'],
     ['icon' => 'fa-check', 'title' => 'Senior editors only',     'desc' => 'No outsourced reads. Real publishing experience, real attention.'],
     ['icon' => 'fa-check', 'title' => 'Transparent pricing',     'desc' => 'No hidden fees. Quote on what your book actually needs.'],
-    ['icon' => 'fa-check', 'title' => 'Honest editorial advice', 'desc' => 'We\'ll tell you if your manuscript isn\'t ready, then help fix it.'],
+    ['icon' => 'fa-check', 'title' => 'Honest editorial advice', 'desc' => "We'll tell you if your manuscript isn't ready, then help fix it."],
     ['icon' => 'fa-check', 'title' => 'Global distribution',     'desc' => 'Amazon, Apple, Kobo, Google Play, IngramSpark, all of it.'],
     ['icon' => 'fa-check', 'title' => 'Post-launch support',     'desc' => 'We stay with you after publication, not just until the invoice clears.'],
 ];
@@ -43,6 +45,8 @@ $whyCtaHref = $whyCtaHref ?? '#popup';
                 <span class="eyebrow"><?= safe($whyEyebrow) ?></span>
                 <h2 class="section-title"><?= $whyTitle ?></h2>
                 <p class="lead"><?= safe($whyLead) ?></p>
+                <p><?= safe($whyBody) ?></p>
+                <p><?= safe($whyBody2) ?></p>
 
                 <ul class="why-features">
                     <?php foreach ($whyFeatures as $f): ?>

@@ -2,21 +2,15 @@
 require_once __DIR__ . '/config.php';
 
 $categoriesList = $categoriesList ?? [
-    ['icon' => 'fa-user-pen',    'label' => 'Memoir & Biography'],
-    ['icon' => 'fa-briefcase',   'label' => 'Business & Leadership'],
-    ['icon' => 'fa-seedling',    'label' => 'Self-Improvement'],
-    ['icon' => 'fa-book-open',   'label' => 'Literary Fiction'],
-    ['icon' => 'fa-children',    'label' => 'Children & YA'],
-    ['icon' => 'fa-heart-pulse', 'label' => 'Health & Wellness'],
-    ['icon' => 'fa-dragon',      'label' => 'Fantasy & Sci-Fi'],
-    ['icon' => 'fa-magnifying-glass', 'label' => 'Mystery & Thriller'],
-    ['icon' => 'fa-heart',       'label' => 'Romance'],
-    ['icon' => 'fa-landmark',    'label' => 'History & Culture'],
-    ['icon' => 'fa-graduation-cap','label' => 'Academic'],
-    ['icon' => 'fa-feather',     'label' => 'Poetry & Essays'],
+    ['icon' => 'fa-user-pen',     'label' => 'Memoirs & Autobiographies'],
+    ['icon' => 'fa-briefcase',    'label' => 'Business and Leadership'],
+    ['icon' => 'fa-seedling',     'label' => 'Self-Help'],
+    ['icon' => 'fa-book-open',    'label' => 'Fiction'],
+    ['icon' => 'fa-children',     'label' => "Children's Book"],
+    ['icon' => 'fa-heart-pulse',  'label' => 'Health and Lifestyle'],
 ];
-$categoriesEyebrow = $categoriesEyebrow ?? 'Most-Requested';
-$categoriesTitle   = $categoriesTitle   ?? 'Book categories we <em class="serif-italic">specialise in</em>';
+$categoriesEyebrow = $categoriesEyebrow ?? 'Top Categories';
+$categoriesTitle   = $categoriesTitle   ?? 'Most-requested <em class="serif-italic">book categories</em>';
 $categoriesIntro   = $categoriesIntro   ?? null;
 ?>
 <section class="categories-section" id="categories">

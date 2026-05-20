@@ -10,68 +10,61 @@ require __DIR__ . '/includes/header.php';
 
 $hero = [
     'crumb'      => 'Publishing',
-    'eyebrow'    => 'Book Publishing',
-    'title'      => 'Professional Book Publishing Services in <em class="gold-italic">Europe</em>',
+    'title'      => 'Professional Book Publishing Services in <em class="serif-italic">Europe</em>',
     'paragraphs' => [
-        'Getting published used to mean waiting years for a traditional publisher to say yes. It doesn&rsquo;t anymore. At European Publishing House, we help authors across Europe publish their books properly , without the gatekeepers, without giving up their rights, and without figuring it all out alone.',
-        'We&rsquo;ve helped over 800 authors publish since 2021, across every genre you can think of.',
+        "Getting published used to mean waiting years for a traditional publisher to say yes. It doesn't anymore. At European Publishing House, we help authors across Europe publish their books properly, without the gatekeepers, without giving up their rights, and without figuring it all out alone.",
+        "We've helped over 800 authors publish since 2021, across every genre you can think of. Fiction, non-fiction, memoirs, children's books, business titles, academic writing. First-time authors who don't know where to start and experienced writers who just want a reliable team to handle the process. Whatever stage you're at, we take your manuscript and get it published, professionally, globally, and on your terms.",
     ],
     'ctas' => [
-        ['label' => 'Get Started',  'href' => 'contact.php#submit', 'class' => 'btn-cta'],
-        ['label' => 'View Pricing', 'href' => '#pricing',           'class' => 'btn-outline-dark'],
+        ['label' => 'Get Started',  'href' => '#popup', 'class' => 'btn-cta',   'popup' => true],
+        ['label' => 'View Pricing', 'href' => '#pricing','class' => 'btn-glass'],
     ],
 ];
 include __DIR__ . '/includes/service-hero.php';
-include __DIR__ . '/includes/logo-slider.php';
+include __DIR__ . '/includes/distributors.php';
 ?>
 
 <!-- ============================================================
      HOW WE PUBLISH YOUR BOOK, six structured stages
      ============================================================ -->
-<section class="services-section section--dark" id="how-we-publish">
+<section class="services-section" id="how-we-publish">
     <div class="container">
         <div class="section-head text-center" data-aos="fade-up">
-            <span class="eyebrow eyebrow--light">Our Process</span>
-            <h2 class="section-title text-light">How We Publish <em class="gold-italic">Your Book</em></h2>
-            <p class="hero-sub" style="max-width:760px;margin-inline:auto;color:rgba(255,255,255,0.78);">Six structured stages from finished manuscript to global retail availability.</p>
+            <span class="eyebrow">Our Process</span>
+            <h2 class="section-title">How We Publish <em class="gold-italic">Your Book</em></h2>
+            <p class="hero-sub" style="max-width:760px;margin-inline:auto;">Six structured stages from finished manuscript to global retail availability.</p>
         </div>
 
         <div class="services-grid mt-5">
             <article class="service-card" data-aos="fade-up">
                 <span class="service-icon"><i class="fa-solid fa-pen-fancy"></i></span>
                 <h3 class="service-title">Manuscript Preparation</h3>
-                <p class="service-desc">Before anything else, your manuscript needs to be ready. We work through editing, proofreading, and any structural changes needed to get your book to a publication-ready standard.</p>
-                <span class="service-glow" aria-hidden="true"></span>
+                <p class="service-desc">Before anything else, your manuscript needs to be ready. We work through editing, proofreading, and any structural changes needed to get your book to a publication-ready standard. If you've already had your manuscript edited elsewhere and it's good to go, we move straight to the next stage. We publish across all genres, fiction, literary fiction, romance, thrillers, sci-fi, fantasy, memoirs, self-help, business, children's books, and academic titles.</p>
             </article>
             <article class="service-card" data-aos="fade-up" data-aos-delay="70">
                 <span class="service-icon"><i class="fa-solid fa-palette"></i></span>
                 <h3 class="service-title">Cover Design</h3>
-                <p class="service-desc">Your cover is the first thing a reader sees, and on a platform like Amazon, it&rsquo;s often the only thing they look at before deciding whether to click.</p>
-                <span class="service-glow" aria-hidden="true"></span>
+                <p class="service-desc">Your cover is the first thing a reader sees, and on a platform like Amazon, it's often the only thing they look at before deciding whether to click. We design custom covers built around your genre and your audience, eBook covers, full print wraparounds, spine design, and back cover layout. Multiple concepts, revisions until it's right, and final files sized for every platform.</p>
             </article>
             <article class="service-card" data-aos="fade-up" data-aos-delay="140">
                 <span class="service-icon"><i class="fa-solid fa-align-left"></i></span>
                 <h3 class="service-title">Formatting</h3>
-                <p class="service-desc">We format your book for every format it needs to be published in , PDF for print, ePub for Apple Books, Kobo and Google Play, MOBI for Kindle.</p>
-                <span class="service-glow" aria-hidden="true"></span>
+                <p class="service-desc">We format your book for every format it needs to be published in. PDF for print, ePub for Apple Books, Kobo and Google Play, MOBI for Kindle. Every file is built to meet each platform's technical specifications so your book passes review first time and looks right on every device a reader might use.</p>
             </article>
             <article class="service-card" data-aos="fade-up" data-aos-delay="210">
                 <span class="service-icon"><i class="fa-solid fa-magnifying-glass"></i></span>
                 <h3 class="service-title">Proofreading</h3>
-                <p class="service-desc">The last read before your book goes to print or goes live. We catch typos, spacing issues, formatting glitches, and missing punctuation.</p>
-                <span class="service-glow" aria-hidden="true"></span>
+                <p class="service-desc">The last read before your book goes to print or goes live. We catch typos, spacing issues, formatting glitches, and missing punctuation that may have slipped through earlier. Proofreading covers all genres and all formats, both print layouts and eBook files. It's a focused, detail-level pass, and it's the one that makes sure nothing embarrassing makes it to publication.</p>
             </article>
             <article class="service-card" data-aos="fade-up">
                 <span class="service-icon"><i class="fa-solid fa-fingerprint"></i></span>
                 <h3 class="service-title">ISBN &amp; Copyright Registration</h3>
-                <p class="service-desc">We handle all the administrative groundwork , ISBN assignment, copyright documentation, author profile setup, and metadata optimisation.</p>
-                <span class="service-glow" aria-hidden="true"></span>
+                <p class="service-desc">We handle all the administrative groundwork, ISBN assignment, copyright documentation, author profile setup, and metadata optimisation so your book is properly catalogued and discoverable. These details matter more than most authors realise when it comes to getting found by readers.</p>
             </article>
             <article class="service-card" data-aos="fade-up" data-aos-delay="70">
                 <span class="service-icon"><i class="fa-solid fa-globe"></i></span>
                 <h3 class="service-title">Global Distribution</h3>
-                <p class="service-desc">Once everything is ready, your book goes live. We upload and manage your book across Amazon KDP, Apple Books, Kobo, Google Play, IngramSpark, Barnes &amp; Noble, and 150+ additional retailers worldwide.</p>
-                <span class="service-glow" aria-hidden="true"></span>
+                <p class="service-desc">Once everything is ready, your book goes live. We upload and manage your book across Amazon KDP, Apple Books, Kobo, Google Play, IngramSpark, Barnes &amp; Noble, and 150+ additional retailers worldwide. Every platform has its own submission requirements and technical standards, we handle all of it so you don't have to work through each one separately.</p>
             </article>
         </div>
     </div>
@@ -91,29 +84,30 @@ include __DIR__ . '/includes/logo-slider.php';
             </div>
             <div class="col-lg-6" data-aos="fade-left">
                 <span class="eyebrow">Why It Matters</span>
-                <h2 class="section-title">Publishing That Works <em class="gold-italic">for the Author</em>, Not Against Them</h2>
-                <p>Most publishers are built around the publisher&rsquo;s economics, not the author&rsquo;s. Slow contracts, low royalties, rights locked up for years, marketing budgets reserved for a handful of lead titles. We started European Publishing House because authors deserved a model that actually worked in their favour.</p>
-                <p>That means transparent pricing, clean contracts, and a publishing process that keeps you involved at every stage. You wrote the book. We just make sure the world actually gets to read it.</p>
+                <h2 class="section-title">Publishing That Works <em class="serif-italic">for the Author</em>, Not Against Them</h2>
+                <p>Traditional publishing asks a lot from authors. Years of submissions, literary agents, rejection letters, and at the end of it, if you're one of the lucky ones, a deal that hands over most of your rights and a royalty rate that won't make you rich. It works for some. For most, there's a better way.</p>
+                <p>Self-publishing through European Publishing House gives you everything a traditional deal offers, professional editing, proper cover design, global distribution, and real marketing support, without any of the compromises. Your book. Your rights. Your royalties.</p>
+                <p>We handle every part of the process, from preparing your manuscript for publication all the way through to going live on every major platform worldwide. You make the decisions. We do the work.</p>
                 <ul class="genre-list mt-3" role="list">
-                    <li><i class="fa-solid fa-check" style="color:var(--c-leaf,#6CB04C);"></i>Full rights retained by you, always</li>
-                    <li><i class="fa-solid fa-check" style="color:var(--c-leaf,#6CB04C);"></i>Higher royalty rates than traditional publishing</li>
-                    <li><i class="fa-solid fa-check" style="color:var(--c-leaf,#6CB04C);"></i>Global distribution from day one</li>
-                    <li><i class="fa-solid fa-check" style="color:var(--c-leaf,#6CB04C);"></i>One team handling everything end to end</li>
+                    <li><i class="fa-solid fa-check"></i>Full rights retained by you, always</li>
+                    <li><i class="fa-solid fa-check"></i>Higher royalty rates than traditional publishing</li>
+                    <li><i class="fa-solid fa-check"></i>Global distribution from day one</li>
+                    <li><i class="fa-solid fa-check"></i>One team handling everything end to end</li>
                 </ul>
                 <div class="mt-4">
-                    <a href="contact.php#submit" class="btn btn-cta">Get Your Quote <i class="fa-solid fa-arrow-right"></i></a>
+                    <a href="#popup" class="btn btn-cta" data-popup>Get Your Quote <i class="fa-solid fa-arrow-right"></i></a>
                 </div>
             </div>
         </div>
     </div>
 </section>
 
-<?php include __DIR__ . '/includes/top-categories.php'; ?>
+<?php include __DIR__ . '/includes/categories.php'; ?>
 
 <!-- ============================================================
      PRICING
      ============================================================ -->
-<section class="publish-cost-sec section--dark" id="pricing">
+<section class="publish-cost-sec" id="pricing">
     <div class="container">
         <div class="row align-items-center g-5">
             <div class="col-lg-6" data-aos="fade-right">
@@ -134,6 +128,7 @@ include __DIR__ . '/includes/logo-slider.php';
 
 <?php
 $exclude_slug = 'publishing';
+include __DIR__ . '/includes/books.php';
 include __DIR__ . '/includes/other-services.php';
 ?>
 
@@ -180,5 +175,5 @@ include __DIR__ . '/includes/other-services.php';
 </section>
 
 <?php
-include __DIR__ . '/includes/cta.php';
+include __DIR__ . '/includes/final-cta.php';
 include __DIR__ . '/includes/footer.php';
