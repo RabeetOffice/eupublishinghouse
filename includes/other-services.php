@@ -10,7 +10,7 @@ $exclude = $exclude_slug ?? '';
 $_otherServices = [
     'publishing'   => ['icon' => 'fa-book',       'label' => 'Book Publishing',    'url' => 'publishing.php',   'desc' => 'We publish books across major platforms, including Amazon KDP, IngramSpark and other global distributors.'],
     'editing'      => ['icon' => 'fa-pen-fancy',  'label' => 'Book Editing',       'url' => 'editing.php',      'desc' => 'Developmental, line, copy editing and proofreading from editors with real publishing experience.'],
-    'ghostwriting' => ['icon' => 'fa-feather',    'label' => 'Ghostwriting',       'url' => 'ghostwriting.php', 'desc' => 'Confidential ghostwriting across every genre &mdash; you keep 100% of the rights.'],
+    'ghostwriting' => ['icon' => 'fa-feather',    'label' => 'Ghostwriting',       'url' => 'ghostwriting.php', 'desc' => 'Confidential ghostwriting across every genre , you keep 100% of the rights.'],
     'design'       => ['icon' => 'fa-palette',    'label' => 'Book Cover Design',  'url' => 'design.php',       'desc' => 'Custom covers built from scratch for fiction, non-fiction, children\'s and academic titles.'],
     'formatting'   => ['icon' => 'fa-align-left', 'label' => 'Book Formatting',    'url' => 'formatting.php',   'desc' => 'Print-ready PDFs, ePub, MOBI and KDP files built to every platform\'s exact specifications.'],
     'marketing'    => ['icon' => 'fa-bullhorn',   'label' => 'Book Marketing',     'url' => 'marketing.php',    'desc' => 'Amazon optimisation, paid ads, social, author branding and launch planning.'],

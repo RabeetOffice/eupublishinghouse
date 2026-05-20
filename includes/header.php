@@ -4,12 +4,12 @@ require_once __DIR__ . '/config.php';
 /* --------------------------------------------------------------
    PER-PAGE SEO
    Each page may set any of these BEFORE including this file:
-     $page_title       — full <title> string
-     $page_description — meta description
-     $page_keywords    — meta keywords (optional)
-     $canonical_url    — full canonical URL (preferred)
-     $og_image         — full URL to OG image (1200×630 recommended)
-     $og_type          — "website" (default) or "article"
+     $page_title      , full <title> string
+     $page_description, meta description
+     $page_keywords   , meta keywords (optional)
+     $canonical_url   , full canonical URL (preferred)
+     $og_image        , full URL to OG image (1200×630 recommended)
+     $og_type         , "website" (default) or "article"
    Falls back to the $PAGE_META registry, then to global SEO defaults.
 -------------------------------------------------------------- */
 $_meta = getMeta();
@@ -95,8 +95,8 @@ $_ogType  = $og_type          ?? 'website';
     <link rel="dns-prefetch" href="https://unpkg.com">
     <link rel="dns-prefetch" href="https://m.media-amazon.com">
 
-    <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,600;1,700;1,800&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Lato:wght@300;400;500;600;700;900&family=Caveat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Fonts: Inter (Apple/SF Pro alternative) + Instrument Serif for editorial italic accents -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
 
     <!-- Bootstrap 5 -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" />
@@ -130,14 +130,6 @@ $_ogType  = $og_type          ?? 'website';
     </style>
 </head>
 <body class="page-<?= safe(getCurrentPage()) ?>">
-
-<!-- Page preloader -->
-<div class="page-loader" id="pageLoader">
-    <div class="loader-inner">
-        <span class="loader-mark">EU</span>
-        <span class="loader-line"></span>
-    </div>
-</div>
 
 <?php include __DIR__ . '/navbar.php'; ?>
 

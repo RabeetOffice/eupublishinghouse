@@ -14,7 +14,7 @@ $hero = [
     'title'      => 'Book Marketing Services in Europe That <em class="gold-italic">Actually Sell Books</em>',
     'paragraphs' => [
         'Publishing your book is one thing. Getting it in front of the right readers is another thing entirely. A professionally edited book with a great cover will still sit unnoticed without a proper marketing strategy behind it.',
-        'At European Publishing House, our book marketing services are built around one goal &mdash; putting your book in front of the people who want to read it. Every campaign is built around your specific book, your audience, and the platforms where your readers actually spend their time.',
+        'At European Publishing House, our book marketing services are built around one goal , putting your book in front of the people who want to read it. Every campaign is built around your specific book, your audience, and the platforms where your readers actually spend their time.',
     ],
     'ctas' => [
         ['label' => 'Plan Your Campaign', 'href' => 'contact.php#submit', 'class' => 'btn-cta'],
@@ -37,13 +37,13 @@ include __DIR__ . '/includes/logo-slider.php';
             <article class="service-card" data-aos="fade-up">
                 <span class="service-icon"><i class="fa-brands fa-amazon"></i></span>
                 <h3 class="service-title">Amazon Marketing &amp; Optimisation</h3>
-                <p class="service-desc">Amazon is where most book sales happen, and most authors aren&rsquo;t using it properly. We optimise your book listing from the ground up &mdash; title, subtitle, description, keywords, categories, and author profile &mdash; so your book surfaces in the right searches and converts browsers into buyers.</p>
+                <p class="service-desc">Amazon is where most book sales happen, and most authors aren&rsquo;t using it properly. We optimise your book listing from the ground up , title, subtitle, description, keywords, categories, and author profile , so your book surfaces in the right searches and converts browsers into buyers.</p>
                 <span class="service-glow" aria-hidden="true"></span>
             </article>
             <article class="service-card" data-aos="fade-up" data-aos-delay="70">
                 <span class="service-icon"><i class="fa-solid fa-hashtag"></i></span>
                 <h3 class="service-title">Social Media Campaigns</h3>
-                <p class="service-desc">We build social media strategies around your book and your genre rather than generic content calendars. Instagram, Facebook, TikTok, LinkedIn, and X &mdash; tailored to whatever suits your book and your audience best.</p>
+                <p class="service-desc">We build social media strategies around your book and your genre rather than generic content calendars. Instagram, Facebook, TikTok, LinkedIn, and X , tailored to whatever suits your book and your audience best.</p>
                 <span class="service-glow" aria-hidden="true"></span>
             </article>
             <article class="service-card" data-aos="fade-up" data-aos-delay="140">
@@ -92,7 +92,7 @@ include __DIR__ . '/includes/logo-slider.php';
                 <ul class="genre-list mt-3" role="list">
                     <li><i class="fa-solid fa-check" style="color:var(--c-leaf,#6CB04C);"></i>Campaigns built around your specific book and audience</li>
                     <li><i class="fa-solid fa-check" style="color:var(--c-leaf,#6CB04C);"></i>All genres, all formats, all platforms</li>
-                    <li><i class="fa-solid fa-check" style="color:var(--c-leaf,#6CB04C);"></i>Transparent strategy &mdash; you know exactly what we&rsquo;re doing and why</li>
+                    <li><i class="fa-solid fa-check" style="color:var(--c-leaf,#6CB04C);"></i>Transparent strategy , you know exactly what we&rsquo;re doing and why</li>
                     <li><i class="fa-solid fa-check" style="color:var(--c-leaf,#6CB04C);"></i>Focused on actual sales, not vanity metrics</li>
                 </ul>
                 <div class="mt-4">
@@ -142,10 +142,10 @@ include __DIR__ . '/includes/other-services.php';
                 <div class="accordion faq-accordion" id="mktFaq">
                     <?php
                     $faqs = [
-                        ['q' => 'What is the largest book fair in Europe?',                    'a' => 'The Frankfurt Book Fair is the largest book fair in Europe and the largest in the world &mdash; over 7,000 exhibitors from more than 100 countries attend each year. The London Book Fair and Bologna Children&rsquo;s Book Fair are the other two major European events.'],
+                        ['q' => 'What is the largest book fair in Europe?',                    'a' => 'The Frankfurt Book Fair is the largest book fair in Europe and the largest in the world , over 7,000 exhibitors from more than 100 countries attend each year. The London Book Fair and Bologna Children&rsquo;s Book Fair are the other two major European events.'],
                         ['q' => 'What is the best book marketing company in Europe?',           'a' => 'The best book marketing company for your book is the one that understands your genre, your audience, and what realistic success looks like for your specific title. At European Publishing House, we&rsquo;ve been marketing books across every genre since 2021, building campaigns around what actually sells books rather than what looks impressive in a proposal.'],
                         ['q' => 'Is marketing in demand in Europe?',                            'a' => 'In publishing specifically, demand for professional book marketing has grown significantly alongside the rise of self-publishing. More authors publishing independently means more authors who need marketing support that traditional publishers used to provide.'],
-                        ['q' => 'Which country is best for marketing in Europe?',                'a' => 'For book marketing specifically, the UK is the most developed market in Europe &mdash; it has the largest English-language readership and the strongest presence on global platforms like Amazon. Germany and the Netherlands are strong markets for translated and multilingual titles.'],
+                        ['q' => 'Which country is best for marketing in Europe?',                'a' => 'For book marketing specifically, the UK is the most developed market in Europe , it has the largest English-language readership and the strongest presence on global platforms like Amazon. Germany and the Netherlands are strong markets for translated and multilingual titles.'],
                     ];
                     foreach ($faqs as $i => $f): ?>
                     <div class="accordion-item">

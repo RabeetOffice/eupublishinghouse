@@ -12,7 +12,7 @@ $banner = [
     'crumb'   => 'Contact Us',
     'eyebrow' => 'Get in Touch',
     'title'   => 'Every book starts with a <em class="gold-italic">conversation.</em>',
-    'sub'     => 'Wherever you are in the process, we&rsquo;re happy to talk it through &mdash; no pressure, no sales pitch.',
+    'sub'     => 'Wherever you are in the process, we&rsquo;re happy to talk it through , no pressure, no sales pitch.',
 ];
 include __DIR__ . '/includes/page-banner.php';
 ?>
@@ -27,7 +27,7 @@ include __DIR__ . '/includes/page-banner.php';
                 <span class="eyebrow">Contact Us</span>
                 <h2 class="section-title">A short note is enough to <em class="gold-italic">begin.</em></h2>
                 <p>Maybe you&rsquo;ve got a finished manuscript and you&rsquo;re not sure what comes next. Maybe you&rsquo;re mid-draft and want to understand what publishing actually involves before you get there. Maybe you&rsquo;ve published before and it didn&rsquo;t go the way you hoped.</p>
-                <p>Whatever stage you&rsquo;re at, we&rsquo;re happy to talk it through &mdash; no pressure, no sales pitch. Just an honest conversation about your book, what it needs, and whether we&rsquo;re the right fit to help you get it published properly.</p>
+                <p>Whatever stage you&rsquo;re at, we&rsquo;re happy to talk it through , no pressure, no sales pitch. Just an honest conversation about your book, what it needs, and whether we&rsquo;re the right fit to help you get it published properly.</p>
                 <p>We work with authors across Europe on everything from editing and cover design to full publishing and marketing.</p>
             </div>
             <div class="col-lg-5" data-aos="fade-left">
@@ -60,7 +60,7 @@ include __DIR__ . '/includes/page-banner.php';
 </section>
 
 <!-- ============================================================
-     CONTACT FORM — pulled from includes/forms/contact-form.php
+     CONTACT FORM, pulled from includes/forms/contact-form.php
      ============================================================ -->
 <section class="contact-section" id="submit">
     <div class="container">

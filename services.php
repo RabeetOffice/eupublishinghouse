@@ -2,7 +2,7 @@
 require_once __DIR__ . '/includes/config.php';
 
 $page_title       = 'Author Services | ' . BRAND_NAME;
-$page_description = 'Use one service or commission the entire pipeline — publishing, editing, ghostwriting, cover design, formatting, and marketing for serious authors.';
+$page_description = 'Use one service or commission the entire pipeline, publishing, editing, ghostwriting, cover design, formatting, and marketing for serious authors.';
 $page_keywords    = 'author services Europe, book publishing services, book editing services, ghostwriting, cover design, book marketing';
 $canonical_url    = rtrim(BRAND_SITE_URL, '/') . '/services.php';
 
@@ -13,8 +13,8 @@ $hero = [
     'eyebrow'    => 'Author Services',
     'title'      => 'Every <em class="gold-italic">Publishing Service</em>, One Place',
     'paragraphs' => [
-        'We launched in 2021 because we kept seeing the same problem &mdash; brilliant manuscripts that never became books. Not because they weren&rsquo;t good enough, but because traditional publishing is slow, closed-off, and difficult to break into.',
-        'Use one service or commission the entire pipeline. Either way, you work directly with a team that&rsquo;s genuinely invested in your book &mdash; editing, ghostwriting, cover design, formatting, marketing, and global distribution all under one roof.',
+        'We launched in 2021 because we kept seeing the same problem , brilliant manuscripts that never became books. Not because they weren&rsquo;t good enough, but because traditional publishing is slow, closed-off, and difficult to break into.',
+        'Use one service or commission the entire pipeline. Either way, you work directly with a team that&rsquo;s genuinely invested in your book , editing, ghostwriting, cover design, formatting, marketing, and global distribution all under one roof.',
     ],
     'ctas' => [
         ['label' => 'Get Started',     'href' => 'contact.php#submit', 'class' => 'btn-cta'],
@@ -39,7 +39,7 @@ $services = [
         <div class="section-head text-center" data-aos="fade-up">
             <span class="eyebrow">Author Services</span>
             <h2 class="section-title">Every Publishing Service, <em class="gold-italic">One Place</em></h2>
-            <p style="max-width:760px;margin-inline:auto;">Manuscript editing, ghostwriting, cover design, formatting, marketing and global distribution — all under one roof, all built around your specific book.</p>
+            <p style="max-width:760px;margin-inline:auto;">Manuscript editing, ghostwriting, cover design, formatting, marketing and global distribution, all under one roof, all built around your specific book.</p>
         </div>
 
         <div class="services-grid mt-5">

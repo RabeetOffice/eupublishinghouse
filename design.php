@@ -13,7 +13,7 @@ $hero = [
     'eyebrow'    => 'Book Cover Design',
     'title'      => 'Book Cover Design Services in <em class="gold-italic">Europe</em>',
     'paragraphs' => [
-        'Two seconds. That&rsquo;s roughly how long your cover has to make someone stop scrolling on Amazon and actually look. The covers that work aren&rsquo;t accidental &mdash; they&rsquo;re built around a deep understanding of genre, reader expectations, and what makes one book stand out from the fifty others sitting in the same category.',
+        'Two seconds. That&rsquo;s roughly how long your cover has to make someone stop scrolling on Amazon and actually look. The covers that work aren&rsquo;t accidental , they&rsquo;re built around a deep understanding of genre, reader expectations, and what makes one book stand out from the fifty others sitting in the same category.',
         'At European Publishing House, we design covers from scratch for fiction, non-fiction, children&rsquo;s books, academic titles, and everything that sits between those categories.',
     ],
     'ctas' => [
@@ -37,13 +37,13 @@ include __DIR__ . '/includes/logo-slider.php';
             <article class="service-card" data-aos="fade-up">
                 <span class="service-icon"><i class="fa-solid fa-mobile-screen-button"></i></span>
                 <h3 class="service-title">eBook Cover Design</h3>
-                <p class="service-desc">Your eBook cover needs to work at thumbnail size on Amazon, Apple Books, Kobo, and Google Play &mdash; often no bigger than a postage stamp on a mobile screen. We design for that reality first.</p>
+                <p class="service-desc">Your eBook cover needs to work at thumbnail size on Amazon, Apple Books, Kobo, and Google Play , often no bigger than a postage stamp on a mobile screen. We design for that reality first.</p>
                 <span class="service-glow" aria-hidden="true"></span>
             </article>
             <article class="service-card" data-aos="fade-up" data-aos-delay="70">
                 <span class="service-icon"><i class="fa-solid fa-book"></i></span>
                 <h3 class="service-title">Print Wraparound Design</h3>
-                <p class="service-desc">A print book needs a full wraparound design &mdash; front cover, back cover, and spine all working together as a single piece. Built to your printer&rsquo;s exact specifications.</p>
+                <p class="service-desc">A print book needs a full wraparound design , front cover, back cover, and spine all working together as a single piece. Built to your printer&rsquo;s exact specifications.</p>
                 <span class="service-glow" aria-hidden="true"></span>
             </article>
             <article class="service-card" data-aos="fade-up" data-aos-delay="140">
@@ -144,7 +144,7 @@ include __DIR__ . '/includes/other-services.php';
                         ['q' => 'How much does book cover design cost in Europe?',          'a' => 'Book cover design costs in Europe vary depending on the type of cover, the genre, and what&rsquo;s involved in producing it. Most professional projects sit between &euro;400 and &euro;1,500, with custom-illustrated covers and series branding sitting at the higher end.'],
                         ['q' => 'What makes a professional book cover?',                     'a' => 'A professional cover does several things at once. It signals genre clearly enough that the right readers recognise it immediately, it looks polished at thumbnail size, and it gives a sense of the book&rsquo;s tone before a reader has opened it.'],
                         ['q' => 'How long does it take to design a book cover?',             'a' => 'A standard book cover design typically takes two to three weeks from briefing to final files, accounting for concept development, your feedback, and revision rounds.'],
-                        ['q' => 'Do you provide eBook and print cover formats?',             'a' => 'Yes. We provide final files in every format your book needs &mdash; optimised eBook covers sized for Amazon KDP, Apple Books, Kobo, and Google Play, as well as full print-ready wraparound files built to your printer&rsquo;s exact specifications.'],
+                        ['q' => 'Do you provide eBook and print cover formats?',             'a' => 'Yes. We provide final files in every format your book needs , optimised eBook covers sized for Amazon KDP, Apple Books, Kobo, and Google Play, as well as full print-ready wraparound files built to your printer&rsquo;s exact specifications.'],
                         ['q' => 'Can I request revisions for my book cover design?',         'a' => 'Yes, unlimited revisions, always. We keep refining until the cover is exactly what you want.'],
                     ];
                     foreach ($faqs as $i => $f): ?>

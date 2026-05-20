@@ -61,11 +61,12 @@
         }
 
         /* ---------- HEADER SHRINK ---------- */
-        var header = document.getElementById('siteHeader');
+        var header = document.getElementById('topNav') || document.getElementById('siteHeader');
         var onScroll = function () {
-            if (!header) return;
-            if (window.scrollY > 28) header.classList.add('is-scrolled');
-            else header.classList.remove('is-scrolled');
+            if (header) {
+                if (window.scrollY > 28) header.classList.add('is-scrolled');
+                else header.classList.remove('is-scrolled');
+            }
 
             var top = document.getElementById('toTop');
             if (top) {
@@ -73,6 +74,8 @@
                 else top.classList.remove('is-visible');
             }
         };
+        // ensure header state is correct on load
+        if (header && window.scrollY > 28) header.classList.add('is-scrolled');
         window.addEventListener('scroll', onScroll, { passive: true });
         onScroll();
 
@@ -170,11 +173,53 @@
             });
         }
 
+        /* ---------- FAQ ACCORDION ---------- */
+        document.querySelectorAll('[data-faq-accordion]').forEach(function (acc) {
+            acc.querySelectorAll('.faq-trigger').forEach(function (btn) {
+                btn.addEventListener('click', function () {
+                    var item = btn.closest('.faq-item');
+                    if (!item) return;
+                    var isOpen = item.classList.contains('is-open');
+                    // Close all siblings for a clean single-open accordion
+                    acc.querySelectorAll('.faq-item.is-open').forEach(function (open) {
+                        open.classList.remove('is-open');
+                        var t = open.querySelector('.faq-trigger');
+                        if (t) t.setAttribute('aria-expanded', 'false');
+                    });
+                    if (!isOpen) {
+                        item.classList.add('is-open');
+                        btn.setAttribute('aria-expanded', 'true');
+                    }
+                });
+            });
+        });
+
         /* ---------- TO TOP ---------- */
         var toTop = document.getElementById('toTop');
         if (toTop) {
             toTop.addEventListener('click', function () {
                 window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+        }
+
+        /* ---------- LIVE CHAT TOGGLE ---------- */
+        var liveChatBtn = document.getElementById('liveChatBtn');
+        if (liveChatBtn) {
+            liveChatBtn.addEventListener('click', function () {
+                // If Tawk.to is loaded, toggle its window
+                if (window.Tawk_API && typeof Tawk_API.toggle === 'function') {
+                    try { Tawk_API.toggle(); return; } catch (e) {}
+                }
+                if (window.Tawk_API && typeof Tawk_API.maximize === 'function') {
+                    try { Tawk_API.maximize(); return; } catch (e) {}
+                }
+                // Fallback: open the manuscript popup so the user can still reach us
+                var overlay = document.getElementById('popupOverlay');
+                if (overlay) {
+                    overlay.classList.add('is-open');
+                    overlay.setAttribute('aria-hidden', 'false');
+                    document.body.classList.add('popup-open');
+                }
             });
         }
 
@@ -221,79 +266,124 @@
             });
         }
 
-        /* ---------- OWL SLIDERS ---------- */
-        if (window.jQuery && jQuery.fn.owlCarousel) {
+        /* ---- HERO STACK SLIDER — fanned 5-position book showcase ---- */
+        (function initHeroStack() {
+                var stage = document.getElementById('heroStack');
+                if (!stage) return;
 
-            /* ---- HERO BOOK SLIDER (fanned 3D shelf) ---- */
-            var $heroSlider = jQuery('.hero-book-slider');
-            if ($heroSlider.length) {
+                var slides = Array.prototype.slice.call(stage.querySelectorAll('.stack-slide'));
+                if (slides.length < 5) return;
 
-                function applyHeroFan() {
-                    var $items = $heroSlider.find('.owl-item');
-                    if (!$items.length) return;
+                var n = slides.length;
+                var center = 0;
+                var positions = { '-2': 's-left2', '-1': 's-left1', '0': 's-center', '1': 's-right1', '2': 's-right2' };
+                var allPositionClasses = ['s-center', 's-left1', 's-left2', 's-right1', 's-right2', 's-hidden'];
 
-                    // Find the centered slide
-                    var centerIdx = -1;
-                    $items.each(function (i) {
-                        if (jQuery(this).hasClass('center')) centerIdx = i;
-                    });
-                    if (centerIdx < 0) return;
-
-                    $items.each(function (i) {
-                        var d = i - centerIdx;
-                        var cls = '';
-                        if (d === 0)       cls = 'fan-c';
-                        else if (d === -1) cls = 'fan-l1';
-                        else if (d === -2) cls = 'fan-l2';
-                        else if (d === -3) cls = 'fan-l3';
-                        else if (d === 1)  cls = 'fan-r1';
-                        else if (d === 2)  cls = 'fan-r2';
-                        else if (d === 3)  cls = 'fan-r3';
-
-                        var el = this;
-                        // Only touch the DOM when the class actually needs to change
-                        if (!el.classList.contains(cls)) {
-                            el.classList.remove('fan-c','fan-l1','fan-l2','fan-l3','fan-r1','fan-r2','fan-r3');
-                            if (cls) el.classList.add(cls);
+                function render() {
+                    slides.forEach(function (sl, i) {
+                        var offset = i - center;
+                        if (offset >  Math.floor(n / 2)) offset -= n;
+                        if (offset < -Math.floor(n / 2)) offset += n;
+                        var cls = positions[offset] || 's-hidden';
+                        // Only rewrite classes if needed
+                        if (sl.dataset._pos !== cls) {
+                            allPositionClasses.forEach(function (c) { sl.classList.remove(c); });
+                            sl.classList.add(cls);
+                            sl.dataset._pos = cls;
                         }
                     });
                 }
 
-                // Fire on EVERY relevant event — including 'translate' (slide start) and
-                // 'changed' (Owl announces the new center) so books reposition WITH the
-                // stage, not after it settles. That removes the perceived delay.
-                $heroSlider.on(
-                    'initialized.owl.carousel changed.owl.carousel translate.owl.carousel translated.owl.carousel resized.owl.carousel refreshed.owl.carousel',
-                    function () { window.requestAnimationFrame(applyHeroFan); }
-                );
+                function next() { center = (center + 1) % n; render(); }
+                function prev() { center = (center - 1 + n) % n; render(); }
 
-                $heroSlider.owlCarousel({
-                    loop: true,
-                    margin: 6,
-                    nav: false,
-                    dots: false,
-                    center: true,
-                    autoplay: true,
-                    autoplayTimeout: 4200,
-                    autoplayHoverPause: true,
-                    smartSpeed: 850,
-                    fluidSpeed: true,
-                    mouseDrag: true,
-                    touchDrag: true,
-                    pullDrag: false,
-                    responsive: {
-                        0:    { items: 3 },
-                        480:  { items: 5 },
-                        768:  { items: 7 },
-                        1100: { items: 7 }
-                    }
+                render();
+
+                /* ---- Autoplay ---- */
+                var interval = parseInt(stage.getAttribute('data-autoplay'), 10) || 3500;
+                var timer = null;
+                function play() {
+                    stop();
+                    timer = setInterval(next, interval);
+                }
+                function stop() {
+                    if (timer) { clearInterval(timer); timer = null; }
+                }
+                play();
+
+                /* Hover-to-pause */
+                stage.addEventListener('mouseenter', stop);
+                stage.addEventListener('mouseleave', play);
+
+                /* Pause when tab hidden, resume when visible */
+                document.addEventListener('visibilitychange', function () {
+                    if (document.hidden) stop(); else play();
                 });
 
-                // Initial paint after Owl finishes its async setup
-                window.requestAnimationFrame(applyHeroFan);
-                setTimeout(applyHeroFan, 200);
-                setTimeout(applyHeroFan, 600);
-            }
+                /* ---- Click side slide to jump there ---- */
+                slides.forEach(function (sl, i) {
+                    sl.addEventListener('click', function (e) {
+                        var pos = sl.dataset._pos;
+                        // Center cover keeps its link behavior; sides slide in
+                        if (pos && pos !== 's-center') {
+                            e.preventDefault();
+                            center = i;
+                            render();
+                            play();
+                        }
+                    });
+                });
+
+                /* ---- Drag / swipe ---- */
+                var startX = 0, dragging = false, threshold = 50;
+                function pointerDown(x) {
+                    dragging = true; startX = x;
+                    stop();
+                    stage.classList.add('is-grabbing');
+                }
+                function pointerUp(x) {
+                    if (!dragging) return;
+                    var delta = x - startX;
+                    dragging = false;
+                    stage.classList.remove('is-grabbing');
+                    if (delta >  threshold) prev();
+                    if (delta < -threshold) next();
+                    play();
+                }
+                stage.addEventListener('mousedown',  function (e) { pointerDown(e.clientX); });
+                window.addEventListener('mouseup',   function (e) { pointerUp(e.clientX); });
+                stage.addEventListener('mouseleave', function () { if (dragging) { dragging = false; stage.classList.remove('is-grabbing'); play(); } });
+                stage.addEventListener('touchstart', function (e) { pointerDown(e.touches[0].clientX); }, { passive: true });
+                stage.addEventListener('touchend',   function (e) { pointerUp(e.changedTouches[0].clientX); }, { passive: true });
+                /* Prevent native drag-image when dragging the cover */
+                slides.forEach(function (sl) {
+                    sl.addEventListener('dragstart', function (e) { e.preventDefault(); });
+                });
+        })();
+
+        /* ---------- OWL SLIDERS ---------- */
+        if (window.jQuery && jQuery.fn.owlCarousel) {
+
+            /* ---- BOOKS CAROUSEL (homepage "Our Catalog") ---- */
+            jQuery('.books-carousel').owlCarousel({
+                loop: true,
+                margin: 22,
+                nav: false,
+                dots: true,
+                autoplay: true,
+                autoplayTimeout: 4500,
+                autoplayHoverPause: true,
+                smartSpeed: 900,
+                mouseDrag: true,
+                touchDrag: true,
+                responsive: {
+                    0:    { items: 2 },
+                    480:  { items: 3 },
+                    768:  { items: 4 },
+                    1100: { items: 5 },
+                    1400: { items: 6 }
+                }
+            });
 
             /* ---- PORTFOLIO SLIDER ---- */
             jQuery('.portfolio-slider').owlCarousel({
@@ -400,18 +490,14 @@
                 if (e.key === 'Escape' && popupOverlay.classList.contains('is-open')) closePopup();
             });
 
-            // Intercept every primary CTA click site-wide. Selector targets:
-            //   - explicit triggers via [data-popup]
-            //   - all primary action buttons (.btn-cta, .btn-gold, .nav-cta)
-            //   - hrefs aimed at the legacy contact-form anchor
-            // Bypasses any element carrying [data-no-popup].
+            // Open the popup on explicit triggers:
+            //   - [data-popup] attribute
+            //   - hrefs of "#popup" or "contact.php#submit"
+            // Skip elements carrying [data-no-popup].
             document.addEventListener('click', function (e) {
-                var trigger = e.target.closest(
-                    '[data-popup], .btn-cta, .btn-gold, .nav-cta, a[href$="contact.php#submit"]'
-                );
+                var trigger = e.target.closest('[data-popup], a[href="#popup"], a[href$="contact.php#submit"]');
                 if (!trigger) return;
                 if (trigger.hasAttribute('data-no-popup')) return;
-                // The popup's own submit button is .btn-cta — exclude clicks inside the modal
                 if (popupOverlay.contains(trigger)) return;
 
                 e.preventDefault();

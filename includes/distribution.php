@@ -1,31 +1,69 @@
-<?php require_once __DIR__ . '/config.php';
-$partners = [
-    ['label' => 'Amazon Kindle',    'icon' => 'fa-brands fa-amazon'],
-    ['label' => 'Apple Books',      'icon' => 'fa-brands fa-apple'],
-    ['label' => 'Kobo',             'icon' => 'fa-solid fa-book-bookmark'],
-    ['label' => 'Google Play Books','icon' => 'fa-brands fa-google-play'],
-    ['label' => 'Barnes & Noble',   'icon' => 'fa-solid fa-book-open-reader'],
-    ['label' => 'Waterstones',      'icon' => 'fa-solid fa-store'],
+<?php
+require_once __DIR__ . '/config.php';
+
+$distPlatforms = $distPlatforms ?? [
+    'Amazon Kindle, UK, EU, US, Canada, Australia, Germany, France, Spain, Italy, Japan',
+    'Apple Books, 170+ countries',
+    'Google Play Books, 75+ countries',
+    'Kobo, 190+ countries',
+    'Barnes & Noble, US & UK',
+    'Scribd, global digital library',
+    'OverDrive, library distribution worldwide',
+    '150+ additional retailers worldwide',
 ];
+$distFormats = $distFormats ?? [
+    'Kindle eBooks',
+    'ePub for Apple Books, Kobo, Google Play',
+    'Print-on-demand paperbacks',
+    'Print-on-demand hardcovers',
+    'Large print editions',
+    'Audiobook (Audible / Apple / Google)',
+];
+
+$distEyebrow = $distEyebrow ?? 'Global Distribution';
+$distTitle   = $distTitle   ?? 'Your book, available <em class="serif-italic">worldwide</em>';
+$distIntro   = $distIntro   ?? 'Publishing with us means your book is available globally from launch day. We distribute across every major retailer in every major format, so readers can find it however they prefer to read.';
+$distFootnote = $distFootnote ?? 'We handle every upload, every platform requirement, every technical specification. You manage your book, we manage the logistics.';
 ?>
-<section class="distribution-section" id="distribution">
-    <div class="dist-map" aria-hidden="true">
-        <span class="dist-glow"></span>
-    </div>
+<section class="distribution-section section-paper" id="distribution">
     <div class="container">
         <div class="section-head" data-aos="fade-up">
-            <span class="eyebrow">Global Distribution</span>
-            <h2 class="section-title">On shelves &amp; screens in <em class="gold-italic">25+ countries.</em></h2>
-            <p class="section-lead">Our titles ship through the world's leading retailers, libraries and independent bookstores.</p>
+            <span class="eyebrow"><?= safe($distEyebrow) ?></span>
+            <h2 class="section-title"><?= $distTitle ?></h2>
+            <p><?= safe($distIntro) ?></p>
         </div>
 
-        <ul class="partners-grid" data-aos="fade-up" data-aos-delay="120">
-            <?php foreach ($partners as $p): ?>
-            <li class="partner">
-                <i class="<?= $p['icon'] ?>"></i>
-                <span><?= safe($p['label']) ?></span>
-            </li>
-            <?php endforeach; ?>
-        </ul>
+        <div class="dist-grid">
+            <div class="dist-card" data-aos="fade-up">
+                <h3 class="dist-card-title">
+                    <i class="fa-solid fa-globe"></i>
+                    Platforms we distribute to
+                </h3>
+                <ul class="dist-list">
+                    <?php foreach ($distPlatforms as $p): ?>
+                        <li><i class="fa-solid fa-check"></i><?= safe($p) ?></li>
+                    <?php endforeach; ?>
+                </ul>
+            </div>
+            <div class="dist-card" data-aos="fade-up" data-aos-delay="100">
+                <h3 class="dist-card-title">
+                    <i class="fa-solid fa-book"></i>
+                    Available formats
+                </h3>
+                <ul class="dist-list">
+                    <?php foreach ($distFormats as $f): ?>
+                        <li><i class="fa-solid fa-check"></i><?= safe($f) ?></li>
+                    <?php endforeach; ?>
+                </ul>
+            </div>
+        </div>
+
+        <p class="dist-footnote" data-aos="fade-up"><?= safe($distFootnote) ?></p>
+
+        <div class="text-center mt-4" data-aos="fade-up">
+            <a href="#popup" class="btn btn-cta btn-lg" data-popup>
+                Publish globally <i class="fa-solid fa-arrow-right"></i>
+            </a>
+        </div>
     </div>
 </section>

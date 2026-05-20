@@ -1,28 +1,42 @@
-<?php require_once __DIR__ . '/config.php';
-$steps = [
-    ['n' => '01', 'icon' => 'fa-pen-nib',  'title' => 'Manuscript Submission', 'desc' => 'You submit your manuscript through our editorial portal. A senior editor reads every word personally.'],
-    ['n' => '02', 'icon' => 'fa-feather',  'title' => 'Editorial Partnership', 'desc' => 'We pair you with the right structural and line editor. We refine voice, pace and intent — never overwrite it.'],
-    ['n' => '03', 'icon' => 'fa-palette',  'title' => 'Design & Production',   'desc' => 'Type-set in fine European traditions. Cover art directed by our in-house design studio.'],
-    ['n' => '04', 'icon' => 'fa-globe',    'title' => 'Launch & Distribution', 'desc' => 'Print, e-book and audio rolled out across 25+ countries. Marketing led by a dedicated publicist.'],
+<?php
+require_once __DIR__ . '/config.php';
+
+$processSteps = $processSteps ?? [
+    ['n' => '01', 'icon' => 'fa-comments',   'title' => 'Free Consultation',
+        'desc' => 'Send your manuscript. A senior editor reads it personally and replies with a clear plan, budget and timeline.'],
+    ['n' => '02', 'icon' => 'fa-pen-nib',    'title' => 'Professional Editing',
+        'desc' => 'Developmental, copy editing or proofreading, every change tracked and explained, paced to your manuscript.'],
+    ['n' => '03', 'icon' => 'fa-palette',    'title' => 'Custom Cover Design',
+        'desc' => 'Multiple concepts, unlimited refinements, files sized for every retailer your book will sell on.'],
+    ['n' => '04', 'icon' => 'fa-globe',      'title' => 'Format & Publish',
+        'desc' => 'Print-ready files, ISBN, metadata, then live across Amazon, Apple, Kobo, Google Play and 150+ retailers.'],
 ];
+$processEyebrow = $processEyebrow ?? 'The Editorial Journey';
+$processTitle   = $processTitle   ?? 'How we publish <em class="serif-italic">your book</em>';
+$processIntro   = $processIntro   ?? 'Four considered steps, from the manuscript on your desk to a book in readers\' hands.';
 ?>
-<section class="process-section" id="process">
+<section class="process-section section-mint" id="process">
     <div class="container">
         <div class="section-head" data-aos="fade-up">
-            <span class="eyebrow">The Editorial Journey</span>
-            <h2 class="section-title">From manuscript to <em class="gold-italic">masterpiece.</em></h2>
-            <p class="section-lead">Four considered stages — every one led by humans, not pipelines.</p>
+            <span class="eyebrow"><?= safe($processEyebrow) ?></span>
+            <h2 class="section-title"><?= $processTitle ?></h2>
+            <p><?= safe($processIntro) ?></p>
         </div>
 
         <div class="process-grid">
-            <?php foreach ($steps as $i => $s): ?>
-            <article class="process-card" data-aos="fade-up" data-aos-delay="<?= $i * 120 ?>">
-                <span class="process-n"><?= safe($s['n']) ?></span>
-                <i class="fa-solid <?= $s['icon'] ?> process-icon"></i>
-                <h3 class="process-title"><?= safe($s['title']) ?></h3>
-                <p class="process-desc"><?= safe($s['desc']) ?></p>
-            </article>
+            <?php foreach ($processSteps as $i => $s): ?>
+                <article class="process-card" data-aos="fade-up" data-aos-delay="<?= $i * 100 ?>">
+                    <span class="process-n"><?= safe($s['n']) ?></span>
+                    <h3 class="process-title"><?= safe($s['title']) ?></h3>
+                    <p class="process-desc"><?= safe($s['desc']) ?></p>
+                </article>
             <?php endforeach; ?>
+        </div>
+
+        <div class="text-center mt-5" data-aos="fade-up">
+            <a href="#popup" class="btn btn-cta btn-lg" data-popup>
+                Start your book today <i class="fa-solid fa-arrow-right"></i>
+            </a>
         </div>
     </div>
 </section>

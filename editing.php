@@ -14,7 +14,7 @@ $hero = [
     'title'      => 'Professional Book Editing Services in <em class="gold-italic">Europe</em>',
     'paragraphs' => [
         'Even the most acclaimed authors rely on editors, and not because their writing falls short. The truth is, after spending so much time with a manuscript, it&rsquo;s easy to miss the details a fresh, professional perspective will catch.',
-        'We partner with writers across every genre &mdash; fiction, non-fiction, memoirs, business books, children&rsquo;s literature, academic writing, and more. Every suggestion we make comes with a clear explanation, and every change is yours to approve or decline.',
+        'We partner with writers across every genre , fiction, non-fiction, memoirs, business books, children&rsquo;s literature, academic writing, and more. Every suggestion we make comes with a clear explanation, and every change is yours to approve or decline.',
     ],
     'ctas' => [
         ['label' => 'Get a Quote',    'href' => 'contact.php#submit', 'class' => 'btn-cta'],
@@ -46,13 +46,13 @@ include __DIR__ . '/includes/logo-slider.php';
             <article class="service-card" data-aos="fade-up" data-aos-delay="70">
                 <span class="service-icon"><i class="fa-solid fa-pen-nib"></i></span>
                 <h3 class="service-title">Line Editing</h3>
-                <p class="service-desc">Once the structure is solid, line editing works at the sentence level. Wordy passages get tightened, awkward phrasing gets untangled, and unclear writing gets sharpened &mdash; all while keeping your voice completely intact.</p>
+                <p class="service-desc">Once the structure is solid, line editing works at the sentence level. Wordy passages get tightened, awkward phrasing gets untangled, and unclear writing gets sharpened , all while keeping your voice completely intact.</p>
                 <span class="service-glow" aria-hidden="true"></span>
             </article>
             <article class="service-card" data-aos="fade-up" data-aos-delay="140">
                 <span class="service-icon"><i class="fa-solid fa-spell-check"></i></span>
                 <h3 class="service-title">Copy Editing</h3>
-                <p class="service-desc">The technical side &mdash; grammar, punctuation, spelling, and consistency all the way through. By the end of a copy edit, your manuscript is clean, consistent, and ready for its final pass.</p>
+                <p class="service-desc">The technical side , grammar, punctuation, spelling, and consistency all the way through. By the end of a copy edit, your manuscript is clean, consistent, and ready for its final pass.</p>
                 <span class="service-glow" aria-hidden="true"></span>
             </article>
             <article class="service-card" data-aos="fade-up" data-aos-delay="210">

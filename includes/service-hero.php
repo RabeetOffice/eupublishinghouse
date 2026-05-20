@@ -5,44 +5,47 @@
  * Set $hero before include:
  *   $hero = [
  *       'crumb'      => 'Publishing',
- *       'eyebrow'    => 'Book Publishing',
- *       'title'      => 'H1 <em class="gold-italic">title</em> (HTML allowed)',
+ *       'title'      => 'H1 <em class="serif-italic">title</em> (HTML allowed)',
  *       'paragraphs' => ['First intro paragraph.', 'Second intro paragraph.'],
  *       'ctas'       => [
- *           ['label' => 'Get Started',    'href' => 'contact.php#submit', 'class' => 'btn-cta'],
- *           ['label' => 'View Pricing',   'href' => '#pricing',           'class' => 'btn-outline-dark'],
+ *           ['label' => 'Get Started',  'href' => '#popup',  'class' => 'btn-cta',  'popup' => true],
+ *           ['label' => 'View Pricing', 'href' => '#pricing','class' => 'btn-glass'],
  *       ],
  *   ];
  */
 require_once __DIR__ . '/config.php';
-$h = $hero ?? [];
-$hCrumb    = $h['crumb']      ?? '';
-$hEyebrow  = $h['eyebrow']    ?? '';
-$hTitle    = $h['title']      ?? '';
-$hParas    = $h['paragraphs'] ?? [];
-$hCtas     = $h['ctas']       ?? [];
+$h        = $hero ?? [];
+$hCrumb   = $h['crumb']      ?? '';
+$hTitle   = $h['title']      ?? '';
+$hParas   = $h['paragraphs'] ?? [];
+$hCtas    = $h['ctas']       ?? [];
+$hImage   = $h['image']      ?? null;
 ?>
 <section class="service-hero">
-    <div class="service-hero__bg" aria-hidden="true">
-        <span class="bg-shape bg-shape--arch-left"></span>
-        <span class="bg-shape bg-shape--arch-right"></span>
-        <span class="paper-grain"></span>
+
+    <div class="hero-bg" aria-hidden="true">
+        <span class="blob blob-1"></span>
+        <span class="blob blob-2"></span>
+        <svg class="leaf leaf-1" viewBox="0 0 120 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M60 10 C 25 60, 25 150, 60 190 C 95 150, 95 60, 60 10 Z" fill="#6CB04C"/>
+            <path d="M60 10 L 60 190" stroke="#4F932F" stroke-width="2"/>
+        </svg>
     </div>
-    <div class="container service-hero__inner">
-        <div class="row g-5 align-items-center">
 
-            <!-- Left: copy + CTAs -->
-            <div class="col-lg-6 service-hero__copy" data-aos="fade-right">
+    <div class="container">
+        <div class="service-hero-grid">
+
+            <div class="service-hero-copy">
+
                 <?php if ($hCrumb): ?>
-                <nav class="crumbs service-hero__crumbs" aria-label="Breadcrumb">
-                    <a href="index.php">Home</a>
-                    <i class="fa-solid fa-chevron-right"></i>
-                    <span><?= safe($hCrumb) ?></span>
-                </nav>
-                <?php endif; ?>
-
-                <?php if ($hEyebrow): ?>
-                    <span class="eyebrow eyebrow--pill"><?= safe($hEyebrow) ?></span>
+                    <nav class="breadcrumb-pill" aria-label="Breadcrumb">
+                        <a href="index.php">
+                            <i class="fa-solid fa-house-chimney"></i>
+                            Home
+                        </a>
+                        <span class="sep"><i class="fa-solid fa-chevron-right"></i></span>
+                        <span class="current"><?= safe($hCrumb) ?></span>
+                    </nav>
                 <?php endif; ?>
 
                 <h1 class="service-hero__title"><?= $hTitle ?></h1>
@@ -52,20 +55,24 @@ $hCtas     = $h['ctas']       ?? [];
                 <?php endforeach; ?>
 
                 <?php if (!empty($hCtas)): ?>
-                <div class="hero-cta-row service-hero__ctas">
-                    <?php foreach ($hCtas as $cta): ?>
-                        <a href="<?= safe($cta['href']) ?>" class="btn <?= safe($cta['class'] ?? 'btn-cta') ?> btn-lg" data-no-popup>
-                            <?= safe($cta['label']) ?> <i class="fa-solid fa-arrow-right"></i>
-                        </a>
-                    <?php endforeach; ?>
-                </div>
+                    <div class="hero-cta-row service-hero__ctas">
+                        <?php foreach ($hCtas as $cta):
+                            $isPopup = !empty($cta['popup']);
+                        ?>
+                            <a href="<?= safe($cta['href']) ?>"
+                               class="btn <?= safe($cta['class'] ?? 'btn-cta') ?> btn-lg"
+                               <?= $isPopup ? 'data-popup' : 'data-no-popup' ?>>
+                                <?= safe($cta['label']) ?> <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                        <?php endforeach; ?>
+                    </div>
                 <?php endif; ?>
             </div>
 
-            <!-- Right: quote-card form -->
-            <div class="col-lg-6">
+            <div class="service-hero-side">
                 <?php include __DIR__ . '/forms/quote-card.php'; ?>
             </div>
+
         </div>
     </div>
 </section>

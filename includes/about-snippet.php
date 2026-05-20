@@ -1,32 +1,54 @@
-<?php require_once __DIR__ . '/config.php'; ?>
-<section class="about-snippet" id="about">
+<?php
+require_once __DIR__ . '/config.php';
+
+$aboutEyebrow = $aboutEyebrow ?? 'About the House';
+$aboutTitle   = $aboutTitle   ?? 'A publisher built for authors who <em class="serif-italic">mean it</em>';
+$aboutLead    = $aboutLead    ?? "We launched in 2021 because brilliant manuscripts kept slipping through the cracks of traditional publishing. Not because they weren't good enough, but because the gates were closed. We built " . WEBSITE_NAME . " to sit between traditional and self-publishing, professional, accessible, author-led.";
+$aboutBody    = $aboutBody    ?? "Since then we've helped authors publish over 800 books across every genre, working with debut writers and experienced authors alike. Our team includes editors with serious publishing experience, designers who understand what sells, and publishing specialists who know every step of the process.";
+
+$aboutBullets = $aboutBullets ?? [
+    'Senior editors only',
+    'Honest, no-pressure quotes',
+    'You keep your rights & royalties',
+    'Worldwide distribution',
+];
+
+$aboutImage    = $aboutImage    ?? 'assets/images/about-image.png';
+$aboutChipNum  = $aboutChipNum  ?? '800+';
+$aboutChipLbl  = $aboutChipLbl  ?? 'Books published since 2021 across every major genre';
+$aboutCtaText  = $aboutCtaText  ?? 'Get your publishing quote';
+$aboutCtaHref  = $aboutCtaHref  ?? '#popup';
+$aboutCtaPopup = $aboutCtaPopup ?? true;
+?>
+<section class="about-section section-paper" id="about">
     <div class="container">
-        <div class="row g-5 align-items-center">
-            <div class="col-lg-6" data-aos="fade-right">
-                <div class="about-collage">
-                    <span class="about-img about-img--1"></span>
-                    <span class="about-img about-img--2"></span>
-                    <span class="about-img about-img--3"></span>
-                    <span class="about-badge">
-                        <strong>Est. 2014</strong>
-                        <span>Dublin · Ireland</span>
-                    </span>
+        <div class="about-grid">
+
+            <div class="about-image" data-aos="fade-right">
+                <img src="<?= safe($aboutImage) ?>" alt="Inside the EU Publishing House editorial studio" loading="lazy" decoding="async">
+                <div class="about-image-chip">
+                    <div class="num"><?= safe($aboutChipNum) ?></div>
+                    <div class="lbl"><?= safe($aboutChipLbl) ?></div>
                 </div>
             </div>
-            <div class="col-lg-6" data-aos="fade-left">
-                <span class="eyebrow">About the House</span>
-                <h2 class="section-title">A publisher for writers who believe a book is still a <em class="gold-italic">cultural artefact.</em></h2>
-                <p class="about-lead">
-                    Founded in a quiet Dublin studio, <?= safe(WEBSITE_NAME) ?> exists for authors who want their work read in fifty years, not just fifty days.
-                    We publish a small, curated list each year — and put everything we have behind every book.
-                </p>
-                <ul class="about-list" role="list">
-                    <li><i class="fa-solid fa-check"></i>Independent &amp; author-owned royalties</li>
-                    <li><i class="fa-solid fa-check"></i>European production standards</li>
-                    <li><i class="fa-solid fa-check"></i>Worldwide distribution &amp; rights</li>
+
+            <div class="about-copy" data-aos="fade-left">
+                <span class="eyebrow"><?= safe($aboutEyebrow) ?></span>
+                <h2 class="section-title"><?= $aboutTitle ?></h2>
+                <p class="lead"><?= safe($aboutLead) ?></p>
+                <p><?= safe($aboutBody) ?></p>
+
+                <ul class="about-bullets">
+                    <?php foreach ($aboutBullets as $b): ?>
+                        <li><i class="fa-solid fa-check"></i><?= safe($b) ?></li>
+                    <?php endforeach; ?>
                 </ul>
-                <a href="about.php" class="btn btn-cta" data-no-popup>Read Our Story <i class="fa-solid fa-arrow-right"></i></a>
+
+                <a href="<?= safe($aboutCtaHref) ?>" class="btn btn-cta" <?= $aboutCtaPopup ? 'data-popup' : '' ?>>
+                    <?= safe($aboutCtaText) ?> <i class="fa-solid fa-arrow-right"></i>
+                </a>
             </div>
+
         </div>
     </div>
 </section>

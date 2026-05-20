@@ -28,6 +28,17 @@ define('ADDRESS', 'The Observatory, 22 Windmill Ln, Dublin 2, D02 W282, Ireland'
 define('ADDRESS_SHORT', 'Dublin, Ireland');
 
 // =====================================================
+// LIVE CHAT (Tawk.to)
+// =====================================================
+// Replace with your Tawk.to property ID and widget ID, e.g. '5f9c3...'
+// Find these in Tawk dashboard -> Administration -> Property Settings -> Property ID,
+// and the widget ID at the end of your Tawk JS embed URL.
+// Leave empty to disable the chat widget loader (the floating button stays clickable
+// and shows a graceful fallback).
+define('TAWK_PROPERTY_ID', '');
+define('TAWK_WIDGET_ID',   'default');
+
+// =====================================================
 // SOCIAL
 // =====================================================
 define('SOCIAL_FACEBOOK',  'https://www.facebook.com/eupublishinghouse/');
@@ -38,7 +49,7 @@ define('SOCIAL_YOUTUBE',   'https://www.youtube.com/@EUPublishingHouse');
 define('SOCIAL_PINTEREST', 'https://www.pinterest.com/eupublishinghouse/');
 
 // =====================================================
-// BRAND COLORS — Derived from the EU Publishing House logo
+// BRAND COLORS, Derived from the EU Publishing House logo
 // =====================================================
 define('BRAND_PRIMARY',   '#1B5340');   // Deep forest green ("EU Publishing" text)
 define('BRAND_PRIMARY_2', '#0F3E2E');   // Darker shade for hovers / footer
@@ -63,7 +74,7 @@ define('UPLOADS_URL', 'uploads');
 // =====================================================
 // SEO DEFAULTS
 // =====================================================
-define('SEO_DEFAULT_TITLE', WEBSITE_NAME . ' — ' . WEBSITE_TAGLINE);
+define('SEO_DEFAULT_TITLE', WEBSITE_NAME . ', ' . WEBSITE_TAGLINE);
 define('SEO_DEFAULT_DESCRIPTION', WEBSITE_DESCRIPTION);
 define('SEO_DEFAULT_KEYWORDS', 'book publishing, publishing house, European publisher, manuscript publishing, book editing, ghostwriting, cover design, author services, Dublin publisher, literary publishing');
 define('SEO_DEFAULT_IMAGE', WEBSITE_URL . '/assets/images/og-default.jpg');
@@ -75,20 +86,20 @@ define('SEO_LOCALE', 'en_IE');
 // =====================================================
 $PAGE_META = [
     'index' => [
-        'title' => WEBSITE_NAME . ' — ' . WEBSITE_TAGLINE,
+        'title' => WEBSITE_NAME . ', ' . WEBSITE_TAGLINE,
         'description' => WEBSITE_DESCRIPTION,
         'keywords' => SEO_DEFAULT_KEYWORDS,
         'canonical' => WEBSITE_URL . '/',
     ],
     'about' => [
         'title' => 'About Us | ' . WEBSITE_NAME,
-        'description' => 'Discover the story behind European Publishing House — a publisher built for authors who want professional support without the gatekeepers.',
+        'description' => 'Discover the story behind European Publishing House, a publisher built for authors who want professional support without the gatekeepers.',
         'keywords' => 'about EU Publishing House, European publisher story, hybrid publisher Ireland',
         'canonical' => WEBSITE_URL . '/about.php',
     ],
     'services' => [
         'title' => 'Author Services | ' . WEBSITE_NAME,
-        'description' => 'Full-service publishing for serious authors — editing, ghostwriting, design, formatting, distribution and marketing.',
+        'description' => 'Full-service publishing for serious authors, editing, ghostwriting, design, formatting, distribution and marketing.',
         'keywords' => 'book publishing services, editing, ghostwriting, cover design, book marketing',
         'canonical' => WEBSITE_URL . '/services.php',
     ],
@@ -124,7 +135,7 @@ $PAGE_META = [
     ],
     'formatting' => [
         'title' => 'Professional Book Formatting Services in Europe | ' . WEBSITE_NAME,
-        'description' => 'Print-ready PDFs, ePub, MOBI, KDP and IngramSpark files for paperback, hardback and eBook — built to every platform\'s exact specifications.',
+        'description' => 'Print-ready PDFs, ePub, MOBI, KDP and IngramSpark files for paperback, hardback and eBook, built to every platform\'s exact specifications.',
         'keywords' => 'book formatting Europe, ePub MOBI formatting, KDP formatting, print ready PDF, IngramSpark formatting',
         'canonical' => WEBSITE_URL . '/formatting.php',
     ],
@@ -142,7 +153,7 @@ $PAGE_META = [
     ],
     'blog-book-cover-design-cost' => [
         'title' => 'How Much Does Book Cover Design Cost in Europe? | ' . WEBSITE_NAME,
-        'description' => 'A full 2026 breakdown of book cover design costs across Europe — by region, by experience, by complexity, including VAT, contracts and rights.',
+        'description' => 'A full 2026 breakdown of book cover design costs across Europe, by region, by experience, by complexity, including VAT, contracts and rights.',
         'keywords' => 'book cover design cost Europe, Reedsy cover design price, freelance book cover designer Europe',
         'canonical' => WEBSITE_URL . '/blog-book-cover-design-cost.php',
     ],
@@ -325,7 +336,7 @@ function navIsActiveTree($item) {
 /**
  * Read every book cover image from /assets/images/book-covers/ and return
  * a list of web-relative paths. Used dynamically by the hero slider,
- * portfolio slider and portfolios grid — no filenames are hard-coded.
+ * portfolio slider and portfolios grid, no filenames are hard-coded.
  *
  * @param array $options {
  *     @type int    $limit    Max number of items to return. 0 = all.
@@ -371,7 +382,7 @@ function getBookCovers($options = []) {
 }
 
 /**
- * Turn a cover filename into a presentable title — used as alt text & fallback labels
+ * Turn a cover filename into a presentable title, used as alt text & fallback labels
  * when no per-book metadata is available.
  */
 function coverLabel($path) {

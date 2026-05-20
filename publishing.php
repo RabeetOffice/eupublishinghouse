@@ -13,7 +13,7 @@ $hero = [
     'eyebrow'    => 'Book Publishing',
     'title'      => 'Professional Book Publishing Services in <em class="gold-italic">Europe</em>',
     'paragraphs' => [
-        'Getting published used to mean waiting years for a traditional publisher to say yes. It doesn&rsquo;t anymore. At European Publishing House, we help authors across Europe publish their books properly &mdash; without the gatekeepers, without giving up their rights, and without figuring it all out alone.',
+        'Getting published used to mean waiting years for a traditional publisher to say yes. It doesn&rsquo;t anymore. At European Publishing House, we help authors across Europe publish their books properly , without the gatekeepers, without giving up their rights, and without figuring it all out alone.',
         'We&rsquo;ve helped over 800 authors publish since 2021, across every genre you can think of.',
     ],
     'ctas' => [
@@ -26,7 +26,7 @@ include __DIR__ . '/includes/logo-slider.php';
 ?>
 
 <!-- ============================================================
-     HOW WE PUBLISH YOUR BOOK — six structured stages
+     HOW WE PUBLISH YOUR BOOK, six structured stages
      ============================================================ -->
 <section class="services-section section--dark" id="how-we-publish">
     <div class="container">
@@ -52,7 +52,7 @@ include __DIR__ . '/includes/logo-slider.php';
             <article class="service-card" data-aos="fade-up" data-aos-delay="140">
                 <span class="service-icon"><i class="fa-solid fa-align-left"></i></span>
                 <h3 class="service-title">Formatting</h3>
-                <p class="service-desc">We format your book for every format it needs to be published in &mdash; PDF for print, ePub for Apple Books, Kobo and Google Play, MOBI for Kindle.</p>
+                <p class="service-desc">We format your book for every format it needs to be published in , PDF for print, ePub for Apple Books, Kobo and Google Play, MOBI for Kindle.</p>
                 <span class="service-glow" aria-hidden="true"></span>
             </article>
             <article class="service-card" data-aos="fade-up" data-aos-delay="210">
@@ -64,7 +64,7 @@ include __DIR__ . '/includes/logo-slider.php';
             <article class="service-card" data-aos="fade-up">
                 <span class="service-icon"><i class="fa-solid fa-fingerprint"></i></span>
                 <h3 class="service-title">ISBN &amp; Copyright Registration</h3>
-                <p class="service-desc">We handle all the administrative groundwork &mdash; ISBN assignment, copyright documentation, author profile setup, and metadata optimisation.</p>
+                <p class="service-desc">We handle all the administrative groundwork , ISBN assignment, copyright documentation, author profile setup, and metadata optimisation.</p>
                 <span class="service-glow" aria-hidden="true"></span>
             </article>
             <article class="service-card" data-aos="fade-up" data-aos-delay="70">
@@ -78,7 +78,7 @@ include __DIR__ . '/includes/logo-slider.php';
 </section>
 
 <!-- ============================================================
-     VALUE — Publishing that works for the author
+     VALUE, Publishing that works for the author
      ============================================================ -->
 <section class="why-eph-sec" id="value">
     <div class="container">

@@ -5,7 +5,7 @@ $faqs = [
     ['q' => 'What genres do you publish?',              'a' => 'Literary &amp; commercial fiction, memoir, business, children\'s, poetry and selected specialist non-fiction. We do not currently publish technical academic work.'],
     ['q' => 'What does the royalty structure look like?','a' => 'Authors keep market-leading royalty rates and retain ownership of their intellectual property. We sign clean, transparent contracts with no hidden clauses.'],
     ['q' => 'Where will my book be distributed?',       'a' => 'Worldwide. Through Amazon Kindle, Apple Books, Kobo, Google Play, Barnes &amp; Noble, Waterstones and a curated network of independent bookshops in 25+ countries.'],
-    ['q' => 'Do you offer marketing &amp; PR?',         'a' => 'Yes — every title is matched with a dedicated publicist. We focus on press placements, considered digital campaigns and bookseller relationships rather than paid noise.'],
+    ['q' => 'Do you offer marketing &amp; PR?',         'a' => 'Yes, every title is matched with a dedicated publicist. We focus on press placements, considered digital campaigns and bookseller relationships rather than paid noise.'],
 ];
 ?>
 <section class="faq-section" id="faq">

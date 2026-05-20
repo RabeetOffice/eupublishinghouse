@@ -55,7 +55,7 @@ $menu = navMenu();
             <a href="tel:<?= PHONE_NUMBER_RAW ?>" class="nav-phone-btn" aria-label="Call <?= safe(PHONE_NUMBER) ?>">
                 <i class="fa-solid fa-phone-volume" aria-hidden="true"></i>
             </a>
-            <a class="btn btn-cta nav-cta" href="contact.php#submit">
+            <a class="btn btn-cta nav-cta" href="#popup" data-popup>
                 <span class="lbl lbl--long">Submit Manuscript</span>
                 <span class="lbl lbl--short">Submit</span>
                 <span class="arr" aria-hidden="true">&rarr;</span>
@@ -109,7 +109,7 @@ $menu = navMenu();
     </nav>
 
     <div class="mm-cta">
-        <a class="btn btn-cta" href="contact.php#submit">
+        <a class="btn btn-cta" href="#popup" data-popup>
             Submit Manuscript <span class="arr" aria-hidden="true">&rarr;</span>
         </a>
         <a class="btn btn-outline-dark" href="contact.php">Contact Us</a>

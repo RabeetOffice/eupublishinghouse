@@ -23,13 +23,13 @@ $sliderBooks = $portfolioItems;
                 <a href="<?= safe($book['amazon_link']) ?>"
                    class="portfolio-card book book--slider"
                    target="_blank" rel="noopener noreferrer"
-                   aria-label="<?= safe($book['title']) ?> by <?= safe($book['author']) ?> — Buy on Amazon">
+                   aria-label="<?= safe($book['title']) ?> by <?= safe($book['author']) ?>, Buy on Amazon">
                     <div class="book__cover book__cover--img">
                         <?php if ($i % 4 === 0): ?>
                             <span class="book__badge" aria-hidden="true"><i class="fa-solid fa-award"></i></span>
                         <?php endif; ?>
                         <img src="<?= safe($book['image']) ?>"
-                             alt="<?= safe($book['title']) ?> by <?= safe($book['author']) ?> — published by <?= safe(WEBSITE_NAME) ?>"
+                             alt="<?= safe($book['title']) ?> by <?= safe($book['author']) ?>, published by <?= safe(WEBSITE_NAME) ?>"
                              loading="lazy" decoding="async">
                         <span class="book__shine" aria-hidden="true"></span>
                     </div>

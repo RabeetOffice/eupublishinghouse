@@ -2,62 +2,66 @@
 </main><!-- /.site-main -->
 
 <footer class="site-footer">
-    <div class="footer-grain" aria-hidden="true"></div>
+    <svg class="footer-feather" viewBox="0 0 120 200" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M60 10 C 25 60, 25 150, 60 190 C 95 150, 95 60, 60 10 Z" fill="#6CB04C"/>
+        <path d="M60 10 L 60 190" stroke="#fff" stroke-width="1.5"/>
+        <path d="M60 40 L 35 65 M60 60 L 30 90 M60 80 L 28 110 M60 100 L 30 130 M60 120 L 35 150 M60 140 L 42 170" stroke="#fff" stroke-width=".8" opacity=".6"/>
+        <path d="M60 40 L 85 65 M60 60 L 90 90 M60 80 L 92 110 M60 100 L 90 130 M60 120 L 85 150 M60 140 L 78 170" stroke="#fff" stroke-width=".8" opacity=".6"/>
+    </svg>
     <div class="container">
 
         <div class="footer-top">
-            <div class="row g-5">
-                <div class="col-lg-4">
-                    <a href="index.php" class="brand brand--footer" aria-label="<?= safe(WEBSITE_NAME) ?>">
-                        <img src="<?= asset('images/logo.webp') ?>" style="filter : brightness(0) invert(1)" alt="<?= safe(WEBSITE_NAME) ?>">
-                    </a>
-                    <p class="footer-about">
-                        European Publishing House helps writers publish professional books. We provide publishing, editing, ghostwriting, design, formatting and marketing services. Our team supports authors from the first draft to the final published book.
-                    </p>
-                    <ul class="footer-social" role="list">
-                        <li><a href="<?= SOCIAL_FACEBOOK ?>"  target="_blank" rel="noopener" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a></li>
-                        <li><a href="<?= SOCIAL_INSTAGRAM ?>" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a></li>
-                        <li><a href="<?= SOCIAL_LINKEDIN ?>"  target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a></li>
-                        <li><a href="<?= SOCIAL_TWITTER ?>"   target="_blank" rel="noopener" aria-label="X / Twitter"><i class="fa-brands fa-x-twitter"></i></a></li>
-                        <li><a href="<?= SOCIAL_YOUTUBE ?>"   target="_blank" rel="noopener" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a></li>
-                        <li><a href="<?= SOCIAL_PINTEREST ?>" target="_blank" rel="noopener" aria-label="Pinterest"><i class="fa-brands fa-pinterest-p"></i></a></li>
-                    </ul>
-                </div>
 
-                <div class="col-6 col-lg-2">
-                    <h4 class="footer-title">Quick Links</h4>
-                    <ul class="footer-links">
-                        <li><a href="index.php">Home</a></li>
-                        <li><a href="about.php">About Us</a></li>
-                        <li><a href="portfolios.php">Portfolio</a></li>
-                        <li><a href="blog.php">Blog</a></li>
-                        <li><a href="testimonial.php">Testimonials</a></li>
-                        <li><a href="faq.php">FAQs</a></li>
-                        <li><a href="contact.php">Contact Us</a></li>
-                    </ul>
-                </div>
+            <div class="footer-brand-col">
+                <a href="index.php" class="footer-brand" aria-label="<?= safe(WEBSITE_NAME) ?> home">
+                    <img src="<?= asset('images/logo.webp') ?>" alt="<?= safe(WEBSITE_NAME) ?>" loading="lazy" decoding="async">
+                </a>
+                <p class="footer-about">
+                    Premium hybrid publishing in Europe, editing, design, formatting, distribution and marketing under one roof. Authors keep their rights and royalties.
+                </p>
+                <ul class="footer-social" role="list">
+                    <li><a href="<?= SOCIAL_FACEBOOK ?>"  target="_blank" rel="noopener" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a></li>
+                    <li><a href="<?= SOCIAL_INSTAGRAM ?>" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a></li>
+                    <li><a href="<?= SOCIAL_LINKEDIN ?>"  target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a></li>
+                    <li><a href="<?= SOCIAL_TWITTER ?>"   target="_blank" rel="noopener" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a></li>
+                    <li><a href="<?= SOCIAL_YOUTUBE ?>"   target="_blank" rel="noopener" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a></li>
+                    <li><a href="<?= SOCIAL_PINTEREST ?>" target="_blank" rel="noopener" aria-label="Pinterest"><i class="fa-brands fa-pinterest-p"></i></a></li>
+                </ul>
+            </div>
 
-                <div class="col-6 col-lg-2">
-                    <h4 class="footer-title">Services</h4>
-                    <ul class="footer-links">
-                        <li><a href="publishing.php">Publishing</a></li>
-                        <li><a href="editing.php">Editing</a></li>
-                        <li><a href="ghostwriting.php">Ghostwriting</a></li>
-                        <li><a href="design.php">Cover Design</a></li>
-                        <li><a href="marketing.php">Marketing</a></li>
-                        <li><a href="formatting.php">Formatting</a></li>
-                    </ul>
-                </div>
+            <div class="footer-links-col">
+                <h4 class="footer-title">Explore</h4>
+                <ul class="footer-links">
+                    <li><a href="index.php">Home</a></li>
+                    <li><a href="about.php">About</a></li>
+                    <li><a href="portfolios.php">Portfolio</a></li>
+                    <li><a href="blog.php">Journal</a></li>
+                    <li><a href="testimonial.php">Testimonials</a></li>
+                    <li><a href="faq.php">FAQs</a></li>
+                    <li><a href="contact.php">Contact</a></li>
+                </ul>
+            </div>
 
-                <div class="col-lg-4">
-                    <h4 class="footer-title">Editorial Desk</h4>
-                    <ul class="footer-contact">
-                        <li><i class="fa-solid fa-location-dot"></i><?= safe(ADDRESS) ?></li>
-                        <li><i class="fa-solid fa-phone"></i><a href="tel:<?= PHONE_NUMBER_RAW ?>"><?= safe(PHONE_NUMBER) ?></a></li>
-                        <li><i class="fa-solid fa-envelope"></i><a href="mailto:<?= EMAIL_ADDRESS ?>"><?= safe(EMAIL_ADDRESS) ?></a></li>
-                    </ul>
-                    <?php include __DIR__ . '/forms/newsletter.php'; ?>
-                </div>
+            <div class="footer-links-col">
+                <h4 class="footer-title">Services</h4>
+                <ul class="footer-links">
+                    <li><a href="publishing.php">Publishing</a></li>
+                    <li><a href="editing.php">Editing</a></li>
+                    <li><a href="ghostwriting.php">Ghostwriting</a></li>
+                    <li><a href="design.php">Cover Design</a></li>
+                    <li><a href="formatting.php">Formatting</a></li>
+                    <li><a href="marketing.php">Marketing</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-contact-col">
+                <h4 class="footer-title">Editorial Desk</h4>
+                <ul class="footer-contact">
+                    <li><i class="fa-solid fa-location-dot"></i><?= safe(ADDRESS) ?></li>
+                    <li><i class="fa-solid fa-phone"></i><a href="tel:<?= PHONE_NUMBER_RAW ?>"><?= safe(PHONE_NUMBER) ?></a></li>
+                    <li><i class="fa-solid fa-envelope"></i><a href="mailto:<?= EMAIL_ADDRESS ?>"><?= safe(EMAIL_ADDRESS) ?></a></li>
+                </ul>
+                <?php include __DIR__ . '/forms/newsletter.php'; ?>
             </div>
         </div>
 
@@ -76,6 +80,18 @@
     <i class="fa-solid fa-arrow-up"></i>
 </button>
 
+<!-- Glass live-chat toggle (wired to Tawk.to when TAWK_PROPERTY_ID is set) -->
+<button id="liveChatBtn" class="live-chat-btn" type="button" aria-label="Open live chat">
+    <span class="lc-icon">
+        <i class="fa-solid fa-comment-dots"></i>
+        <span class="lc-pulse" aria-hidden="true"></span>
+    </span>
+    <span class="lc-label">
+        <span class="top">We're online</span>
+        <span class="bot">Live chat</span>
+    </span>
+</button>
+
 <?php include __DIR__ . '/forms/manuscript-popup.php'; ?>
 
 <!-- Scripts -->
@@ -84,5 +100,24 @@
 <script src="https://unpkg.com/aos@2.3.4/dist/aos.js" defer></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" defer></script>
 <script src="<?= asset('js/main.js') ?>" defer></script>
+
+<?php if (TAWK_PROPERTY_ID): ?>
+<!-- Tawk.to live chat -->
+<script>
+    var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
+    Tawk_API.onLoad = function () {
+        // Hide the default Tawk widget so we use our custom .live-chat-btn instead
+        if (Tawk_API.hideWidget) Tawk_API.hideWidget();
+    };
+    (function () {
+        var s1 = document.createElement('script'), s0 = document.getElementsByTagName('script')[0];
+        s1.async = true;
+        s1.src = 'https://embed.tawk.to/<?= safe(TAWK_PROPERTY_ID) ?>/<?= safe(TAWK_WIDGET_ID) ?>';
+        s1.charset = 'UTF-8';
+        s1.setAttribute('crossorigin', '*');
+        s0.parentNode.insertBefore(s1, s0);
+    })();
+</script>
+<?php endif; ?>
 </body>
 </html>

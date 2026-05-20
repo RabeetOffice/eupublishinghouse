@@ -2,7 +2,7 @@
 require_once __DIR__ . '/includes/config.php';
 
 $page_title       = 'Frequently Asked Questions | ' . BRAND_NAME;
-$page_description = '15 honest answers to the questions authors ask most often about publishing with European Publishing House — services, rights, timelines, and pricing.';
+$page_description = '15 honest answers to the questions authors ask most often about publishing with European Publishing House, services, rights, timelines, and pricing.';
 $page_keywords    = 'publishing FAQ, EU Publishing House questions, manuscript submission, book publishing rights, publishing timelines';
 $canonical_url    = rtrim(BRAND_SITE_URL, '/') . '/faq.php';
 
@@ -19,7 +19,7 @@ include __DIR__ . '/includes/page-banner.php';
 $faqs = [
     [
         'q' => 'What services does European Publishing House offer?',
-        'a' => 'We cover every part of the publishing process under one roof — book editing across all levels, ghostwriting, cover design, book formatting, marketing, and full publishing with global distribution.',
+        'a' => 'We cover every part of the publishing process under one roof, book editing across all levels, ghostwriting, cover design, book formatting, marketing, and full publishing with global distribution.',
     ],
     [
         'q' => 'Do I need to have a completed manuscript before contacting you?',
@@ -27,7 +27,7 @@ $faqs = [
     ],
     [
         'q' => 'What types of books do you publish?',
-        'a' => 'We publish across every genre — fiction, literary fiction, romance, thrillers, science fiction, fantasy, historical fiction, horror, young adult, children\'s books, memoirs, autobiographies, business books, self-help, academic writing, non-fiction, and more.',
+        'a' => 'We publish across every genre, fiction, literary fiction, romance, thrillers, science fiction, fantasy, historical fiction, horror, young adult, children\'s books, memoirs, autobiographies, business books, self-help, academic writing, non-fiction, and more.',
     ],
     [
         'q' => 'What does your book editing service include?',
@@ -39,7 +39,7 @@ $faqs = [
     ],
     [
         'q' => 'How long does the publishing process take?',
-        'a' => 'Timeline depends on services needed — two to three weeks for formatting-only work, or four to six weeks for complete packages. We&rsquo;ll give you a clear timeline at the start of your project.',
+        'a' => 'Timeline depends on services needed, two to three weeks for formatting-only work, or four to six weeks for complete packages. We&rsquo;ll give you a clear timeline at the start of your project.',
     ],
     [
         'q' => 'Do you design custom book covers?',
@@ -67,7 +67,7 @@ $faqs = [
     ],
     [
         'q' => 'Do you help with book formatting and layout?',
-        'a' => 'Yes. We format manuscripts for every format and every platform — ePub for Apple Books, Kobo, and Google Play, MOBI for Kindle, and print-ready PDFs.',
+        'a' => 'Yes. We format manuscripts for every format and every platform, ePub for Apple Books, Kobo, and Google Play, MOBI for Kindle, and print-ready PDFs.',
     ],
     [
         'q' => 'Can I be involved in the editing and design process?',

@@ -2,7 +2,7 @@
 require_once __DIR__ . '/includes/config.php';
 
 $page_title       = 'Professional Book Formatting Services in Europe | ' . BRAND_NAME;
-$page_description = 'Print-ready PDFs, ePub, MOBI, KDP and IngramSpark files for paperback, hardback and eBook editions — built to every platform\'s exact specifications.';
+$page_description = 'Print-ready PDFs, ePub, MOBI, KDP and IngramSpark files for paperback, hardback and eBook editions, built to every platform\'s exact specifications.';
 $page_keywords    = 'book formatting Europe, ePub MOBI formatting, KDP formatting, print ready PDF, IngramSpark formatting';
 $canonical_url    = rtrim(BRAND_SITE_URL, '/') . '/formatting.php';
 
@@ -13,8 +13,8 @@ $hero = [
     'eyebrow'    => 'Book Formatting',
     'title'      => 'Professional Book Formatting Services in <em class="gold-italic">Europe</em>',
     'paragraphs' => [
-        'A well-written book with poor formatting is still a book readers won&rsquo;t finish. Awkward spacing, inconsistent chapter breaks, margins that don&rsquo;t work in print &mdash; these are the things that make a book feel unprofessional before a reader has given it a fair chance.',
-        'At European Publishing House, we format manuscripts for every format and every platform &mdash; paperback, hardback, eBook, Amazon KDP, IngramSpark. We produce files that meet every technical requirement and look exactly right when readers open them.',
+        'A well-written book with poor formatting is still a book readers won&rsquo;t finish. Awkward spacing, inconsistent chapter breaks, margins that don&rsquo;t work in print , these are the things that make a book feel unprofessional before a reader has given it a fair chance.',
+        'At European Publishing House, we format manuscripts for every format and every platform , paperback, hardback, eBook, Amazon KDP, IngramSpark. We produce files that meet every technical requirement and look exactly right when readers open them.',
     ],
     'ctas' => [
         ['label' => 'Get Your Files', 'href' => 'contact.php#submit', 'class' => 'btn-cta'],
@@ -37,7 +37,7 @@ include __DIR__ . '/includes/logo-slider.php';
             <article class="service-card" data-aos="fade-up">
                 <span class="service-icon"><i class="fa-solid fa-tablet-screen-button"></i></span>
                 <h3 class="service-title">eBook Formatting</h3>
-                <p class="service-desc">We format eBooks into ePub and MOBI — the two formats that cover every major digital platform. Every file includes a clickable table of contents, properly styled chapter headings, correct font embedding, and formatting that adapts cleanly to whatever screen size or font setting a reader uses.</p>
+                <p class="service-desc">We format eBooks into ePub and MOBI, the two formats that cover every major digital platform. Every file includes a clickable table of contents, properly styled chapter headings, correct font embedding, and formatting that adapts cleanly to whatever screen size or font setting a reader uses.</p>
                 <span class="service-glow" aria-hidden="true"></span>
             </article>
             <article class="service-card" data-aos="fade-up" data-aos-delay="70">
@@ -61,13 +61,13 @@ include __DIR__ . '/includes/logo-slider.php';
             <article class="service-card" data-aos="fade-up">
                 <span class="service-icon"><i class="fa-solid fa-graduation-cap"></i></span>
                 <h3 class="service-title">Academic &amp; Technical</h3>
-                <p class="service-desc">Academic and technical manuscripts have their own requirements — consistent citation formatting, properly styled footnotes and endnotes, tables, figures, and reference lists that hold together throughout.</p>
+                <p class="service-desc">Academic and technical manuscripts have their own requirements, consistent citation formatting, properly styled footnotes and endnotes, tables, figures, and reference lists that hold together throughout.</p>
                 <span class="service-glow" aria-hidden="true"></span>
             </article>
             <article class="service-card" data-aos="fade-up" data-aos-delay="70">
                 <span class="service-icon"><i class="fa-solid fa-layer-group"></i></span>
                 <h3 class="service-title">Multi-Format Formatting</h3>
-                <p class="service-desc">Most authors publish in more than one format — eBook and paperback as a minimum, sometimes hardback as well. We handle all formats together as a single project, ensuring consistency across every version while meeting each platform&rsquo;s individual specifications.</p>
+                <p class="service-desc">Most authors publish in more than one format, eBook and paperback as a minimum, sometimes hardback as well. We handle all formats together as a single project, ensuring consistency across every version while meeting each platform&rsquo;s individual specifications.</p>
                 <span class="service-glow" aria-hidden="true"></span>
             </article>
         </div>
@@ -143,8 +143,8 @@ include __DIR__ . '/includes/other-services.php';
                     <?php
                     $faqs = [
                         ['q' => 'How much does book formatting cost in Europe?',         'a' => 'Book formatting costs vary depending on the type of book, the number of formats needed, and the complexity of the layout. Most professional formatters charge per project, and the scope of the work is what drives the cost.'],
-                        ['q' => 'What is included in professional book formatting?',      'a' => 'Setting correct margins and trim sizes for print, styling chapter headings, page numbers, headers and footers, creating a clickable table of contents for eBooks, embedding fonts correctly, and producing final files in every format required — ePub, MOBI, and print-ready PDF.'],
-                        ['q' => 'How long does book formatting take?',                    'a' => 'Standard book formatting typically takes three to five working days for a straightforward manuscript. More complex projects — children&rsquo;s books with illustrations, academic titles, or multi-format projects — take one to two weeks depending on what&rsquo;s involved.'],
+                        ['q' => 'What is included in professional book formatting?',      'a' => 'Setting correct margins and trim sizes for print, styling chapter headings, page numbers, headers and footers, creating a clickable table of contents for eBooks, embedding fonts correctly, and producing final files in every format required, ePub, MOBI, and print-ready PDF.'],
+                        ['q' => 'How long does book formatting take?',                    'a' => 'Standard book formatting typically takes three to five working days for a straightforward manuscript. More complex projects, children&rsquo;s books with illustrations, academic titles, or multi-format projects, take one to two weeks depending on what&rsquo;s involved.'],
                         ['q' => 'Do you support Amazon KDP and print-ready files?',       'a' => 'Yes. We produce files specifically built to Amazon KDP&rsquo;s current technical requirements for both Kindle eBooks and KDP print editions, as well as print-ready PDFs for IngramSpark and other print platforms.'],
                         ['q' => 'Can I format my book for both eBook and paperback?',     'a' => 'Absolutely, and most authors do both. eBook and print formatting are different processes with different technical requirements, but we handle both together as a single project so everything stays consistent and you get every file you need in one go.'],
                     ];

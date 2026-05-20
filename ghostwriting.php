@@ -14,7 +14,7 @@ $hero = [
     'title'      => 'Professional Ghostwriting Services in <em class="gold-italic">Europe</em>',
     'paragraphs' => [
         'Some of the best books ever written had help. Ghostwriting has been part of the industry for as long as the industry has existed, and there&rsquo;s nothing unusual about having a professional writer turn your ideas into a finished manuscript.',
-        'You bring the ideas, the experiences, and the vision. We bring the craft. The finished book is entirely yours &mdash; your name on the cover, your rights, your royalties.',
+        'You bring the ideas, the experiences, and the vision. We bring the craft. The finished book is entirely yours , your name on the cover, your rights, your royalties.',
     ],
     'ctas' => [
         ['label' => 'Start a Conversation', 'href' => 'contact.php#submit', 'class' => 'btn-cta'],
@@ -40,7 +40,7 @@ include __DIR__ . '/includes/logo-slider.php';
             <article class="service-card" data-aos="fade-up">
                 <span class="service-icon"><i class="fa-solid fa-book-open"></i></span>
                 <h3 class="service-title">Fiction Ghostwriting</h3>
-                <p class="service-desc">We write across every fiction genre &mdash; literary fiction, romance, thrillers, crime, science fiction, fantasy, historical fiction, horror, young adult, and more. Whether you have a detailed outline or just a concept you&rsquo;ve been sitting on for years, our fiction ghostwriters build the plot, develop the characters, and write the kind of prose that keeps readers turning pages.</p>
+                <p class="service-desc">We write across every fiction genre , literary fiction, romance, thrillers, crime, science fiction, fantasy, historical fiction, horror, young adult, and more. Whether you have a detailed outline or just a concept you&rsquo;ve been sitting on for years, our fiction ghostwriters build the plot, develop the characters, and write the kind of prose that keeps readers turning pages.</p>
                 <span class="service-glow" aria-hidden="true"></span>
             </article>
             <article class="service-card" data-aos="fade-up" data-aos-delay="70">
@@ -149,10 +149,10 @@ include __DIR__ . '/includes/other-services.php';
                     <?php
                     $faqs = [
                         ['q' => 'What is the average cost of a ghostwriter in Europe?',                 'a' => 'Ghostwriting rates in Europe vary considerably depending on the type of book, its length, and the level of research and interviews involved. A short eBook sits at a very different price point from a full-length memoir or a detailed business book. We don&rsquo;t publish fixed rates because they rarely reflect what a specific project actually costs.'],
-                        ['q' => 'What are the red flags when hiring a ghostwriter in Europe?',          'a' => 'Ghostwriters who quote immediately without asking about your project in any detail are usually working from templates. Unusually low rates are another warning sign &mdash; professional ghostwriting takes significant time and skill. Lack of a proper contract covering confidentiality, ownership, and revision rounds is a serious concern.'],
+                        ['q' => 'What are the red flags when hiring a ghostwriter in Europe?',          'a' => 'Ghostwriters who quote immediately without asking about your project in any detail are usually working from templates. Unusually low rates are another warning sign , professional ghostwriting takes significant time and skill. Lack of a proper contract covering confidentiality, ownership, and revision rounds is a serious concern.'],
                         ['q' => 'Is ghostwriting illegal in the UK?',                                    'a' => 'No. Ghostwriting is completely legal across the UK and Europe. It&rsquo;s a long-established, widely used professional service across publishing, business, academia, and public life. The only context where using ghostwritten work can become problematic is in academic settings where institutions have specific rules about original authorship.'],
                         ['q' => 'Can I use ChatGPT for ghostwriting?',                                   'a' => 'You can use it as a drafting or brainstorming tool, but it has real limitations as a ghostwriter. It can&rsquo;t interview you, it doesn&rsquo;t know your story, it can&rsquo;t capture your voice with any real accuracy, and the output tends to read as generic and flat. For a book that needs to engage readers and sound like a real person, a professional human ghostwriter produces a substantially better result.'],
-                        ['q' => 'What is the difference between a ghostwriter and ChatGPT?',            'a' => 'A professional ghostwriter interviews you, gets to know how you think and speak, researches your subject thoroughly, and crafts writing that sounds authentically like you. ChatGPT generates text statistically &mdash; it produces words that follow patterns but doesn&rsquo;t understand your story, can&rsquo;t ask you the right questions, and has no genuine feel for voice or narrative.'],
+                        ['q' => 'What is the difference between a ghostwriter and ChatGPT?',            'a' => 'A professional ghostwriter interviews you, gets to know how you think and speak, researches your subject thoroughly, and crafts writing that sounds authentically like you. ChatGPT generates text statistically , it produces words that follow patterns but doesn&rsquo;t understand your story, can&rsquo;t ask you the right questions, and has no genuine feel for voice or narrative.'],
                     ];
                     foreach ($faqs as $i => $f): ?>
                     <div class="accordion-item">

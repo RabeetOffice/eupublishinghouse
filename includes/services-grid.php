@@ -1,9 +1,9 @@
 <?php require_once __DIR__ . '/config.php';
 $services = [
-    ['icon' => 'fa-book',         'title' => 'Book Publishing',  'desc' => 'End-to-end publishing — from manuscript to global launch — under our flagship imprint.'],
+    ['icon' => 'fa-book',         'title' => 'Book Publishing',  'desc' => 'End-to-end publishing, from manuscript to global launch, under our flagship imprint.'],
     ['icon' => 'fa-pen-fancy',    'title' => 'Editing',          'desc' => 'Developmental, copy and proofreading editing handled by senior literary editors.'],
     ['icon' => 'fa-feather',      'title' => 'Ghostwriting',     'desc' => 'Long-form ghostwriting partnerships built around your voice, not ours.'],
-    ['icon' => 'fa-palette',      'title' => 'Cover Design',     'desc' => 'Posters for the shelf — direction-led design with premium finishes and typography.'],
+    ['icon' => 'fa-palette',      'title' => 'Cover Design',     'desc' => 'Posters for the shelf, direction-led design with premium finishes and typography.'],
     ['icon' => 'fa-align-left',   'title' => 'Formatting',       'desc' => 'European-grade interior typesetting for print, e-book and audio editions.'],
     ['icon' => 'fa-bullhorn',     'title' => 'Marketing & PR',   'desc' => 'Author-publicist pairings, press placements and considered digital launches.'],
 ];

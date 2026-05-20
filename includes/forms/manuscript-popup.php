@@ -15,7 +15,7 @@
                 <div class="popup-aside__inner">
                     <span class="eyebrow eyebrow--light">Speak with our team</span>
                     <h3 class="popup-title" id="popupTitle">Get a free <em class="gold-italic">consultation</em> &amp; manuscript review.</h3>
-                    <p class="popup-lead">Send us your manuscript or just a short note. A senior editor will read it personally and reply &mdash; no automated screening, no sales pitch.</p>
+                    <p class="popup-lead">Send us your manuscript or just a short note. A senior editor will read it personally and reply , no automated screening, no sales pitch.</p>
                     <ul class="popup-perks">
                         <li><i class="fa-solid fa-check"></i>Free manuscript review</li>
                         <li><i class="fa-solid fa-check"></i>Honest, no-pressure quote</li>

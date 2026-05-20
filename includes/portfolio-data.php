@@ -1,6 +1,6 @@
 <?php
 /* =================================================================
-   PORTFOLIO — single source of truth for every book card on the site.
+   PORTFOLIO, single source of truth for every book card on the site.
    Edit this file once; every page that pulls portfolio data updates.
 
    Files that consume this data:
@@ -37,7 +37,7 @@ $portfolioItems = array_map(static function (array $item): array {
     ['category' => 'Informative',   'author' => 'Heather Green',      'title' => 'Art & Poetry',                                             'amazon_link' => 'https://www.amazon.com/Art-Poetry-Heather-Green-ebook/dp/B0FXGYYQZ1/'],
     ['category' => 'Children Book', 'author' => 'Heather Green',      'title' => "The Duck, the Limpet and the Crab",                        'amazon_link' => 'https://www.amazon.com/DUCK-LIMPET-CRAB-Childrens-Stories-ebook/dp/B0GPB1YCF9/'],
     ['category' => 'Children Book', 'author' => 'Chelsey Thomas',     'title' => 'Being Me is My Superpower',                                'amazon_link' => 'https://www.amazon.com/Being-Me-My-Superpower-inspire-ebook/dp/B0FYS1PVNP/'],
-    ['category' => 'Memoir',        'author' => 'Cerys Pugh',         'title' => 'Flames Into Dust — Edition Two',                           'amazon_link' => 'https://www.amazon.com/Flames-Into-Dust-Cerys-Pugh-ebook/dp/B0GBXD237W/'],
+    ['category' => 'Memoir',        'author' => 'Cerys Pugh',         'title' => 'Flames Into Dust, Edition Two',                           'amazon_link' => 'https://www.amazon.com/Flames-Into-Dust-Cerys-Pugh-ebook/dp/B0GBXD237W/'],
     ['category' => 'Fiction',       'author' => 'Michael Wattam',     'title' => 'Ragnarok: The Twilight of the Gods',                       'amazon_link' => 'https://www.amazon.com/Ragnar%C3%B6k-Twilight-Gods-Michael-Wattam/dp/1918162344/'],
     ['category' => 'Fiction',       'author' => 'Rose Lainie',        'title' => 'The Cafe on the Corner',                                   'amazon_link' => 'https://www.amazon.com/Caf%C3%A9-Corner-Rose-Lainie-ebook/dp/B0GBXSPCM6/'],
     ['category' => 'Fiction',       'author' => 'Peter Mellors',      'title' => 'Fox, Badger Hedgehog, and Me',                             'amazon_link' => 'https://www.amazon.com/Fox-Badger-Hedgehog-Peter-Mellors-ebook/dp/B0GCX1KW3Z/'],
@@ -47,7 +47,7 @@ $portfolioItems = array_map(static function (array $item): array {
     ['category' => 'Memoir',        'author' => 'Joy Jewett',         'title' => 'Chaos of Life: Whispers From a Soul Trying to Stay',       'amazon_link' => 'https://www.amazon.com/Chaos-Life-Whispers-Soul-Trying-ebook/dp/B0GHZRGPXN/'],
 ]);
 
-/* Build the genre tabs list dynamically from the data — `All` first,
+/* Build the genre tabs list dynamically from the data, `All` first,
    then unique categories sorted alphabetically. */
 $portfolioCategories = [];
 foreach ($portfolioItems as $b) {
