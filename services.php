@@ -28,7 +28,7 @@ include __DIR__ . '/includes/services.php';
 
 include __DIR__ . '/includes/process.php';
 include __DIR__ . '/includes/why-choose.php';
-include __DIR__ . '/includes/books.php';
+include __DIR__ . '/includes/books-portfolio.php';
 include __DIR__ . '/includes/categories.php';
 include __DIR__ . '/includes/final-cta.php';
 include __DIR__ . '/includes/footer.php';

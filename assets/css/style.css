@@ -1224,6 +1224,51 @@ nav.top .navactions {
     background: var(--c-primary) !important;
 }
 
+/* Books intro — centered compact variant for sub-pages */
+.books-intro { margin-bottom: 1rem; }
+.books-intro--center { text-align: center; }
+.books-intro--center .books-intro__copy {
+    max-width: 820px;
+    margin-inline: auto;
+}
+.books-intro__copy .eyebrow { margin-bottom: .9rem; }
+.books-intro__copy .section-title { margin-bottom: 1.1rem; }
+.books-intro__lead {
+    font-size: 1.05rem;
+    line-height: 1.75;
+    color: var(--c-muted);
+    margin: 0 auto 1.6rem;
+    max-width: 64ch;
+}
+.books-genre-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .5rem;
+}
+.books-intro--center .books-genre-chips {
+    justify-content: center;
+}
+.books-genre-chip {
+    display: inline-flex;
+    align-items: center;
+    padding: .42rem .85rem;
+    font-size: .78rem;
+    font-weight: 500;
+    letter-spacing: .02em;
+    color: var(--c-primary-2);
+    background: var(--glass-bg-2);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--r-pill);
+    backdrop-filter: blur(10px) saturate(160%);
+    transition: all var(--t-fast) var(--ease);
+}
+.books-genre-chip:hover {
+    background: var(--c-primary);
+    color: #fff;
+    transform: translateY(-2px);
+    border-color: var(--c-primary);
+}
+
 /* =====================================================================
    15. CATEGORIES
    ===================================================================== */

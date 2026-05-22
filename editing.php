@@ -129,7 +129,7 @@ include __DIR__ . '/includes/distributors.php';
 
 <?php
 $exclude_slug = 'editing';
-include __DIR__ . '/includes/books.php';
+include __DIR__ . '/includes/books-portfolio.php';
 include __DIR__ . '/includes/services.php';
 ?>
 
