@@ -60,6 +60,7 @@ $reviews = [
 
 <?php
 include __DIR__ . '/includes/books.php';
+include __DIR__ . '/includes/services.php';
 include __DIR__ . '/includes/distributors.php';
 include __DIR__ . '/includes/final-cta.php';
 include __DIR__ . '/includes/footer.php';

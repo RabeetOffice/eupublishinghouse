@@ -130,7 +130,7 @@ include __DIR__ . '/includes/distributors.php';
 <?php
 $exclude_slug = 'editing';
 include __DIR__ . '/includes/books.php';
-include __DIR__ . '/includes/other-services.php';
+include __DIR__ . '/includes/services.php';
 ?>
 
 <!-- ============================================================
@@ -141,7 +141,7 @@ include __DIR__ . '/includes/other-services.php';
         <div class="row g-5 align-items-start">
             <div class="col-lg-4" data-aos="fade-right">
                 <span class="eyebrow">FAQs</span>
-                <h2 class="section-title">WeWe&rsquo;re Here To Answer All Your <em class="serif-italic">Questions.</em>rsquo;re here to answer all your <em class="serif-italic">questions</em></h2>
+                <h2 class="section-title">We&rsquo;re here to answer all your <em class="serif-italic">questions</em></h2>
                 <p>Can&rsquo;t find what you&rsquo;re looking for? Speak with our team directly.</p>
                 <a href="contact.php" class="btn btn-cta" data-no-popup>Get in Touch <i class="fa-solid fa-arrow-right"></i></a>
             </div>

@@ -167,7 +167,7 @@ include __DIR__ . '/includes/distributors.php';
 <?php
 $exclude_slug = 'formatting';
 include __DIR__ . '/includes/books.php';
-include __DIR__ . '/includes/other-services.php';
+include __DIR__ . '/includes/services.php';
 ?>
 
 <section class="faq-section" id="faq">
