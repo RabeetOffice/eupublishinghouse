@@ -39,7 +39,7 @@ include __DIR__ . '/../includes/page-banner.php';
         <figure class="blog-feature" data-aos="fade-up">
             <div class="blog-feature__art">
                 <img src="<?= safe($post['image']) ?>"
-                     alt="<?= safe($post['title']) ?>"
+                     alt="How much does book cover design cost – professional book cover pricing guide"
                      class="blog-feature__img"
                      loading="lazy"
                      decoding="async"

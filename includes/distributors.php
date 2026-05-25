@@ -3,14 +3,14 @@ require_once __DIR__ . '/config.php';
 
 /* Distribution partner logos. Override $distributorLogos before include to customize. */
 $distributorLogos = $distributorLogos ?? [
-    ['src' => asset('images/logo-slider/googlebooks.webp'),  'alt' => 'Google Books'],
-    ['src' => asset('images/logo-slider/booktopia.webp'),    'alt' => 'Booktopia'],
-    ['src' => asset('images/logo-slider/draft2digital.webp'),'alt' => 'Draft2Digital'],
-    ['src' => asset('images/logo-slider/ingram.webp'),       'alt' => 'IngramSpark'],
-    ['src' => asset('images/logo-slider/kindle.webp'),       'alt' => 'Amazon Kindle'],
-    ['src' => asset('images/logo-slider/lulu.webp'),         'alt' => 'Lulu'],
-    ['src' => asset('images/logo-slider/publishdrive.webp'), 'alt' => 'PublishDrive'],
-    ['src' => asset('images/logo-slider/smashwords.webp'),   'alt' => 'Smashwords'],
+    ['src' => asset('images/logo-slider/googlebooks.webp'),  'alt' => 'Google Books logo – digital book discovery and preview platform'],
+    ['src' => asset('images/logo-slider/booktopia.webp'),    'alt' => 'Booktopia logo – Australian online bookstore and retailer'],
+    ['src' => asset('images/logo-slider/draft2digital.webp'),'alt' => 'Draft2Digital logo – ebook formatting and distribution service'],
+    ['src' => asset('images/logo-slider/ingram.webp'),       'alt' => 'Ingram Content Group logo – book distribution and publishing services'],
+    ['src' => asset('images/logo-slider/kindle.webp'),       'alt' => 'Kindle Direct Publishing (KDP) logo – Amazon self-publishing platform'],
+    ['src' => asset('images/logo-slider/lulu.webp'),         'alt' => 'Lulu logo – self-publishing and print-on-demand platform'],
+    ['src' => asset('images/logo-slider/publishdrive.webp'), 'alt' => 'PublishDrive logo – global ebook distribution platform'],
+    ['src' => asset('images/logo-slider/smashwords.webp'),   'alt' => 'Smashwords logo – independent ebook publishing and distribution'],
 ];
 $distributorsTitle = $distributorsTitle ?? 'Distributed across 150+ retailers worldwide';
 ?>

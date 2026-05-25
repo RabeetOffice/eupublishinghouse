@@ -39,7 +39,7 @@ include __DIR__ . '/../includes/page-banner.php';
         <figure class="blog-feature" data-aos="fade-up">
             <div class="blog-feature__art">
                 <img src="<?= safe($post['image']) ?>"
-                     alt="<?= safe($post['title']) ?>"
+                     alt="How to self-publish on KDP in Europe – step-by-step guide for European authors"
                      class="blog-feature__img"
                      loading="lazy"
                      decoding="async"

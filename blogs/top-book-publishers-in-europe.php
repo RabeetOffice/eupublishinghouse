@@ -39,7 +39,7 @@ include __DIR__ . '/../includes/page-banner.php';
         <figure class="blog-feature" data-aos="fade-up">
             <div class="blog-feature__art">
                 <img src="<?= safe($post['image']) ?>"
-                     alt="<?= safe($post['title']) ?>"
+                     alt="Top book publishers in the world – leading traditional publishing houses"
                      class="blog-feature__img"
                      loading="lazy"
                      decoding="async"

@@ -23,7 +23,7 @@ if (empty($recent_posts)) return;
                         <a href="<?= safe($rp_href) ?>" class="blog-card__art-link" aria-label="Read <?= safe($rp['title']) ?>">
                             <div class="blog-card__art">
                                 <img src="<?= safe($rp['image']) ?>"
-                                     alt=""
+                                     alt="<?= safe($rp['image_alt'] ?? $rp['title']) ?>"
                                      class="blog-card__img"
                                      loading="lazy"
                                      decoding="async"

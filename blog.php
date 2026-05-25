@@ -81,7 +81,7 @@ include __DIR__ . '/includes/page-banner.php';
                         <a href="<?= safe($post_url) ?>" class="blog-card__art-link" aria-label="Read <?= safe($p['title']) ?>">
                             <div class="blog-card__art">
                                 <img src="<?= safe($p['image']) ?>"
-                                     alt=""
+                                     alt="<?= safe($p['image_alt'] ?? $p['title']) ?>"
                                      class="blog-card__img"
                                      loading="lazy"
                                      decoding="async"
