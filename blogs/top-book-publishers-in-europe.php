@@ -37,7 +37,15 @@ include __DIR__ . '/../includes/page-banner.php';
     <div class="container">
 
         <figure class="blog-feature" data-aos="fade-up">
-            <div class="blog-feature__art" style="background-image:url('<?= safe($post['image']) ?>');" role="img" aria-label="<?= safe($post['title']) ?>"></div>
+            <div class="blog-feature__art">
+                <img src="<?= safe($post['image']) ?>"
+                     alt="<?= safe($post['title']) ?>"
+                     class="blog-feature__img"
+                     loading="lazy"
+                     decoding="async"
+                     onload="this.parentElement.classList.add('is-loaded')"
+                     onerror="this.parentElement.classList.add('is-loaded','is-error')">
+            </div>
         </figure>
 
         <div class="blog-layout" data-aos="fade-up">

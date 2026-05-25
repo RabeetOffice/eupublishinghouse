@@ -26,6 +26,16 @@ $blog_posts = [
         'author'   => 'Clara Lichtenberg',
         'read'     => '14 min read',
     ],
+    [
+        'slug'     => 'self-publish-on-amazon-kdp-in-europe',
+        'title'    => 'How to Self-Publish on Amazon KDP in Europe',
+        'excerpt'  => 'A complete 2026 walkthrough of self-publishing on Amazon KDP for European authors. Manuscript prep, cover design, formatting, KDP upload, pricing, royalties and marketing.',
+        'date'     => '2026-05-25',
+        'category' => 'Publishing',
+        'image'    => asset('images/blog/self-publish-kdp-europe.webp'),
+        'author'   => 'Clara Lichtenberg',
+        'read'     => '18 min read',
+    ],
 ];
 
 usort($blog_posts, static function ($a, $b) {

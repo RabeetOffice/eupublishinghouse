@@ -3812,15 +3812,54 @@ body.popup-open { overflow: hidden; }
 }
 .blog-card__art {
     aspect-ratio: 16/10;
-    background-size: cover;
-    background-position: center;
     background-color: var(--c-mint);
     position: relative;
+    overflow: hidden;
+    isolation: isolate;
+}
+.blog-card__img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+    opacity: 0;
+    transition: opacity .45s ease, transform var(--t-mid) var(--ease);
+    z-index: 1;
+}
+.blog-card__art.is-loaded .blog-card__img { opacity: 1; }
+.blog-card:hover .blog-card__art.is-loaded .blog-card__img { transform: scale(1.04); }
+/* Skeleton shimmer — visible until the image fires `load` */
+.blog-card__art::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    background:
+        linear-gradient(110deg,
+            rgba(255, 255, 255, 0) 0%,
+            rgba(255, 255, 255, .55) 50%,
+            rgba(255, 255, 255, 0) 100%),
+        linear-gradient(180deg, #e6efe8 0%, #d6e3d8 100%);
+    background-size: 220% 100%, 100% 100%;
+    background-repeat: no-repeat;
+    background-position: -150% 0, 0 0;
+    animation: blog-skeleton 1.4s ease-in-out infinite;
+    transition: opacity .35s ease;
+}
+.blog-card__art.is-loaded::before {
+    opacity: 0;
+    animation: none;
+    pointer-events: none;
 }
 .blog-card__art::after {
     content: '';
     position: absolute; inset: 0;
+    z-index: 3;
     background: linear-gradient(180deg, transparent 50%, rgba(15, 62, 46, .15));
+    pointer-events: none;
 }
 .blog-card__body {
     padding: 1.5rem;
@@ -3999,11 +4038,62 @@ body.popup-open { overflow: hidden; }
 }
 .blog-feature__art {
     display: block;
-    background-size: cover;
-    background-position: center;
     background-color: var(--c-mint);
-    aspect-ratio: 16 / 7;
+    aspect-ratio: 9 / 6;
     min-height: 280px;
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+}
+.blog-feature__img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+    opacity: 0;
+    transition: opacity .5s ease;
+    z-index: 1;
+}
+.blog-feature__art.is-loaded .blog-feature__img { opacity: 1; }
+/* Skeleton shimmer for the article hero */
+.blog-feature__art::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    background:
+        linear-gradient(110deg,
+            rgba(255, 255, 255, 0) 0%,
+            rgba(255, 255, 255, .55) 50%,
+            rgba(255, 255, 255, 0) 100%),
+        linear-gradient(180deg, #e6efe8 0%, #d6e3d8 100%);
+    background-size: 220% 100%, 100% 100%;
+    background-repeat: no-repeat;
+    background-position: -150% 0, 0 0;
+    animation: blog-skeleton 1.4s ease-in-out infinite;
+    transition: opacity .35s ease;
+}
+.blog-feature__art.is-loaded::before {
+    opacity: 0;
+    animation: none;
+    pointer-events: none;
+}
+@keyframes blog-skeleton {
+    0%   { background-position: -150% 0, 0 0; }
+    100% { background-position:  150% 0, 0 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+    .blog-card__art::before,
+    .blog-feature__art::before {
+        animation: none;
+    }
+    .blog-card__img,
+    .blog-feature__img {
+        transition: opacity .15s ease;
+    }
 }
 @media (max-width: 767px) {
     .blog-feature__art { aspect-ratio: 16 / 9; min-height: 220px; }

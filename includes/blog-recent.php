@@ -21,7 +21,15 @@ if (empty($recent_posts)) return;
                 <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="<?= ($i % 3) * 90 ?>">
                     <article class="blog-card">
                         <a href="<?= safe($rp_href) ?>" class="blog-card__art-link" aria-label="Read <?= safe($rp['title']) ?>">
-                            <div class="blog-card__art" style="background-image:url('<?= safe($rp['image']) ?>')" aria-hidden="true"></div>
+                            <div class="blog-card__art">
+                                <img src="<?= safe($rp['image']) ?>"
+                                     alt=""
+                                     class="blog-card__img"
+                                     loading="lazy"
+                                     decoding="async"
+                                     onload="this.parentElement.classList.add('is-loaded')"
+                                     onerror="this.parentElement.classList.add('is-loaded','is-error')">
+                            </div>
                         </a>
                         <div class="blog-card__body">
                             <span class="post-cat"><?= safe($rp['category'] ?? 'Journal') ?></span>

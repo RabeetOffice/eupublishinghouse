@@ -79,7 +79,15 @@ include __DIR__ . '/includes/page-banner.php';
                      data-aos="fade-up" data-aos-delay="<?= ($i % 3) * 90 ?>">
                     <article class="blog-card">
                         <a href="<?= safe($post_url) ?>" class="blog-card__art-link" aria-label="Read <?= safe($p['title']) ?>">
-                            <div class="blog-card__art" style="background-image:url('<?= safe($p['image']) ?>')" aria-hidden="true"></div>
+                            <div class="blog-card__art">
+                                <img src="<?= safe($p['image']) ?>"
+                                     alt=""
+                                     class="blog-card__img"
+                                     loading="lazy"
+                                     decoding="async"
+                                     onload="this.parentElement.classList.add('is-loaded')"
+                                     onerror="this.parentElement.classList.add('is-loaded','is-error')">
+                            </div>
                         </a>
                         <div class="blog-card__body">
                             <span class="post-cat"><?= safe($p['category']) ?></span>

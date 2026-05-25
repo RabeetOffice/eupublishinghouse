@@ -721,3 +721,32 @@
         }
     });
 })();
+
+/* =====================================================================
+   Blog image skeleton loader — marks each .blog-card__art /
+   .blog-feature__art as `.is-loaded` once its <img> reports `load`.
+   Inline `onload` handles fresh loads; this script handles images that
+   were already cached and finished loading before the listener attached.
+   ===================================================================== */
+(function () {
+    function markLoaded(img) {
+        var wrap = img.parentElement;
+        if (wrap) wrap.classList.add('is-loaded');
+    }
+    function init() {
+        var imgs = document.querySelectorAll('.blog-card__img, .blog-feature__img');
+        imgs.forEach(function (img) {
+            if (img.complete && img.naturalWidth > 0) {
+                markLoaded(img);
+            } else {
+                img.addEventListener('load',  function () { markLoaded(img); }, { once: true });
+                img.addEventListener('error', function () { markLoaded(img); }, { once: true });
+            }
+        });
+    }
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', init);
+    } else {
+        init();
+    }
+})();
