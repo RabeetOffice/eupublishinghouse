@@ -1,8 +1,8 @@
 <?php
 require_once __DIR__ . '/includes/config.php';
 
-$page_title       = 'Book Cover Design Services in Europe | ' . BRAND_NAME;
-$page_description = 'Custom book cover design for eBook, paperback wraparounds, audiobooks, series branding and children\'s illustration. Multiple concepts, unlimited revisions.';
+$page_title       = 'Creative Book Cover Design Services Across Europe';
+$page_description = 'Make your book stand out with professional cover design services in Europe. Unique, eye-catching designs crafted to capture readers\' attention instantly.';
 $page_keywords    = 'book cover design Europe, custom cover design, eBook cover, print wraparound, children\'s book illustration, series branding';
 $canonical_url    = rtrim(BRAND_SITE_URL, '/') . '/design.php';
 
@@ -37,7 +37,7 @@ include __DIR__ . '/includes/distributors.php';
             <article class="service-card" data-aos="fade-up">
                 <span class="service-icon"><i class="fa-solid fa-mobile-screen-button"></i></span>
                 <h3 class="service-title">eBook Cover Design</h3>
-                <p class="service-desc">YYour eBook cover needs to work at thumbnail size on Amazon, Apple Books, Kobo, and Google Play, often no bigger than a postage stamp on a mobile screen. We design eBook covers that are bold, clear, and genre-appropriate at every size, with typography and imagery that reads instantly even when scaled down. We work across fiction, non-fiction, business books, self-help, memoirs, and academic titles for eBook cover design.</p>
+                <p class="service-desc">Your eBook cover needs to work at thumbnail size on Amazon, Apple Books, Kobo, and Google Play, often no bigger than a postage stamp on a mobile screen. We design eBook covers that are bold, clear, and genre-appropriate at every size, with typography and imagery that reads instantly even when scaled down. We work across fiction, non-fiction, business books, self-help, memoirs, and academic titles for eBook cover design.</p>
                 <span class="service-glow" aria-hidden="true"></span>
             </article>
             <article class="service-card" data-aos="fade-up" data-aos-delay="70">

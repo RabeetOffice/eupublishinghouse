@@ -1,8 +1,8 @@
 <?php
 require_once __DIR__ . '/includes/config.php';
 
-$page_title       = 'Professional Book Formatting Services in Europe | ' . BRAND_NAME;
-$page_description = 'Print-ready PDFs, ePub, MOBI, KDP and IngramSpark files for paperback, hardback and eBook editions, built to every platform\'s exact specifications.';
+$page_title       = 'Professional Book Formatting Services Across Europe';
+$page_description = 'Ensure your book looks perfect with expert formatting services in Europe. Precise layouts, polished designs, and professional support for every author.';
 $page_keywords    = 'book formatting Europe, ePub MOBI formatting, KDP formatting, print ready PDF, IngramSpark formatting';
 $canonical_url    = rtrim(BRAND_SITE_URL, '/') . '/formatting.php';
 

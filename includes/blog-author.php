@@ -9,7 +9,7 @@ if (!isset($post) || !is_array($post)) return;
 $author_name = trim($post['author'] ?? 'EU Publishing House');
 
 $author_bios = [
-    'Clara Lichtenberg' => 'Clara Lichtenberg is the editorial lead at EU Publishing House. She has spent more than a decade working with authors across fiction, non-fiction and memoir, helping writers across Europe move from first draft to a published book that holds its own on a crowded shelf.',
+    'Clara Lichtenberg' => 'Clara Lichtenberg is presented as a European academic-style writer whose work sits at the intersection of literary philosophy, cultural theory, and narrative fiction. Her writing is characterised by a deliberate, measured prose style that prioritises conceptual depth over plot-driven storytelling, often resembling a hybrid between philosophical essays and introspective fiction.',
 ];
 
 $author_desc = $author_bios[$author_name] ?? 'The editorial team at EU Publishing House brings together editors, designers, and publishing professionals who help authors take their manuscripts from draft to published book. Our writers share practical guidance drawn from years of hands-on experience across editing, design, formatting, printing, and marketing.';

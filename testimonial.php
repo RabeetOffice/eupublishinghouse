@@ -1,8 +1,8 @@
 <?php
 require_once __DIR__ . '/includes/config.php';
 
-$page_title       = 'Testimonials | ' . BRAND_NAME;
-$page_description = 'What authors say about working with European Publishing House across fiction, memoir, business, biography and children\'s books.';
+$page_title       = 'European Publishing House – Author Testimonials & Reviews';
+$page_description = 'Read what authors say about European Publishing House. Honest testimonials reflecting our commitment, expertise, and dedicated publishing support across Europe.';
 $page_keywords    = 'EU Publishing House testimonials, author reviews, publishing testimonials Dublin';
 $canonical_url    = rtrim(BRAND_SITE_URL, '/') . '/testimonial.php';
 

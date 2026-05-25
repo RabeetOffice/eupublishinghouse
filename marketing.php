@@ -1,8 +1,8 @@
 <?php
 require_once __DIR__ . '/includes/config.php';
 
-$page_title       = 'Book Marketing Services in Europe That Actually Sell Books | ' . BRAND_NAME;
-$page_description = 'Amazon listing optimisation, paid advertising, social campaigns, author branding, review generation and book fair promotion built around your specific book.';
+$page_title       = 'Effective Book Marketing Services Across Europe';
+$page_description = 'Boost your book\'s reach with expert marketing services in Europe. Proven strategies, targeted campaigns, and professional support to grow your readership.';
 $page_keywords    = 'book marketing Europe, Amazon ads for authors, author branding, book launch marketing, book fair promotion';
 $canonical_url    = rtrim(BRAND_SITE_URL, '/') . '/marketing.php';
 
@@ -10,7 +10,7 @@ require __DIR__ . '/includes/header.php';
 
 $hero = [
     'crumb'      => 'Marketing',
-    'title'      => 'Book Marketing Services in Europe That <em class="serif-italic">Actually Sell Books Books</em>',
+    'title'      => 'Book Marketing Services in Europe That <em class="serif-italic">Actually Sell Books</em>',
     'paragraphs' => [
         "Publishing your book is one thing. Getting it in front of the right readers is another thing entirely. A professionally edited book with a great cover will still sit unnoticed without a proper marketing strategy behind it, and that’s true whether you’re publishing on Amazon, through independent retailers, or both.",
         "At European Publishing House, our book marketing services are built around one goal: putting your book in front of the people who want to read it. We’ve worked across every genre since 2021, marketing fiction, non-fiction, memoirs, business books, children’s titles, self-help, and academic writing. Every campaign is built around your specific book, your audience, and the platforms where your readers actually spend their time.",

@@ -2,8 +2,8 @@
 require_once __DIR__ . '/includes/config.php';
 require_once __DIR__ . '/includes/blog-data.php';
 
-$page_title       = 'Our Blogs | ' . BRAND_NAME;
-$page_description = 'Essays, pricing guides and long-form resources on publishing, editing, cover design and book marketing from the European Publishing House editorial desk.';
+$page_title       = 'European Publishing House – Our Blogs & Insights';
+$page_description = 'Explore European Publishing House blogs for expert tips, news, and valuable insights to help authors and publishers stay ahead in the literary world.';
 $page_keywords    = 'publishing blog, author journal, writing craft, book marketing tips, cover design pricing';
 $canonical_url    = rtrim(BRAND_SITE_URL, '/') . '/blog.php';
 

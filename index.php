@@ -9,8 +9,8 @@
  */
 require_once __DIR__ . '/includes/config.php';
 
-$page_title       = BRAND_NAME . ', Premium Book Publishing in Europe';
-$page_description = 'European Publishing House is a premium hybrid publisher in Dublin. Editing, ghostwriting, cover design, formatting, marketing and global distribution, authors keep their rights and royalties. 800+ books published since 2021.';
+$page_title       = 'EU Publishing House - Expert Book Publishers in Europe';
+$page_description = 'Discover top book publishers across Europe, offering expert guidance, quality services, and reliable support for authors seeking professional publishing';
 $page_keywords    = 'book publishing Europe, hybrid publisher Ireland, book editing, ghostwriting, cover design, book marketing, publish a book Europe';
 $canonical_url    = rtrim(BRAND_SITE_URL, '/') . '/';
 

@@ -2,8 +2,8 @@
 require_once __DIR__ . '/includes/config.php';
 require_once __DIR__ . '/includes/portfolio-data.php';
 
-$page_title       = 'Portfolio | ' . BRAND_NAME;
-$page_description = 'Explore titles published by European Publishing House across fiction, memoir, business, children\'s, biography and specialist categories. Every cover links to Amazon.';
+$page_title       = 'Portfolio | Branding & Publishing Work – EU House UK';
+$page_description = 'Explore EU Publishing House portfolio featuring publishing, branding, and creative design projects. View our work, expertise, and client collaborations.';
 $page_keywords    = 'EU Publishing House portfolio, published books, EUPH titles, books on Amazon';
 $canonical_url    = rtrim(BRAND_SITE_URL, '/') . '/portfolios.php';
 
@@ -21,7 +21,7 @@ $total = count($portfolioItems);
 ?>
 <section class="portfolio-grid-section">
     <div class="container">
-        <div class="portfolio-filters" data-aos="fade-up">
+        <div class="portfolio-filters">
             <?php foreach ($portfolioTabs as $slug => $label):
                 $count = $slug === 'all'
                     ? $total
@@ -37,8 +37,7 @@ $total = count($portfolioItems);
         <div class="row g-4 portfolio-grid">
             <?php foreach ($portfolioItems as $i => $book): ?>
             <div class="col-6 col-md-4 col-lg-3 pf-item"
-                 data-cat="<?= safe($book['category_slug']) ?>"
-                 data-aos="fade-up" data-aos-delay="<?= ($i % 4) * 80 ?>">
+                 data-cat="<?= safe($book['category_slug']) ?>">
                 <a href="<?= safe($book['amazon_link']) ?>"
                    class="portfolio-card book book--grid"
                    target="_blank" rel="noopener noreferrer"

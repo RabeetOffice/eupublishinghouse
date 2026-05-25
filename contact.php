@@ -1,8 +1,8 @@
 <?php
 require_once __DIR__ . '/includes/config.php';
 
-$page_title       = 'Contact Us | ' . BRAND_NAME;
-$page_description = 'Speak with the European Publishing House team. Submit a manuscript, ask a question, or schedule a free consultation with a senior editor.';
+$page_title       = 'Contact European Publishing House – Get in Touch';
+$page_description = 'Reach out to European Publishing House for inquiries, support, or publishing guidance. Friendly, professional assistance for authors across Europe is here.';
 $page_keywords    = 'contact European Publishing House, submit manuscript Dublin, publishing consultation Europe';
 $canonical_url    = rtrim(BRAND_SITE_URL, '/') . '/contact.php';
 

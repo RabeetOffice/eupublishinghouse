@@ -1,8 +1,8 @@
 <?php
 require_once __DIR__ . '/includes/config.php';
 
-$page_title       = 'Terms & Conditions | ' . BRAND_NAME;
-$page_description = 'The terms that govern your use of the European Publishing House website and our publishing, editing, design, formatting and marketing services.';
+$page_title       = 'European Publishing House – Terms & Conditions';
+$page_description = 'Review the Terms & Conditions of European Publishing House. Clear guidelines and policies to ensure a secure, fair, and professional experience for authors.';
 $page_keywords    = 'terms and conditions, EU Publishing House terms, publishing agreement';
 $canonical_url    = rtrim(BRAND_SITE_URL, '/') . '/terms-conditions.php';
 

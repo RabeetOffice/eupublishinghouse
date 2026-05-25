@@ -1,8 +1,8 @@
 <?php
 require_once __DIR__ . '/includes/config.php';
 
-$page_title       = 'Author Services | ' . BRAND_NAME;
-$page_description = 'Use one service or commission the entire pipeline: publishing, editing, ghostwriting, cover design, formatting, and marketing for serious authors.';
+$page_title       = 'Professional Author Services Across Europe | EU Publishing House';
+$page_description = 'Comprehensive author services across Europe including publishing, editing, ghostwriting, design, formatting, and marketing tailored to every writer\'s needs.';
 $page_keywords    = 'author services Europe, book publishing services, book editing services, ghostwriting, cover design, book marketing';
 $canonical_url    = rtrim(BRAND_SITE_URL, '/') . '/services.php';
 

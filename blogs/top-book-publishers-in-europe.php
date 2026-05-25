@@ -15,8 +15,8 @@ if (!$post) {
     exit;
 }
 
-$page_title       = $post['title'] . ' | ' . BRAND_NAME;
-$page_description = 'A practical 2026 guide to the top 10 book publishers in Europe, from indie-friendly modern publishers to the Big Five traditional houses in the UK.';
+$page_title       = 'Top 10 Book Publishers in Europe | Leading Houses EU';
+$page_description = 'Discover the top 10 book publishers in Europe, exploring leading literary houses shaping global fiction, academic and educational publishing markets today.';
 $page_keywords    = 'top book publishers Europe, best UK publishers, Penguin Random House, HarperCollins UK, publishers in London, Irish publishers';
 $canonical_url    = rtrim(BRAND_SITE_URL, '/') . '/blogs/' . $current_slug . '/';
 $og_image         = rtrim(BRAND_SITE_URL, '/') . '/' . ltrim($post['image'], '/');

@@ -1,8 +1,8 @@
 <?php
 require_once __DIR__ . '/includes/config.php';
 
-$page_title       = 'About Us | ' . BRAND_NAME;
-$page_description = 'European Publishing House started in 2021 to give authors across Europe professional publishing support without the gatekeepers. Over 800 books published, every one treated like it matters.';
+$page_title       = 'European Publishing House – About Our Story & Mission';
+$page_description = 'Learn about European Publishing House, our journey, mission, and commitment to helping authors across Europe achieve their publishing goals with expertise.';
 $page_keywords    = 'about European Publishing House, hybrid publisher Dublin, Irish book publisher, EU Publishing House story';
 $canonical_url    = rtrim(BRAND_SITE_URL, '/') . '/about.php';
 
