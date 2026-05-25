@@ -10,10 +10,10 @@ require __DIR__ . '/includes/header.php';
 
 $hero = [
     'crumb'      => 'Marketing',
-    'title'      => 'Book Marketing Services in Europe That <em class="serif-italic">Actually Sell Books</em>',
+    'title'      => 'Book Marketing Services in Europe That <em class="serif-italic">Actually Sell Books Books</em>',
     'paragraphs' => [
-        "Publishing your book is one thing. Getting it in front of the right readers is another thing entirely. A professionally edited book with a great cover will still sit unnoticed without a proper marketing strategy behind it.",
-        "At European Publishing House, our book marketing services are built around one goal, putting your book in front of the people who want to read it. Every campaign is built around your specific book, your audience, and the platforms where your readers actually spend their time.",
+        "Publishing your book is one thing. Getting it in front of the right readers is another thing entirely. A professionally edited book with a great cover will still sit unnoticed without a proper marketing strategy behind it, and that’s true whether you’re publishing on Amazon, through independent retailers, or both.",
+        "At European Publishing House, our book marketing services are built around one goal: putting your book in front of the people who want to read it. We’ve worked across every genre since 2021, marketing fiction, non-fiction, memoirs, business books, children’s titles, self-help, and academic writing. Every campaign is built around your specific book, your audience, and the platforms where your readers actually spend their time.",
     ],
     'ctas' => [
         ['label' => 'Get Started',        'href' => '#popup',              'class' => 'btn-cta',  'popup' => true],
@@ -36,37 +36,37 @@ include __DIR__ . '/includes/distributors.php';
             <article class="service-card" data-aos="fade-up">
                 <span class="service-icon"><i class="fa-brands fa-amazon"></i></span>
                 <h3 class="service-title">Amazon Marketing &amp; Optimisation</h3>
-                <p class="service-desc">Amazon is where most book sales happen, and most authors aren&rsquo;t using it properly. We optimise your book listing from the ground up, title, subtitle, description, keywords, categories, and author profile, so your book surfaces in the right searches and converts browsers into buyers.</p>
+                <p class="service-desc">Amazon is where most book sales happen, and most authors aren’t using it properly. We optimise your book listing from the ground up, title, subtitle, description, keywords, categories, and author profile, so your book surfaces in the right searches and converts browsers into buyers. For authors running Amazon ads, we set up, manage, and refine campaigns to make sure your advertising spend is actually working. We handle Amazon marketing for fiction, non-fiction, business books, children’s titles, memoirs, self-help, and academic titles.</p>
                 <span class="service-glow" aria-hidden="true"></span>
             </article>
             <article class="service-card" data-aos="fade-up" data-aos-delay="70">
                 <span class="service-icon"><i class="fa-solid fa-hashtag"></i></span>
                 <h3 class="service-title">Social Media Campaigns</h3>
-                <p class="service-desc">We build social media strategies around your book and your genre rather than generic content calendars. Instagram, Facebook, TikTok, LinkedIn, and X, tailored to whatever suits your book and your audience best.</p>
+                <p class="service-desc">We build social media strategies around your book and your genre rather than generic content calendars. That means identifying which platforms your readers are actually on, creating content that speaks to them, and building an author presence that grows an audience rather than just accumulating followers. We work across Instagram, Facebook, TikTok, LinkedIn, and X, tailoring the approach to whatever suits your book and your audience best.</p>
                 <span class="service-glow" aria-hidden="true"></span>
             </article>
             <article class="service-card" data-aos="fade-up" data-aos-delay="140">
                 <span class="service-icon"><i class="fa-solid fa-rectangle-ad"></i></span>
                 <h3 class="service-title">Paid Advertising</h3>
-                <p class="service-desc">We run paid advertising campaigns across Amazon, Facebook, Instagram, and BookBub, building and managing ads that target readers by genre, interest, and reading behaviour. Every campaign is monitored and adjusted based on performance data.</p>
+                <p class="service-desc">We run paid advertising campaigns across Amazon, Facebook, Instagram, and BookBub, building and managing ads that target readers by genre, interest, and reading behaviour. Every campaign is monitored and adjusted based on performance data, we don’t set budgets running without watching what they’re doing. Paid advertising is particularly effective for authors who want to scale sales quickly or push a backlist title back into visibility.</p>
                 <span class="service-glow" aria-hidden="true"></span>
             </article>
             <article class="service-card" data-aos="fade-up" data-aos-delay="210">
                 <span class="service-icon"><i class="fa-solid fa-user-tie"></i></span>
                 <h3 class="service-title">Author Branding</h3>
-                <p class="service-desc">Your author brand is how readers recognise you, trust you, and come back for your next book. We develop biography, online presence, visual identity, and messaging that holds together across every platform.</p>
+                <p class="service-desc">Your author brand is how readers recognise you, trust you, and come back for your next book. We develop author branding across biography, online presence, visual identity, and messaging, building a consistent picture of who you are as a writer that works across your website, social media, Amazon profile, and any press or promotional material. Strong author branding matters especially for writers publishing more than one book.</p>
                 <span class="service-glow" aria-hidden="true"></span>
             </article>
             <article class="service-card" data-aos="fade-up">
                 <span class="service-icon"><i class="fa-solid fa-star"></i></span>
                 <h3 class="service-title">Review Generation</h3>
-                <p class="service-desc">Reviews are one of the most important factors in a book&rsquo;s visibility and credibility on Amazon and other platforms. We run structured review outreach campaigns, connecting your book with relevant advance readers, book bloggers, and review platforms.</p>
+                <p class="service-desc">Reviews are one of the most important factors in a book’s visibility and credibility on Amazon and other platforms. We run structured review outreach campaigns, connecting your book with relevant advance readers, book bloggers, and review platforms, to build a genuine base of reader reviews before and after launch. Everything we do here is above board and platform-compliant.</p>
                 <span class="service-glow" aria-hidden="true"></span>
             </article>
             <article class="service-card" data-aos="fade-up" data-aos-delay="70">
                 <span class="service-icon"><i class="fa-solid fa-tent"></i></span>
                 <h3 class="service-title">Book Fair Promotion</h3>
-                <p class="service-desc">Frankfurt, London Book Fair, Bologna, and others are significant opportunities for authors and publishers to generate visibility, rights deals, and press coverage. We help authors prepare for and promote their work at the major European fairs.</p>
+                <p class="service-desc">Europe’s book fairs, Frankfurt, London Book Fair, Bologna, and others, are significant opportunities for authors and publishers to generate visibility, rights deals, and press coverage. We help authors prepare for and promote their work at the major book fairs across Europe, advising on presentation, materials, and how to make the most of these events whether you’re attending in person or being represented.</p>
                 <span class="service-glow" aria-hidden="true"></span>
             </article>
         </div>
@@ -115,8 +115,9 @@ include __DIR__ . '/includes/distributors.php';
             <div class="col-lg-6" data-aos="fade-left">
                 <span class="eyebrow">Pricing</span>
                 <h2 class="section-title">What Do Book Marketing Services Cost in <em class="serif-italic">Europe?</em></h2>
-                <p>Marketing budgets vary as much as the books themselves. A children&rsquo;s picture book launch looks completely different from a business book campaign or a thriller series promotion. Some authors come to us needing a full campaign built from scratch. Others have already published and just need targeted help with one or two things that aren&rsquo;t working.</p>
-                <p>We don&rsquo;t sell generic marketing packages because generic marketing doesn&rsquo;t sell books. Get in touch and we&rsquo;ll have an honest conversation about where your book is and what it needs. No inflated proposals. No paying for campaigns that don&rsquo;t fit your book.</p>
+                <p>Marketing budgets vary as much as the books themselves. A children’s picture book launch looks completely different from a business book campaign or a thriller series promotion. Some authors come to us needing a full campaign built from scratch, launch strategy, Amazon optimisation, social media, and paid advertising running together. Others have already published and just need targeted help with one or two things that aren’t working.</p>
+                <p>We don’t sell generic marketing packages because generic marketing doesn’t sell books. We look at your book, your audience, your current situation, and your budget, and build a strategy around what will actually move the needle for your specific title.</p>
+                <p>Get in touch and we’ll have an honest conversation about where your book is and what it needs. No inflated proposals. No paying for campaigns that don’t fit your book.</p>
                 <a href="contact.php#submit" class="btn btn-cta btn-lg">Get a Marketing Quote <i class="fa-solid fa-arrow-right"></i></a>
             </div>
         </div>
@@ -142,10 +143,11 @@ include __DIR__ . '/includes/services.php';
                 <div class="accordion faq-accordion" id="mktFaq">
                     <?php
                     $faqs = [
-                        ['q' => 'What is the largest book fair in Europe?',                    'a' => 'The Frankfurt Book Fair is the largest book fair in Europe and the largest in the world, over 7,000 exhibitors from more than 100 countries attend each year. The London Book Fair and Bologna Children&rsquo;s Book Fair are the other two major European events.'],
-                        ['q' => 'What is the best book marketing company in Europe?',           'a' => 'The best book marketing company for your book is the one that understands your genre, your audience, and what realistic success looks like for your specific title. At European Publishing House, we&rsquo;ve been marketing books across every genre since 2021, building campaigns around what actually sells books rather than what looks impressive in a proposal.'],
-                        ['q' => 'Is marketing in demand in Europe?',                            'a' => 'In publishing specifically, demand for professional book marketing has grown significantly alongside the rise of self-publishing. More authors publishing independently means more authors who need marketing support that traditional publishers used to provide.'],
-                        ['q' => 'Which country is best for marketing in Europe?',                'a' => 'For book marketing specifically, the UK is the most developed market in Europe, it has the largest English-language readership and the strongest presence on global platforms like Amazon. Germany and the Netherlands are strong markets for translated and multilingual titles.'],
+                        ['q' => 'What is the largest book fair in Europe?', 'a' => 'The Frankfurt Book Fair is the largest book fair in Europe and the largest in the world by any measure, over 7,000 exhibitors from more than 100 countries attend each year. It&rsquo;s the central event in the international publishing calendar for rights deals, foreign language sales, and industry networking. The London Book Fair and Bologna Children&rsquo;s Book Fair are the other two major European events, with Bologna being the most significant fair specifically for children&rsquo;s publishing. For authors looking to generate visibility or explore rights opportunities, these fairs are worth knowing about and, in some cases, worth attending or being represented at.'],
+                        ['q' => 'What is the best book marketing company in Europe?', 'a' => 'The best book marketing company for your book is the one that understands your genre, your audience, and what realistic success looks like for your specific title. At European Publishing House, we&rsquo;ve been marketing books across every genre since 2021, fiction, non-fiction, business, memoirs, children&rsquo;s titles, self-help, and academic writing, building campaigns around what actually sells books rather than what looks impressive in a proposal. We&rsquo;re not the biggest marketing agency in Europe, but we&rsquo;re probably the one that&rsquo;ll treat your book&rsquo;s success as seriously as you do.'],
+                        ['q' => 'Is marketing in demand in Europe?', 'a' => 'Across every industry, yes, but in publishing specifically, demand for professional book marketing has grown significantly alongside the rise of self-publishing. More authors publishing independently means more authors who need marketing support that traditional publishers used to provide. The European book market is large and genuinely competitive, and authors who invest in proper marketing consistently outperform those who don&rsquo;t. The gap between a well-marketed book and one that isn&rsquo;t is visible in the sales numbers within weeks of publication.'],
+                        ['q' => 'Who are the best book publishers and marketers in Europe?', 'a' => 'European Publishing House sits among the leading independent publishing and marketing companies in Europe for authors who want professional quality without the restrictions of traditional publishing. We handle the full process, from manuscript to publication to marketing, under one roof, which means your book&rsquo;s positioning and promotion is consistent from the moment it&rsquo;s published. For authors who want a team that understands both the publishing side and the marketing side equally well, that matters.'],
+                        ['q' => 'Which country is best for marketing in Europe?', 'a' => 'For book marketing specifically, the UK is the most developed market in Europe, it has the largest English-language readership, the most established publishing infrastructure, and the strongest presence on global platforms like Amazon. Germany and the Netherlands are strong markets for translated and multilingual titles. For digital marketing and social media reach, English-language campaigns tend to perform best regardless of where in Europe the author is based, simply because of the size of the English-reading audience across platforms. We work with authors across Europe and tailor campaigns to wherever their readership is strongest.'],
                     ];
                     foreach ($faqs as $i => $f): ?>
                     <div class="accordion-item">

@@ -10,7 +10,7 @@ require __DIR__ . '/includes/header.php';
 
 $banner = [
     'crumb' => 'Contact Us',
-    'title' => 'Every book starts with a <em class="serif-italic">conversation</em>',
+    'title' => 'Contact <em class="serif-italic">Us</em>',
     'sub'   => 'Wherever you are in the process, we\'re happy to talk it through. No pressure, no sales pitch.',
 ];
 include __DIR__ . '/includes/page-banner.php';
@@ -23,13 +23,10 @@ include __DIR__ . '/includes/page-banner.php';
             <!-- LEFT: copy + details -->
             <div class="contact-page-copy">
                 <span class="eyebrow">Get in Touch</span>
-                <h2 class="section-title">A short note is enough to <em class="serif-italic">begin</em></h2>
-                <p class="lead">
-                    Maybe you have a finished manuscript and are not sure what comes next. Maybe you are mid-draft and want to understand what publishing actually involves. Maybe you have published before and it did not go the way you hoped.
-                </p>
-                <p>
-                    Whatever stage you are at, we are happy to talk it through. Just an honest conversation about your book, what it needs, and whether we are the right fit to help you publish it properly.
-                </p>
+                <h2 class="section-title">Let’s Talk <em class="serif-italic">About Your Book</em></h2>
+                <p>Every book starts with a conversation. Maybe you’ve got a finished manuscript and you’re not sure what comes next. Maybe you’re mid-draft and want to understand what publishing actually involves before you get there. Maybe you’ve published before and it didn’t go the way you hoped.</p>
+                <p>Whatever stage you’re at, we’re happy to talk it through, no pressure, no sales pitch. Just an honest conversation about your book, what it needs, and whether we’re the right fit to help you get it published properly.</p>
+                <p>We work with authors across Europe on everything from editing and cover design to full publishing and marketing. If you have a question about any of it, or you’re ready to get started, get in touch and we’ll take it from there.</p>
 
                 <ul class="contact-list" role="list">
                     <li>
@@ -55,12 +52,12 @@ include __DIR__ . '/includes/page-banner.php';
                     </li>
                 </ul>
 
-                <ul class="contact-perks" role="list">
+                <!-- <ul class="contact-perks" role="list">
                     <li><i class="fa-solid fa-check"></i>Free manuscript review by a senior editor</li>
                     <li><i class="fa-solid fa-check"></i>Honest, no-pressure conversation</li>
                     <li><i class="fa-solid fa-check"></i>Reply within a few working days</li>
                     <li><i class="fa-solid fa-check"></i>Your manuscript stays confidential</li>
-                </ul>
+                </ul> -->
             </div>
 
             <!-- RIGHT: form -->

@@ -17,7 +17,7 @@
                     <img src="<?= asset('images/logo.webp') ?>" alt="<?= safe(WEBSITE_NAME) ?>" loading="lazy" decoding="async">
                 </a>
                 <p class="footer-about">
-                    Premium hybrid publishing in Europe, editing, design, formatting, distribution and marketing under one roof. Authors keep their rights and royalties.
+                    EU Publishing House helps writers publish professional books. We provide publishing, editing, ghostwriting, design, formatting, and marketing services. Our team supports authors from the first draft to the final published book.
                 </p>
                 <ul class="footer-social" role="list">
                     <li><a href="<?= SOCIAL_FACEBOOK ?>"  target="_blank" rel="noopener" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a></li>
@@ -57,7 +57,7 @@
             <div class="footer-contact-col">
                 <h4 class="footer-title">Editorial Desk</h4>
                 <ul class="footer-contact">
-                    <li><i class="fa-solid fa-location-dot"></i><?= safe(ADDRESS) ?></li>
+                    <li><i class="fa-solid fa-location-dot"></i><a href="https://g.page/r/CfC-n6QmdJxNEBM/" target="_blank" rel="noopener noreferrer"><?= safe(ADDRESS) ?></a></li>
                     <li><i class="fa-solid fa-phone"></i><a href="tel:<?= PHONE_NUMBER_RAW ?>"><?= safe(PHONE_NUMBER) ?></a></li>
                     <li><i class="fa-solid fa-envelope"></i><a href="mailto:<?= EMAIL_ADDRESS ?>"><?= safe(EMAIL_ADDRESS) ?></a></li>
                 </ul>

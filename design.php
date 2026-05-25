@@ -37,37 +37,37 @@ include __DIR__ . '/includes/distributors.php';
             <article class="service-card" data-aos="fade-up">
                 <span class="service-icon"><i class="fa-solid fa-mobile-screen-button"></i></span>
                 <h3 class="service-title">eBook Cover Design</h3>
-                <p class="service-desc">Your eBook cover needs to work at thumbnail size on Amazon, Apple Books, Kobo, and Google Play, often no bigger than a postage stamp on a mobile screen. We design for that reality first.</p>
+                <p class="service-desc">YYour eBook cover needs to work at thumbnail size on Amazon, Apple Books, Kobo, and Google Play, often no bigger than a postage stamp on a mobile screen. We design eBook covers that are bold, clear, and genre-appropriate at every size, with typography and imagery that reads instantly even when scaled down. We work across fiction, non-fiction, business books, self-help, memoirs, and academic titles for eBook cover design.</p>
                 <span class="service-glow" aria-hidden="true"></span>
             </article>
             <article class="service-card" data-aos="fade-up" data-aos-delay="70">
                 <span class="service-icon"><i class="fa-solid fa-book"></i></span>
-                <h3 class="service-title">Print Wraparound Design</h3>
-                <p class="service-desc">A print book needs a full wraparound design, front cover, back cover, and spine all working together as a single piece. Built to your printer&rsquo;s exact specifications.</p>
+                <h3 class="service-title">Print Wraparound Cover Design</h3>
+                <p class="service-desc">A print book needs a full wraparound design, front cover, back cover, and spine all working together as a single piece. We design print covers for paperback and hardback editions across all genres, accounting for spine width based on your page count and ensuring all files meet the exact technical specifications of your chosen printer or platform. The result is a cover that looks professional on a shelf, in a hand, and in a photograph.</p>
                 <span class="service-glow" aria-hidden="true"></span>
             </article>
             <article class="service-card" data-aos="fade-up" data-aos-delay="140">
                 <span class="service-icon"><i class="fa-solid fa-grip-lines-vertical"></i></span>
-                <h3 class="service-title">Spine &amp; Back Cover</h3>
-                <p class="service-desc">The spine is what readers see first when your book is shelved. The back cover is where a browser decides whether to open it. Both deserve the same care as the front.</p>
+                <h3 class="service-title">Spine &amp; Back Cover Design</h3>
+                <p class="service-desc">The spine is what readers see first when your book is shelved. The back cover is where a browser decides whether to open it. We design both with the same care as the front, compelling back cover copy layout, author bio placement, barcode positioning, and spine typography that’s legible at any width. Every element is considered, not filled in as an afterthought.</p>
                 <span class="service-glow" aria-hidden="true"></span>
             </article>
             <article class="service-card" data-aos="fade-up" data-aos-delay="210">
                 <span class="service-icon"><i class="fa-solid fa-paintbrush"></i></span>
                 <h3 class="service-title">Children&rsquo;s Book Illustration</h3>
-                <p class="service-desc">Children&rsquo;s books live and die by their illustrations. The art has to carry the story, work for the age group, and be the kind of thing a child wants to look at again and again.</p>
+                <p class="service-desc">Children’s books live and die by their illustrations. The art has to carry the story, work for the age group, and be the kind of thing a child wants to look at again and again. Our children’s book illustration services in Europe cover picture books, early readers, and middle grade titles, full interior illustration as well as cover design. We match illustrators to projects based on style, tone, and the specific age group you’re writing for.</p>
                 <span class="service-glow" aria-hidden="true"></span>
             </article>
             <article class="service-card" data-aos="fade-up">
                 <span class="service-icon"><i class="fa-solid fa-layer-group"></i></span>
                 <h3 class="service-title">Series Branding</h3>
-                <p class="service-desc">If you&rsquo;re publishing more than one book, series branding matters enormously. Consistent visual language across covers builds reader trust and recognition.</p>
+                <p class="service-desc">If you’re publishing more than one book, series branding matters enormously. Readers need to recognise your books instantly across a series, and retailers and algorithms both respond to consistency. We develop series branding that ties your covers together visually, consistent typography, colour palette, layout structure, and design language, while giving each individual title its own identity within that framework.</p>
                 <span class="service-glow" aria-hidden="true"></span>
             </article>
             <article class="service-card" data-aos="fade-up" data-aos-delay="70">
                 <span class="service-icon"><i class="fa-solid fa-bullhorn"></i></span>
-                <h3 class="service-title">Marketing &amp; Promo Graphics</h3>
-                <p class="service-desc">A great cover is the starting point for your marketing materials, not the end of them. We produce 3D mockups, social banners, and ad creatives built from your cover.</p>
+                <h3 class="service-title">Marketing &amp; Promotional Graphics</h3>
+                <p class="service-desc">A great cover is the starting point for your marketing materials, not the end of them. We create promotional graphics for social media, Amazon advertising, book launch campaigns, and author websites, all built from your cover design to ensure consistency across everything readers see. Whether you need Instagram graphics, Facebook ad creatives, or banner images for your website, we produce materials that look like they belong together.</p>
                 <span class="service-glow" aria-hidden="true"></span>
             </article>
         </div>

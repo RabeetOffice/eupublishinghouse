@@ -39,37 +39,37 @@ include __DIR__ . '/includes/distributors.php';
             <article class="service-card" data-aos="fade-up">
                 <span class="service-icon"><i class="fa-solid fa-book-open"></i></span>
                 <h3 class="service-title">Fiction Ghostwriting</h3>
-                <p class="service-desc">We write across every fiction genre, literary fiction, romance, thrillers, crime, science fiction, fantasy, historical fiction, horror, young adult, and more. Whether you have a detailed outline or just a concept you&rsquo;ve been sitting on for years, our fiction ghostwriters build the plot, develop the characters, and write the kind of prose that keeps readers turning pages.</p>
+                <p class="service-desc">We write across every fiction genre, literary fiction, romance, thrillers, crime, science fiction, fantasy, historical fiction, horror, young adult, and more. Whether you have a detailed outline or just a concept you’ve been sitting on for years, our fiction ghostwriters build the plot, develop the characters, and write the kind of prose that keeps readers turning pages. You stay involved throughout, approving each stage before we move forward.</p>
                 <span class="service-glow" aria-hidden="true"></span>
             </article>
             <article class="service-card" data-aos="fade-up" data-aos-delay="70">
                 <span class="service-icon"><i class="fa-solid fa-user-pen"></i></span>
-                <h3 class="service-title">Memoir &amp; Autobiography</h3>
-                <p class="service-desc">A memoir is one of the most personal books a person can publish, and getting the voice right matters more here than almost anywhere else. Our ghostwriters approach autobiography and memoir projects with interviews, detailed conversations, and a careful ear for the way you speak and tell stories.</p>
+                <h3 class="service-title">Memoir &amp; Autobiography Ghostwriting</h3>
+                <p class="service-desc">A memoir is one of the most personal books a person can publish, and getting the voice right matters more here than almost anywhere else. Our ghostwriters approach autobiography and memoir projects with interviews, detailed conversations, and a careful ear for the way you speak and tell stories. The result reads like you wrote it, because in every way that matters, you did.</p>
                 <span class="service-glow" aria-hidden="true"></span>
             </article>
             <article class="service-card" data-aos="fade-up" data-aos-delay="140">
                 <span class="service-icon"><i class="fa-solid fa-briefcase"></i></span>
                 <h3 class="service-title">Business Book Ghostwriting</h3>
-                <p class="service-desc">A well-written business book builds authority, generates leads, and opens doors that a LinkedIn post never will. We work with entrepreneurs, executives, consultants, and industry specialists to turn their expertise into structured, readable, commercially relevant books that actually get read.</p>
+                <p class="service-desc">Business books are one of the most searched ghostwriting services in Europe, and for good reason. A well-written business book builds authority, generates leads, and opens doors that a LinkedIn post never will. We work with entrepreneurs, executives, consultants, and industry specialists to turn their expertise into structured, readable, commercially relevant books that actually get read.</p>
                 <span class="service-glow" aria-hidden="true"></span>
             </article>
             <article class="service-card" data-aos="fade-up" data-aos-delay="210">
                 <span class="service-icon"><i class="fa-solid fa-newspaper"></i></span>
                 <h3 class="service-title">Non-Fiction Ghostwriting</h3>
-                <p class="service-desc">Whether it&rsquo;s a narrative non-fiction project, a current affairs book, a popular history title, or anything that sits outside the business or self-help categories, our non-fiction ghostwriters research thoroughly and write with authority.</p>
+                <p class="service-desc">Whether it’s a narrative non-fiction project, a current affairs book, a popular history title, or anything that sits outside the business or self-help categories, our non-fiction ghostwriters research thoroughly and write with authority. We work with subject matter experts who know their field inside out but need a writer who can make that knowledge accessible and engaging to a general readership.</p>
                 <span class="service-glow" aria-hidden="true"></span>
             </article>
             <article class="service-card" data-aos="fade-up">
                 <span class="service-icon"><i class="fa-solid fa-seedling"></i></span>
                 <h3 class="service-title">Self-Help Ghostwriting</h3>
-                <p class="service-desc">We write self-help manuscripts that are grounded, practical, and free from the kind of hollow motivational language that fills too many books in the genre. Your framework, your methodology, your voice, written properly.</p>
+                <p class="service-desc">Self-help is one of the most competitive publishing categories there is, which means the writing has to be genuinely useful and genuinely readable. We write self-help manuscripts that are grounded, practical, and free from the kind of hollow motivational language that fills too many books in the genre. Your framework, your methodology, your voice, written properly.</p>
                 <span class="service-glow" aria-hidden="true"></span>
             </article>
             <article class="service-card" data-aos="fade-up" data-aos-delay="70">
                 <span class="service-icon"><i class="fa-solid fa-children"></i></span>
                 <h3 class="service-title">Children&rsquo;s Book Ghostwriting</h3>
-                <p class="service-desc">Our children&rsquo;s book ghostwriters work across picture books, early readers, middle grade, and young adult, tailoring the writing to the age group and the story you want to tell.</p>
+                <p class="service-desc">Children’s books are deceptively difficult to write well. The language has to work at the right level, the story has to move, and the whole thing has to land with both the child reading it and the adult reading it aloud. Our children’s book ghostwriters work across picture books, early readers, middle grade, and young adult, tailoring the writing to the age group and the story you want to tell.</p>
                 <span class="service-glow" aria-hidden="true"></span>
             </article>
         </div>

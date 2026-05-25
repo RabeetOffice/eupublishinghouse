@@ -10,7 +10,7 @@ require __DIR__ . '/includes/header.php';
 
 $banner = [
     'crumb' => 'About Us',
-    'title' => 'Welcome to <em class="serif-italic">European Publishing House</em>',
+    'title' => 'About <em class="serif-italic">Us</em>',
     'sub'   => 'Author-first publishing for writers across Europe who want the quality of a traditional house without the gatekeepers.',
 ];
 include __DIR__ . '/includes/page-banner.php';
