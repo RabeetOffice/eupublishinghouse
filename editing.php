@@ -79,7 +79,7 @@ include __DIR__ . '/includes/distributors.php';
         <div class="row align-items-center g-5">
             <div class="col-lg-6" data-aos="fade-right">
                 <div class="why-eph-art">
-                    <img src="assets/images/ManuscriptProfessionalEditor-2048x1635.webp" alt="Why your manuscript needs a professional editor" loading="lazy" decoding="async">
+                    <img src="<?= asset('images/ManuscriptProfessionalEditor-2048x1635.webp') ?>" alt="Why your manuscript needs a professional editor" loading="lazy" decoding="async">
                     <span class="why-eph-art__chip">Editorial</span>
                 </div>
             </div>
@@ -112,7 +112,7 @@ include __DIR__ . '/includes/distributors.php';
         <div class="row align-items-center g-5">
             <div class="col-lg-6" data-aos="fade-right">
                 <div class="publish-cost-art">
-                    <img src="assets/images/BookEditingServices-2048x1365.webp" alt="How much do book editing services cost in Europe" loading="lazy" decoding="async">
+                    <img src="<?= asset('images/BookEditingServices-2048x1365.webp') ?>" alt="How much do book editing services cost in Europe" loading="lazy" decoding="async">
                 </div>
             </div>
             <div class="col-lg-6" data-aos="fade-left">

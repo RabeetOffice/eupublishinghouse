@@ -15,21 +15,21 @@ $today  = date('Y-m-d');
 /* ----- Static pages with priority + change frequency ----- */
 $staticPages = [
     ['',                       '1.0', 'weekly'],
-    ['about.php',              '0.8', 'monthly'],
-    ['services.php',           '0.9', 'monthly'],
-    ['publishing.php',         '0.9', 'monthly'],
-    ['editing.php',            '0.8', 'monthly'],
-    ['ghostwriting.php',       '0.8', 'monthly'],
-    ['design.php',             '0.8', 'monthly'],
-    ['formatting.php',         '0.8', 'monthly'],
-    ['marketing.php',          '0.8', 'monthly'],
-    ['portfolios.php',         '0.7', 'weekly'],
-    ['blog.php',               '0.9', 'weekly'],
-    ['testimonial.php',        '0.6', 'monthly'],
-    ['faq.php',                '0.7', 'monthly'],
-    ['contact.php',            '0.8', 'monthly'],
-    ['privacy-policy.php',     '0.3', 'yearly'],
-    ['terms-conditions.php',   '0.3', 'yearly'],
+    ['about/',                 '0.8', 'monthly'],
+    ['services/',              '0.9', 'monthly'],
+    ['publishing/',            '0.9', 'monthly'],
+    ['editing/',               '0.8', 'monthly'],
+    ['ghostwriting/',          '0.8', 'monthly'],
+    ['design/',                '0.8', 'monthly'],
+    ['formatting/',            '0.8', 'monthly'],
+    ['marketing/',             '0.8', 'monthly'],
+    ['portfolios/',            '0.7', 'weekly'],
+    ['blog/',                  '0.9', 'weekly'],
+    ['testimonial/',           '0.6', 'monthly'],
+    ['faq/',                   '0.7', 'monthly'],
+    ['contact/',               '0.8', 'monthly'],
+    ['privacy-policy/',        '0.3', 'yearly'],
+    ['terms-conditions/',      '0.3', 'yearly'],
 ];
 
 echo '<?xml version="1.0" encoding="UTF-8"?>' . "\n";
@@ -49,7 +49,7 @@ foreach ($staticPages as [$path, $priority, $freq]) {
 
 /* ----- Blog detail pages (driven by blog-data.php) ----- */
 foreach ($blog_posts as $post) {
-    $loc      = $base . '/blogs/' . $post['slug'] . '.php';
+    $loc      = $base . '/blogs/' . $post['slug'] . '/';
     $lastmod  = date('Y-m-d', strtotime($post['date'] ?? 'now'));
     $imageUrl = $base . '/' . ltrim($post['image'] ?? '', '/');
     $title    = htmlspecialchars($post['title'] ?? '', ENT_QUOTES | ENT_XML1, 'UTF-8');

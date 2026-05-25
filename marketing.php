@@ -78,7 +78,7 @@ include __DIR__ . '/includes/distributors.php';
         <div class="row align-items-center g-5">
             <div class="col-lg-6" data-aos="fade-right">
                 <div class="why-eph-art">
-                    <img src="assets/images/MostBooksDon-2048x1835.webp" alt="Why most books don't sell, and how we fix that" loading="lazy" decoding="async">
+                    <img src="<?= asset('images/MostBooksDon-2048x1835.webp') ?>" alt="Why most books don't sell, and how we fix that" loading="lazy" decoding="async">
                     <span class="why-eph-art__chip">Strategy</span>
                 </div>
             </div>
@@ -109,7 +109,7 @@ include __DIR__ . '/includes/distributors.php';
         <div class="row align-items-center g-5">
             <div class="col-lg-6" data-aos="fade-right">
                 <div class="publish-cost-art">
-                    <img src="assets/images/BookPublishersAcrossEurope-2048x1754.webp" alt="What do book marketing services cost in Europe" loading="lazy" decoding="async">
+                    <img src="<?= asset('images/BookPublishersAcrossEurope-2048x1754.webp') ?>" alt="What do book marketing services cost in Europe" loading="lazy" decoding="async">
                 </div>
             </div>
             <div class="col-lg-6" data-aos="fade-left">

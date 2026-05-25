@@ -63,6 +63,30 @@ define('BRAND_MUTED',     '#7A7570');   // Secondary text
 define('BRAND_CTA',       '#1B5340');   // CTA uses primary forest green
 
 // =====================================================
+// INSTALL BASE — runtime-detected URL prefix
+// =====================================================
+// On XAMPP/localhost (project in subfolder): "/brands/eupublishinghouse.com/"
+// On a domain-root production install:       "/"
+// Used by asset() and link_to() to emit absolute URLs that work in both
+// environments. Required because pretty URLs (/about/ instead of /about.php)
+// change how browsers resolve relative paths inside the page.
+if (!defined('INSTALL_BASE')) {
+    $__doc  = isset($_SERVER['DOCUMENT_ROOT'])
+        ? str_replace('\\', '/', rtrim($_SERVER['DOCUMENT_ROOT'], '/\\'))
+        : '';
+    $__proj = str_replace('\\', '/', dirname(__DIR__));
+    if ($__doc !== '' && stripos($__proj, $__doc) === 0) {
+        $__base = substr($__proj, strlen($__doc));
+        $__base = '/' . trim($__base, '/');
+        if (substr($__base, -1) !== '/') $__base .= '/';
+    } else {
+        $__base = '/';
+    }
+    define('INSTALL_BASE', $__base);
+    unset($__doc, $__proj, $__base);
+}
+
+// =====================================================
 // ASSETS
 // =====================================================
 define('ASSETS_URL', 'assets');
@@ -296,15 +320,51 @@ function site_base() {
 }
 
 function asset($path) {
-    return site_base() . rtrim(ASSETS_URL, '/') . '/' . ltrim($path, '/');
+    return INSTALL_BASE . rtrim(ASSETS_URL, '/') . '/' . ltrim($path, '/');
 }
 
 /**
- * Resolve a root-level page link, honouring the current page's site_base
- * so that links from /blogs/<slug>.php correctly walk up to /<page>.php.
+ * Resolve a root-level page link as a clean, trailing-slash URL.
+ *
+ * - `link_to('about.php')`             -> /about/
+ * - `link_to('blogs/foo.php')`         -> /blogs/foo/
+ * - `link_to('index.php')` / `''`      -> /        (homepage)
+ * - `link_to('form-submission.php')`   -> /form-submission.php  (POST handler exempt)
+ * - `link_to('javascript:;')`,
+ *   `link_to('mailto:x@y')`,
+ *   `link_to('#anchor')`,
+ *   `link_to('https://...')`           -> passed through unchanged
+ * - Anything else (assets, images)     -> site_base() . $path  (unchanged)
+ *
+ * Honours $GLOBALS['site_base'] so links from /blogs/<slug>.php still resolve
+ * correctly. Pretty URLs are enforced by .htaccess; this just emits them
+ * directly so the browser never hits the 301 redirect hop.
  */
 function link_to($path) {
-    return site_base() . ltrim($path, '/');
+    $path = ltrim($path, '/');
+
+    // Homepage shortcut — empty path or index.php => install root.
+    if ($path === '' || $path === 'index.php' || $path === 'index') {
+        return INSTALL_BASE;
+    }
+
+    // Form handler must keep its .php extension (POST endpoint, .htaccess exempt).
+    if ($path === 'form-submission.php') {
+        return INSTALL_BASE . $path;
+    }
+
+    // Pass non-page schemes through unchanged.
+    if (preg_match('/^(javascript:|mailto:|tel:|#|https?:\/\/)/i', $path)) {
+        return $path;
+    }
+
+    // Strip .php from page paths and force a trailing slash.
+    if (preg_match('/\.php$/i', $path)) {
+        return INSTALL_BASE . preg_replace('/\.php$/i', '/', $path);
+    }
+
+    // Everything else (assets, images, files with other extensions) — leave alone.
+    return INSTALL_BASE . $path;
 }
 
 function img($name) {

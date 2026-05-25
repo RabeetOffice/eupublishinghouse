@@ -18,7 +18,7 @@ if (!$post) {
 $page_title       = $post['title'] . ' | ' . BRAND_NAME;
 $page_description = 'A full 2026 breakdown of book cover design costs across Europe, by region, by designer experience and complexity, including VAT, contracts and rights.';
 $page_keywords    = 'book cover design cost Europe, Reedsy cover design price, freelance book cover designer Europe, eBook cover cost';
-$canonical_url    = rtrim(BRAND_SITE_URL, '/') . '/blogs/' . $current_slug . '.php';
+$canonical_url    = rtrim(BRAND_SITE_URL, '/') . '/blogs/' . $current_slug . '/';
 $og_image         = rtrim(BRAND_SITE_URL, '/') . '/' . ltrim($post['image'], '/');
 $og_type          = 'article';
 $share_url        = $canonical_url;
@@ -37,7 +37,7 @@ include __DIR__ . '/../includes/page-banner.php';
     <div class="container">
 
         <figure class="blog-feature" data-aos="fade-up">
-            <div class="blog-feature__art" style="background-image:url('<?= safe(link_to($post['image'])) ?>');" role="img" aria-label="<?= safe($post['title']) ?>"></div>
+            <div class="blog-feature__art" style="background-image:url('<?= safe($post['image']) ?>');" role="img" aria-label="<?= safe($post['title']) ?>"></div>
         </figure>
 
         <div class="blog-layout" data-aos="fade-up">

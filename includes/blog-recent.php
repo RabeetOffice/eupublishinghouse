@@ -17,15 +17,11 @@ if (empty($recent_posts)) return;
         </div>
 
         <div class="row g-4 mt-2">
-            <?php foreach ($recent_posts as $i => $rp): ?>
-                <?php
-                /* From inside /blogs/<slug>.php, sibling blog files are just <slug>.php */
-                $rp_href = basename($rp['slug']) . '.php';
-                ?>
+            <?php foreach ($recent_posts as $i => $rp): $rp_href = blog_post_url($rp['slug']); ?>
                 <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="<?= ($i % 3) * 90 ?>">
                     <article class="blog-card">
                         <a href="<?= safe($rp_href) ?>" class="blog-card__art-link" aria-label="Read <?= safe($rp['title']) ?>">
-                            <div class="blog-card__art" style="background-image:url('<?= safe(link_to($rp['image'])) ?>')" aria-hidden="true"></div>
+                            <div class="blog-card__art" style="background-image:url('<?= safe($rp['image']) ?>')" aria-hidden="true"></div>
                         </a>
                         <div class="blog-card__body">
                             <span class="post-cat"><?= safe($rp['category'] ?? 'Journal') ?></span>

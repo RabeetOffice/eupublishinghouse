@@ -3,14 +3,14 @@ require_once __DIR__ . '/config.php';
 
 /* Distribution partner logos. Override $distributorLogos before include to customize. */
 $distributorLogos = $distributorLogos ?? [
-    ['src' => 'assets/images/logo-slider/googlebooks.webp',  'alt' => 'Google Books'],
-    ['src' => 'assets/images/logo-slider/booktopia.webp',    'alt' => 'Booktopia'],
-    ['src' => 'assets/images/logo-slider/draft2digital.webp','alt' => 'Draft2Digital'],
-    ['src' => 'assets/images/logo-slider/ingram.webp',       'alt' => 'IngramSpark'],
-    ['src' => 'assets/images/logo-slider/kindle.webp',       'alt' => 'Amazon Kindle'],
-    ['src' => 'assets/images/logo-slider/lulu.webp',         'alt' => 'Lulu'],
-    ['src' => 'assets/images/logo-slider/publishdrive.webp', 'alt' => 'PublishDrive'],
-    ['src' => 'assets/images/logo-slider/smashwords.webp',   'alt' => 'Smashwords'],
+    ['src' => asset('images/logo-slider/googlebooks.webp'),  'alt' => 'Google Books'],
+    ['src' => asset('images/logo-slider/booktopia.webp'),    'alt' => 'Booktopia'],
+    ['src' => asset('images/logo-slider/draft2digital.webp'),'alt' => 'Draft2Digital'],
+    ['src' => asset('images/logo-slider/ingram.webp'),       'alt' => 'IngramSpark'],
+    ['src' => asset('images/logo-slider/kindle.webp'),       'alt' => 'Amazon Kindle'],
+    ['src' => asset('images/logo-slider/lulu.webp'),         'alt' => 'Lulu'],
+    ['src' => asset('images/logo-slider/publishdrive.webp'), 'alt' => 'PublishDrive'],
+    ['src' => asset('images/logo-slider/smashwords.webp'),   'alt' => 'Smashwords'],
 ];
 $distributorsTitle = $distributorsTitle ?? 'Distributed across 150+ retailers worldwide';
 ?>

@@ -12,7 +12,7 @@ $blog_posts = [
         'excerpt'  => 'A practical 2026 guide to the top 10 book publishers in Europe, from indie-friendly modern publishers to the Big Five traditional houses.',
         'date'     => '2026-05-11',
         'category' => 'Industry',
-        'image'    => 'assets/images/blog/top-publishers.webp',
+        'image'    => asset('images/blog/top-publishers.webp'),
         'author'   => 'Clara Lichtenberg',
         'read'     => '12 min read',
     ],
@@ -22,7 +22,7 @@ $blog_posts = [
         'excerpt'  => 'A 2026 breakdown of book cover design costs across Europe by region, designer experience and complexity. VAT, contracts, rights, and the cheapest places to hire.',
         'date'     => '2026-05-11',
         'category' => 'Design',
-        'image'    => 'assets/images/blog/book-cover-design-cost.webp',
+        'image'    => asset('images/blog/book-cover-design-cost.webp'),
         'author'   => 'Clara Lichtenberg',
         'read'     => '14 min read',
     ],
@@ -57,7 +57,8 @@ if (!function_exists('blog_get_recent')) {
 
 if (!function_exists('blog_post_url')) {
     function blog_post_url(string $slug): string {
-        return 'blogs/' . $slug . '.php';
+        // Absolute pretty URL: /brands/eupublishinghouse.com/blogs/<slug>/
+        return link_to('blogs/' . $slug . '.php');
     }
 }
 

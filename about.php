@@ -26,7 +26,7 @@ include __DIR__ . '/includes/page-banner.php';
         <div class="row">
             <div class="col-lg-6 about-snippet__spacer" aria-hidden="true">
                 <div class="about-image" data-aos="fade-right">
-                    <img src="assets/images/about-image.png" alt="Inside the EU Publishing House editorial studio"
+                    <img src="<?= asset('images/about-image.png') ?>" alt="Inside the EU Publishing House editorial studio"
                         loading="lazy" decoding="async">
                 </div>
             </div>
@@ -80,7 +80,7 @@ include __DIR__ . '/includes/page-banner.php';
             </div>
             <div class="col-lg-6" data-aos="fade-right">
                 <div class="publish-cost-art">
-                    <img src="assets/images/livesite/AuthorChoose.jpg"
+                    <img src="<?= asset('images/livesite/AuthorChoose.jpg') ?>"
                         alt="What European Publishing House is here to do" loading="lazy" decoding="async">
                 </div>
             </div>
@@ -99,7 +99,7 @@ include __DIR__ . '/includes/page-banner.php';
         <div class="row align-items-center g-5">
             <div class="col-lg-6" data-aos="fade-right">
                 <div class="why-eph-art">
-                    <img src="assets/images/livesite/publishCostsection.jpg"
+                    <img src="<?= asset('images/livesite/publishCostsection.jpg') ?>"
                         alt="Book publishers across Europe you can trust" loading="lazy" decoding="async">
                     <span class="why-eph-art__chip">Independent</span>
                 </div>

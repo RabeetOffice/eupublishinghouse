@@ -18,7 +18,7 @@ if (!$post) {
 $page_title       = $post['title'] . ' | ' . BRAND_NAME;
 $page_description = 'A practical 2026 guide to the top 10 book publishers in Europe, from indie-friendly modern publishers to the Big Five traditional houses in the UK.';
 $page_keywords    = 'top book publishers Europe, best UK publishers, Penguin Random House, HarperCollins UK, publishers in London, Irish publishers';
-$canonical_url    = rtrim(BRAND_SITE_URL, '/') . '/blogs/' . $current_slug . '.php';
+$canonical_url    = rtrim(BRAND_SITE_URL, '/') . '/blogs/' . $current_slug . '/';
 $og_image         = rtrim(BRAND_SITE_URL, '/') . '/' . ltrim($post['image'], '/');
 $og_type          = 'article';
 $share_url        = $canonical_url;
@@ -37,7 +37,7 @@ include __DIR__ . '/../includes/page-banner.php';
     <div class="container">
 
         <figure class="blog-feature" data-aos="fade-up">
-            <div class="blog-feature__art" style="background-image:url('<?= safe(link_to($post['image'])) ?>');" role="img" aria-label="<?= safe($post['title']) ?>"></div>
+            <div class="blog-feature__art" style="background-image:url('<?= safe($post['image']) ?>');" role="img" aria-label="<?= safe($post['title']) ?>"></div>
         </figure>
 
         <div class="blog-layout" data-aos="fade-up">

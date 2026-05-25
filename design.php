@@ -79,7 +79,7 @@ include __DIR__ . '/includes/distributors.php';
         <div class="row align-items-center g-5">
             <div class="col-lg-6" data-aos="fade-right">
                 <div class="why-eph-art">
-                    <img src="assets/images/ProfessionalBookCover-2048x1967.webp" alt="What a professional book cover actually does" loading="lazy" decoding="async">
+                    <img src="<?= asset('images/ProfessionalBookCover-2048x1967.webp') ?>" alt="What a professional book cover actually does" loading="lazy" decoding="async">
                     <span class="why-eph-art__chip">Custom</span>
                 </div>
             </div>
@@ -110,7 +110,7 @@ include __DIR__ . '/includes/distributors.php';
         <div class="row align-items-center g-5">
             <div class="col-lg-6" data-aos="fade-right">
                 <div class="publish-cost-art">
-                    <img src="assets/images/BookCoverDesignCost-2048x1365.webp" alt="How much does book cover design cost in Europe" loading="lazy" decoding="async">
+                    <img src="<?= asset('images/BookCoverDesignCost-2048x1365.webp') ?>" alt="How much does book cover design cost in Europe" loading="lazy" decoding="async">
                 </div>
             </div>
             <div class="col-lg-6" data-aos="fade-left">
