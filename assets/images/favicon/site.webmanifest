@@ -1,0 +1,25 @@
+{
+  "name": "EU Publishing House",
+  "short_name": "EU Publishing",
+  "description": "EU Publishing House — independent book publisher. Publishing, editing, ghostwriting, design, formatting and marketing for authors across Europe.",
+  "icons": [
+    {
+      "src": "/assets/images/favicon/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/assets/images/favicon/android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "theme_color": "#1B5340",
+  "background_color": "#F9F6F0",
+  "display": "standalone",
+  "start_url": "/",
+  "scope": "/",
+  "lang": "en"
+}

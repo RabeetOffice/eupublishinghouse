@@ -6,7 +6,10 @@ $menu = navMenu();
     <div class="wrap">
 
         <a class="brand" href="<?= link_to('index.php') ?>" aria-label="<?= safe(WEBSITE_NAME) ?> home">
-            <img src="<?= asset('images/logo.webp') ?>" alt="<?= safe(WEBSITE_NAME) ?>" loading="lazy" decoding="async">
+            <img src="<?= asset('images/logo.webp') ?>"
+                 alt="<?= safe(WEBSITE_NAME) ?> &mdash; <?= safe(WEBSITE_TAGLINE) ?>"
+                 width="180" height="44"
+                 loading="eager" fetchpriority="high" decoding="async">
         </a>
 
         <div class="navlinks" role="menubar">
@@ -77,7 +80,10 @@ $menu = navMenu();
 <aside class="mobile-menu" id="mobileMenu" aria-hidden="true">
     <div class="mm-head">
         <a class="brand" href="<?= link_to('index.php') ?>" aria-label="<?= safe(WEBSITE_NAME) ?> home">
-            <img src="<?= asset('images/logo.webp') ?>" alt="<?= safe(WEBSITE_NAME) ?>" loading="lazy" decoding="async">
+            <img src="<?= asset('images/logo.webp') ?>"
+                 alt="<?= safe(WEBSITE_NAME) ?> &mdash; <?= safe(WEBSITE_TAGLINE) ?>"
+                 width="180" height="44"
+                 loading="eager" decoding="async">
         </a>
         <button class="mm-close" type="button" aria-label="Close menu" id="navDrawerClose">
             <i class="fa-solid fa-xmark" aria-hidden="true"></i>

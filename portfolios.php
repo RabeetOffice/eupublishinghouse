@@ -46,6 +46,7 @@ $total = count($portfolioItems);
                     <div class="book__cover book__cover--img">
                         <img src="<?= safe($book['image']) ?>"
                              alt="<?= safe($book['title']) ?> by <?= safe($book['author']) ?>, published by <?= safe(WEBSITE_NAME) ?>"
+                             width="400" height="600"
                              loading="lazy" decoding="async">
                         <span class="book__shine" aria-hidden="true"></span>
                     </div>

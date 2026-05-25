@@ -6,6 +6,9 @@ $page_description = 'Thanks for reaching out to ' . BRAND_NAME . '. A senior edi
 $page_keywords    = 'thank you, EU Publishing House, submission confirmation';
 $canonical_url    = rtrim(BRAND_SITE_URL, '/') . '/thank-you.php';
 
+/* This page is transactional — don't index it in search results. */
+header('X-Robots-Tag: noindex, nofollow', true);
+
 /* Auto-redirect to home after 8s (also enforced via JS with a live countdown).
  * The meta refresh is the no-JS fallback. */
 $redirect_seconds = 8;

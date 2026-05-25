@@ -38,31 +38,52 @@ $_ogType  = $og_type          ?? 'website';
     <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
     <link rel="canonical" href="<?= safe($_canon) ?>" />
 
+    <?php
+    /* Detect og image mime so social validators know what to expect.
+       Falls back to image/jpeg if the URL has no recognised extension. */
+    $_ogImgExt  = strtolower(pathinfo(parse_url($_ogImg, PHP_URL_PATH) ?? '', PATHINFO_EXTENSION));
+    $_ogImgMime = [
+        'webp' => 'image/webp', 'png' => 'image/png', 'jpg' => 'image/jpeg',
+        'jpeg' => 'image/jpeg', 'gif' => 'image/gif',  'svg' => 'image/svg+xml',
+    ][$_ogImgExt] ?? 'image/jpeg';
+    ?>
     <!-- Open Graph -->
-    <meta property="og:type"        content="<?= safe($_ogType) ?>" />
-    <meta property="og:site_name"   content="<?= safe(BRAND_NAME) ?>" />
-    <meta property="og:title"       content="<?= safe($_title) ?>" />
-    <meta property="og:description" content="<?= safe($_desc) ?>" />
-    <meta property="og:url"         content="<?= safe($_canon) ?>" />
-    <meta property="og:image"       content="<?= safe($_ogImg) ?>" />
+    <meta property="og:type"         content="<?= safe($_ogType) ?>" />
+    <meta property="og:site_name"    content="<?= safe(BRAND_NAME) ?>" />
+    <meta property="og:title"        content="<?= safe($_title) ?>" />
+    <meta property="og:description"  content="<?= safe($_desc) ?>" />
+    <meta property="og:url"          content="<?= safe($_canon) ?>" />
+    <meta property="og:image"        content="<?= safe($_ogImg) ?>" />
+    <meta property="og:image:secure_url" content="<?= safe($_ogImg) ?>" />
+    <meta property="og:image:type"   content="<?= safe($_ogImgMime) ?>" />
     <meta property="og:image:width"  content="1200" />
     <meta property="og:image:height" content="630" />
-    <meta property="og:locale"      content="<?= safe(SEO_LOCALE) ?>" />
+    <meta property="og:image:alt"    content="<?= safe($_title) ?>" />
+    <meta property="og:locale"       content="<?= safe(SEO_LOCALE) ?>" />
 
     <!-- Twitter -->
     <meta name="twitter:card"        content="summary_large_image" />
     <meta name="twitter:title"       content="<?= safe($_title) ?>" />
     <meta name="twitter:description" content="<?= safe($_desc) ?>" />
     <meta name="twitter:image"       content="<?= safe($_ogImg) ?>" />
+    <meta name="twitter:image:alt"   content="<?= safe($_title) ?>" />
 
-    <!-- Schema -->
+    <!-- Schema: Organization (site-wide entity) -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "Organization",
+      "@id": "<?= BRAND_SITE_URL ?>/#organization",
       "name": "<?= addslashes(BRAND_NAME) ?>",
+      "alternateName": "EUPH",
       "url": "<?= BRAND_SITE_URL ?>",
-      "logo": "<?= BRAND_SITE_URL ?>/<?= IMG_URL ?>/logo.webp",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "<?= BRAND_SITE_URL ?>/<?= IMG_URL ?>/logo.webp",
+        "width": 512,
+        "height": 128
+      },
+      "description": "<?= addslashes(WEBSITE_DESCRIPTION) ?>",
       "email": "<?= EMAIL_ADDRESS ?>",
       "telephone": "<?= PHONE_NUMBER ?>",
       "address": {
@@ -71,6 +92,14 @@ $_ogType  = $og_type          ?? 'website';
         "addressLocality": "Dublin",
         "postalCode": "D02 W282",
         "addressCountry": "IE"
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "<?= PHONE_NUMBER ?>",
+        "contactType": "customer service",
+        "email": "<?= EMAIL_ADDRESS ?>",
+        "areaServed": ["IE", "GB", "EU", "Worldwide"],
+        "availableLanguage": ["English"]
       },
       "sameAs": [
         "<?= SOCIAL_FACEBOOK ?>",
@@ -83,9 +112,43 @@ $_ogType  = $og_type          ?? 'website';
     }
     </script>
 
-    <!-- Favicons -->
-    <link rel="icon" type="image/png" href="<?= img('favicon.png') ?>" />
-    <link rel="apple-touch-icon" href="<?= img('favicon.png') ?>" />
+    <!-- Schema: WebSite (enables Google sitelinks search box) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "@id": "<?= BRAND_SITE_URL ?>/#website",
+      "url": "<?= BRAND_SITE_URL ?>/",
+      "name": "<?= addslashes(BRAND_NAME) ?>",
+      "publisher": { "@id": "<?= BRAND_SITE_URL ?>/#organization" },
+      "inLanguage": "en",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": {
+          "@type": "EntryPoint",
+          "urlTemplate": "<?= BRAND_SITE_URL ?>/blog.php?q={search_term_string}"
+        },
+        "query-input": "required name=search_term_string"
+      }
+    }
+    </script>
+
+    <!-- Favicons (Google-recommended set) -->
+    <link rel="icon" href="<?= asset('images/favicon/favicon.ico') ?>" sizes="any" />
+    <link rel="icon" type="image/png" sizes="16x16" href="<?= asset('images/favicon/favicon-16x16.png') ?>" />
+    <link rel="icon" type="image/png" sizes="32x32" href="<?= asset('images/favicon/favicon-32x32.png') ?>" />
+    <link rel="icon" type="image/png" sizes="192x192" href="<?= asset('images/favicon/android-chrome-192x192.png') ?>" />
+    <link rel="apple-touch-icon" sizes="180x180" href="<?= asset('images/favicon/apple-touch-icon.png') ?>" />
+    <link rel="manifest" href="<?= asset('images/favicon/site.webmanifest') ?>" />
+    <meta name="application-name" content="<?= safe(WEBSITE_NAME) ?>" />
+    <meta name="apple-mobile-web-app-title" content="<?= safe(WEBSITE_NAME) ?>" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="msapplication-TileColor" content="<?= BRAND_PRIMARY ?>" />
+    <meta name="msapplication-TileImage" content="<?= asset('images/favicon/android-chrome-192x192.png') ?>" />
+
+    <!-- LCP hint: preload the navbar logo so it paints fast -->
+    <link rel="preload" as="image" href="<?= asset('images/logo.webp') ?>" type="image/webp" />
 
     <!-- Resource hints -->
     <link rel="preconnect" href="https://fonts.googleapis.com">

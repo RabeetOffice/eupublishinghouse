@@ -77,7 +77,7 @@ define('UPLOADS_URL', 'uploads');
 define('SEO_DEFAULT_TITLE', WEBSITE_NAME . ', ' . WEBSITE_TAGLINE);
 define('SEO_DEFAULT_DESCRIPTION', WEBSITE_DESCRIPTION);
 define('SEO_DEFAULT_KEYWORDS', 'book publishing, publishing house, European publisher, manuscript publishing, book editing, ghostwriting, cover design, author services, Dublin publisher, literary publishing');
-define('SEO_DEFAULT_IMAGE', WEBSITE_URL . '/assets/images/og-default.jpg');
+define('SEO_DEFAULT_IMAGE', WEBSITE_URL . '/assets/images/og.webp');
 define('SEO_AUTHOR', 'EU Publishing House');
 define('SEO_LOCALE', 'en_IE');
 

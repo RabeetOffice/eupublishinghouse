@@ -1,7 +1,24 @@
+# robots.txt — EU Publishing House
+# https://eupublishinghouse.com
+
 User-agent: *
 Allow: /
+
+# Internal endpoints and helper scripts — not for indexing
 Disallow: /admin/
 Disallow: /config/
 Disallow: /includes/
+Disallow: /uploads/
+Disallow: /form-submission.php
+Disallow: /thank-you.php
+Disallow: /*?form_status=
 
+# Common bad-actor paths
+Disallow: /wp-admin/
+Disallow: /wp-login.php
+
+# Allow crawlers to fetch CSS/JS/images so they render the page correctly
+Allow: /assets/
+
+# Reference sitemap
 Sitemap: https://eupublishinghouse.com/sitemap.xml

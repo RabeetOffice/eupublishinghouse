@@ -40,7 +40,8 @@ $booksList = array_slice($portfolioItems, 0, (int)$booksLimit);
                    aria-label="<?= safe($book['title']) ?> by <?= safe($book['author']) ?> on Amazon"
                    data-no-popup>
                     <img src="<?= safe($book['image']) ?>"
-                         alt="<?= safe($book['title']) ?> by <?= safe($book['author']) ?>"
+                         alt="<?= safe($book['title']) ?> by <?= safe($book['author']) ?> &mdash; published by <?= safe(WEBSITE_NAME) ?>"
+                         width="300" height="450"
                          loading="lazy" decoding="async">
                     <span class="book-card-meta">
                         <b><?= safe($book['title']) ?></b>

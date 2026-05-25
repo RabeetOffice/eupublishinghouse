@@ -77,8 +77,10 @@ $stackBooks = $portfolioItems;
                            aria-label="<?= safe($book['title']) ?> by <?= safe($book['author']) ?>, Buy on Amazon"
                            title="<?= safe($book['title']) ?> by <?= safe($book['author']) ?>">
                             <img src="<?= safe($book['image']) ?>"
-                                 alt="<?= safe($book['title']) ?> by <?= safe($book['author']) ?>"
+                                 alt="<?= safe($book['title']) ?> by <?= safe($book['author']) ?> &mdash; published by <?= safe(WEBSITE_NAME) ?>"
+                                 width="300" height="450"
                                  loading="<?= $i < 5 ? 'eager' : 'lazy' ?>"
+                                 <?= $i === 0 ? 'fetchpriority="high"' : '' ?>
                                  decoding="async">
                         </a>
                     <?php endforeach; ?>
