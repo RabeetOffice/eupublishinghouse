@@ -230,8 +230,8 @@ $SMTP = [
     'enabled' => true,
     'host'    => 'smtp.gmail.com',
     'port'    => 587,
-    'user'    => 'info@eupublishinghouse.com',
-    'pass'    => 'placeholder',                  // <-- 16-char Google App Password
+    'user'    => 'sales@eupublishinghouse.com',
+    'pass'    => 'ttlk bmlm gjfz qtzk',                  // <-- 16-char Google App Password
     'secure'  => 'tls',                          // STARTTLS on 587 (use 'ssl' + 465 for SMTPS)
 ];
 
@@ -241,7 +241,7 @@ $SMTP = [
  * table on first write.
  */
 $DB = [
-    'host'    => '',
+    'host'    => 'localhost',
     'name'    => '',
     'user'    => '',
     'pass'    => '',
