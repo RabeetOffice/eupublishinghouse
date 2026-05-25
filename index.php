@@ -41,6 +41,9 @@ require_once __DIR__ . '/includes/publishing-cost.php';
 // 10. Publishing process timeline
 require_once __DIR__ . '/includes/process.php';
 
+// 15. Final CTA
+require_once __DIR__ . '/includes/final-cta.php';
+
 // 11. Why authors choose us
 require_once __DIR__ . '/includes/why-choose.php';
 
@@ -53,8 +56,7 @@ require_once __DIR__ . '/includes/testimonials.php';
 // 14. FAQ accordion
 require_once __DIR__ . '/includes/faqs.php';
 
-// 15. Final CTA
-require_once __DIR__ . '/includes/final-cta.php';
+
 
 // 16. Footer (closes </main>, scripts, popup, </body>, </html>)
 require_once __DIR__ . '/includes/footer.php';

@@ -33,7 +33,7 @@ $sub   = $b['sub']   ?? '';
 
         <?php if ($crumb): ?>
             <nav class="breadcrumb-pill" aria-label="Breadcrumb">
-                <a href="index.php">
+                <a href="<?= link_to('index.php') ?>">
                     <i class="fa-solid fa-house-chimney"></i>
                     Home
                 </a>

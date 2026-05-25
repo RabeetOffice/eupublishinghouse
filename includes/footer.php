@@ -13,7 +13,7 @@
         <div class="footer-top">
 
             <div class="footer-brand-col">
-                <a href="index.php" class="footer-brand" aria-label="<?= safe(WEBSITE_NAME) ?> home">
+                <a href="<?= link_to('index.php') ?>" class="footer-brand" aria-label="<?= safe(WEBSITE_NAME) ?> home">
                     <img src="<?= asset('images/logo.webp') ?>" alt="<?= safe(WEBSITE_NAME) ?>" loading="lazy" decoding="async">
                 </a>
                 <p class="footer-about">
@@ -32,25 +32,25 @@
             <div class="footer-links-col">
                 <h4 class="footer-title">Explore</h4>
                 <ul class="footer-links">
-                    <li><a href="index.php">Home</a></li>
-                    <li><a href="about.php">About</a></li>
-                    <li><a href="portfolios.php">Portfolio</a></li>
-                    <li><a href="blog.php">Journal</a></li>
-                    <li><a href="testimonial.php">Testimonials</a></li>
-                    <li><a href="faq.php">FAQs</a></li>
-                    <li><a href="contact.php">Contact</a></li>
+                    <li><a href="<?= link_to('index.php') ?>">Home</a></li>
+                    <li><a href="<?= link_to('about.php') ?>">About</a></li>
+                    <li><a href="<?= link_to('portfolios.php') ?>">Portfolio</a></li>
+                    <li><a href="<?= link_to('blog.php') ?>">Journal</a></li>
+                    <li><a href="<?= link_to('testimonial.php') ?>">Testimonials</a></li>
+                    <li><a href="<?= link_to('faq.php') ?>">FAQs</a></li>
+                    <li><a href="<?= link_to('contact.php') ?>">Contact</a></li>
                 </ul>
             </div>
 
             <div class="footer-links-col">
                 <h4 class="footer-title">Services</h4>
                 <ul class="footer-links">
-                    <li><a href="publishing.php">Publishing</a></li>
-                    <li><a href="editing.php">Editing</a></li>
-                    <li><a href="ghostwriting.php">Ghostwriting</a></li>
-                    <li><a href="design.php">Cover Design</a></li>
-                    <li><a href="formatting.php">Formatting</a></li>
-                    <li><a href="marketing.php">Marketing</a></li>
+                    <li><a href="<?= link_to('publishing.php') ?>">Publishing</a></li>
+                    <li><a href="<?= link_to('editing.php') ?>">Editing</a></li>
+                    <li><a href="<?= link_to('ghostwriting.php') ?>">Ghostwriting</a></li>
+                    <li><a href="<?= link_to('design.php') ?>">Cover Design</a></li>
+                    <li><a href="<?= link_to('formatting.php') ?>">Formatting</a></li>
+                    <li><a href="<?= link_to('marketing.php') ?>">Marketing</a></li>
                 </ul>
             </div>
 
@@ -68,9 +68,9 @@
         <div class="footer-bottom">
             <p>&copy; <?= date('Y') ?> <?= safe(WEBSITE_NAME) ?>. All rights reserved.</p>
             <ul class="footer-legal">
-                <li><a href="privacy-policy.php">Privacy Policy</a></li>
-                <li><a href="terms-conditions.php">Terms &amp; Conditions</a></li>
-                <li><a href="contact.php">Contact</a></li>
+                <li><a href="<?= link_to('privacy-policy.php') ?>">Privacy Policy</a></li>
+                <li><a href="<?= link_to('terms-conditions.php') ?>">Terms &amp; Conditions</a></li>
+                <li><a href="<?= link_to('contact.php') ?>">Contact</a></li>
             </ul>
         </div>
     </div>
@@ -105,10 +105,43 @@
 <!-- Tawk.to live chat -->
 <script>
     var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
-    Tawk_API.onLoad = function () {
-        // Hide the default Tawk widget so we use our custom .live-chat-btn instead
-        if (Tawk_API.hideWidget) Tawk_API.hideWidget();
+
+    /* Hide the default Tawk bubble at every lifecycle hook so only our
+       custom .live-chat-btn launches the chat. */
+    function _euphHideTawk() {
+        try { if (window.Tawk_API && Tawk_API.hideWidget) Tawk_API.hideWidget(); } catch (e) {}
+    }
+    /* When Tawk's chat panel is open, hide our floating Live chat pill and
+       the back-to-top button so they don't overlap the Tawk window. */
+    function _euphChatOpen()  { document.body.classList.add('chat-open'); }
+    function _euphChatClose() { document.body.classList.remove('chat-open'); _euphHideTawk(); }
+
+    Tawk_API.onLoad           = _euphHideTawk;
+    Tawk_API.onStatusChange   = _euphHideTawk;
+    Tawk_API.onChatMaximized  = _euphChatOpen;
+    Tawk_API.onChatMinimized  = _euphChatClose;
+    Tawk_API.onChatHidden     = _euphChatClose;
+    Tawk_API.onChatEnded      = _euphChatClose;
+
+    /* Single helper used by the floating Live Chat button to open Tawk. */
+    window.openTawkChat = function () {
+        if (!window.Tawk_API) return false;
+        try {
+            if (typeof Tawk_API.showWidget === 'function') Tawk_API.showWidget();
+            if (typeof Tawk_API.maximize === 'function') {
+                Tawk_API.maximize();
+                _euphChatOpen();
+                return true;
+            }
+            if (typeof Tawk_API.toggle === 'function') {
+                Tawk_API.toggle();
+                _euphChatOpen();
+                return true;
+            }
+        } catch (e) { /* swallow — JS fallback below */ }
+        return false;
     };
+
     (function () {
         var s1 = document.createElement('script'), s0 = document.getElementsByTagName('script')[0];
         s1.async = true;

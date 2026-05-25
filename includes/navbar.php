@@ -5,7 +5,7 @@ $menu = navMenu();
 <nav class="top" id="topNav" aria-label="Primary">
     <div class="wrap">
 
-        <a class="brand" href="index.php" aria-label="<?= safe(WEBSITE_NAME) ?> home">
+        <a class="brand" href="<?= link_to('index.php') ?>" aria-label="<?= safe(WEBSITE_NAME) ?> home">
             <img src="<?= asset('images/logo.webp') ?>" alt="<?= safe(WEBSITE_NAME) ?>" loading="lazy" decoding="async">
         </a>
 
@@ -18,7 +18,7 @@ $menu = navMenu();
                 <?php if ($hasKids): ?>
                     <div class="nav-item has-dd <?= $isActive ? 'is-active' : '' ?>">
                         <a class="<?= $isActive ? 'is-active' : '' ?>"
-                           href="<?= safe($item['href']) ?>"
+                           href="<?= link_to($item['href']) ?>"
                            role="menuitem"
                            aria-haspopup="true"
                            aria-expanded="false">
@@ -28,7 +28,7 @@ $menu = navMenu();
                         <ul class="nav-dd <?= $isMega ? 'nav-dd--wide' : '' ?>" role="menu">
                             <?php foreach ($item['children'] as $child): ?>
                                 <li role="none">
-                                    <a role="menuitem" href="<?= safe($child['href']) ?>">
+                                    <a role="menuitem" href="<?= link_to($child['href']) ?>">
                                         <?php if (!empty($child['icon'])): ?>
                                             <i class="fa-solid <?= safe($child['icon']) ?>"></i>
                                         <?php endif; ?>
@@ -45,7 +45,7 @@ $menu = navMenu();
                     </div>
                 <?php else: ?>
                     <a class="<?= $isActive ? 'is-active' : '' ?>"
-                       href="<?= safe($item['href']) ?>"
+                       href="<?= link_to($item['href']) ?>"
                        role="menuitem"><?= safe($item['label']) ?></a>
                 <?php endif; ?>
             <?php endforeach; ?>
@@ -76,7 +76,7 @@ $menu = navMenu();
 <div class="mobile-overlay" id="mobileOverlay" aria-hidden="true"></div>
 <aside class="mobile-menu" id="mobileMenu" aria-hidden="true">
     <div class="mm-head">
-        <a class="brand" href="index.php" aria-label="<?= safe(WEBSITE_NAME) ?> home">
+        <a class="brand" href="<?= link_to('index.php') ?>" aria-label="<?= safe(WEBSITE_NAME) ?> home">
             <img src="<?= asset('images/logo.webp') ?>" alt="<?= safe(WEBSITE_NAME) ?>" loading="lazy" decoding="async">
         </a>
         <button class="mm-close" type="button" aria-label="Close menu" id="navDrawerClose">
@@ -96,14 +96,14 @@ $menu = navMenu();
                         <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
                     </button>
                     <div class="mm-sub">
-                        <a href="<?= safe($item['href']) ?>">All <?= safe($item['label']) ?></a>
+                        <a href="<?= link_to($item['href']) ?>">All <?= safe($item['label']) ?></a>
                         <?php foreach ($item['children'] as $child): ?>
-                            <a href="<?= safe($child['href']) ?>"><?= safe($child['label']) ?></a>
+                            <a href="<?= link_to($child['href']) ?>"><?= safe($child['label']) ?></a>
                         <?php endforeach; ?>
                     </div>
                 </div>
             <?php else: ?>
-                <a class="<?= $isActive ? 'is-active' : '' ?>" href="<?= safe($item['href']) ?>"><?= safe($item['label']) ?></a>
+                <a class="<?= $isActive ? 'is-active' : '' ?>" href="<?= link_to($item['href']) ?>"><?= safe($item['label']) ?></a>
             <?php endif; ?>
         <?php endforeach; ?>
     </nav>
@@ -112,7 +112,7 @@ $menu = navMenu();
         <a class="btn btn-cta" href="#popup" data-popup>
             Submit Manuscript <span class="arr" aria-hidden="true">&rarr;</span>
         </a>
-        <a class="btn btn-outline-dark" href="contact.php">Contact Us</a>
+        <a class="btn btn-outline-dark" href="<?= link_to('contact.php') ?>">Contact Us</a>
     </div>
 
     <div class="mm-foot">

@@ -35,8 +35,8 @@ define('ADDRESS_SHORT', 'Dublin, Ireland');
 // and the widget ID at the end of your Tawk JS embed URL.
 // Leave empty to disable the chat widget loader (the floating button stays clickable
 // and shows a graceful fallback).
-define('TAWK_PROPERTY_ID', '');
-define('TAWK_WIDGET_ID',   'default');
+define('TAWK_PROPERTY_ID', '69b3ccc23a61e31c3587d38a');
+define('TAWK_WIDGET_ID',   '1jjj5fmcf');
 
 // =====================================================
 // SOCIAL
@@ -151,18 +151,6 @@ $PAGE_META = [
         'keywords' => 'publishing blog, author journal, writing craft, book marketing tips',
         'canonical' => WEBSITE_URL . '/blog.php',
     ],
-    'blog-book-cover-design-cost' => [
-        'title' => 'How Much Does Book Cover Design Cost in Europe? | ' . WEBSITE_NAME,
-        'description' => 'A full 2026 breakdown of book cover design costs across Europe, by region, by experience, by complexity, including VAT, contracts and rights.',
-        'keywords' => 'book cover design cost Europe, Reedsy cover design price, freelance book cover designer Europe',
-        'canonical' => WEBSITE_URL . '/blog-book-cover-design-cost.php',
-    ],
-    'blog-top-publishers' => [
-        'title' => 'Top 10 Book Publishers in Europe | ' . WEBSITE_NAME,
-        'description' => 'A practical 2026 guide to the top 10 book publishers in Europe, from indie-friendly modern publishers to the Big Five traditional houses.',
-        'keywords' => 'top book publishers Europe, best publishers UK, publishing companies London, Irish publishers',
-        'canonical' => WEBSITE_URL . '/blog-top-publishers.php',
-    ],
     'testimonial' => [
         'title' => 'Testimonials | ' . WEBSITE_NAME,
         'description' => 'What our authors say about working with European Publishing House.',
@@ -199,6 +187,11 @@ $PAGE_META = [
 // HELPER FUNCTIONS
 // =====================================================
 function getCurrentPage() {
+    // If a page has explicitly declared what menu key it represents, use that
+    // (so /blogs/<slug>.php can still register as 'blog' for nav highlighting).
+    if (!empty($GLOBALS['current_page_key'])) {
+        return $GLOBALS['current_page_key'];
+    }
     $script = basename($_SERVER['SCRIPT_NAME'], '.php');
     return $script ?: 'index';
 }
@@ -211,8 +204,25 @@ function getMeta($key = null) {
     return $meta;
 }
 
+/**
+ * Returns the relative path prefix that lets a page in a subfolder
+ * (e.g. /blogs/<slug>.php) link back up to root-level assets and pages.
+ * Pages can set $GLOBALS['site_base'] = '../'; before including header.php.
+ */
+function site_base() {
+    return $GLOBALS['site_base'] ?? '';
+}
+
 function asset($path) {
-    return rtrim(ASSETS_URL, '/') . '/' . ltrim($path, '/');
+    return site_base() . rtrim(ASSETS_URL, '/') . '/' . ltrim($path, '/');
+}
+
+/**
+ * Resolve a root-level page link, honouring the current page's site_base
+ * so that links from /blogs/<slug>.php correctly walk up to /<page>.php.
+ */
+function link_to($path) {
+    return site_base() . ltrim($path, '/');
 }
 
 function img($name) {

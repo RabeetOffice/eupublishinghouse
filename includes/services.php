@@ -41,7 +41,7 @@ $servicesIntro   = $servicesIntro   ?? null;
                     <h3 class="service-title"><?= safe($s['title']) ?></h3>
                     <p class="service-desc"><?= safe($s['desc']) ?></p>
                     <?php if (!empty($s['href'])): ?>
-                        <a href="<?= safe($s['href']) ?>" class="service-link" data-no-popup>
+                        <a href="<?= safe(link_to($s['href'])) ?>" class="service-link" data-no-popup>
                             Learn more <i class="fa-solid fa-arrow-right"></i>
                         </a>
                     <?php endif; ?>

@@ -173,7 +173,7 @@
             });
         }
 
-        /* ---------- BLOG SEARCH ---------- */
+        /* ---------- BLOG SEARCH + CATEGORY CHIPS ---------- */
         (function initBlogSearch() {
             var input = document.getElementById('blogSearch');
             if (!input) return;
@@ -183,22 +183,36 @@
             var count   = document.getElementById('blogSearchCount');
             var clearEl = document.getElementById('blogSearchClear');
             var resetEl = document.getElementById('blogResetBtn');
+            var chips   = Array.prototype.slice.call(document.querySelectorAll('.blog-chip'));
             var items   = grid ? Array.prototype.slice.call(grid.querySelectorAll('.blog-grid-item')) : [];
             var total   = items.length;
+            var activeCat = '';
 
             function plural(n) { return n === 1 ? '1 article' : n + ' articles'; }
 
-            function filter(q) {
-                q = (q || '').trim().toLowerCase();
+            function renderCount(q, visible) {
+                if (!count) return;
+                var qActive   = !!q;
+                var catActive = !!activeCat;
+                if (!qActive && !catActive) {
+                    count.innerHTML = '<i class="fa-regular fa-newspaper" aria-hidden="true"></i> <strong>' + total + '</strong> ' + (total === 1 ? 'article' : 'articles');
+                    return;
+                }
+                if (visible === 0) {
+                    count.innerHTML = '<i class="fa-regular fa-circle-xmark" aria-hidden="true"></i> No matches';
+                    return;
+                }
+                count.innerHTML = '<i class="fa-regular fa-newspaper" aria-hidden="true"></i> <strong>' + visible + '</strong> of ' + total;
+            }
+
+            function filter() {
+                var q = (input.value || '').trim().toLowerCase();
                 var visible = 0;
                 items.forEach(function (el) {
-                    if (!q) {
-                        el.classList.remove('is-hidden');
-                        visible++;
-                        return;
-                    }
                     var hay = (el.dataset.title || '') + ' ' + (el.dataset.desc || '') + ' ' + (el.dataset.cat || '');
-                    if (hay.indexOf(q) !== -1) {
+                    var matchesText = !q || hay.indexOf(q) !== -1;
+                    var matchesCat  = !activeCat || (el.dataset.cat || '') === activeCat;
+                    if (matchesText && matchesCat) {
                         el.classList.remove('is-hidden');
                         visible++;
                     } else {
@@ -207,27 +221,42 @@
                 });
 
                 if (empty) empty.hidden = visible !== 0;
-                if (count) count.textContent = q
-                    ? (visible === 0 ? 'No matches' : plural(visible) + ' of ' + total)
-                    : plural(total);
+                renderCount(q, visible);
                 if (clearEl) clearEl.hidden = !q;
             }
 
-            input.addEventListener('input', function () { filter(this.value); });
+            input.addEventListener('input', filter);
             if (clearEl) {
                 clearEl.addEventListener('click', function () {
                     input.value = '';
                     input.focus();
-                    filter('');
+                    filter();
                 });
             }
             if (resetEl) {
                 resetEl.addEventListener('click', function () {
                     input.value = '';
+                    activeCat = '';
+                    chips.forEach(function (c) {
+                        var on = !c.dataset.cat;
+                        c.classList.toggle('is-active', on);
+                        c.setAttribute('aria-selected', on ? 'true' : 'false');
+                    });
                     input.focus();
-                    filter('');
+                    filter();
                 });
             }
+            chips.forEach(function (chip) {
+                chip.addEventListener('click', function () {
+                    activeCat = chip.dataset.cat || '';
+                    chips.forEach(function (c) {
+                        var on = c === chip;
+                        c.classList.toggle('is-active', on);
+                        c.setAttribute('aria-selected', on ? 'true' : 'false');
+                    });
+                    filter();
+                });
+            });
         })();
 
         /* ---------- FAQ ACCORDION ---------- */
@@ -263,14 +292,17 @@
         var liveChatBtn = document.getElementById('liveChatBtn');
         if (liveChatBtn) {
             liveChatBtn.addEventListener('click', function () {
-                // If Tawk.to is loaded, toggle its window
-                if (window.Tawk_API && typeof Tawk_API.toggle === 'function') {
-                    try { Tawk_API.toggle(); return; } catch (e) {}
+                // Preferred: dedicated helper installed by footer.php's Tawk loader
+                if (typeof window.openTawkChat === 'function' && window.openTawkChat()) return;
+                // Raw Tawk fallbacks in case the helper isn't loaded yet
+                if (window.Tawk_API) {
+                    try {
+                        if (typeof Tawk_API.showWidget === 'function') Tawk_API.showWidget();
+                        if (typeof Tawk_API.maximize === 'function') { Tawk_API.maximize(); return; }
+                        if (typeof Tawk_API.toggle === 'function')   { Tawk_API.toggle();   return; }
+                    } catch (e) {}
                 }
-                if (window.Tawk_API && typeof Tawk_API.maximize === 'function') {
-                    try { Tawk_API.maximize(); return; } catch (e) {}
-                }
-                // Fallback: open the manuscript popup so the user can still reach us
+                // Last-resort fallback: open the manuscript popup
                 var overlay = document.getElementById('popupOverlay');
                 if (overlay) {
                     overlay.classList.add('is-open');

@@ -1,5 +1,6 @@
 <?php
 require_once __DIR__ . '/includes/config.php';
+require_once __DIR__ . '/includes/blog-data.php';
 
 $page_title       = 'Our Blogs | ' . BRAND_NAME;
 $page_description = 'Essays, pricing guides and long-form resources on publishing, editing, cover design and book marketing from the European Publishing House editorial desk.';
@@ -14,75 +15,84 @@ $banner = [
     'sub'   => 'Practical guides and longer essays from the European Publishing House editorial desk.',
 ];
 include __DIR__ . '/includes/page-banner.php';
-
-$posts = [
-    [
-        'cat'    => 'Design',
-        'date'   => '11-05-2026',
-        'read'   => '14 min read',
-        'title'  => 'How Much Does Book Cover Design Cost in Europe?',
-        'desc'   => 'A 2026 breakdown of cover design costs across Europe by region, by experience, by complexity. Includes VAT, contracts and rights.',
-        'image'  => 'assets/images/blog/book-cover-design-cost.webp',
-        'url'    => 'blog-book-cover-design-cost.php',
-        'author' => 'Clara Lichtenberg',
-    ],
-    [
-        'cat'    => 'Industry',
-        'date'   => '11-05-2026',
-        'read'   => '12 min read',
-        'title'  => 'Top 10 Book Publishers in Europe',
-        'desc'   => 'A practical guide to the top 10 book publishers in Europe, from indie-friendly modern publishers to the Big Five traditional houses.',
-        'image'  => 'assets/images/blog/top-publishers.webp',
-        'url'    => 'blog-top-publishers.php',
-        'author' => 'Clara Lichtenberg',
-    ],
-];
 ?>
 
 <section class="blog-section">
     <div class="container">
 
-        <!-- Search bar -->
-        <div class="blog-search-wrap" data-aos="fade-up">
-            <label class="blog-search">
-                <i class="fa-solid fa-magnifying-glass blog-search__ico" aria-hidden="true"></i>
+        <!-- Filter bar: search + category chips + count -->
+        <?php
+        // Unique, alphabetised category list pulled from the blog index
+        $blog_categories = array_values(array_unique(array_map(
+            static function ($p) { return $p['category']; },
+            $blog_posts
+        )));
+        sort($blog_categories, SORT_STRING | SORT_FLAG_CASE);
+        ?>
+        <div class="blog-filter-bar" data-aos="fade-up">
+            <div class="blog-filter-search">
+                <i class="fa-solid fa-magnifying-glass blog-filter-search__ico" aria-hidden="true"></i>
                 <input id="blogSearch" type="search"
+                       class="blog-filter-search__input"
                        placeholder="Search articles by title, topic, or keyword..."
                        autocomplete="off"
                        aria-label="Search blog articles">
-                <button type="button" class="blog-search__clear" id="blogSearchClear" aria-label="Clear search" hidden>
+                <button type="button" class="blog-filter-search__clear" id="blogSearchClear" aria-label="Clear search" hidden>
                     <i class="fa-solid fa-xmark"></i>
                 </button>
-            </label>
-            <span class="blog-search-count" id="blogSearchCount" aria-live="polite">
-                <?= count($posts) ?> article<?= count($posts) === 1 ? '' : 's' ?>
-            </span>
+            </div>
+
+            <div class="blog-filter-row">
+                <div class="blog-filter-chips" role="tablist" aria-label="Filter by category">
+                    <button type="button" class="blog-chip is-active" data-cat="" role="tab" aria-selected="true">
+                        <i class="fa-solid fa-layer-group" aria-hidden="true"></i>
+                        <span>All</span>
+                        <span class="blog-chip__count"><?= count($blog_posts) ?></span>
+                    </button>
+                    <?php foreach ($blog_categories as $cat):
+                        $cat_count = count(array_filter($blog_posts, static function ($p) use ($cat) {
+                            return $p['category'] === $cat;
+                        }));
+                    ?>
+                        <button type="button" class="blog-chip" data-cat="<?= safe(strtolower($cat)) ?>" role="tab" aria-selected="false">
+                            <span><?= safe($cat) ?></span>
+                            <span class="blog-chip__count"><?= $cat_count ?></span>
+                        </button>
+                    <?php endforeach; ?>
+                </div>
+                <span class="blog-filter-count" id="blogSearchCount" aria-live="polite">
+                    <i class="fa-regular fa-newspaper" aria-hidden="true"></i>
+                    <strong><?= count($blog_posts) ?></strong> article<?= count($blog_posts) === 1 ? '' : 's' ?>
+                </span>
+            </div>
         </div>
 
         <!-- Blog grid (uniform cards) -->
         <div class="row g-4 mt-4" id="blogGrid">
-            <?php foreach ($posts as $i => $p): ?>
+            <?php foreach ($blog_posts as $i => $p):
+                $post_url = blog_post_url($p['slug']);
+            ?>
                 <div class="col-md-6 col-lg-4 blog-grid-item"
                      data-title="<?= safe(strtolower($p['title'])) ?>"
-                     data-desc="<?= safe(strtolower($p['desc'])) ?>"
-                     data-cat="<?= safe(strtolower($p['cat'])) ?>"
+                     data-desc="<?= safe(strtolower($p['excerpt'])) ?>"
+                     data-cat="<?= safe(strtolower($p['category'])) ?>"
                      data-aos="fade-up" data-aos-delay="<?= ($i % 3) * 90 ?>">
                     <article class="blog-card">
-                        <a href="<?= safe($p['url']) ?>" class="blog-card__art-link" aria-label="Read <?= safe($p['title']) ?>">
+                        <a href="<?= safe($post_url) ?>" class="blog-card__art-link" aria-label="Read <?= safe($p['title']) ?>">
                             <div class="blog-card__art" style="background-image:url('<?= safe($p['image']) ?>')" aria-hidden="true"></div>
                         </a>
                         <div class="blog-card__body">
-                            <span class="post-cat"><?= safe($p['cat']) ?></span>
+                            <span class="post-cat"><?= safe($p['category']) ?></span>
                             <h3 class="post-title">
-                                <a href="<?= safe($p['url']) ?>"><?= safe($p['title']) ?></a>
+                                <a href="<?= safe($post_url) ?>"><?= safe($p['title']) ?></a>
                             </h3>
-                            <p class="post-desc"><?= safe($p['desc']) ?></p>
+                            <p class="post-desc"><?= safe($p['excerpt']) ?></p>
                             <div class="post-meta">
-                                <span><i class="fa-regular fa-calendar"></i> <?= safe($p['date']) ?></span>
+                                <span><i class="fa-regular fa-calendar"></i> <?= safe(blog_format_date($p['date'])) ?></span>
                                 <span><i class="fa-regular fa-clock"></i> <?= safe($p['read']) ?></span>
                                 <span><i class="fa-regular fa-user"></i> <?= safe($p['author']) ?></span>
                             </div>
-                            <a href="<?= safe($p['url']) ?>" class="post-link">Read article <i class="fa-solid fa-arrow-right"></i></a>
+                            <a href="<?= safe($post_url) ?>" class="post-link">Read article <i class="fa-solid fa-arrow-right"></i></a>
                         </div>
                     </article>
                 </div>
