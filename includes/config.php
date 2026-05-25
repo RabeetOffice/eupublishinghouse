@@ -184,8 +184,90 @@ $PAGE_META = [
 ];
 
 // =====================================================
+// FORM SYSTEM — lead routing, SMTP, reCAPTCHA, DB
+// Used by /form-submission.php, includes/smtp-mailer.php and includes/recaptcha.php.
+// =====================================================
+
+/* ---------- $BRAND — required by smtp-mailer.php so the "From" name on every
+ *            outbound email is the brand, even when SMTP uses a different mailbox. */
+$BRAND = [
+    'name'       => WEBSITE_NAME,
+    'tagline'    => WEBSITE_TAGLINE,
+    'base_url'   => WEBSITE_URL,
+];
+
+/* ---------- LEAD / EMAIL ROUTING ----------
+ * `recipients`  : ALWAYS forces lead notifications to info@eupublishinghouse.com
+ *                 regardless of whichever mailbox is used to authenticate SMTP.
+ * `from_name`   : The brand name appears as the sender name in inboxes.
+ * `from_email`  : Should match the SMTP auth user below so Google Workspace
+ *                 doesn't rewrite the From header.
+ * `reply_to`    : Where clicking "Reply" sends the response (usually same).
+ */
+$LEAD = [
+    'recipients' => [
+        'info@eupublishinghouse.com',
+    ],
+    'from_name'  => WEBSITE_NAME . ' Leads',
+    'from_email' => 'info@eupublishinghouse.com',
+    'reply_to'   => 'info@eupublishinghouse.com',
+];
+
+/* ---------- SMTP — Google Workspace ----------
+ * Requirements:
+ *   1. PHPMailer must be installed:
+ *        composer require phpmailer/phpmailer
+ *      (or drop into includes/PHPMailer/src/).
+ *   2. `user` must be a real Google Workspace mailbox.
+ *   3. `pass` MUST be a Google App Password (16-char), NOT the account password.
+ *      Generate at https://myaccount.google.com/apppasswords after enabling
+ *      2-Step Verification on the account.
+ *   4. If you later switch `user` to a different mailbox, leave `from_email`
+ *      as info@eupublishinghouse.com and set up "Send mail as" in Gmail so
+ *      Google allows the From header — otherwise it'll be rewritten.
+ */
+$SMTP = [
+    'enabled' => true,
+    'host'    => 'smtp.gmail.com',
+    'port'    => 587,
+    'user'    => 'info@eupublishinghouse.com',
+    'pass'    => 'placeholder',                  // <-- 16-char Google App Password
+    'secure'  => 'tls',                          // STARTTLS on 587 (use 'ssl' + 465 for SMTPS)
+];
+
+/* ---------- DATABASE (optional lead log) ----------
+ * Leave `host` blank to skip DB logging — email is the source of truth.
+ * If credentials are filled in, form-submission.php auto-creates a `leads`
+ * table on first write.
+ */
+$DB = [
+    'host'    => '',
+    'name'    => '',
+    'user'    => '',
+    'pass'    => '',
+    'charset' => 'utf8mb4',
+];
+
+/* ---------- reCAPTCHA v3 ----------
+ * Leave keys blank to disable bot check entirely. When filled, every form
+ * gets a hidden token field, the SDK is lazy-loaded on first focus, and
+ * form-submission.php verifies server-side before processing.
+ */
+$RECAPTCHA = [
+    'site_key'   => '6LfTp_ssAAAAAFOub_iWJD270Dsak6u2Yz5Kdbrz',
+    'secret_key' => '6LfTp_ssAAAAABUCpVXwNJWbUfs9btQYoODy1M2H',
+    'min_score'  => 0.5,
+];
+
+// =====================================================
 // HELPER FUNCTIONS
 // =====================================================
+/* Short alias for the HTML-escape helper. Some shared includes (form-submission,
+ * smtp-mailer, recaptcha) use the conventional `e()` name. */
+if (!function_exists('e')) {
+    function e($str) { return htmlspecialchars((string)$str, ENT_QUOTES, 'UTF-8'); }
+}
+
 function getCurrentPage() {
     // If a page has explicitly declared what menu key it represents, use that
     // (so /blogs/<slug>.php can still register as 'blog' for nav highlighting).

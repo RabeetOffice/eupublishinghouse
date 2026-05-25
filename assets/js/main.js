@@ -173,6 +173,99 @@
             });
         }
 
+        /* ---------- SITE FORMS — populate source_page, fetch recaptcha token,
+           show loading state, then let the form POST natively to form-submission.php */
+        (function initSiteForms() {
+            var forms = document.querySelectorAll('form.site-form');
+            if (!forms.length) return;
+
+            forms.forEach(function (form) {
+                /* Stamp the source URL into the hidden field so form-submission.php
+                   knows where to redirect on error. */
+                var srcInput = form.querySelector('input[name="source_page"]');
+                if (srcInput && !srcInput.value) {
+                    srcInput.value = window.location.href;
+                }
+
+                form.addEventListener('submit', function (e) {
+                    if (form.dataset.submitting === '1') {
+                        e.preventDefault();
+                        return;
+                    }
+
+                    /* Loading state on submit button */
+                    var btn = form.querySelector('button[type="submit"], .qc-submit, .popup-submit');
+                    if (btn) {
+                        var label = btn.querySelector('.btn-label');
+                        btn.dataset.originalHtml = btn.dataset.originalHtml || btn.innerHTML;
+                        btn.disabled = true;
+                        if (label) {
+                            label.textContent = 'Sending…';
+                        } else {
+                            btn.innerHTML = '<span class="btn-label">Sending…</span> <i class="fa-solid fa-circle-notch fa-spin"></i>';
+                        }
+                    }
+
+                    /* If a reCAPTCHA token field is present, fetch a fresh token,
+                       inject it, and re-submit. Otherwise let the form submit normally. */
+                    var tokenField = form.querySelector('[data-recaptcha-token]');
+                    if (tokenField && typeof window.recaptchaGetToken === 'function') {
+                        e.preventDefault();
+                        form.dataset.submitting = '1';
+                        var action = tokenField.dataset.recaptchaAction || form.dataset.formAction || 'submit';
+                        window.recaptchaGetToken(action).then(function (token) {
+                            tokenField.value = token || '';
+                            form.dataset.submitting = '0';
+                            form.submit();
+                        }).catch(function () {
+                            /* If recaptcha fails for any reason, submit anyway —
+                               the server will treat it as an empty token and
+                               return form_status=captcha if real bot-check is on.
+                               Better than blocking real users on flaky networks. */
+                            form.dataset.submitting = '0';
+                            form.submit();
+                        });
+                    }
+                });
+            });
+
+            /* Surface server-side error codes from ?form_status=... in a toast
+               so users know what went wrong when they were redirected back. */
+            var params = new URLSearchParams(window.location.search);
+            var status = params.get('form_status');
+            if (status && status !== 'success') {
+                var messages = {
+                    'invalid':         'Please fill in all required fields.',
+                    'captcha':         'Bot check failed. Please try again.',
+                    'file-too-large':  'Your manuscript is larger than 20 MB. Please send a smaller file.',
+                    'file-virus':      'The uploaded file failed our security scan.',
+                    'file-blocked':    'That file type is not permitted.',
+                    'invalid-file':    'We could not read that manuscript file. Please try another.'
+                };
+                var msg = messages[status] || 'Something went wrong. Please try again.';
+                var toast = document.createElement('div');
+                toast.className = 'form-toast form-toast--error';
+                toast.innerHTML = '<i class="fa-solid fa-triangle-exclamation"></i> ' + msg
+                    + '<button type="button" aria-label="Dismiss"><i class="fa-solid fa-xmark"></i></button>';
+                document.body.appendChild(toast);
+                requestAnimationFrame(function () { toast.classList.add('is-visible'); });
+                var closeFn = function () {
+                    toast.classList.remove('is-visible');
+                    setTimeout(function () { toast.remove(); }, 280);
+                };
+                toast.querySelector('button').addEventListener('click', closeFn);
+                setTimeout(closeFn, 7000);
+
+                /* Strip the query param so a refresh doesn't show the toast again */
+                if (window.history && history.replaceState) {
+                    params.delete('form_status');
+                    var qs = params.toString();
+                    var url = window.location.pathname + (qs ? '?' + qs : '') + window.location.hash;
+                    history.replaceState(null, '', url);
+                }
+            }
+        })();
+
         /* ---------- BLOG SEARCH + CATEGORY CHIPS ---------- */
         (function initBlogSearch() {
             var input = document.getElementById('blogSearch');

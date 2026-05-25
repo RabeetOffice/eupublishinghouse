@@ -1,4 +1,7 @@
-<?php require_once __DIR__ . '/../config.php'; ?>
+<?php
+require_once __DIR__ . '/../config.php';
+require_once __DIR__ . '/../recaptcha.php';
+?>
 <aside class="quote-card">
     <div class="quote-card__head">
         <span class="quote-card__ico" aria-hidden="true">
@@ -16,7 +19,7 @@
         Send us your manuscript or a short note. A senior editor will read it personally and reply, no auto-screening, no sales pitch.
     </p>
 
-    <form class="quote-card__form" action="#" method="post" novalidate>
+    <form class="quote-card__form site-form" action="<?= safe(link_to('form-submission.php')) ?>" method="post" novalidate data-form-action="quote_card">
         <div class="qc-grid">
             <label class="qc-field">
                 <span class="qc-label">First name</span>
@@ -54,12 +57,17 @@
         </div>
 
         <button type="submit" class="btn btn-cta btn-lg qc-submit" data-no-popup>
-            Submit to Editorial <i class="fa-solid fa-arrow-right"></i>
+            <span class="btn-label">Submit to Editorial</span>
+            <i class="fa-solid fa-arrow-right"></i>
         </button>
 
         <div class="qc-note">
             <i class="fa-solid fa-lock"></i>
             Your manuscript stays confidential.
         </div>
+
+        <input type="hidden" name="form_type" value="quote_card">
+        <input type="hidden" name="source_page" value="">
+        <?php recaptcha_field('quote_card'); ?>
     </form>
 </aside>

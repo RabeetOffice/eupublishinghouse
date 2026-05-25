@@ -111,6 +111,12 @@
 
 <?php include __DIR__ . '/forms/manuscript-popup.php'; ?>
 
+<?php
+/* reCAPTCHA v3 lazy-loader — only outputs if site_key is set in config.php */
+require_once __DIR__ . '/recaptcha.php';
+recaptcha_loader();
+?>
+
 <!-- Scripts -->
 <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" defer></script>

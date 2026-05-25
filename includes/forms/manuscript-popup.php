@@ -1,4 +1,7 @@
-<?php require_once __DIR__ . '/../config.php'; ?>
+<?php
+require_once __DIR__ . '/../config.php';
+require_once __DIR__ . '/../recaptcha.php';
+?>
 <!-- ===== GLOBAL POPUP FORM ===== -->
 <div class="popup-overlay" id="popupOverlay" aria-hidden="true" role="presentation">
     <div class="popup-modal" role="dialog" aria-modal="true" aria-labelledby="popupTitle">
@@ -29,7 +32,7 @@
                 </div>
             </aside>
 
-            <form class="popup-form" action="#" method="post" novalidate id="popupForm">
+            <form class="popup-form site-form" action="<?= safe(link_to('form-submission.php')) ?>" method="post" novalidate id="popupForm" data-form-action="popup_quote">
                 <div class="row g-3">
                     <div class="col-md-6">
                         <label class="form-label">First Name</label>
@@ -67,10 +70,14 @@
                     <div class="col-12 d-flex justify-content-between align-items-center flex-wrap gap-3">
                         <small class="form-note"><i class="fa-solid fa-lock"></i> Your manuscript stays confidential.</small>
                         <button type="submit" class="btn btn-cta btn-lg" data-no-popup>
-                            Submit to Editorial <i class="fa-solid fa-arrow-right"></i>
+                            <span class="btn-label">Submit to Editorial</span>
+                            <i class="fa-solid fa-arrow-right"></i>
                         </button>
                     </div>
                 </div>
+                <input type="hidden" name="form_type" value="popup">
+                <input type="hidden" name="source_page" value="">
+                <?php recaptcha_field('popup_quote'); ?>
             </form>
 
         </div>
