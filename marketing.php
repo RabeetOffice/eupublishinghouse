@@ -16,8 +16,8 @@ $hero = [
         "At European Publishing House, our book marketing services are built around one goal: putting your book in front of the people who want to read it. We’ve worked across every genre since 2021, marketing fiction, non-fiction, memoirs, business books, children’s titles, self-help, and academic writing. Every campaign is built around your specific book, your audience, and the platforms where your readers actually spend their time.",
     ],
     'ctas' => [
-        ['label' => 'Get Started',        'href' => '#popup',              'class' => 'btn-cta',  'popup' => true],
-        ['label' => 'Marketing Services', 'href' => '#marketing-services', 'class' => 'btn-glass'],
+        ['label' => 'Get Started', 'href' => '#popup',                'class' => 'btn-cta',   'popup'    => true],
+        ['label' => 'Live Chat',   'href' => link_to('javascript:;'), 'class' => 'btn-glass', 'livechat' => true],
     ],
 ];
 include __DIR__ . '/includes/service-hero.php';
@@ -78,7 +78,7 @@ include __DIR__ . '/includes/distributors.php';
         <div class="row align-items-center g-5">
             <div class="col-lg-6" data-aos="fade-right">
                 <div class="why-eph-art">
-                    <img src="assets/images/livesite/AuthorChoose.jpg" alt="Why most books don't sell, and how we fix that" loading="lazy" decoding="async">
+                    <img src="assets/images/MostBooksDon-2048x1835.webp" alt="Why most books don't sell, and how we fix that" loading="lazy" decoding="async">
                     <span class="why-eph-art__chip">Strategy</span>
                 </div>
             </div>
@@ -109,7 +109,7 @@ include __DIR__ . '/includes/distributors.php';
         <div class="row align-items-center g-5">
             <div class="col-lg-6" data-aos="fade-right">
                 <div class="publish-cost-art">
-                    <img src="assets/images/livesite/publishCostsection.jpg" alt="What do book marketing services cost in Europe" loading="lazy" decoding="async">
+                    <img src="assets/images/BookPublishersAcrossEurope-2048x1754.webp" alt="What do book marketing services cost in Europe" loading="lazy" decoding="async">
                 </div>
             </div>
             <div class="col-lg-6" data-aos="fade-left">

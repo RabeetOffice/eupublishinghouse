@@ -16,8 +16,8 @@ $hero = [
         "We've helped over 800 authors publish since 2021, across every genre you can think of. Fiction, non-fiction, memoirs, children's books, business titles, academic writing. First-time authors who don't know where to start and experienced writers who just want a reliable team to handle the process. Whatever stage you're at, we take your manuscript and get it published, professionally, globally, and on your terms.",
     ],
     'ctas' => [
-        ['label' => 'Get Started',  'href' => '#popup', 'class' => 'btn-cta',   'popup' => true],
-        ['label' => 'View Pricing', 'href' => '#pricing','class' => 'btn-glass'],
+        ['label' => 'Get Started', 'href' => '#popup',                'class' => 'btn-cta',   'popup'    => true],
+        ['label' => 'Live Chat',   'href' => link_to('javascript:;'), 'class' => 'btn-glass', 'livechat' => true],
     ],
 ];
 include __DIR__ . '/includes/service-hero.php';
@@ -78,7 +78,7 @@ include __DIR__ . '/includes/distributors.php';
         <div class="row align-items-center g-5">
             <div class="col-lg-6" data-aos="fade-right">
                 <div class="why-eph-art">
-                    <img src="assets/images/livesite/AuthorChoose.jpg" alt="Publishing that works for the author" loading="lazy" decoding="async">
+                    <img src="assets/images/PublishingThatWorksfortheAuthor-1969x2048.webp" alt="Publishing that works for the author" loading="lazy" decoding="async">
                     <span class="why-eph-art__chip">Author-First</span>
                 </div>
             </div>
@@ -112,7 +112,7 @@ include __DIR__ . '/includes/distributors.php';
         <div class="row align-items-center g-5">
             <div class="col-lg-6" data-aos="fade-right">
                 <div class="publish-cost-art">
-                    <img src="assets/images/livesite/publishCostsection.jpg" alt="What does it cost to publish a book in Europe" loading="lazy" decoding="async">
+                    <img src="assets/images/CosttoPublishaBook-2048x1365.webp" alt="What does it cost to publish a book in Europe" loading="lazy" decoding="async">
                 </div>
             </div>
             <div class="col-lg-6" data-aos="fade-left">

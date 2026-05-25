@@ -16,8 +16,8 @@ $hero = [
         'Use one service or commission the entire pipeline. Either way, you work directly with a team that\'s genuinely invested in your book, editing, ghostwriting, cover design, formatting, marketing, and global distribution all under one roof.',
     ],
     'ctas' => [
-        ['label' => 'Get Started',     'href' => '#popup',    'class' => 'btn-cta',  'popup' => true],
-        ['label' => 'Browse Services', 'href' => '#services', 'class' => 'btn-glass'],
+        ['label' => 'Get Started', 'href' => '#popup',                'class' => 'btn-cta',   'popup'    => true],
+        ['label' => 'Live Chat',   'href' => link_to('javascript:;'), 'class' => 'btn-glass', 'livechat' => true],
     ],
 ];
 include __DIR__ . '/includes/service-hero.php';

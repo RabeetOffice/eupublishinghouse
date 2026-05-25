@@ -57,10 +57,12 @@ $hImage   = $h['image']      ?? null;
                 <?php if (!empty($hCtas)): ?>
                     <div class="hero-cta-row service-hero__ctas">
                         <?php foreach ($hCtas as $cta):
-                            $isPopup = !empty($cta['popup']);
+                            $isPopup    = !empty($cta['popup']);
+                            $isLiveChat = !empty($cta['livechat']);
                         ?>
                             <a href="<?= safe($cta['href']) ?>"
                                class="btn <?= safe($cta['class'] ?? 'btn-cta') ?> btn-lg"
+                               <?= $isLiveChat ? 'data-livechat role="button"' : '' ?>
                                <?= $isPopup ? 'data-popup' : 'data-no-popup' ?>>
                                 <?= safe($cta['label']) ?> <i class="fa-solid fa-arrow-right"></i>
                             </a>

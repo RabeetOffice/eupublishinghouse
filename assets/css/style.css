@@ -2707,7 +2707,7 @@ body.popup-open { overflow: hidden; }
 .publish-cost-sec p { color: var(--c-muted); margin-bottom: 1rem; }
 .publish-cost-sec .btn { margin-top: 1rem; }
 
-.publish-cost-art {
+/* .publish-cost-art {
     position: relative;
     border-radius: var(--r-xl);
     overflow: hidden;
@@ -2724,7 +2724,7 @@ body.popup-open { overflow: hidden; }
     position: absolute; inset: 0;
     background: linear-gradient(135deg, rgba(108, 176, 76, .14), transparent 50%);
     pointer-events: none;
-}
+} */
 
 /* =====================================================================
    28e. INNER-PAGE WHY/VALUE SECTIONS — bullet lists with leaf-check icons
@@ -2798,7 +2798,7 @@ body.popup-open { overflow: hidden; }
 @media (min-width: 992px) {
     .why-eph-sec .col-lg-6 { width: 50%; }
 }
-.why-eph-art {
+/* .why-eph-art {
     position: relative;
     border-radius: var(--r-xl);
     overflow: hidden;
@@ -2809,7 +2809,7 @@ body.popup-open { overflow: hidden; }
     width: 100%; height: 100%;
     object-fit: cover;
     display: block;
-}
+} */
 .why-eph-art__chip {
     position: absolute;
     bottom: 1.25rem; left: 1.25rem;

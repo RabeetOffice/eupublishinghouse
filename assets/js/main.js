@@ -289,20 +289,25 @@
         }
 
         /* ---------- LIVE CHAT TOGGLE ---------- */
+        // Returns true if Tawk was successfully opened, false otherwise.
+        function openLiveChat() {
+            if (typeof window.openTawkChat === 'function' && window.openTawkChat()) return true;
+            if (window.Tawk_API) {
+                try {
+                    if (typeof Tawk_API.showWidget === 'function') Tawk_API.showWidget();
+                    if (typeof Tawk_API.maximize === 'function') { Tawk_API.maximize(); return true; }
+                    if (typeof Tawk_API.toggle === 'function')   { Tawk_API.toggle();   return true; }
+                } catch (e) {}
+            }
+            return false;
+        }
+        window.openLiveChat = openLiveChat;
+
         var liveChatBtn = document.getElementById('liveChatBtn');
         if (liveChatBtn) {
             liveChatBtn.addEventListener('click', function () {
-                // Preferred: dedicated helper installed by footer.php's Tawk loader
-                if (typeof window.openTawkChat === 'function' && window.openTawkChat()) return;
-                // Raw Tawk fallbacks in case the helper isn't loaded yet
-                if (window.Tawk_API) {
-                    try {
-                        if (typeof Tawk_API.showWidget === 'function') Tawk_API.showWidget();
-                        if (typeof Tawk_API.maximize === 'function') { Tawk_API.maximize(); return; }
-                        if (typeof Tawk_API.toggle === 'function')   { Tawk_API.toggle();   return; }
-                    } catch (e) {}
-                }
-                // Last-resort fallback: open the manuscript popup
+                if (openLiveChat()) return;
+                // Last-resort fallback for the floating button: open the manuscript popup
                 var overlay = document.getElementById('popupOverlay');
                 if (overlay) {
                     overlay.classList.add('is-open');
@@ -311,6 +316,14 @@
                 }
             });
         }
+
+        // Delegated handler: any element with [data-livechat] opens Tawk on click.
+        // If Tawk is unavailable, the link's own href acts as a graceful fallback.
+        document.addEventListener('click', function (e) {
+            var trigger = e.target.closest('[data-livechat]');
+            if (!trigger) return;
+            if (openLiveChat()) e.preventDefault();
+        });
 
         /* ---------- COUNT UP ---------- */
         var counters = document.querySelectorAll('.count-up');

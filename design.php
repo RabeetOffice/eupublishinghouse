@@ -17,8 +17,8 @@ $hero = [
         "At European Publishing House, we design covers from scratch for fiction, non-fiction, children's books, academic titles, and everything that sits between those categories. There are no templates being pulled from a library and personalised with your title. No designs recycled from a previous project with the name changed. Every cover starts with your book specifically, what it's about, who it's for, and what it needs to communicate before a reader has read a single word.",
     ],
     'ctas' => [
-        ['label' => 'Get Started',  'href' => '#popup',          'class' => 'btn-cta',  'popup' => true],
-        ['label' => 'See Formats',  'href' => '#cover-services', 'class' => 'btn-glass'],
+        ['label' => 'Get Started', 'href' => '#popup',                'class' => 'btn-cta',   'popup'    => true],
+        ['label' => 'Live Chat',   'href' => link_to('javascript:;'), 'class' => 'btn-glass', 'livechat' => true],
     ],
 ];
 include __DIR__ . '/includes/service-hero.php';
@@ -79,7 +79,7 @@ include __DIR__ . '/includes/distributors.php';
         <div class="row align-items-center g-5">
             <div class="col-lg-6" data-aos="fade-right">
                 <div class="why-eph-art">
-                    <img src="assets/images/livesite/AuthorChoose.jpg" alt="What a professional book cover actually does" loading="lazy" decoding="async">
+                    <img src="assets/images/ProfessionalBookCover-2048x1967.webp" alt="What a professional book cover actually does" loading="lazy" decoding="async">
                     <span class="why-eph-art__chip">Custom</span>
                 </div>
             </div>
@@ -110,7 +110,7 @@ include __DIR__ . '/includes/distributors.php';
         <div class="row align-items-center g-5">
             <div class="col-lg-6" data-aos="fade-right">
                 <div class="publish-cost-art">
-                    <img src="assets/images/livesite/publishCostsection.jpg" alt="How much does book cover design cost in Europe" loading="lazy" decoding="async">
+                    <img src="assets/images/BookCoverDesignCost-2048x1365.webp" alt="How much does book cover design cost in Europe" loading="lazy" decoding="async">
                 </div>
             </div>
             <div class="col-lg-6" data-aos="fade-left">

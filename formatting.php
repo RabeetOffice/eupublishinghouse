@@ -16,8 +16,8 @@ $hero = [
         "At European Publishing House, we format manuscripts for every format and every platform. Paperback, hardback, eBook, Amazon KDP, IngramSpark, wherever your book is going, we produce files that meet every technical requirement and look exactly right when readers open them. Clean, consistent, and ready to publish.",
     ],
     'ctas' => [
-        ['label' => 'Get Started',   'href' => '#popup',          'class' => 'btn-cta',  'popup' => true],
-        ['label' => 'See Formats',   'href' => '#format-services','class' => 'btn-glass'],
+        ['label' => 'Get Started', 'href' => '#popup',                'class' => 'btn-cta',   'popup'    => true],
+        ['label' => 'Live Chat',   'href' => link_to('javascript:;'), 'class' => 'btn-glass', 'livechat' => true],
     ],
 ];
 include __DIR__ . '/includes/service-hero.php';
@@ -72,7 +72,7 @@ include __DIR__ . '/includes/distributors.php';
         <div class="row align-items-center g-5">
             <div class="col-lg-6" data-aos="fade-right">
                 <div class="why-eph-art">
-                    <img src="assets/images/livesite/AuthorChoose.jpg" alt="Why formatting matters more than most authors realise" loading="lazy" decoding="async">
+                    <img src="assets/images/FormattingMatters-2048x1536.webp" alt="Why formatting matters more than most authors realise" loading="lazy" decoding="async">
                     <span class="why-eph-art__chip">Layout</span>
                 </div>
             </div>
@@ -149,7 +149,7 @@ include __DIR__ . '/includes/distributors.php';
         <div class="row align-items-center g-5">
             <div class="col-lg-6" data-aos="fade-right">
                 <div class="publish-cost-art">
-                    <img src="assets/images/livesite/publishCostsection.jpg" alt="How much does book formatting cost in Europe" loading="lazy" decoding="async">
+                    <img src="assets/images/BookFormattingCost-2048x1536.webp" alt="How much does book formatting cost in Europe" loading="lazy" decoding="async">
                 </div>
             </div>
             <div class="col-lg-6" data-aos="fade-left">
