@@ -83,12 +83,12 @@ $faqs = [
 <section class="faq-section" id="faq">
     <div class="container">
         <div class="row g-5 align-items-start">
-            <div class="col-lg-4" data-aos="fade-right">
+            <!-- <div class="col-lg-4" data-aos="fade-right">
                 <span class="eyebrow">Frequently Asked</span>
                 <h2 class="section-title">We&rsquo;re Here To Answer All Your <em class="serif-italic">Questions.</em></h2>
                 <p class="section-lead">Can&rsquo;t find what you&rsquo;re looking for? Speak with our team directly.</p>
                 <a href="contact.php" class="btn btn-cta">Get in Touch <i class="fa-solid fa-arrow-right"></i></a>
-            </div>
+            </div> -->
 
             <div class="col-lg-8" data-aos="fade-left" data-aos-delay="100">
                 <div class="accordion faq-accordion" id="faqAcc">
@@ -114,7 +114,4 @@ $faqs = [
 </section>
 
 <?php
-include __DIR__ . '/includes/services.php';
-include __DIR__ . '/includes/distributors.php';
-include __DIR__ . '/includes/final-cta.php';
 include __DIR__ . '/includes/footer.php';
