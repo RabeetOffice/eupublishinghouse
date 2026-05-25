@@ -17,12 +17,12 @@ require_once __DIR__ . '/../recaptcha.php';
                 </span>
                 <div class="popup-aside__inner">
                     <span class="eyebrow eyebrow--light">Speak with our team</span>
-                    <h3 class="popup-title" id="popupTitle">Get a free <em class="gold-italic">consultation</em> &amp; manuscript review.</h3>
-                    <p class="popup-lead">Send us your manuscript or just a short note. A senior editor will read it personally and reply , no automated screening, no sales pitch.</p>
+                    <h3 class="popup-title" id="popupTitle">Get a free <em class="gold-italic">consultation</em> for your book.</h3>
+                    <p class="popup-lead">Tell us about your book and the service you're after. A senior editor will reply personally with a clear plan and a realistic quote, no automated screening, no sales pitch.</p>
                     <ul class="popup-perks">
-                        <li><i class="fa-solid fa-check"></i>Free manuscript review</li>
+                        <li><i class="fa-solid fa-check"></i>Free editorial consultation</li>
                         <li><i class="fa-solid fa-check"></i>Honest, no-pressure quote</li>
-                        <li><i class="fa-solid fa-check"></i>Reply within four weeks</li>
+                        <li><i class="fa-solid fa-check"></i>Personal reply within four weeks</li>
                         <li><i class="fa-solid fa-check"></i>You keep your rights &amp; royalties</li>
                     </ul>
                     <div class="popup-contact">
@@ -68,9 +68,9 @@ require_once __DIR__ . '/../recaptcha.php';
                         <textarea name="message" rows="4" class="form-control" placeholder="A short paragraph is plenty. We'll write back personally."></textarea>
                     </div>
                     <div class="col-12 d-flex justify-content-between align-items-center flex-wrap gap-3">
-                        <small class="form-note"><i class="fa-solid fa-lock"></i> Your manuscript stays confidential.</small>
+                        <small class="form-note"><i class="fa-solid fa-lock"></i> Your details stay confidential.</small>
                         <button type="submit" class="btn btn-cta btn-lg" data-no-popup>
-                            <span class="btn-label">Submit to Editorial</span>
+                            <span class="btn-label">Get My Free Quote</span>
                             <i class="fa-solid fa-arrow-right"></i>
                         </button>
                     </div>

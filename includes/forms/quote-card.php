@@ -10,13 +10,13 @@ require_once __DIR__ . '/../recaptcha.php';
         <div>
             <span class="quote-card__eyebrow">Free Consultation</span>
             <h3 class="quote-card__title">
-                Get a free manuscript <em class="serif-italic">review</em>
+                Get a free <em class="serif-italic">Consultation</em> for your book.
             </h3>
         </div>
     </div>
 
     <p class="quote-card__lead">
-        Send us your manuscript or a short note. A senior editor will read it personally and reply, no auto-screening, no sales pitch.
+        Tell us about your book and the service you're after. A senior editor will reply personally, no auto-screening, no sales pitch.
     </p>
 
     <form class="quote-card__form site-form" action="<?= safe(link_to('form-submission.php')) ?>" method="post" novalidate data-form-action="quote_card">
@@ -63,7 +63,7 @@ require_once __DIR__ . '/../recaptcha.php';
 
         <div class="qc-note">
             <i class="fa-solid fa-lock"></i>
-            Your manuscript stays confidential.
+            Your details stay confidential.
         </div>
 
         <input type="hidden" name="form_type" value="quote_card">

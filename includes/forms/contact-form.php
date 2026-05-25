@@ -38,9 +38,9 @@ require_once __DIR__ . '/../recaptcha.php';
             <textarea name="message" rows="5" class="form-control" placeholder="Tell us a little about your project , a short paragraph is plenty."></textarea>
         </div>
         <div class="col-12 d-flex justify-content-between align-items-center flex-wrap gap-3">
-            <small class="form-note"><i class="fa-solid fa-lock"></i> Your manuscript stays confidential.</small>
+            <small class="form-note"><i class="fa-solid fa-lock"></i> Your details stay confidential.</small>
             <button type="submit" class="btn btn-cta btn-lg" data-no-popup>
-                <span class="btn-label">Submit to Editorial</span>
+                <span class="btn-label">Get My Free Quote</span>
                 <i class="fa-solid fa-arrow-right"></i>
             </button>
         </div>

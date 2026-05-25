@@ -9,83 +9,138 @@ $canonical_url    = rtrim(BRAND_SITE_URL, '/') . '/privacy-policy.php';
 require __DIR__ . '/includes/header.php';
 
 $banner = [
-    'crumb'   => 'Privacy Policy',
-
-    'title'   => 'Privacy <em class="serif-italic">Policy</em>',
-    'sub'     => 'How European Publishing House collects, uses, and safeguards your information.',
+    'crumb' => 'Privacy Policy',
+    'title' => 'Privacy <em class="serif-italic">Policy</em>',
+    'sub'   => 'How European Publishing House collects, uses, and safeguards your information.',
 ];
 include __DIR__ . '/includes/page-banner.php';
+
+/* Ordered list of (anchor, title) pairs — drives the sticky TOC and each
+ * section card's heading. Content for each section is below in the same order. */
+$sections = [
+    ['intro',       'Introduction'],
+    ['collect',     'Information We Collect'],
+    ['use',         'How We Use Your Information'],
+    ['protect',     'How We Protect Your Information'],
+    ['sharing',     'Sharing Your Information'],
+    ['cookies',     'Cookies and Tracking Technologies'],
+    ['rights',      'Your Rights and Choices'],
+    ['third-party', 'Third-Party Links'],
+    ['children',    'Children&rsquo;s Privacy'],
+    ['changes',     'Changes to This Privacy Policy'],
+    ['contact',     'Contact Us'],
+];
 ?>
 
-<section class="legal-section" style="padding-block:80px;background:var(--c-ivory);">
+<section class="legal-section">
     <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-lg-9 legal-body" data-aos="fade-up">
-                <p><strong>Effective Date:</strong> 1 January 2026</p>
+        <div class="legal-layout">
 
-                <h2>Introduction</h2>
-                <p>European Publishing House is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website. By accessing or using our site, you agree to the terms of this Privacy Policy.</p>
+            <aside class="legal-toc" aria-label="On this page">
+                <span class="legal-toc__label">On this page</span>
+                <ol class="legal-toc__list">
+                    <?php foreach ($sections as $i => [$anchor, $title]): ?>
+                        <li>
+                            <a href="#<?= safe($anchor) ?>">
+                                <span class="legal-toc__num"><?= str_pad((string)($i + 1), 2, '0', STR_PAD_LEFT) ?></span>
+                                <span><?= $title ?></span>
+                            </a>
+                        </li>
+                    <?php endforeach; ?>
+                </ol>
+            </aside>
 
-                <h2>Information We Collect</h2>
-                <p>We gather personal data through website visits, newsletter signups, purchases, manuscript submissions, and other interactions with our team. The categories of information we collect include:</p>
-                <ul>
-                    <li><strong>Contact Information:</strong> Name, email address, mailing address, and phone number.</li>
-                    <li><strong>Payment Information:</strong> Credit card details or other payment information when you purchase services.</li>
-                    <li><strong>Manuscript &amp; Project Information:</strong> Manuscripts, briefs, draft material, project notes, and any other content you choose to share with us in the course of working together.</li>
-                    <li><strong>Usage Data:</strong> Information about your browsing activity on our site, such as IP address, browser type, pages visited, and time spent on each page.</li>
-                    <li><strong>Newsletter &amp; Marketing Preferences:</strong> Your preferences regarding communication from us.</li>
-                </ul>
+            <div class="legal-body" data-aos="fade-up">
 
-                <h2>How We Use Your Information</h2>
-                <p>We use the information we collect for the following purposes:</p>
-                <ul>
-                    <li>To deliver the services you have requested, including editing, publishing, design, formatting and marketing.</li>
-                    <li>To communicate with you about your account, project status, or any enquiries you raise.</li>
-                    <li>To send you marketing or promotional communications, but only where you have consented to receive them.</li>
-                    <li>To improve our services, website, and overall author experience.</li>
-                    <li>To meet our legal, regulatory and accounting obligations.</li>
-                </ul>
+                <article class="legal-card" id="intro">
+                    <span class="legal-card__num">01</span>
+                    <h2 class="legal-card__title">Introduction</h2>
+                    <p>European Publishing House is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website. By accessing or using our site, you agree to the terms of this Privacy Policy.</p>
+                </article>
 
-                <h2>How We Protect Your Information</h2>
-                <p>We implement a variety of security measures to maintain the safety of your personal information. We use encryption, including SSL technology, to protect sensitive information transmitted online. Access to client data is restricted to team members who need it to perform their work.</p>
+                <article class="legal-card" id="collect">
+                    <span class="legal-card__num">02</span>
+                    <h2 class="legal-card__title">Information We Collect</h2>
+                    <p>We may collect personal information when you visit our site, sign up for our newsletter, make a purchase, or engage with us in other ways. The types of personal information we collect may include:</p>
+                    <ul class="legal-list">
+                        <li><strong>Contact Information:</strong> Name, email address, mailing address, and phone number.</li>
+                        <li><strong>Payment Information:</strong> Credit card details or other payment information.</li>
+                        <li><strong>Usage Data:</strong> Information about your browsing activity on our site, such as IP address, browser type, and pages visited.</li>
+                        <li><strong>Newsletter &amp; Marketing Preferences:</strong> Preferences regarding communication from us.</li>
+                    </ul>
+                </article>
 
-                <h2>Sharing Your Information</h2>
-                <p>We do not sell your personal information. We may share information with:</p>
-                <ul>
-                    <li><strong>Service providers</strong> who help us operate our business (such as payment processors, hosting providers, or email platforms), under appropriate confidentiality obligations.</li>
-                    <li><strong>Legal authorities</strong> where required by law, court order, or to protect our rights and the rights of others.</li>
-                    <li><strong>Successor entities</strong> in the event of a merger, acquisition, or restructuring of our business.</li>
-                </ul>
+                <article class="legal-card" id="use">
+                    <span class="legal-card__num">03</span>
+                    <h2 class="legal-card__title">How We Use Your Information</h2>
+                    <p>We use the information we collect for the following purposes:</p>
+                    <ul class="legal-list">
+                        <li>To process and fulfil orders, including sending order confirmations and updates.</li>
+                        <li>To communicate with you about your account, orders, or enquiries.</li>
+                        <li>To send promotional emails or newsletters if you have opted in to receive them.</li>
+                        <li>To improve our site and services, including analysing user behaviour to enhance user experience.</li>
+                        <li>To comply with legal obligations or enforce our legal rights.</li>
+                    </ul>
+                </article>
 
-                <h2>Cookies and Tracking Technologies</h2>
-                <p>Our website uses cookies and similar technologies to provide a better browsing experience, analyse traffic, and improve our content. You can choose to disable cookies through your browser settings, though doing so may limit certain features on our site.</p>
+                <article class="legal-card" id="protect">
+                    <span class="legal-card__num">04</span>
+                    <h2 class="legal-card__title">How We Protect Your Information</h2>
+                    <p>We implement a variety of security measures to maintain the safety of your personal information. We use encryption, including SSL technology, to protect sensitive information transmitted online. We also use secure servers and restrict access to your personal data to authorised personnel only.</p>
+                </article>
 
-                <h2>Your Rights and Choices</h2>
-                <p>Depending on where you live, you may have certain rights regarding your personal information, including the right to:</p>
-                <ul>
-                    <li>Access the personal information we hold about you.</li>
-                    <li>Request correction of any inaccurate or incomplete information.</li>
-                    <li>Request deletion of your personal information, subject to legal and contractual obligations.</li>
-                    <li>Opt out of marketing communications at any time.</li>
-                </ul>
-                <p>To exercise any of these rights, please contact us at <a href="mailto:<?= EMAIL_ADDRESS ?>"><?= safe(EMAIL_ADDRESS) ?></a>.</p>
+                <article class="legal-card" id="sharing">
+                    <span class="legal-card__num">05</span>
+                    <h2 class="legal-card__title">Sharing Your Information</h2>
+                    <p>We do not sell, rent, or trade your personal information to third parties. However, we may share your information in the following circumstances:</p>
+                    <ul class="legal-list">
+                        <li><strong>Service Providers:</strong> We may share information with trusted third-party service providers who assist us in operating our business, such as payment processors and email marketing services.</li>
+                        <li><strong>Legal Compliance:</strong> We may disclose your information if required by law, such as in response to a court order or government request.</li>
+                        <li><strong>Business Transfers:</strong> In the event of a merger, acquisition, or sale of European Publishing House, your information may be transferred as part of that transaction.</li>
+                    </ul>
+                </article>
 
-                <h2>Third-Party Links</h2>
-                <p>Our website may contain links to third-party websites. We are not responsible for the privacy practices or content of those external sites and encourage you to review their privacy policies before sharing any personal information with them.</p>
+                <article class="legal-card" id="cookies">
+                    <span class="legal-card__num">06</span>
+                    <h2 class="legal-card__title">Cookies and Tracking Technologies</h2>
+                    <p>We use cookies and other tracking technologies to improve the functionality and performance of our site. These technologies allow us to remember your preferences, analyse trends, and gather information about how users interact with our site. You can choose to disable cookies through your browser settings, though doing so may limit certain features on our site.</p>
+                </article>
 
-                <h2>Children&rsquo;s Privacy</h2>
-                <p>Our website and services are not directed at children under 13. We do not knowingly collect personal information from children under 13. If you believe a child has provided us with information without parental consent, please contact us so that we can remove it.</p>
+                <article class="legal-card" id="rights">
+                    <span class="legal-card__num">07</span>
+                    <h2 class="legal-card__title">Your Rights and Choices</h2>
+                    <p>You have the following rights regarding your personal information:</p>
+                    <ul class="legal-list">
+                        <li><strong>Access &amp; Correction:</strong> You may request to access or correct your personal information by contacting us directly.</li>
+                        <li><strong>Opt-Out:</strong> You can unsubscribe from marketing communications at any time by following the instructions in any email we send or by contacting us directly.</li>
+                        <li><strong>Data Deletion:</strong> You may request the deletion of your personal information, subject to certain legal exceptions.</li>
+                    </ul>
+                </article>
 
-                <h2>Changes to This Privacy Policy</h2>
-                <p>We may update this Privacy Policy from time to time. When we do, we will update the effective date at the top of this page. Continued use of our site or services following any changes constitutes your acceptance of the updated policy.</p>
+                <article class="legal-card" id="third-party">
+                    <span class="legal-card__num">08</span>
+                    <h2 class="legal-card__title">Third-Party Links</h2>
+                    <p>Our site may contain links to third-party websites. We are not responsible for the privacy practices or content of those websites. We encourage you to review the privacy policies of any third-party websites before providing them with your personal information.</p>
+                </article>
 
-                <h2>Contact Us</h2>
-                <p>If you have questions about this Privacy Policy or how we handle your information, please contact us:</p>
-                <ul>
-                    <li><strong>Email:</strong> <a href="mailto:<?= EMAIL_ADDRESS ?>"><?= safe(EMAIL_ADDRESS) ?></a></li>
-                    <li><strong>Phone:</strong> <a href="tel:<?= PHONE_NUMBER_RAW ?>"><?= safe(PHONE_NUMBER) ?></a></li>
-                    <li><strong>Address:</strong> <?= safe(ADDRESS) ?></li>
-                </ul>
+                <article class="legal-card" id="children">
+                    <span class="legal-card__num">09</span>
+                    <h2 class="legal-card__title">Children&rsquo;s Privacy</h2>
+                    <p>Our site is not intended for children under the age of 13. We do not knowingly collect personal information from children. If we become aware that we have collected information from a child under 13, we will take steps to delete that information promptly.</p>
+                </article>
+
+                <article class="legal-card" id="changes">
+                    <span class="legal-card__num">10</span>
+                    <h2 class="legal-card__title">Changes to This Privacy Policy</h2>
+                    <p>We may update this Privacy Policy from time to time. When we make changes, we will update the effective date at the top of the policy. We encourage you to review this Privacy Policy periodically to stay informed about how we are protecting your information.</p>
+                </article>
+
+                <article class="legal-card legal-card--accent" id="contact">
+                    <span class="legal-card__num">11</span>
+                    <h2 class="legal-card__title">Contact Us</h2>
+                    <p>If you have any questions about this Privacy Policy or how we handle your personal information, please get in touch with us through our <a href="<?= safe(link_to('contact.php')) ?>">contact page</a>.</p>
+                </article>
+
             </div>
         </div>
     </div>

@@ -2,52 +2,85 @@
 require_once __DIR__ . '/includes/config.php';
 
 $page_title       = 'Thank You | ' . BRAND_NAME;
-$page_description = 'Thanks for reaching out to ' . BRAND_NAME . '. A senior editor will read your note personally and reply within one working day.';
-$page_keywords    = 'thank you, EU Publishing House, manuscript submission, contact confirmation';
+$page_description = 'Thanks for reaching out to ' . BRAND_NAME . '. A senior editor will reply within one working day.';
+$page_keywords    = 'thank you, EU Publishing House, submission confirmation';
 $canonical_url    = rtrim(BRAND_SITE_URL, '/') . '/thank-you.php';
+
+/* Auto-redirect to home after 8s (also enforced via JS with a live countdown).
+ * The meta refresh is the no-JS fallback. */
+$redirect_seconds = 8;
+$home_url         = link_to('index.php');
 
 require __DIR__ . '/includes/header.php';
 ?>
 
+<meta http-equiv="refresh" content="<?= (int)$redirect_seconds ?>;url=<?= safe($home_url) ?>">
+
 <section class="thank-you-section">
     <div class="container">
-        <div class="thank-you-card" data-aos="fade-up">
+        <div class="thank-you-card thank-you-card--minimal" data-aos="fade-up">
             <span class="thank-you-ico" aria-hidden="true">
-                <i class="fa-solid fa-feather"></i>
+                <i class="fa-solid fa-check"></i>
             </span>
 
-            <span class="eyebrow"><i class="fa-solid fa-circle-check"></i> Submission Received</span>
             <h1 class="thank-you-title">
                 Thanks &mdash; we&rsquo;ve <em class="serif-italic">got it</em>.
             </h1>
             <p class="thank-you-lead">
-                One of our senior editors at <?= safe(WEBSITE_NAME) ?> will read your note personally and reply within one working day. Please keep an eye on your inbox &mdash; and your spam folder, just in case.
+                A senior editor will reply within one working day.
             </p>
 
-            <ul class="thank-you-perks">
-                <li><i class="fa-solid fa-shield-halved"></i><span>Your manuscript stays confidential</span></li>
-                <li><i class="fa-solid fa-pen-nib"></i><span>Read by a senior editor, no auto-screening</span></li>
-                <li><i class="fa-solid fa-bullhorn"></i><span>Honest, no-pressure feedback</span></li>
-            </ul>
-
-            <div class="thank-you-actions">
-                <a href="<?= safe(link_to('index.php')) ?>" class="btn btn-cta btn-lg">
-                    <i class="fa-solid fa-arrow-left"></i> Back to home
-                </a>
-                <a href="<?= safe(link_to('blog.php')) ?>" class="btn btn-outline-dark btn-lg">
-                    Read the journal <i class="fa-solid fa-book-open"></i>
-                </a>
+            <div class="thank-you-redirect" role="status" aria-live="polite"
+                 data-redirect-url="<?= safe($home_url) ?>"
+                 data-redirect-seconds="<?= (int)$redirect_seconds ?>">
+                <span class="redirect-ring" aria-hidden="true">
+                    <svg viewBox="0 0 36 36">
+                        <circle class="ring-bg"   cx="18" cy="18" r="16"></circle>
+                        <circle class="ring-fill" cx="18" cy="18" r="16"></circle>
+                    </svg>
+                    <span class="redirect-count"><?= (int)$redirect_seconds ?></span>
+                </span>
+                <span class="redirect-text">
+                    Redirecting to home<a href="<?= safe($home_url) ?>" class="redirect-skip">go now</a>
+                </span>
             </div>
-
-            <p class="thank-you-meta">
-                Need to reach us in the meantime?
-                <a href="mailto:<?= safe(EMAIL_ADDRESS) ?>"><?= safe(EMAIL_ADDRESS) ?></a>
-                &middot;
-                <a href="tel:<?= safe(PHONE_NUMBER_RAW) ?>"><?= safe(PHONE_NUMBER) ?></a>
-            </p>
         </div>
     </div>
 </section>
+
+<script>
+(function () {
+    var box = document.querySelector('.thank-you-redirect');
+    if (!box) return;
+
+    var url      = box.dataset.redirectUrl || 'index.php';
+    var seconds  = parseInt(box.dataset.redirectSeconds, 10) || 8;
+    var countEl  = box.querySelector('.redirect-count');
+    var ringFill = box.querySelector('.ring-fill');
+    var ringLen  = 2 * Math.PI * 16; // matches r="16" on the SVG circle
+    if (ringFill) {
+        ringFill.style.strokeDasharray  = ringLen.toFixed(2);
+        ringFill.style.strokeDashoffset = '0';
+    }
+
+    var remaining = seconds;
+    var start = Date.now();
+
+    var tick = setInterval(function () {
+        var elapsed = (Date.now() - start) / 1000;
+        remaining = Math.max(0, Math.ceil(seconds - elapsed));
+        if (countEl) countEl.textContent = remaining;
+        if (ringFill) {
+            var progress = Math.min(1, elapsed / seconds);
+            ringFill.style.strokeDashoffset = (ringLen * progress).toFixed(2);
+        }
+        if (remaining <= 0) {
+            clearInterval(tick);
+            window.location.href = url;
+        }
+    }, 100);
+})();
+</script>
 
 <?php
 include __DIR__ . '/includes/footer.php';
