@@ -14,7 +14,7 @@ $aboutBullets = $aboutBullets ?? [
     'Worldwide distribution',
 ];
 
-$aboutImage    = $aboutImage    ?? 'assets/images/about-image.png';
+$aboutImage    = $aboutImage    ?? 'assets/images/about-image.webp';
 $aboutChipNum  = $aboutChipNum  ?? '800+';
 $aboutChipLbl  = $aboutChipLbl  ?? 'Books published since 2021 across every major genre';
 $aboutCtaText  = $aboutCtaText  ?? 'Learn More About Us';

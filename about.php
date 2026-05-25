@@ -26,7 +26,7 @@ include __DIR__ . '/includes/page-banner.php';
         <div class="row">
             <div class="col-lg-6 about-snippet__spacer" aria-hidden="true">
                 <div class="about-image" data-aos="fade-right">
-                    <img src="<?= asset('images/about-image.png') ?>" alt="Inside the EU Publishing House editorial studio"
+                    <img src="<?= asset('images/about-image.webp') ?>" alt="Inside the EU Publishing House editorial studio"
                         loading="lazy" decoding="async">
                 </div>
             </div>
