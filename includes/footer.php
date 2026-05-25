@@ -92,6 +92,23 @@
     </span>
 </button>
 
+<!-- Floating WhatsApp contact -->
+<a id="whatsappBtn"
+   class="whatsapp-btn"
+   href="https://wa.me/353899595672"
+   target="_blank"
+   rel="noopener"
+   aria-label="Chat with us on WhatsApp at +353 89 959 5672">
+    <span class="wa-icon">
+        <i class="fa-brands fa-whatsapp"></i>
+        <span class="wa-pulse" aria-hidden="true"></span>
+    </span>
+    <span class="wa-label">
+        <span class="top">WhatsApp</span>
+        <span class="bot">+353 89 959 5672</span>
+    </span>
+</a>
+
 <?php include __DIR__ . '/forms/manuscript-popup.php'; ?>
 
 <!-- Scripts -->

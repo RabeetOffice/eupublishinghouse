@@ -2175,7 +2175,7 @@ nav.top .navactions {
     font-size: .85rem;
     color: rgba(255, 255, 255, .5);
 }
-.footer-bottom p { margin: 0; }
+.footer-bottom p { margin: 0; color : #fff; font-weight: 500; }
 .footer-legal { list-style: none; padding: 0; margin: 0; display: flex; gap: 1.5rem; flex-wrap: wrap; }
 .footer-legal a { color: rgba(255, 255, 255, .65); transition: color var(--t-fast) var(--ease); }
 .footer-legal a:hover { color: var(--c-leaf); }
@@ -2211,11 +2211,12 @@ nav.top .navactions {
 .to-top.is-visible { opacity: 1; visibility: visible; transform: translateY(0); }
 .to-top:hover { transform: translateY(-5px); }
 
-/* Glass live-chat button — bottom-left */
+/* Glass live-chat button — bottom-right */
 /* When the Tawk chat window is open, hide our floating buttons so they
    don't overlap the chat panel. body.chat-open is toggled by the Tawk
    lifecycle hooks in includes/footer.php. */
 body.chat-open .live-chat-btn,
+body.chat-open .whatsapp-btn,
 body.chat-open .to-top {
     opacity: 0;
     visibility: hidden;
@@ -2300,6 +2301,93 @@ body.chat-open .to-top {
     }
     .live-chat-btn .lc-label { display: none; }
     .to-top { bottom: 80px; right: 18px; }
+}
+
+/* Glass WhatsApp button — bottom-left, mirrors .live-chat-btn */
+.whatsapp-btn {
+    position: fixed;
+    bottom: 30px; left: 30px;
+    z-index: 51;
+    display: inline-flex;
+    align-items: center;
+    gap: .55rem;
+    padding: .8rem 1.1rem .8rem .85rem;
+    background: rgba(255, 255, 255, .65);
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    border: 1px solid rgba(255, 255, 255, .7);
+    border-radius: var(--r-pill);
+    color: var(--c-primary-2);
+    font-family: inherit;
+    font-size: .9rem;
+    font-weight: 600;
+    text-decoration: none;
+    box-shadow:
+        0 14px 35px -10px rgba(37, 211, 102, .28),
+        inset 0 1px 0 rgba(255, 255, 255, .8);
+    transition: all var(--t-fast) var(--ease);
+}
+.whatsapp-btn:hover {
+    transform: translateY(-3px);
+    background: #fff;
+    color: var(--c-primary-2);
+    box-shadow:
+        0 20px 45px -10px rgba(37, 211, 102, .40),
+        0 0 0 4px rgba(37, 211, 102, .15);
+}
+.whatsapp-btn:focus-visible {
+    outline: 2px solid #25D366;
+    outline-offset: 3px;
+}
+.whatsapp-btn .wa-icon {
+    width: 32px; height: 32px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #25D366, #128C7E);
+    color: #fff;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 1rem;
+    position: relative;
+}
+.whatsapp-btn .wa-pulse {
+    position: absolute;
+    top: -2px; right: -2px;
+    width: 10px; height: 10px;
+    background: #25D366;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    animation: waPulse 1.8s ease-in-out infinite;
+}
+@keyframes waPulse {
+    0%, 100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(37, 211, 102, .55); }
+    50%      { transform: scale(1.15); box-shadow: 0 0 0 6px rgba(37, 211, 102, 0); }
+}
+.whatsapp-btn .wa-label .top {
+    display: block;
+    font-size: .68rem;
+    text-transform: uppercase;
+    letter-spacing: .12em;
+    color: var(--c-muted);
+    font-weight: 500;
+}
+.whatsapp-btn .wa-label .bot {
+    display: block;
+    font-size: .82rem;
+    color: var(--c-primary-2);
+    font-weight: 600;
+    line-height: 1.1;
+    letter-spacing: .01em;
+}
+@media (max-width: 575px) {
+    .whatsapp-btn {
+        bottom: 18px; left: 18px;
+        padding: .6rem .85rem .6rem .6rem;
+    }
+    .whatsapp-btn .wa-label { display: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+    .whatsapp-btn,
+    .whatsapp-btn:hover { transition: none; transform: none; }
+    .whatsapp-btn .wa-pulse { animation: none; }
 }
 
 /* =====================================================================
