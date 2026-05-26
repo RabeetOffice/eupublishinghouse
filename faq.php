@@ -12,7 +12,7 @@ $banner = [
     'crumb'   => 'FAQs',
 
     'title'   => 'We&rsquo;re Here To Answer All Your <em class="serif-italic">Questions.</em>',
-    'sub'     => 'A short brief on how we work, who we publish, and what authors can expect.',
+    // 'sub'     => '',
 ];
 include __DIR__ . '/includes/page-banner.php';
 
