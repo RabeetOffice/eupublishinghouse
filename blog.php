@@ -100,7 +100,7 @@ include __DIR__ . '/includes/page-banner.php';
                                 <span><i class="fa-regular fa-clock"></i> <?= safe($p['read']) ?></span>
                                 <span><i class="fa-regular fa-user"></i> <?= safe($p['author']) ?></span>
                             </div>
-                            <a href="<?= safe($post_url) ?>" class="post-link">Read article <i class="fa-solid fa-arrow-right"></i></a>
+                            <a href="<?= safe($post_url) ?>" class="post-link">Read Blog <i class="fa-solid fa-arrow-right"></i></a>
                         </div>
                     </article>
                 </div>
