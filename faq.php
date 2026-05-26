@@ -4,7 +4,7 @@ require_once __DIR__ . '/includes/config.php';
 $page_title       = 'European Publishing House – FAQs & Author Support';
 $page_description = 'Find answers to common questions about publishing with European Publishing House. Expert guidance, clear solutions, and support for authors across Europe.';
 $page_keywords    = 'publishing FAQ, EU Publishing House questions, manuscript submission, book publishing rights, publishing timelines';
-$canonical_url    = rtrim(BRAND_SITE_URL, '/') . '/faq.php';
+$canonical_url    = rtrim(BRAND_SITE_URL, '/') . '/faq/';
 
 require __DIR__ . '/includes/header.php';
 

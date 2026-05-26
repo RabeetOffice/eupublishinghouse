@@ -5,7 +5,7 @@ require_once __DIR__ . '/includes/portfolio-data.php';
 $page_title       = 'Portfolio | Branding & Publishing Work – EU House UK';
 $page_description = 'Explore EU Publishing House portfolio featuring publishing, branding, and creative design projects. View our work, expertise, and client collaborations.';
 $page_keywords    = 'EU Publishing House portfolio, published books, EUPH titles, books on Amazon';
-$canonical_url    = rtrim(BRAND_SITE_URL, '/') . '/portfolios.php';
+$canonical_url    = rtrim(BRAND_SITE_URL, '/') . '/portfolios/';
 
 require __DIR__ . '/includes/header.php';
 

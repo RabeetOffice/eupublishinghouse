@@ -4,7 +4,7 @@ require_once __DIR__ . '/includes/config.php';
 $page_title       = 'Effective Book Marketing Services Across Europe';
 $page_description = 'Boost your book\'s reach with expert marketing services in Europe. Proven strategies, targeted campaigns, and professional support to grow your readership.';
 $page_keywords    = 'book marketing Europe, Amazon ads for authors, author branding, book launch marketing, book fair promotion';
-$canonical_url    = rtrim(BRAND_SITE_URL, '/') . '/marketing.php';
+$canonical_url    = rtrim(BRAND_SITE_URL, '/') . '/marketing/';
 
 require __DIR__ . '/includes/header.php';
 

@@ -4,7 +4,7 @@ require_once __DIR__ . '/includes/config.php';
 $page_title       = 'Professional Author Services Across Europe | EU Publishing House';
 $page_description = 'Comprehensive author services across Europe including publishing, editing, ghostwriting, design, formatting, and marketing tailored to every writer\'s needs.';
 $page_keywords    = 'author services Europe, book publishing services, book editing services, ghostwriting, cover design, book marketing';
-$canonical_url    = rtrim(BRAND_SITE_URL, '/') . '/services.php';
+$canonical_url    = rtrim(BRAND_SITE_URL, '/') . '/services/';
 
 require __DIR__ . '/includes/header.php';
 
@@ -26,9 +26,4 @@ include __DIR__ . '/includes/distributors.php';
 // Use the homepage services include (9-card grid) for the full services list
 include __DIR__ . '/includes/services.php';
 
-include __DIR__ . '/includes/process.php';
-include __DIR__ . '/includes/why-choose.php';
-include __DIR__ . '/includes/books-portfolio.php';
-include __DIR__ . '/includes/categories.php';
-include __DIR__ . '/includes/final-cta.php';
 include __DIR__ . '/includes/footer.php';

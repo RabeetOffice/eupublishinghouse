@@ -4,7 +4,7 @@ require_once __DIR__ . '/includes/config.php';
 $page_title       = 'Professional Book Formatting Services Across Europe';
 $page_description = 'Ensure your book looks perfect with expert formatting services in Europe. Precise layouts, polished designs, and professional support for every author.';
 $page_keywords    = 'book formatting Europe, ePub MOBI formatting, KDP formatting, print ready PDF, IngramSpark formatting';
-$canonical_url    = rtrim(BRAND_SITE_URL, '/') . '/formatting.php';
+$canonical_url    = rtrim(BRAND_SITE_URL, '/') . '/formatting/';
 
 require __DIR__ . '/includes/header.php';
 

@@ -4,7 +4,7 @@ require_once __DIR__ . '/includes/config.php';
 $page_title       = 'Contact European Publishing House – Get in Touch';
 $page_description = 'Reach out to European Publishing House for inquiries, support, or publishing guidance. Friendly, professional assistance for authors across Europe is here.';
 $page_keywords    = 'contact European Publishing House, submit manuscript Dublin, publishing consultation Europe';
-$canonical_url    = rtrim(BRAND_SITE_URL, '/') . '/contact.php';
+$canonical_url    = rtrim(BRAND_SITE_URL, '/') . '/contact/';
 
 require __DIR__ . '/includes/header.php';
 

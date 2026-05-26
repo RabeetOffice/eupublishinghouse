@@ -4,7 +4,7 @@ require_once __DIR__ . '/includes/config.php';
 $page_title       = 'European Publishing House – Terms & Conditions';
 $page_description = 'Review the Terms & Conditions of European Publishing House. Clear guidelines and policies to ensure a secure, fair, and professional experience for authors.';
 $page_keywords    = 'terms and conditions, EU Publishing House terms, publishing agreement';
-$canonical_url    = rtrim(BRAND_SITE_URL, '/') . '/terms-conditions.php';
+$canonical_url    = rtrim(BRAND_SITE_URL, '/') . '/terms-conditions/';
 
 require __DIR__ . '/includes/header.php';
 

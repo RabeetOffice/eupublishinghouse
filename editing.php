@@ -4,7 +4,7 @@ require_once __DIR__ . '/includes/config.php';
 $page_title       = 'Professional Book Editing Services Across Europe';
 $page_description = 'Enhance your manuscript with expert book editing services across Europe. Precision, quality, and trusted support to help authors perfect every page.';
 $page_keywords    = 'book editing Europe, developmental editing, copy editing, line editing, proofreading services, manuscript editing Ireland';
-$canonical_url    = rtrim(BRAND_SITE_URL, '/') . '/editing.php';
+$canonical_url    = rtrim(BRAND_SITE_URL, '/') . '/editing/';
 
 require __DIR__ . '/includes/header.php';
 

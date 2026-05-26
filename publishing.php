@@ -4,7 +4,7 @@ require_once __DIR__ . '/includes/config.php';
 $page_title       = 'Professional Book Publishing Services Across Europe';
 $page_description = 'Offering professional book publishing services across Europe, with expert guidance, quality production, and reliable support for authors and publishers.';
 $page_keywords    = 'book publishing Europe, hybrid publisher Ireland, Amazon KDP publishing, IngramSpark, global book distribution, publish a book Europe';
-$canonical_url    = rtrim(BRAND_SITE_URL, '/') . '/publishing.php';
+$canonical_url    = rtrim(BRAND_SITE_URL, '/') . '/publishing/';
 
 require __DIR__ . '/includes/header.php';
 

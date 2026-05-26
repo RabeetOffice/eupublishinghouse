@@ -4,7 +4,7 @@ require_once __DIR__ . '/includes/config.php';
 $page_title       = 'European Publishing House – About Our Story & Mission';
 $page_description = 'Learn about European Publishing House, our journey, mission, and commitment to helping authors across Europe achieve their publishing goals with expertise.';
 $page_keywords    = 'about European Publishing House, hybrid publisher Dublin, Irish book publisher, EU Publishing House story';
-$canonical_url    = rtrim(BRAND_SITE_URL, '/') . '/about.php';
+$canonical_url    = rtrim(BRAND_SITE_URL, '/') . '/about/';
 
 require __DIR__ . '/includes/header.php';
 

@@ -4,7 +4,7 @@ require_once __DIR__ . '/includes/config.php';
 $page_title       = 'European Publishing House – Privacy Policy & Safety';
 $page_description = 'Read European Publishing House\'s Privacy Policy to see how we protect your data. Committed to security, transparency, and author privacy across Europe.';
 $page_keywords    = 'privacy policy EU Publishing House, data protection, GDPR';
-$canonical_url    = rtrim(BRAND_SITE_URL, '/') . '/privacy-policy.php';
+$canonical_url    = rtrim(BRAND_SITE_URL, '/') . '/privacy-policy/';
 
 require __DIR__ . '/includes/header.php';
 

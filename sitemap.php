@@ -33,9 +33,7 @@ $staticPages = [
 ];
 
 echo '<?xml version="1.0" encoding="UTF-8"?>' . "\n";
-echo '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"' . "\n";
-echo '        xmlns:xhtml="http://www.w3.org/1999/xhtml"' . "\n";
-echo '        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">' . "\n";
+echo '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">' . "\n";
 
 foreach ($staticPages as [$path, $priority, $freq]) {
     $loc = $base . '/' . ltrim($path, '/');
@@ -51,19 +49,11 @@ foreach ($staticPages as [$path, $priority, $freq]) {
 foreach ($blog_posts as $post) {
     $loc      = $base . '/blogs/' . $post['slug'] . '/';
     $lastmod  = date('Y-m-d', strtotime($post['date'] ?? 'now'));
-    $imageUrl = $base . '/' . ltrim($post['image'] ?? '', '/');
-    $title    = htmlspecialchars($post['title'] ?? '', ENT_QUOTES | ENT_XML1, 'UTF-8');
     echo "  <url>\n";
     echo "    <loc>" . htmlspecialchars($loc, ENT_QUOTES | ENT_XML1, 'UTF-8') . "</loc>\n";
     echo "    <lastmod>{$lastmod}</lastmod>\n";
     echo "    <changefreq>monthly</changefreq>\n";
     echo "    <priority>0.7</priority>\n";
-    if (!empty($post['image'])) {
-        echo "    <image:image>\n";
-        echo "      <image:loc>" . htmlspecialchars($imageUrl, ENT_QUOTES | ENT_XML1, 'UTF-8') . "</image:loc>\n";
-        echo "      <image:title>{$title}</image:title>\n";
-        echo "    </image:image>\n";
-    }
     echo "  </url>\n";
 }
 

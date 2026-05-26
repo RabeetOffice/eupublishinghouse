@@ -11,6 +11,7 @@ Disallow: /includes/
 Disallow: /uploads/
 Disallow: /form-submission.php
 Disallow: /thank-you.php
+Disallow: /thank-you/
 Disallow: /*?form_status=
 
 # Common bad-actor paths

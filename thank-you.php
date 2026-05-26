@@ -4,7 +4,7 @@ require_once __DIR__ . '/includes/config.php';
 $page_title       = 'Thank You | ' . BRAND_NAME;
 $page_description = 'Thanks for reaching out to ' . BRAND_NAME . '. A senior editor will reply within one working day.';
 $page_keywords    = 'thank you, EU Publishing House, submission confirmation';
-$canonical_url    = rtrim(BRAND_SITE_URL, '/') . '/thank-you.php';
+$canonical_url    = rtrim(BRAND_SITE_URL, '/') . '/thank-you/';
 
 /* This page is transactional — don't index it in search results. */
 header('X-Robots-Tag: noindex, nofollow', true);

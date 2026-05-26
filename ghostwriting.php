@@ -4,7 +4,7 @@ require_once __DIR__ . '/includes/config.php';
 $page_title       = 'Expert Ghostwriting Services for Authors in Europe';
 $page_description = 'Turn your ideas into compelling books with expert ghostwriting in Europe. Creative, professional, and confidential services tailored for authors.';
 $page_keywords    = 'ghostwriting services Europe, hire a ghostwriter, memoir ghostwriter, business book ghostwriter, fiction ghostwriting';
-$canonical_url    = rtrim(BRAND_SITE_URL, '/') . '/ghostwriting.php';
+$canonical_url    = rtrim(BRAND_SITE_URL, '/') . '/ghostwriting/';
 
 require __DIR__ . '/includes/header.php';
 

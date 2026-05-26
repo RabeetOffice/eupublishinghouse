@@ -4,7 +4,7 @@ require_once __DIR__ . '/includes/config.php';
 $page_title       = 'Creative Book Cover Design Services Across Europe';
 $page_description = 'Make your book stand out with professional cover design services in Europe. Unique, eye-catching designs crafted to capture readers\' attention instantly.';
 $page_keywords    = 'book cover design Europe, custom cover design, eBook cover, print wraparound, children\'s book illustration, series branding';
-$canonical_url    = rtrim(BRAND_SITE_URL, '/') . '/design.php';
+$canonical_url    = rtrim(BRAND_SITE_URL, '/') . '/design/';
 
 require __DIR__ . '/includes/header.php';
 
