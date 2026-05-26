@@ -231,6 +231,8 @@ $BRAND = [
 $LEAD = [
     'recipients' => [
         'info@eupublishinghouse.com',
+        'maaz.rayyan@eupublishinghouse.com',
+        'sam.naran@ukpublishinghouse.co.uk'
     ],
     'from_name'  => WEBSITE_NAME . ' Leads',
     'from_email' => 'info@eupublishinghouse.com',
@@ -266,9 +268,9 @@ $SMTP = [
  */
 $DB = [
     'host'    => 'localhost',
-    'name'    => '',
-    'user'    => '',
-    'pass'    => '',
+    'name'    => 'lumihuxq_eupubhouse',
+    'user'    => 'lumihuxq_eupubhouseuser',
+    'pass'    => '0(qU4SW3tRHnlE%9',
     'charset' => 'utf8mb4',
 ];
 
