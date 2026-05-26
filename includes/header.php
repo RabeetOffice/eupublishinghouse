@@ -214,8 +214,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   gtag('config', 'G-Y6981SVFFZ');
 </script>
 
-
-
 </head>
 <body class="page-<?= safe(getCurrentPage()) ?>">
 
