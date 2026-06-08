@@ -7,6 +7,17 @@ require_once __DIR__ . '/config.php';
  */
 $blog_posts = [
     [
+        'slug'     => 'what-is-a-memoir',
+        'title'    => 'What Is a Memoir? A Complete Writing Guide for Writers',
+        'excerpt'  => 'Discover what a memoir is, how it differs from an autobiography, and what it truly takes to sit down and write one well with genuine craft and intention.',
+        'date'     => '2026-06-08',
+        'category' => 'Writing',
+        'image'    => asset('images/blog/what-is-a-memoir.webp'),
+        'image_alt'=> 'What is a memoir – a complete memoir writing guide for writers',
+        'author'   => 'Clara Lichtenberg',
+        'read'     => '16 min read',
+    ],
+    [
         'slug'     => 'top-book-publishers-in-europe',
         'title'    => 'Top 10 Book Publishers in Europe',
         'excerpt'  => 'A practical 2026 guide to the top 10 book publishers in Europe, from indie-friendly modern publishers to the Big Five traditional houses.',
