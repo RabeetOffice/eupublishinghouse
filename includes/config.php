@@ -230,7 +230,7 @@ $BRAND = [
  */
 $LEAD = [
     'recipients' => [
-        'maaz.rayyan@eupublishinghouse.com',
+        'maaz.rayyan@ukpublishinghouse.co.uk',
         'sam.naran@ukpublishinghouse.co.uk'
     ],
     'from_name'  => WEBSITE_NAME . ' Leads',
