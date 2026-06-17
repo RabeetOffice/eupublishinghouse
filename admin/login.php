@@ -117,6 +117,25 @@ $brandName = defined('BRAND_NAME') ? BRAND_NAME : 'EU Publishing House';
         <button class="adm-btn adm-btn-cta" type="submit">Sign in <i class="fa-solid fa-arrow-right"></i></button>
       </form>
       <?php if ($hasCaptcha && function_exists('recaptcha_loader')) recaptcha_loader(); ?>
+      <script>
+      /* Fetch a fresh reCAPTCHA v3 token and inject it before the form posts.
+         Mirrors the public site's form handler (assets/js/main.js). Safe no-op
+         when no captcha is configured / on localhost (recaptchaGetToken absent). */
+      (function () {
+        var form = document.getElementById('loginForm');
+        if (!form) return;
+        form.addEventListener('submit', function (e) {
+          var tokenField = form.querySelector('[data-recaptcha-token]');
+          if (!tokenField || typeof window.recaptchaGetToken !== 'function') return; // submit normally
+          e.preventDefault();
+          var btn = form.querySelector('button[type="submit"]');
+          if (btn) { btn.disabled = true; btn.style.opacity = '.7'; }
+          var action = tokenField.dataset.recaptchaAction || 'admin_login';
+          var send = function (token) { tokenField.value = token || ''; form.submit(); };
+          window.recaptchaGetToken(action).then(send).catch(function () { send(''); });
+        });
+      })();
+      </script>
     <?php endif; ?>
   </div>
 </div>
