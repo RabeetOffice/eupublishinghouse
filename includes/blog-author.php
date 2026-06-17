@@ -8,11 +8,13 @@ if (!isset($post) || !is_array($post)) return;
 
 $author_name = trim($post['author'] ?? 'EU Publishing House');
 
-$author_bios = [
-    'Clara Lichtenberg' => 'Clara Lichtenberg is presented as a European academic-style writer whose work sits at the intersection of literary philosophy, cultural theory, and narrative fiction. Her writing is characterised by a deliberate, measured prose style that prioritises conceptual depth over plot-driven storytelling, often resembling a hybrid between philosophical essays and introspective fiction.',
-];
+// Author bios now come from a single source of truth (managed in /admin → Authors).
+require __DIR__ . '/authors-data.php';
+$author_bios = $author_bios ?? [];
 
-$author_desc = $author_bios[$author_name] ?? 'The editorial team at EU Publishing House brings together editors, designers, and publishing professionals who help authors take their manuscripts from draft to published book. Our writers share practical guidance drawn from years of hands-on experience across editing, design, formatting, printing, and marketing.';
+$author_desc = $author_bios[$author_name]
+    ?? ($author_fallback_bio
+        ?? 'The editorial team at EU Publishing House brings together editors, designers, and publishing professionals who help authors take their manuscripts from draft to published book. Our writers share practical guidance drawn from years of hands-on experience across editing, design, formatting, printing, and marketing.');
 
 $author_initials = '';
 foreach (preg_split('/\s+/', $author_name) as $part) {

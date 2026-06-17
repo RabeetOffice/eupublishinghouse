@@ -7,6 +7,17 @@ require_once __DIR__ . '/config.php';
  */
 $blog_posts = [
     [
+        'slug'     => 'what-is-a-short-story',
+        'title'    => 'What Is a Short Story? Full Guide for Swiss Writers',
+        'excerpt'  => 'Learn what a short story is, its structure, word count, and core elements, plus how Swiss writers can craft, publish, and share short fiction effectively.',
+        'date'     => '2026-06-17',
+        'category' => 'Writing',
+        'image'    => asset('images/blog/What Is a Short Storys.png'),
+        'image_alt'=> 'What Is a Short Story? Full Guide for Swiss Writers',
+        'author'   => 'Clara Lichtenberg',
+        'read'     => '16 min read',
+    ],
+    [
         'slug'     => 'what-is-a-memoir',
         'title'    => 'What Is a Memoir? A Complete Writing Guide for Writers',
         'excerpt'  => 'Discover what a memoir is, how it differs from an autobiography, and what it truly takes to sit down and write one well with genuine craft and intention.',

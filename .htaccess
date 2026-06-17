@@ -26,6 +26,10 @@ AddDefaultCharset UTF-8
     RewriteCond %{REQUEST_URI}::$0  ^(.*?/)(.*)::\2$
     RewriteRule ^(.*)$  -  [E=BASE:%1]
 
+    # --- 0b. Admin panel: pass through untouched ---------------
+    #     Keep /admin/*.php working — no pretty-URL 301s, no rewrites.
+    RewriteRule ^admin(/.*)?$  -  [L]
+
     # --- 1. Block direct access to private folders -------------
     RewriteRule ^(config|includes)/.*  -  [F,L]
 

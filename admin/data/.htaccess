@@ -1,0 +1,9 @@
+# Block ALL web access to the admin data store (users, roles, posts, backups, state).
+# These files are read only by PHP on the server.
+<IfModule mod_authz_core.c>
+    Require all denied
+</IfModule>
+<IfModule !mod_authz_core.c>
+    Order allow,deny
+    Deny from all
+</IfModule>

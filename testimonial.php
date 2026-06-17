@@ -16,16 +16,8 @@ $banner = [
 ];
 include __DIR__ . '/includes/page-banner.php';
 
-$reviews = [
-    ['name' => 'Maya Thompson', 'role' => 'Memoirist',        'rating' => 5, 'text' => 'They treated my manuscript like a piece of literature, not a content asset. The editorial conversation alone was worth the partnership.'],
-    ['name' => 'J. R. Kaelen',  'role' => 'Fantasy Author',   'rating' => 5, 'text' => 'My fantasy series found its proper home. Every page, text, cover, paper stock, was considered. That is unbelievably rare in modern publishing.'],
-    ['name' => 'David Lincoln', 'role' => 'Non-Fiction Author','rating' => 5, 'text' => 'The marketing was strategic, not noisy. Reviews in three national papers and a placement on the FT summer-reads list. That is what a real publicist does.'],
-    ['name' => 'Elena Hart',    'role' => 'Novelist',         'rating' => 5, 'text' => 'They saw the book the way I saw it, and pushed me to write the version I had been too afraid to commit to. A truly literary partnership.'],
-    ['name' => 'Patrick Gillan','role' => 'Biography Author', 'rating' => 5, 'text' => 'I needed someone who would handle a difficult story with care. They did, every step of the way, and the finished book is exactly what I hoped it would be.'],
-    ['name' => 'Sheena L.C. Walker','role' => 'Business Author','rating' => 5, 'text' => 'From manuscript to Amazon listing, the team was honest about what worked and what needed to change. The end result has been a credible, well-positioned business book.'],
-    ['name' => 'Heather Green', 'role' => 'Children\'s Author','rating' => 5, 'text' => 'They cared as much about the illustrations as I did. The book my child loved became a book other children love too.'],
-    ['name' => 'Rose Lainie',   'role' => 'Fiction Author',   'rating' => 5, 'text' => 'A team that reads carefully, edits honestly, and publishes properly. Exactly what a writer hopes for.'],
-];
+// Single source of truth (managed in /admin → Testimonials).
+require __DIR__ . '/includes/testimonials-data.php';
 ?>
 
 <section class="testimonials-section" id="testimonials">

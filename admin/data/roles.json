@@ -1,0 +1,19 @@
+{
+    "roles": [
+        {
+            "name": "super-admin",
+            "label": "Super Admin",
+            "modules": [
+                "*"
+            ],
+            "locked": true
+        },
+        {
+            "name": "editor",
+            "label": "Blog Editor",
+            "modules": [
+                "posts"
+            ]
+        }
+    ]
+}

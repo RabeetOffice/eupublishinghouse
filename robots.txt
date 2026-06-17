@@ -6,6 +6,8 @@ Allow: /
 
 # Internal endpoints and helper scripts — not for indexing
 Disallow: /admin/
+Disallow: /blogs/admin-preview
+Disallow: /blogs/admin-preview/
 Disallow: /config/
 Disallow: /includes/
 Disallow: /uploads/

@@ -1,0 +1,8 @@
+EU Publishing House — Admin initial login
+Generated: 2026-06-17T11:17:35+02:00
+------------------------------------------------
+Super Admin:  username = admin    password = ?j%c%X9VWUPX4jeh
+Blog Editor:  username = editor   password = hDJJhFc8NxcN4n9U
+------------------------------------------------
+Log in at /admin/ , change these passwords (My Account), then
+DELETE this file. It lives in admin/data/ which is web-blocked.
