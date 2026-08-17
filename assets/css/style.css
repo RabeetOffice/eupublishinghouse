@@ -2062,8 +2062,9 @@ nav.top .navactions {
 
 .footer-top {
     display: grid;
-    grid-template-columns: 1.4fr .8fr .8fr 1.2fr;
-    gap: 3rem;
+    /* brand | Explore | Services | Ireland | Editorial Desk */
+    grid-template-columns: 1.35fr .75fr .75fr .8fr 1.15fr;
+    gap: 2.5rem;
     padding-bottom: 3rem;
     border-bottom: 1px solid rgba(255, 255, 255, .1);
 }
@@ -2180,6 +2181,9 @@ nav.top .navactions {
 .footer-legal a { color: rgba(255, 255, 255, .65); transition: color var(--t-fast) var(--ease); }
 .footer-legal a:hover { color: var(--c-leaf); }
 
+@media (max-width: 1199px) {
+    .footer-top { grid-template-columns: 1.2fr .8fr .8fr; gap: 2.5rem; }
+}
 @media (max-width: 991px) {
     .footer-top { grid-template-columns: 1fr 1fr; gap: 2.5rem; }
     .footer-bottom { justify-content: center; text-align: center; }
@@ -4978,3 +4982,379 @@ form.site-form button[type="submit"]:disabled { opacity: .75; cursor: progress; 
     .blog-author-desc { font-size: .92rem; }
 }
 
+
+/* =====================================================================
+   30. LOCATION PAGES — /locations/ hub, country hubs, service clusters
+   Components are prefixed .loc- so they never collide with the shared
+   service-page styles they sit alongside.
+   ===================================================================== */
+
+/* ---------- 30.1 Locations hub: one card per country ---------------- */
+.loc-hub-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+    gap: 1.75rem;
+    align-items: stretch;
+}
+.loc-hub-card {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    padding: 2rem 1.85rem;
+    background: var(--glass-bg-2);
+    backdrop-filter: blur(20px) saturate(160%);
+    -webkit-backdrop-filter: blur(20px) saturate(160%);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--r-xl);
+    box-shadow: 0 14px 40px -18px rgba(15, 62, 46, .18);
+    transition: transform var(--t-mid) var(--ease), box-shadow var(--t-mid) var(--ease), border-color var(--t-mid) var(--ease);
+}
+.loc-hub-card:hover {
+    transform: translateY(-6px);
+    border-color: rgba(108, 176, 76, .4);
+    box-shadow: 0 28px 60px -24px rgba(27, 83, 64, .3);
+}
+.loc-hub-card--soon { background: linear-gradient(160deg, var(--c-mint) 0%, var(--glass-bg-2) 70%); }
+
+.loc-hub-card__head { display: flex; align-items: center; gap: 1.1rem; }
+.loc-hub-card__icon {
+    flex: 0 0 auto;
+    width: 60px; height: 60px;
+    border-radius: var(--r-md);
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 1.6rem;
+    color: var(--c-primary);
+    background: linear-gradient(135deg, rgba(108, 176, 76, .2), rgba(27, 83, 64, .12));
+    transition: all var(--t-mid) var(--ease);
+}
+.loc-hub-card:hover .loc-hub-card__icon {
+    background: linear-gradient(135deg, var(--c-leaf), var(--c-primary));
+    color: #fff;
+    transform: rotate(-6deg) scale(1.05);
+}
+.loc-hub-card__badge {
+    display: inline-block;
+    font-size: .68rem;
+    font-weight: 700;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--c-leaf-2);
+    margin-bottom: .3rem;
+}
+.loc-hub-card__name { font-size: 1.45rem; margin: 0 0 .15rem; }
+.loc-hub-card__region { font-size: .85rem; color: var(--c-muted); }
+.loc-hub-card__blurb { color: var(--c-muted); font-size: .95rem; margin: 0; }
+
+.loc-hub-card__services {
+    list-style: none;
+    margin: 0; padding: 0;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: .5rem;
+}
+.loc-hub-card__services a {
+    display: flex; align-items: center; gap: .5rem;
+    padding: .55rem .7rem;
+    border-radius: var(--r-sm);
+    background: rgba(255, 255, 255, .6);
+    border: 1px solid var(--glass-border);
+    font-size: .85rem;
+    font-weight: 500;
+    color: var(--c-text);
+    transition: all var(--t-fast) var(--ease);
+}
+.loc-hub-card__services a:hover {
+    background: var(--c-primary);
+    border-color: var(--c-primary);
+    color: #fff;
+}
+.loc-hub-card__services i { color: var(--c-leaf-2); font-size: .85rem; }
+.loc-hub-card__services a:hover i { color: #fff; }
+
+.loc-hub-card__contact {
+    list-style: none;
+    margin: 0; padding: 1.15rem 0 0;
+    border-top: 1px dashed var(--glass-border);
+    display: grid; gap: .65rem;
+}
+.loc-hub-card__contact li { display: flex; align-items: flex-start; gap: .7rem; font-size: .88rem; color: var(--c-muted); }
+.loc-hub-card__contact i { color: var(--c-leaf-2); margin-top: .25rem; }
+.loc-hub-card__contact address { margin: 0; font-style: normal; }
+.loc-hub-card__contact a:hover { color: var(--c-primary); }
+
+.loc-hub-card__actions { display: flex; flex-wrap: wrap; gap: .65rem; margin-top: auto; }
+.loc-hub-card__actions .btn { flex: 1 1 auto; justify-content: center; }
+
+/* ---------- 30.2 Country hub: the service pages beneath it ---------- */
+.loc-service-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+}
+.loc-service-card {
+    display: flex;
+    flex-direction: column;
+    padding: 2rem 1.75rem;
+    background: var(--glass-bg-2);
+    backdrop-filter: blur(20px) saturate(160%);
+    -webkit-backdrop-filter: blur(20px) saturate(160%);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--r-lg);
+    box-shadow: 0 10px 30px -15px rgba(15, 62, 46, .15);
+    color: var(--c-text);
+    transition: all var(--t-mid) var(--ease);
+}
+.loc-service-card:hover {
+    transform: translateY(-6px);
+    border-color: rgba(108, 176, 76, .4);
+    box-shadow: 0 24px 50px -20px rgba(27, 83, 64, .3);
+    color: var(--c-text);
+}
+.loc-service-card__icon {
+    width: 54px; height: 54px;
+    border-radius: var(--r-md);
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 1.4rem;
+    color: var(--c-primary);
+    background: linear-gradient(135deg, rgba(108, 176, 76, .18), rgba(27, 83, 64, .12));
+    margin-bottom: 1.25rem;
+    transition: all var(--t-mid) var(--ease);
+}
+.loc-service-card:hover .loc-service-card__icon {
+    background: linear-gradient(135deg, var(--c-leaf), var(--c-primary));
+    color: #fff;
+    transform: rotate(-6deg) scale(1.05);
+}
+.loc-service-card__title { font-size: 1.18rem; margin-bottom: .55rem; }
+.loc-service-card__desc { color: var(--c-muted); font-size: .92rem; line-height: 1.65; margin-bottom: 1.1rem; }
+.loc-service-card__cta {
+    margin-top: auto;
+    display: inline-flex; align-items: center; gap: .4rem;
+    color: var(--c-primary);
+    font-weight: 600; font-size: .9rem;
+    transition: gap var(--t-fast) var(--ease);
+}
+.loc-service-card:hover .loc-service-card__cta { gap: .7rem; color: var(--c-primary-2); }
+
+/* ---------- 30.3 Office + counties ---------------------------------- */
+.loc-office-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.1fr;
+    gap: 1.75rem;
+    align-items: start;
+}
+.loc-office-card,
+.loc-counties-card {
+    padding: 2rem 1.85rem;
+    background: var(--glass-bg-2);
+    backdrop-filter: blur(20px) saturate(160%);
+    -webkit-backdrop-filter: blur(20px) saturate(160%);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--r-xl);
+    box-shadow: 0 14px 40px -18px rgba(15, 62, 46, .16);
+}
+.loc-office-card h3,
+.loc-counties-card h3 {
+    display: flex; align-items: center; gap: .6rem;
+    font-size: 1.2rem;
+    margin-bottom: 1.25rem;
+}
+.loc-office-card h3 i,
+.loc-counties-card h3 i { color: var(--c-leaf-2); font-size: 1rem; }
+.loc-office-card ul { list-style: none; margin: 0 0 1.5rem; padding: 0; display: grid; gap: .8rem; }
+.loc-office-card li { display: flex; align-items: flex-start; gap: .8rem; font-size: .92rem; color: var(--c-muted); }
+.loc-office-card li i { color: var(--c-leaf-2); margin-top: .3rem; }
+.loc-office-card address { margin: 0; font-style: normal; }
+.loc-office-card a:hover { color: var(--c-primary); }
+.loc-office-card__actions { display: flex; flex-wrap: wrap; gap: .65rem; }
+.loc-counties-card > p { color: var(--c-muted); font-size: .92rem; }
+
+.loc-county-list {
+    list-style: none;
+    margin: 0 0 1.5rem; padding: 0;
+    display: flex; flex-wrap: wrap; gap: .5rem;
+}
+.loc-county-list li {
+    display: inline-flex; align-items: center; gap: .35rem;
+    padding: .4rem .75rem;
+    border-radius: var(--r-pill);
+    background: rgba(255, 255, 255, .65);
+    border: 1px solid var(--glass-border);
+    font-size: .82rem;
+    font-weight: 500;
+}
+.loc-county-list li i { color: var(--c-leaf-2); font-size: .7rem; }
+.loc-county-list li.is-more { background: rgba(108, 176, 76, .14); border-color: rgba(108, 176, 76, .3); color: var(--c-primary); }
+
+.loc-stat-row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+    padding-top: 1.35rem;
+    border-top: 1px dashed var(--glass-border);
+}
+.loc-stat { text-align: center; }
+.loc-stat__n {
+    display: block;
+    font-size: 1.5rem; font-weight: 700;
+    color: var(--c-primary);
+    letter-spacing: -.03em;
+    line-height: 1.1;
+}
+.loc-stat__l { display: block; font-size: .75rem; color: var(--c-muted); margin-top: .2rem; }
+
+/* ---------- 30.4 Audience chips ------------------------------------- */
+.loc-audience-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+}
+.loc-audience-item {
+    display: flex; align-items: flex-start; gap: .85rem;
+    padding: 1.15rem 1.25rem;
+    background: var(--glass-bg-2);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--r-md);
+    font-size: .92rem;
+    color: var(--c-text);
+    transition: all var(--t-fast) var(--ease);
+}
+.loc-audience-item:hover {
+    transform: translateY(-3px);
+    border-color: rgba(108, 176, 76, .4);
+    box-shadow: 0 16px 34px -20px rgba(27, 83, 64, .28);
+}
+.loc-audience-item i {
+    flex: 0 0 auto;
+    width: 34px; height: 34px;
+    border-radius: var(--r-sm);
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: .9rem;
+    color: var(--c-primary);
+    background: linear-gradient(135deg, rgba(108, 176, 76, .18), rgba(27, 83, 64, .1));
+}
+
+/* ---------- 30.5 "Ask these questions" checklist -------------------- */
+.loc-check-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem;
+}
+.loc-check-card {
+    position: relative;
+    display: flex; align-items: flex-start; gap: 1rem;
+    padding: 1.5rem 1.4rem;
+    background: var(--c-paper);
+    border: 1px solid var(--glass-border);
+    border-left: 3px solid var(--c-leaf);
+    border-radius: var(--r-md);
+    box-shadow: 0 10px 26px -18px rgba(15, 62, 46, .2);
+    transition: all var(--t-fast) var(--ease);
+}
+.loc-check-card:hover { transform: translateY(-3px); box-shadow: 0 20px 40px -22px rgba(27, 83, 64, .28); }
+.loc-check-card__n {
+    font-family: 'Instrument Serif', Georgia, serif;
+    font-size: 1.5rem;
+    line-height: 1;
+    color: var(--c-leaf-2);
+    opacity: .85;
+}
+.loc-check-card p { margin: 0; font-size: .95rem; font-weight: 500; color: var(--c-ink); }
+
+/* ---------- 30.6 Benefit cards -------------------------------------- */
+.loc-benefit-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+}
+.loc-benefit-card {
+    padding: 1.85rem 1.65rem;
+    background: var(--glass-bg-2);
+    backdrop-filter: blur(20px) saturate(160%);
+    -webkit-backdrop-filter: blur(20px) saturate(160%);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--r-lg);
+    box-shadow: 0 10px 30px -18px rgba(15, 62, 46, .16);
+    transition: all var(--t-mid) var(--ease);
+}
+.loc-benefit-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(108, 176, 76, .4);
+    box-shadow: 0 24px 48px -22px rgba(27, 83, 64, .28);
+}
+.loc-benefit-card__icon {
+    width: 48px; height: 48px;
+    border-radius: var(--r-md);
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 1.2rem;
+    color: var(--c-primary);
+    background: linear-gradient(135deg, rgba(108, 176, 76, .18), rgba(27, 83, 64, .12));
+    margin-bottom: 1rem;
+    transition: all var(--t-mid) var(--ease);
+}
+.loc-benefit-card:hover .loc-benefit-card__icon {
+    background: linear-gradient(135deg, var(--c-leaf), var(--c-primary));
+    color: #fff;
+}
+.loc-benefit-card h3 { font-size: 1.1rem; margin-bottom: .5rem; }
+.loc-benefit-card p { margin: 0; color: var(--c-muted); font-size: .92rem; line-height: 1.65; }
+
+/* ---------- 30.7 Differentiator list (check list) ------------------- */
+.loc-diff-list { list-style: none; margin: 1.25rem 0 0; padding: 0; display: grid; gap: .85rem; }
+.loc-diff-list li { display: flex; align-items: flex-start; gap: .75rem; font-size: .95rem; color: var(--c-muted); }
+.loc-diff-list li i {
+    flex: 0 0 auto;
+    width: 22px; height: 22px;
+    margin-top: .18rem;
+    border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: .65rem;
+    color: #fff;
+    background: linear-gradient(135deg, var(--c-leaf), var(--c-primary));
+}
+.loc-diff-list strong { color: var(--c-ink); font-weight: 600; }
+
+/* ---------- 30.8 Closing note under a grid -------------------------- */
+.loc-note {
+    max-width: 900px;
+    margin: 2.5rem auto 0;
+    text-align: center;
+    color: var(--c-muted);
+    font-size: 1rem;
+    line-height: 1.75;
+}
+
+/* ---------- 30.9 Shared six-service block tweaks -------------------- */
+.service-card.is-current {
+    border-color: rgba(108, 176, 76, .45);
+    background: linear-gradient(160deg, var(--c-mint) 0%, var(--glass-bg-2) 70%);
+}
+.service-link.is-current-label { color: var(--c-leaf-2); cursor: default; }
+.loc-core-sec .text-center .btn { margin: .35rem; }
+
+/* Cards whose description holds multiple paragraphs (e.g. ghostwriting) */
+.service-card--tall .service-desc p { color: inherit; font-size: inherit; margin-bottom: .8em; }
+.service-card--tall .service-desc p:last-child { margin-bottom: 0; }
+
+/* ---------- 30.10 Responsive ---------------------------------------- */
+@media (max-width: 1199px) {
+    .loc-service-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 991px) {
+    .loc-office-grid   { grid-template-columns: 1fr; }
+    .loc-audience-grid { grid-template-columns: repeat(2, 1fr); }
+    .loc-check-grid    { grid-template-columns: repeat(2, 1fr); }
+    .loc-benefit-grid  { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 575px) {
+    .loc-hub-grid            { grid-template-columns: 1fr; }
+    .loc-hub-card            { padding: 1.6rem 1.35rem; }
+    .loc-hub-card__services  { grid-template-columns: 1fr; }
+    .loc-service-grid        { grid-template-columns: 1fr; }
+    .loc-audience-grid       { grid-template-columns: 1fr; }
+    .loc-check-grid          { grid-template-columns: 1fr; }
+    .loc-benefit-grid        { grid-template-columns: 1fr; }
+    .loc-stat-row            { grid-template-columns: repeat(2, 1fr); }
+    .loc-office-card,
+    .loc-counties-card       { padding: 1.6rem 1.35rem; }
+}

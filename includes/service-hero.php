@@ -12,14 +12,28 @@
  *           ['label' => 'View Pricing', 'href' => '#pricing','class' => 'btn-glass'],
  *       ],
  *   ];
+ *
+ * Deeper pages (e.g. location services) can replace the single 'crumb' with a
+ * full trail. Home is always prepended; the last item renders as plain text:
+ *   'crumbs' => [
+ *       ['label' => 'Locations', 'href' => link_to('locations.php')],
+ *       ['label' => 'Ireland',   'href' => link_to('...-in-ireland.php')],
+ *       ['label' => 'Book Editing'],
+ *   ];
  */
 require_once __DIR__ . '/config.php';
 $h        = $hero ?? [];
 $hCrumb   = $h['crumb']      ?? '';
+$hCrumbs  = $h['crumbs']     ?? [];
 $hTitle   = $h['title']      ?? '';
 $hParas   = $h['paragraphs'] ?? [];
 $hCtas    = $h['ctas']       ?? [];
 $hImage   = $h['image']      ?? null;
+
+/* A single 'crumb' is just the one-level version of a trail. */
+if (!$hCrumbs && $hCrumb) {
+    $hCrumbs = [['label' => $hCrumb]];
+}
 ?>
 <section class="service-hero">
 
@@ -37,14 +51,20 @@ $hImage   = $h['image']      ?? null;
 
             <div class="service-hero-copy">
 
-                <?php if ($hCrumb): ?>
+                <?php if ($hCrumbs): ?>
                     <nav class="breadcrumb-pill" aria-label="Breadcrumb">
-                        <a href="index.php">
+                        <a href="<?= link_to('index.php') ?>">
                             <i class="fa-solid fa-house-chimney"></i>
                             Home
                         </a>
-                        <span class="sep"><i class="fa-solid fa-chevron-right"></i></span>
-                        <span class="current"><?= safe($hCrumb) ?></span>
+                        <?php foreach ($hCrumbs as $c): ?>
+                            <span class="sep"><i class="fa-solid fa-chevron-right"></i></span>
+                            <?php if (!empty($c['href'])): ?>
+                                <a href="<?= safe($c['href']) ?>"><?= safe($c['label']) ?></a>
+                            <?php else: ?>
+                                <span class="current"><?= safe($c['label']) ?></span>
+                            <?php endif; ?>
+                        <?php endforeach; ?>
                     </nav>
                 <?php endif; ?>
 

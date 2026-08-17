@@ -38,6 +38,7 @@
                     <li><a href="<?= link_to('blog.php') ?>">Journal</a></li>
                     <li><a href="<?= link_to('testimonial.php') ?>">Testimonials</a></li>
                     <li><a href="<?= link_to('faq.php') ?>">FAQs</a></li>
+                    <li><a href="<?= link_to('locations.php') ?>">Locations</a></li>
                     <li><a href="<?= link_to('contact.php') ?>">Contact</a></li>
                 </ul>
             </div>
@@ -51,6 +52,20 @@
                     <li><a href="<?= link_to('design.php') ?>">Cover Design</a></li>
                     <li><a href="<?= link_to('formatting.php') ?>">Formatting</a></li>
                     <li><a href="<?= link_to('marketing.php') ?>">Marketing</a></li>
+                </ul>
+            </div>
+
+            <?php /* Ireland cluster — driven by includes/locations-data.php so
+                     adding a service there surfaces it here too. */ ?>
+            <div class="footer-links-col">
+                <h4 class="footer-title">Ireland</h4>
+                <ul class="footer-links">
+                    <li><a href="<?= link_to('book-publishing-services-in-ireland.php') ?>">All Ireland Services</a></li>
+                    <?php
+                    require_once __DIR__ . '/locations-data.php';
+                    foreach (location_services('ireland') as $_fs): ?>
+                        <li><a href="<?= link_to($_fs['href']) ?>"><?= safe($_fs['label']) ?></a></li>
+                    <?php endforeach; ?>
                 </ul>
             </div>
 

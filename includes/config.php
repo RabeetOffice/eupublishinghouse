@@ -163,6 +163,58 @@ $PAGE_META = [
         'keywords' => 'book formatting Europe, ePub MOBI formatting, KDP formatting, print ready PDF, IngramSpark formatting',
         'canonical' => WEBSITE_URL . '/formatting/',
     ],
+    /* ---- Location hub + Ireland cluster ----
+       These pages also set their own $page_title / $page_description before
+       including header.php (the explicit values win). Entries are kept here
+       so the registry stays a complete list of the site's pages. */
+    'locations' => [
+        'title' => 'Book Publishing Locations | EU Publishing House',
+        'description' => 'Find EU Publishing House in your country. Publishing, editing, ghostwriting, cover design, formatting and book marketing for authors in Ireland and across Europe.',
+        'keywords' => 'book publishing locations, book publishers Ireland, publishing services by country',
+        'canonical' => WEBSITE_URL . '/locations/',
+    ],
+    'book-publishing-services-in-ireland' => [
+        'title' => 'Book Publishing Services in Ireland | EU Publishing House',
+        'description' => 'Book publishing services in Ireland covering editing, ghostwriting, cover design, formatting and marketing. Dublin-based team working with authors in every county.',
+        'keywords' => 'book publishing services Ireland, author services Ireland, Dublin book publisher',
+        'canonical' => WEBSITE_URL . '/book-publishing-services-in-ireland/',
+    ],
+    'book-publishers-in-ireland' => [
+        'title' => 'Leading Book Publishers in Ireland for Aspiring Authors',
+        'description' => 'Choose book publishers in Ireland dedicated to bringing your manuscript to life with expert editing, design, and guidance from concept through to launch.',
+        'keywords' => 'book publishers Ireland, hybrid publishing services Ireland, book printing Ireland',
+        'canonical' => WEBSITE_URL . '/book-publishers-in-ireland/',
+    ],
+    'book-editing-services-in-ireland' => [
+        'title' => 'Book Editing Services in Ireland | Professional Editors',
+        'description' => 'Get expert book editing services in Ireland to polish your manuscript for clarity, flow, and publishing success. Trusted editors deliver fast results.',
+        'keywords' => 'book editing services Ireland, copy editing Ireland, proofreading Ireland',
+        'canonical' => WEBSITE_URL . '/book-editing-services-in-ireland/',
+    ],
+    'ghostwriting-services-ireland' => [
+        'title' => 'Ghostwriting Services Ireland | Your Story, Told Right',
+        'description' => 'Professional ghostwriting services in Ireland to turn your ideas into a polished, publish-ready book. Confidential, skilled writers who capture your voice.',
+        'keywords' => 'ghostwriting services Ireland, ghostwriter Ireland, autobiography ghostwriting Ireland',
+        'canonical' => WEBSITE_URL . '/ghostwriting-services-ireland/',
+    ],
+    'custom-book-cover-design-in-ireland' => [
+        'title' => 'Book Cover Design in Ireland for Authors Who Stand Out',
+        'description' => 'Get book cover design in Ireland that turns browsers into buyers. Custom, genre-ready covers crafted to reflect your story and grab reader attention fast.',
+        'keywords' => 'book cover design Ireland, Kindle cover design Ireland, children\'s book illustration Ireland',
+        'canonical' => WEBSITE_URL . '/custom-book-cover-design-in-ireland/',
+    ],
+    'book-formatting-services-in-ireland' => [
+        'title' => 'Book Formatting Services Ireland | Professional Help',
+        'description' => 'Looking for expert book formatting services in Ireland? We craft clean, polished layouts for print and eBooks that meet publishing industry standards.',
+        'keywords' => 'book formatting services Ireland, Kindle book format Ireland, EPUB formatting Ireland',
+        'canonical' => WEBSITE_URL . '/book-formatting-services-in-ireland/',
+    ],
+    'book-marketing-services-in-ireland' => [
+        'title' => 'Book Marketing Services Ireland to Boost Your Sales',
+        'description' => 'Get expert book marketing services Ireland authors trust to build visibility, reach engaged readers, and turn book launches into lasting sales success.',
+        'keywords' => 'book marketing services Ireland, Amazon book marketing Ireland, book promotion Ireland',
+        'canonical' => WEBSITE_URL . '/book-marketing-services-in-ireland/',
+    ],
     'portfolios' => [
         'title' => 'Portfolio | Branding & Publishing Work – EU House UK',
         'description' => 'Explore EU Publishing House portfolio featuring publishing, branding, and creative design projects. View our work, expertise, and client collaborations.',
@@ -443,6 +495,11 @@ function navMenu() {
                 ['key' => 'marketing',    'label' => 'Marketing',     'href' => 'marketing.php',     'icon' => 'fa-bullhorn',   'desc' => 'Amazon, social, ads, reviews & launch'],
             ],
         ],
+        /* NOTE: Locations is deliberately NOT in the header nav. The location
+           pages are reachable from the footer (Explore > Locations, plus the
+           Ireland column) and from each other's breadcrumbs and cross-links.
+           To surface it in the header again, re-add an entry here with
+           'href' => 'locations.php'. */
         [
             'key'   => 'portfolios',
             'label' => 'Portfolio',

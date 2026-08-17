@@ -6,6 +6,7 @@
 ================================================================= */
 require_once __DIR__ . '/includes/config.php';
 require_once __DIR__ . '/includes/blog-data.php';
+require_once __DIR__ . '/includes/locations-data.php';
 
 header('Content-Type: application/xml; charset=utf-8');
 
@@ -23,6 +24,7 @@ $staticPages = [
     ['design/',                '0.8', 'monthly'],
     ['formatting/',            '0.8', 'monthly'],
     ['marketing/',             '0.8', 'monthly'],
+    ['locations/',             '0.8', 'monthly'],
     ['portfolios/',            '0.7', 'weekly'],
     ['blog/',                  '0.9', 'weekly'],
     ['testimonial/',           '0.6', 'monthly'],
@@ -43,6 +45,25 @@ foreach ($staticPages as [$path, $priority, $freq]) {
     echo "    <changefreq>{$freq}</changefreq>\n";
     echo "    <priority>{$priority}</priority>\n";
     echo "  </url>\n";
+}
+
+/* ----- Location pages (driven by locations-data.php) -----
+   The country hub gets the higher priority; its service pages sit just
+   below it, matching the /locations/ -> country -> service hierarchy. */
+foreach ($SITE_LOCATIONS as $location) {
+    $locPages = [[$location['hub'], '0.9']];
+    foreach ($location['services'] as $service) {
+        $locPages[] = [$service['href'], '0.8'];
+    }
+    foreach ($locPages as [$file, $priority]) {
+        $loc = $base . '/' . trim(preg_replace('/\.php$/i', '', $file), '/') . '/';
+        echo "  <url>\n";
+        echo "    <loc>" . htmlspecialchars($loc, ENT_QUOTES | ENT_XML1, 'UTF-8') . "</loc>\n";
+        echo "    <lastmod>{$today}</lastmod>\n";
+        echo "    <changefreq>monthly</changefreq>\n";
+        echo "    <priority>{$priority}</priority>\n";
+        echo "  </url>\n";
+    }
 }
 
 /* ----- Blog detail pages (driven by blog-data.php) ----- */
